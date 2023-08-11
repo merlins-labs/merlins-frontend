@@ -40,7 +40,7 @@ export const Step3Confirm: FunctionComponent<StepProps> = observer((props) => {
   return (
     <StepBase step={3} {...props}>
       <div className="flex flex-col gap-2.5">
-        <div className="grid grid-cols-2 bg-osmoverse-900 rounded-3xl p-6">
+        <div className="grid grid-cols-2 bg-furyverse-900 rounded-3xl p-6">
           <figure
             className="mx-auto"
             style={{
@@ -57,7 +57,7 @@ export const Step3Confirm: FunctionComponent<StepProps> = observer((props) => {
             />
           </figure>
           <div className="flex flex-col gap-2">
-            <div className="flex place-content-between caption md:text-xxs text-osmoverse-500">
+            <div className="flex place-content-between caption md:text-xxs text-furyverse-500">
               <span>{t("pools.createPool.token")}</span>
               <span>{t("pools.createPool.amount")}</span>
             </div>
@@ -98,7 +98,7 @@ export const Step3Confirm: FunctionComponent<StepProps> = observer((props) => {
                     </div>
                     <div className="flex items-center place-content-between">
                       {"paths" in sendCurrency ? (
-                        <span className="subtitle2 md:caption md:text-sm text-osmoverse-500">
+                        <span className="subtitle2 md:caption md:text-sm text-furyverse-500">
                           {(sendCurrency as IBCCurrency).paths
                             .map((path) => path.channelId)
                             .join(", ")}
@@ -106,7 +106,7 @@ export const Step3Confirm: FunctionComponent<StepProps> = observer((props) => {
                       ) : (
                         <br />
                       )}
-                      <span className="body1 md:caption md:text-sm text-osmoverse-500">
+                      <span className="body1 md:caption md:text-sm text-furyverse-500">
                         {config.poolType === "weighted"
                           ? `${percentage}%`
                           : scalingFactor ?? "1"}
@@ -149,14 +149,14 @@ export const Step3Confirm: FunctionComponent<StepProps> = observer((props) => {
                   onInput={(value) =>
                     config.setScalingFactorControllerAddress(value)
                   }
-                  placeholder="osmo..."
+                  placeholder="fury..."
                 />
               </div>
             </div>
           )}
         </div>
         <div className="bg-gradient-negative rounded-xl md:caption p-[2px]">
-          <div className="flex items-center justify-center gap-2 bg-osmoverse-800 rounded-xlinset p-3.5 md:px-12">
+          <div className="flex items-center justify-center gap-2 bg-furyverse-800 rounded-xlinset p-3.5 md:px-12">
             <CheckBox
               className="after:!bg-transparent after:!border-2 after:!rounded-[10px] -top-px -left-0.5 after:!h-6 after:!w-6 after:!border-rust-700 checked:after:bg-gradient-negative checked:after:border-none"
               isOn={config.acknowledgeFee}

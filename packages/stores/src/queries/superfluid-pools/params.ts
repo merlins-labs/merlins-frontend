@@ -6,7 +6,7 @@ import { Dec } from "@keplr-wallet/unit";
 
 export class ObservableQuerySuperfluidParams extends ObservableChainQuery<SuperfluidParams> {
   constructor(kvStore: KVStore, chainId: string, chainGetter: ChainGetter) {
-    super(kvStore, chainId, chainGetter, "/osmosis/superfluid/v1beta1/params");
+    super(kvStore, chainId, chainGetter, "/merlins/superfluid/v1beta1/params");
 
     makeObservable(this);
   }

@@ -38,18 +38,18 @@ export const BondCard: FunctionComponent<
     .toString();
 
   return (
-    <div className="relative flex flex-col gap-[115px] overflow-hidden h-[380px] w-full min-w-[280px] rounded-2xl bg-osmoverse-800 border-2 border-osmoverse-600 p-8 md:p-[10px]">
+    <div className="relative flex flex-col gap-[115px] overflow-hidden h-[380px] w-full min-w-[280px] rounded-2xl bg-furyverse-800 border-2 border-furyverse-600 p-8 md:p-[10px]">
       <div className="h-[260px] flex flex-col place-content-between gap-2">
         <div className="flex items-start gap-4 place-content-between">
           <div className="flex flex-col gap-3 max-w-[60%] overflow-visible z-10">
-            <span className="subtitle1 text-osmoverse-100">
+            <span className="subtitle1 text-furyverse-100">
               {t("pool.amountDaysUnbonding", {
                 numDays: duration.asDays().toString(),
               })}
             </span>
-            <div className="flex flex-col text-osmoverse-100 grow">
+            <div className="flex flex-col text-furyverse-100 grow">
               <h3
-                className={classNames("bg-osmoverse-800", {
+                className={classNames("bg-furyverse-800", {
                   "text-h4 font-h4": shares.length > 5,
                   "text-h5 font-h5": shares.length > 8,
                   "text-h6 font-h6": shares.length > 10,
@@ -70,7 +70,7 @@ export const BondCard: FunctionComponent<
           )}
         </div>
         {userUnlockingShares && (
-          <div className="w-fit flex flex-wrap items-center gap-1 bg-osmoverse-900 rounded-lg p-3 md:p-1.5">
+          <div className="w-fit flex flex-wrap items-center gap-1 bg-furyverse-900 rounded-lg p-3 md:p-1.5">
             <h6 className="lg:text-subtitle1 lg:font-subtitle1">
               ~
               {t("pool.sharesAmount", {
@@ -81,7 +81,7 @@ export const BondCard: FunctionComponent<
                   .toString(),
               })}
             </h6>
-            <h6 className="flex items-center gap-1 lg:text-subtitle1 lg:font-subtitle1 text-osmoverse-400">
+            <h6 className="flex items-center gap-1 lg:text-subtitle1 lg:font-subtitle1 text-furyverse-400">
               {userUnlockingShares.endTime ? (
                 <>
                   {t("pool.sharesAvailableIn")}
@@ -103,7 +103,7 @@ export const BondCard: FunctionComponent<
               className="w-fit bg-superfluid rounded-lg p-[2px]"
               onClick={onGoSuperfluid}
             >
-              <div className="w-full bg-osmoverse-800 rounded-[6px] p-3 md:p-2">
+              <div className="w-full bg-furyverse-800 rounded-[6px] p-3 md:p-2">
                 <span className="text-superfluid-gradient">
                   {t("pool.superfluidEarnMore", {
                     rate: superfluid.apr.maxDecimals(0).toString(),
@@ -115,7 +115,7 @@ export const BondCard: FunctionComponent<
       </div>
       <div
         className={classNames(
-          "absolute w-full h-full top-0 left-1/2 -translate-x-1/2 bg-osmoverse-1000 transition-opacity duration-300",
+          "absolute w-full h-full top-0 left-1/2 -translate-x-1/2 bg-furyverse-1000 transition-opacity duration-300",
           drawerUp ? "opacity-70 z-20" : "opacity-0 -z-10"
         )}
         onClick={() => setDrawerUp(false)}
@@ -174,7 +174,7 @@ const Drawer: FunctionComponent<{
       className={classNames(
         "absolute w-full h-[320px] -bottom-[234px] left-1/2 -translate-x-1/2 flex flex-col transition-all duration-300 ease-inOutBack z-40",
         {
-          "-translate-y-[220px] bg-osmoverse-700 rounded-t-[18px]": drawerUp,
+          "-translate-y-[220px] bg-furyverse-700 rounded-t-[18px]": drawerUp,
         }
       )}
     >
@@ -182,12 +182,12 @@ const Drawer: FunctionComponent<{
         className={classNames(
           "flex items-end place-content-between transition-all py-4 px-8 md:px-[10px]",
           {
-            "border-b border-osmoverse-600": drawerUp,
+            "border-b border-furyverse-600": drawerUp,
           }
         )}
       >
         <div className="flex flex-col">
-          <span className="subtitle1 text-osmoverse-200">
+          <span className="subtitle1 text-furyverse-200">
             {t("pool.incentives")}
           </span>
           <div className="flex items-center gap-2 md:gap-1.5">
@@ -207,7 +207,7 @@ const Drawer: FunctionComponent<{
               {uniqueCoinImages.map((coinImageUrl, index) => (
                 <div key={index}>
                   {index === 2 && incentivesBreakdown.length > 3 ? (
-                    <span className="caption text-osmoverse-400">
+                    <span className="caption text-furyverse-400">
                       +{incentivesBreakdown.length - 2}
                     </span>
                   ) : index < 2 ? (
@@ -232,7 +232,7 @@ const Drawer: FunctionComponent<{
           )}
           onClick={toggleDetailsVisible}
         >
-          <span className="xs:hidden caption text-osmoverse-400">
+          <span className="xs:hidden caption text-furyverse-400">
             {t("pool.details")}
           </span>
           <div
@@ -242,7 +242,7 @@ const Drawer: FunctionComponent<{
           >
             <Image
               alt="details"
-              src="/icons/chevron-up-osmoverse-400.svg"
+              src="/icons/chevron-up-furyverse-400.svg"
               height={30}
               width={30}
             />
@@ -251,7 +251,7 @@ const Drawer: FunctionComponent<{
       </div>
       <div
         className={classNames("flex flex-col gap-1.5 h-full", {
-          "bg-osmoverse-700": drawerUp,
+          "bg-furyverse-700": drawerUp,
         })}
       >
         <div className="flex flex-col h-[180px] gap-5 py-6 px-8 md:px-[10px] overflow-y-auto">
@@ -268,7 +268,7 @@ const Drawer: FunctionComponent<{
             swapFeeDailyReward={swapFeeDailyReward}
           />
         </div>
-        <span className="caption text-center text-osmoverse-400">
+        <span className="caption text-center text-furyverse-400">
           {t("pool.rewardDistribution")}
         </span>
       </div>
@@ -295,7 +295,7 @@ const SuperfluidBreakdownRow: FunctionComponent<BondDuration["superfluid"]> = ({
           <FallbackImg
             className="rounded-full"
             alt="validator icon"
-            src={validatorLogoUrl ?? "/icons/superfluid-osmo.svg"}
+            src={validatorLogoUrl ?? "/icons/superfluid-fury.svg"}
             fallbacksrc="/icons/profile.svg"
             height={24}
             width={24}
@@ -309,14 +309,14 @@ const SuperfluidBreakdownRow: FunctionComponent<BondDuration["superfluid"]> = ({
       </div>
       {(delegated || undelegating) && (
         <div className="flex flex-col text-right ml-auto">
-          <div className="flex flex-col gap-[2px] bg-osmoverse-800 rounded-md py-2 px-4">
+          <div className="flex flex-col gap-[2px] bg-furyverse-800 rounded-md py-2 px-4">
             <span className="caption">
               {delegated
                 ? `~${delegated.trim(true).maxDecimals(7).toString()}`
                 : undelegating
                 ? `~${undelegating.trim(true).maxDecimals(7).toString()}`
                 : null}
-              <span className="text-osmoverse-400">
+              <span className="text-furyverse-400">
                 {delegated
                   ? ` ${t("pool.delegated")}`
                   : undelegating
@@ -327,7 +327,7 @@ const SuperfluidBreakdownRow: FunctionComponent<BondDuration["superfluid"]> = ({
             {commission && (
               <span className="caption">
                 {commission.toString()}{" "}
-                <span className="text-osmoverse-400">
+                <span className="text-furyverse-400">
                   {t("pool.commission")}
                 </span>
               </span>
@@ -346,7 +346,7 @@ const IncentiveBreakdownRow: FunctionComponent<
   return (
     <div className="flex items-start place-content-between">
       <div className="flex items-center shrink-0 gap-2">
-        <h6 className="text-osmoverse-200">+{apr.maxDecimals(0).toString()}</h6>
+        <h6 className="text-furyverse-200">+{apr.maxDecimals(0).toString()}</h6>
         {dailyPoolReward.currency.coinImageUrl && (
           <Image
             alt="token icon"
@@ -363,7 +363,7 @@ const IncentiveBreakdownRow: FunctionComponent<
           })}
         </span>
         {numDaysRemaining && (
-          <span className="caption text-osmoverse-400">
+          <span className="caption text-furyverse-400">
             {t("pool.numDaysRemaining", {
               numDays: numDaysRemaining.toString(),
             })}
@@ -382,7 +382,7 @@ const SwapFeeBreakdownRow: FunctionComponent<{
   return (
     <div className="flex items-start place-content-between">
       <div className="flex items-center gap-2">
-        <h6 className="text-osmoverse-200">
+        <h6 className="text-furyverse-200">
           +{swapFeeApr.maxDecimals(0).toString()}
         </h6>
       </div>
@@ -392,12 +392,12 @@ const SwapFeeBreakdownRow: FunctionComponent<{
             amount: swapFeeDailyReward.maxDecimals(0).toString(),
           })}
         </span>
-        <span className="caption text-osmoverse-400">
+        <span className="caption text-furyverse-400">
           {`${t("pool.from")} `}
           <a
             rel="noreferrer"
             target="_blank"
-            href="https://docs.osmosis.zone/overview/getting-started/#swap-fees"
+            href="https://docs.merlins.zone/overview/getting-started/#swap-fees"
           >
             <u>{t("pool.swapFees")}</u>
           </a>{" "}

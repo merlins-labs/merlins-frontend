@@ -76,7 +76,7 @@ export const BridgeTransferModal: FunctionComponent<
               <AxelarTransfer
                 isWithdraw={isWithdraw}
                 ethWalletClient={walletClient as unknown as EthWallet}
-                balanceOnOsmosis={balance}
+                balanceOnMerlins={balance}
                 {...balance.originBridgeInfo}
                 selectedSourceChainKey={sourceChainKey}
                 onRequestClose={onRequestClose}

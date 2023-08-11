@@ -24,15 +24,15 @@ describe("Join Pool Tx", () => {
 
     // And prepare the pool
     await new Promise<any>((resolve) => {
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0",
         [
           {
             weight: "200",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -60,24 +60,24 @@ describe("Join Pool Tx", () => {
     // refresh stores
     await queriesStore
       .get(chainId)
-      .osmosis!.queryGammNumPools.waitFreshResponse();
-    await queriesStore.get(chainId).osmosis!.queryGammPools.waitFreshResponse();
+      .merlins!.queryGammNumPools.waitFreshResponse();
+    await queriesStore.get(chainId).merlins!.queryGammPools.waitFreshResponse();
 
     // set poolId
     const numPools =
-      queriesStore.get(chainId).osmosis!.queryGammNumPools.numPools;
+      queriesStore.get(chainId).merlins!.queryGammNumPools.numPools;
     poolId = numPools.toString();
   });
 
   test("with no max slippage", async () => {
     const account = accountStore.getAccount(chainId);
 
-    const queriesOsmosis = queriesStore.get(chainId).osmosis!;
+    const queriesMerlins = queriesStore.get(chainId).merlins!;
 
     const shareOutAmount = "1";
     const maxSlippage = "0";
 
-    const queryPool = queriesOsmosis.queryGammPools.getPool(poolId!)!;
+    const queryPool = queriesMerlins.queryGammPools.getPool(poolId!)!;
     await queryPool.waitFreshResponse();
     const estimated = estimateJoinSwap(
       queryPool.pool,
@@ -94,7 +94,7 @@ describe("Join Pool Tx", () => {
     );
 
     const tx = await new Promise<any>((resolve, rejects) => {
-      account.osmosis
+      account.merlins
         .sendJoinPoolMsg(poolId!, shareOutAmount, maxSlippage, "", (tx) => {
           resolve(tx);
         })
@@ -105,7 +105,7 @@ describe("Join Pool Tx", () => {
       {
         type: "message",
         attributes: [
-          { key: "action", value: "/osmosis.gamm.v1beta1.MsgJoinPool" },
+          { key: "action", value: "/merlins.gamm.v1beta1.MsgJoinPool" },
           { key: "module", value: "gamm" },
           {
             key: "sender",
@@ -159,7 +159,7 @@ describe("Join Pool Tx", () => {
 
     const queryPool = queriesStore
       .get(chainId)
-      .osmosis!.queryGammPools.getPool(poolId!)!;
+      .merlins!.queryGammPools.getPool(poolId!)!;
     await queryPool.waitFreshResponse();
     const estimated = estimateJoinSwap(
       queryPool.pool,
@@ -177,7 +177,7 @@ describe("Join Pool Tx", () => {
     );
 
     const tx = await new Promise<any>((resolve, rejects) => {
-      account.osmosis
+      account.merlins
         .sendJoinPoolMsg(poolId!, shareOutAmount, maxSlippage, "", (tx) => {
           resolve(tx);
         })
@@ -188,7 +188,7 @@ describe("Join Pool Tx", () => {
       {
         type: "message",
         attributes: [
-          { key: "action", value: "/osmosis.gamm.v1beta1.MsgJoinPool" },
+          { key: "action", value: "/merlins.gamm.v1beta1.MsgJoinPool" },
           { key: "module", value: "gamm" },
           {
             key: "sender",

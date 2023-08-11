@@ -28,7 +28,7 @@
   "pools": {
     "title": "활성화된 풀",
     "poolId": "풀 #{id}",
-    "priceOsmo": "OSMO 가격",
+    "priceFury": "FURY 가격",
     "rewardDistribution": "보상 지급까지 남은 시간",
     "myPools": "내 풀",
     "APR": "APR",
@@ -90,7 +90,7 @@
         "three": "{step} / {nbStep} 단계 - 풀의 비율과 수량 확인"
       },
       "infoMessage": "풀 생성 수수료",
-      "infoCaption": "Osmosis 커뮤니티풀로 전송됩니다",
+      "infoCaption": "Merlins 커뮤니티풀로 전송됩니다",
       "buttonCreate": "풀 생성하기",
       "buttonNext": "다음",
       "buttonBack": "이전",
@@ -187,7 +187,7 @@
     "bondedAmount": "예치된 수량",
     "estimation": "Superfluid 위임 추정치",
     "estimationMobile": "위임 추정치",
-    "estimationInfo": "이 위임의 값은 변동하며 풀의 OSMO 양을 기준으로 추정됩니다.",
+    "estimationInfo": "이 위임의 값은 변동하며 풀의 FURY 양을 기준으로 추정됩니다.",
     "buttonBond": "예치 & 스테이킹",
     "columns": {
       "validator": "검증인",
@@ -198,7 +198,7 @@
     "totalAssets": "전체",
     "unbondedAssets": "예치되지 않은 자산",
     "bondedAssets": "예치된 자산",
-    "stakedAssets": "스테이킹된 OSMO",
+    "stakedAssets": "스테이킹된 FURY",
     "myPools": "내 풀",
     "transferAssetSelect": {
       "deposit": "입금",
@@ -268,7 +268,7 @@
       "search": "심볼로 필터",
       "title": "자산",
       "hideZero": "작은 자산 숨기기",
-      "buyOsmo": "구매",
+      "buyFury": "구매",
       "preTransfer": {
         "deposit": "입금",
         "withdraw": "출금",
@@ -373,7 +373,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr 이동하는"
   },
-  "connectDisclaimer": "지갑을 연결함으로써 귀하는 Osmosis를 읽고 이해했음을 인정합니다",
+  "connectDisclaimer": "지갑을 연결함으로써 귀하는 Merlins를 읽고 이해했음을 인정합니다",
   "protocolDisclaimer": "프로토콜 면책 조항",
   "Transaction Failed": "전송 실패",
   "Transaction Successful": "전송 성공",

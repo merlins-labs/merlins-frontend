@@ -17,12 +17,12 @@ export function useSuperfluidPoolConfig(
   ) => Promise<"delegated" | "locked-and-delegated">;
 } {
   const { chainStore, accountStore, queriesStore, priceStore } = useStore();
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
 
   const account = accountStore.getAccount(chainId);
   const { bech32Address } = account;
   const fiat = priceStore.getFiatCurrency(priceStore.defaultVsCurrency)!;
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
 
   const [superfluidPoolConfig, setSuperfluidPoolStore] =
     useState<ObservableQuerySuperfluidPool | null>(null);
@@ -34,12 +34,12 @@ export function useSuperfluidPoolConfig(
           poolDetails,
           queriesStore.get(chainId).cosmos.queryValidators,
           queriesStore.get(chainId).cosmos.queryInflation,
-          queryOsmosis,
+          queryMerlins,
           priceStore
         )
       );
     }
-  }, [poolDetails, fiat, queryOsmosis, priceStore]);
+  }, [poolDetails, fiat, queryMerlins, priceStore]);
 
   useEffect(
     () => superfluidPoolConfig?.setBech32Address(bech32Address),
@@ -54,7 +54,7 @@ export function useSuperfluidPoolConfig(
             if (superfluidPoolConfig.superfluid.upgradeableLpLockIds) {
               // is delegating existing locked shares
               try {
-                await account.osmosis.sendSuperfluidDelegateMsg(
+                await account.merlins.sendSuperfluidDelegateMsg(
                   superfluidPoolConfig.superfluid.upgradeableLpLockIds.lockIds,
                   validatorAddress,
                   undefined,
@@ -69,7 +69,7 @@ export function useSuperfluidPoolConfig(
               lockLPTokensConfig
             ) {
               try {
-                await account.osmosis.sendLockAndSuperfluidDelegateMsg(
+                await account.merlins.sendLockAndSuperfluidDelegateMsg(
                   [
                     {
                       currency: lockLPTokensConfig.sendCurrency,

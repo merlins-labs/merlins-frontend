@@ -111,7 +111,7 @@ export const GetKeplrProvider: FunctionComponent = ({ children }) => {
     let callbackClosed: (() => void) | undefined;
 
     const createWalletConnect = (): WalletConnect => {
-      const wcLogoURI = require("../../public/osmosis-logo-wc.png")?.default
+      const wcLogoURI = require("../../public/merlins-logo-wc.png")?.default
         ?.src;
 
       const wc = new WalletConnect({
@@ -132,9 +132,9 @@ export const GetKeplrProvider: FunctionComponent = ({ children }) => {
       // XXX: I don't know why they designed that the client meta options in the constructor should be always ingored...
       // @ts-ignore
       wc._clientMeta = {
-        name: "Osmosis",
-        description: "Osmosis is the first IBC-native Cosmos interchain AMM",
-        url: "https://app.osmosis.zone",
+        name: "Merlins",
+        description: "Merlins is the first IBC-native Cosmos interchain AMM",
+        url: "https://app.merlins.zone",
         icons: wcLogoURI
           ? [
               // Keplr mobile app can't show svg image.

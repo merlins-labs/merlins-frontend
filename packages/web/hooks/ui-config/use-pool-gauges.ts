@@ -30,7 +30,7 @@ export function usePoolGauges(poolId?: string): {
   const { chainStore } = useStore();
 
   const {
-    osmosis: { chainId },
+    merlins: { chainId },
   } = chainStore;
 
   const { poolDetailConfig, pool } = usePoolDetailConfig(poolId);

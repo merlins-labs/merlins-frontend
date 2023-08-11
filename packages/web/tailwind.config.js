@@ -19,7 +19,7 @@ module.exports = {
         disabled: "rgba(255, 255, 255, 0.38)",
         faint: "rgba(255, 255, 255, 0.12)",
       },
-      wosmongton: IS_FRONTIER
+      wfuryngton: IS_FRONTIER
         ? {
             100: "#FFFAF0",
             200: "#F5E7CD",
@@ -48,7 +48,7 @@ module.exports = {
             400: "#6BDEC9",
             600: "#00A399",
           },
-      osmoverse: IS_FRONTIER
+      furyverse: IS_FRONTIER
         ? {
             100: "#D6CDD6",
             200: "#CBBDCB",
@@ -153,8 +153,8 @@ module.exports = {
     backgroundImage: {
       none: "none",
       "home-bg-pattern": IS_FRONTIER
-        ? "url('/images/osmosis-home-bg-pattern-frontier.svg')"
-        : "url('/images/osmosis-home-bg-pattern.svg')",
+        ? "url('/images/merlins-home-bg-pattern-frontier.svg')"
+        : "url('/images/merlins-home-bg-pattern.svg')",
       "loading-bar":
         "linear-gradient(to left,rgba(251, 251, 251, 0.1),rgba(251, 251, 251, 0.2),rgba(251, 251, 251, 0.3),rgba(251, 251, 251, 0.2),rgba(251, 251, 251, 0.1))",
       superfluid: "linear-gradient(90deg, #8A86FF 0.04%, #E13CBD 99.5%)",

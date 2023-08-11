@@ -23,7 +23,7 @@ export const IbcTransferModal: FunctionComponent<ModalBaseProps & IbcTransfer> =
       ibcTransferHistoryStore,
       queriesExternalStore,
     } = useStore();
-    const { chainId: osmosisChainId } = chainStore.osmosis;
+    const { chainId: merlinsChainId } = chainStore.merlins;
 
     const { logEvent } = useAmplitudeAnalytics();
 
@@ -52,7 +52,7 @@ export const IbcTransferModal: FunctionComponent<ModalBaseProps & IbcTransfer> =
     );
 
     const isChainBlockedOrCongested =
-      chainStatus ===  "congested" || chainStatus === "blocked";
+      chainStatus === "congested" || chainStatus === "blocked";
     const { showModalBase, accountActionButton, walletConnected } =
       useConnectWalletModalRedirect(
         {
@@ -135,8 +135,8 @@ export const IbcTransferModal: FunctionComponent<ModalBaseProps & IbcTransfer> =
               ? [
                   {
                     address: account.bech32Address,
-                    networkName: chainStore.getChain(osmosisChainId).chainName,
-                    iconUrl: "/tokens/osmo.svg",
+                    networkName: chainStore.getChain(merlinsChainId).chainName,
+                    iconUrl: "/tokens/fury.svg",
                   },
                   undefined,
                   {
@@ -156,16 +156,16 @@ export const IbcTransferModal: FunctionComponent<ModalBaseProps & IbcTransfer> =
                   undefined,
                   {
                     address: account.bech32Address,
-                    networkName: chainStore.getChain(osmosisChainId).chainName,
-                    iconUrl: "/tokens/osmo.svg",
+                    networkName: chainStore.getChain(merlinsChainId).chainName,
+                    iconUrl: "/tokens/fury.svg",
                   },
                 ]
           }
-          isOsmosisAccountLoaded={walletConnected}
+          isMerlinsAccountLoaded={walletConnected}
           availableBalance={
             isWithdraw
               ? queriesStore
-                  .get(osmosisChainId)
+                  .get(merlinsChainId)
                   .queryBalances.getQueryBech32Address(account.bech32Address)
                   .getBalanceFromCurrency(currency)
               : queriesStore

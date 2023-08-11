@@ -7,7 +7,7 @@ export type Params = {
   param: {
     subspace: "gamm";
     key: "PoolCreationFee";
-    // '[{"denom":"uosmo","amount":"1"}]';
+    // '[{"denom":"ufury","amount":"1"}]';
     value: string;
   };
 };

@@ -42,7 +42,7 @@ const AxelarTransfer: FunctionComponent<
   {
     isWithdraw: boolean;
     ethWalletClient: EthWallet;
-    balanceOnOsmosis: IBCBalance;
+    balanceOnMerlins: IBCBalance;
     selectedSourceChainKey: SourceChain;
     onRequestClose: () => void;
     onRequestSwitchWallet: () => void;
@@ -53,7 +53,7 @@ const AxelarTransfer: FunctionComponent<
   ({
     isWithdraw,
     ethWalletClient,
-    balanceOnOsmosis,
+    balanceOnMerlins,
     selectedSourceChainKey,
     onRequestClose,
     onRequestSwitchWallet,
@@ -66,10 +66,10 @@ const AxelarTransfer: FunctionComponent<
       useStore();
     const t = useTranslation();
 
-    const { chainId } = chainStore.osmosis;
-    const osmosisAccount = accountStore.getAccount(chainId);
-    const { bech32Address } = osmosisAccount;
-    const originCurrency = balanceOnOsmosis.balance.currency.originCurrency!;
+    const { chainId } = chainStore.merlins;
+    const merlinsAccount = accountStore.getAccount(chainId);
+    const { bech32Address } = merlinsAccount;
+    const originCurrency = balanceOnMerlins.balance.currency.originCurrency!;
 
     useTxEventToasts(ethWalletClient);
 
@@ -141,11 +141,11 @@ const AxelarTransfer: FunctionComponent<
       toggleIsMax: toggleIsDepositAmtMax,
     } = useGeneralAmountConfig({ balance: erc20Balance ?? undefined });
 
-    // WITHDRAWING: is an IBC transfer Osmosis->Axelar
+    // WITHDRAWING: is an IBC transfer Merlins->Axelar
     const feeConfig = useFakeFeeConfig(
       chainStore,
       chainId,
-      osmosisAccount.cosmos.msgOpts.ibcTransfer.gas
+      merlinsAccount.cosmos.msgOpts.ibcTransfer.gas
     );
     const withdrawAmountConfig = useAmountConfig(
       chainStore,
@@ -153,14 +153,14 @@ const AxelarTransfer: FunctionComponent<
       chainId,
       bech32Address,
       feeConfig,
-      balanceOnOsmosis.balance.currency
+      balanceOnMerlins.balance.currency
     );
 
     // chain path info whether withdrawing or depositing
-    const osmosisPath = {
+    const merlinsPath = {
       address: bech32Address,
-      networkName: chainStore.osmosis.chainName,
-      iconUrl: "/tokens/osmo.svg",
+      networkName: chainStore.merlins.chainName,
+      iconUrl: "/tokens/fury.svg",
     };
     const counterpartyPath = {
       address: ethWalletClient.accountAddress || "",
@@ -168,15 +168,15 @@ const AxelarTransfer: FunctionComponent<
       iconUrl: originCurrency.coinImageUrl,
     };
 
-    const sourceChain = isWithdraw ? "osmosis" : selectedSourceChainAxelarKey;
-    const destChain = isWithdraw ? selectedSourceChainAxelarKey : "osmosis";
+    const sourceChain = isWithdraw ? "merlins" : selectedSourceChainAxelarKey;
+    const destChain = isWithdraw ? selectedSourceChainAxelarKey : "merlins";
     const address = isWithdraw ? ethWalletClient.accountAddress : bech32Address;
 
     /** Amount, with decimals. e.g. 1.2 USDC */
     const amount = isWithdraw ? withdrawAmountConfig.amount : depositAmount;
 
     const availableBalance = isWithdraw
-      ? balanceOnOsmosis.balance
+      ? balanceOnMerlins.balance
       : erc20ContractAddress
       ? erc20Balance ?? undefined
       : undefined;
@@ -200,7 +200,7 @@ const AxelarTransfer: FunctionComponent<
               .trim(true)
               .toString(),
             isWithdraw,
-            osmosisAccount.bech32Address // use osmosis account for account keys (vs any EVM account)
+            merlinsAccount.bech32Address // use merlins account for account keys (vs any EVM account)
           );
         }
       },
@@ -268,14 +268,14 @@ const AxelarTransfer: FunctionComponent<
           try {
             await basicIbcTransfer(
               {
-                account: osmosisAccount,
+                account: merlinsAccount,
                 chainId,
-                channelId: balanceOnOsmosis.sourceChannelId,
+                channelId: balanceOnMerlins.sourceChannelId,
               },
               {
                 account: depositAddress,
                 chainId: axelarChainId,
-                channelId: balanceOnOsmosis.destChannelId,
+                channelId: balanceOnMerlins.destChannelId,
               },
               withdrawAmountConfig,
               undefined,
@@ -354,21 +354,21 @@ const AxelarTransfer: FunctionComponent<
     }, [
       axelarChainId,
       chainId,
-      balanceOnOsmosis.sourceChannelId,
-      balanceOnOsmosis.destChannelId,
+      balanceOnMerlins.sourceChannelId,
+      balanceOnMerlins.destChannelId,
       depositAddress,
       depositAmount,
       erc20ContractAddress,
       ethWalletClient,
       isWithdraw,
       originCurrency,
-      osmosisAccount,
+      merlinsAccount,
       trackTransferStatus,
       withdrawAmountConfig,
     ]);
     // close modal when initial eth transaction is committed
     const isSendTxPending = isWithdraw
-      ? osmosisAccount.txTypeInProgress !== ""
+      ? merlinsAccount.txTypeInProgress !== ""
       : isEthTxPending || ethWalletClient.isSending === "eth_sendTransaction";
     useEffect(() => {
       if (transferInitiated && !isSendTxPending) {
@@ -376,7 +376,7 @@ const AxelarTransfer: FunctionComponent<
       }
     }, [
       transferInitiated,
-      osmosisAccount.txTypeInProgress,
+      merlinsAccount.txTypeInProgress,
       ethWalletClient.isSending,
       isEthTxPending,
       onRequestClose,
@@ -389,7 +389,7 @@ const AxelarTransfer: FunctionComponent<
         correctChainSelected &&
         !isDepositAddressLoading &&
         !isEthTxPending) ||
-      (isWithdraw && osmosisAccount.txTypeInProgress === "");
+      (isWithdraw && merlinsAccount.txTypeInProgress === "");
     const isInsufficientFee =
       amount !== "" &&
       new CoinPretty(
@@ -443,19 +443,19 @@ const AxelarTransfer: FunctionComponent<
         <Transfer
           isWithdraw={isWithdraw}
           transferPath={[
-            isWithdraw ? osmosisPath : counterpartyPath,
+            isWithdraw ? merlinsPath : counterpartyPath,
             {
               bridgeName: "Axelar",
               bridgeIconUrl: "/icons/axelar.svg",
               isLoading: isDepositAddressLoading,
             },
-            isWithdraw ? counterpartyPath : osmosisPath,
+            isWithdraw ? counterpartyPath : merlinsPath,
           ]}
           selectedWalletDisplay={
             isWithdraw ? undefined : ethWalletClient.displayInfo
           }
-          isOsmosisAccountLoaded={
-            osmosisAccount.walletStatus === WalletStatus.Loaded
+          isMerlinsAccountLoaded={
+            merlinsAccount.walletStatus === WalletStatus.Loaded
           }
           onRequestSwitchWallet={onRequestSwitchWallet}
           currentValue={amount}
@@ -491,7 +491,7 @@ const AxelarTransfer: FunctionComponent<
           }
         />
         {wrapAssetConfig && (
-          <div className="mx-auto text-wosmongton-300">
+          <div className="mx-auto text-wfuryngton-300">
             <a rel="noreferrer" target="_blank" href={wrapAssetConfig.url}>
               {t("assets.transfer.wrapNativeLink", wrapAssetConfig)}
             </a>

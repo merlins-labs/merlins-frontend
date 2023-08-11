@@ -26,15 +26,15 @@ export const AssetSourceCard: FunctionComponent<
   <button disabled={disabled} onClick={onClick}>
     <div
       className={classNames({
-        "p-0.5 bg-wosmongton-200 rounded-2xl": isConnected,
+        "p-0.5 bg-wfuryngton-200 rounded-2xl": isConnected,
       })}
     >
       <div
         className={classNames(
-          "flex flex-col gap-4 bg-osmoverse-900 py-8",
+          "flex flex-col gap-4 bg-furyverse-900 py-8",
           isConnected ? "rounded-2xlinset" : "rounded-2xl",
           {
-            "bg-wosmongton-500": isSelected,
+            "bg-wfuryngton-500": isSelected,
             "opacity-30": disabled,
           },
           className

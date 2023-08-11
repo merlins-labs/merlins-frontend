@@ -9,7 +9,7 @@ import {
   CosmwasmQueries,
 } from "@keplr-wallet/stores";
 import { CoinPretty } from "@keplr-wallet/unit";
-import { OsmosisAccount, OsmosisQueries } from "@osmosis-labs/stores";
+import { MerlinsAccount, MerlinsQueries } from "@osmosis-labs/stores";
 
 export type CallToAction = {
   label: string;
@@ -25,11 +25,11 @@ export class NavBarStore {
   constructor(
     protected readonly chainId: string,
     protected readonly accountStore: AccountStore<
-      [CosmosAccount, CosmwasmAccount, OsmosisAccount],
-      AccountSetBase & CosmosAccount & CosmwasmAccount & OsmosisAccount
+      [CosmosAccount, CosmwasmAccount, MerlinsAccount],
+      AccountSetBase & CosmosAccount & CosmwasmAccount & MerlinsAccount
     >,
     protected readonly queriesStore: QueriesStore<
-      [CosmosQueries, CosmwasmQueries, OsmosisQueries]
+      [CosmosQueries, CosmwasmQueries, MerlinsQueries]
     >
   ) {
     makeObservable(this);

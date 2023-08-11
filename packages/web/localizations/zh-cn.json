@@ -28,7 +28,7 @@
   "pools": {
     "title": "活跃资金池",
     "poolId": "资金池 #{id}",
-    "priceOsmo": "OSMO 价格",
+    "priceFury": "FURY 价格",
     "rewardDistribution": "奖励分配",
     "myPools": "我的资金池",
     "APR": "APR",
@@ -90,7 +90,7 @@
         "three": "步骤 {step} / {nbStep} - 确认资金池的代币比率和总量"
       },
       "infoMessage": "资金池创建费",
-      "infoCaption": "已发送到 Osmosis 社区池",
+      "infoCaption": "已发送到 Merlins 社区池",
       "buttonCreate": "创建资金池",
       "buttonNext": "下一步",
       "buttonBack": "上一步",
@@ -186,7 +186,7 @@
     "bondedAmount": "已绑定数量",
     "estimation": "预估超流委派值",
     "estimationMobile": "预估委派值",
-    "estimationInfo": "此委派值是会改变的，并且基于资金池中的 OSMO 数量预估",
+    "estimationInfo": "此委派值是会改变的，并且基于资金池中的 FURY 数量预估",
     "buttonBond": "绑定 & 质押",
     "columns": {
       "validator": "验证节点",
@@ -197,7 +197,7 @@
     "totalAssets": "资产总额",
     "unbondedAssets": "未绑定资产",
     "bondedAssets": "已绑定资产",
-    "stakedAssets": "质押 OSMO",
+    "stakedAssets": "质押 FURY",
     "myPools": "我的资金池",
     "transferAssetSelect": {
       "deposit": "存入",
@@ -267,7 +267,7 @@
       "search": "搜索代币",
       "title": "资产",
       "hideZero": "隐藏0余额",
-      "buyOsmo": "买入",
+      "buyFury": "买入",
       "preTransfer": {
         "deposit": "存入",
         "withdraw": "提币",
@@ -327,7 +327,7 @@
     "info": "统计数据",
     "signOut": "断开连接",
     "help": "获取 Support Lab 帮助",
-    "learnMoreFrontier": "了解更多<br/>关于 <br2/> <name>Osmosis Frontier</name>"
+    "learnMoreFrontier": "了解更多<br/>关于 <br2/> <name>Merlins Frontier</name>"
   },
   "settings": {
     "title": "设置",
@@ -373,7 +373,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr 手机端"
   },
-  "connectDisclaimer": "连接钱包即表示您已经阅读和理解 Osmosis 相关内容",
+  "connectDisclaimer": "连接钱包即表示您已经阅读和理解 Merlins 相关内容",
   "protocolDisclaimer": "协议免责声明",
   "Transaction Failed": "交易失败",
   "Transaction Successful": "交易成功",

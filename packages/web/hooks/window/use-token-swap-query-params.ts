@@ -13,10 +13,10 @@ export function useTokenSwapQueryParams(
   const router = useRouter();
   const firstQueryEffectChecker = useRef(false);
   const {
-    chainStore: { osmosis },
+    chainStore: { merlins },
     queriesStore,
   } = useStore();
-  const queryGammPools = queriesStore.get(osmosis.chainId).osmosis!
+  const queryGammPools = queriesStore.get(merlins.chainId).merlins!
     .queryGammPools;
 
   useEffect(() => {

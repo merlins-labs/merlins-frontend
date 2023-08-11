@@ -28,7 +28,7 @@
   "pools": {
     "title": "Active Pools",
     "poolId": "Pool #{id}",
-    "priceOsmo": "OSMO Price",
+    "priceFury": "FURY Price",
     "rewardDistribution": "Reward distribution in",
     "myPools": "My Pools",
     "APR": "APR",
@@ -90,7 +90,7 @@
         "three": "Step {step} / {nbStep} - Confirm pool ratio and token amount"
       },
       "infoMessage": "Pool Creation Fee",
-      "infoCaption": "Transferred to the Osmosis community pool",
+      "infoCaption": "Transferred to the Merlins community pool",
       "buttonCreate": "Create Pool",
       "buttonNext": "Next",
       "buttonBack": "Previous",
@@ -187,7 +187,7 @@
     "bondedAmount": "Bonded Amount",
     "estimation": "Estimated Superfluid Delegation",
     "estimationMobile": "Est. Delegation",
-    "estimationInfo": "The value of this delegation fluctuates and is estimated based on the amount of OSMO in the pool.",
+    "estimationInfo": "The value of this delegation fluctuates and is estimated based on the amount of FURY in the pool.",
     "buttonBond": "Bond & Stake",
     "columns": {
       "validator": "Validator",
@@ -198,7 +198,7 @@
     "totalAssets": "Total",
     "unbondedAssets": "Unbonded",
     "bondedAssets": "Bonded",
-    "stakedAssets": "Staked OSMO",
+    "stakedAssets": "Staked FURY",
     "myPools": "My Pools",
     "transferAssetSelect": {
       "deposit": "Deposit",
@@ -268,7 +268,7 @@
       "search": "Filter by symbol",
       "title": "Assets",
       "hideZero": "Hide zero balances",
-      "buyOsmo": "Buy",
+      "buyFury": "Buy",
       "preTransfer": {
         "deposit": "Deposit",
         "withdraw": "Withdraw",
@@ -328,7 +328,7 @@
     "info": "Stats",
     "signOut": "Disconnect",
     "help": "Get Support Lab Help",
-    "learnMoreFrontier": "Learn More<br/>About the <br2/> <name>Osmosis Frontier</name>"
+    "learnMoreFrontier": "Learn More<br/>About the <br2/> <name>Merlins Frontier</name>"
   },
   "settings": {
     "title": "Settings",
@@ -374,7 +374,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr Mobile"
   },
-  "connectDisclaimer": "By connecting a wallet, you acknowledge that you have read and understand the Osmosis",
+  "connectDisclaimer": "By connecting a wallet, you acknowledge that you have read and understand the Merlins",
   "protocolDisclaimer": "Protocol Disclaimer",
   "Transaction Failed": "Transaction Failed",
   "Transaction Successful": "Transaction Successful",

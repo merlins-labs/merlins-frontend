@@ -3,44 +3,44 @@ import { Bech32Address } from "@keplr-wallet/cosmos";
 import { createKeplrChainInfos, SimplifiedChainInfo } from "./utils";
 
 const IS_TESTNET = process.env.NEXT_PUBLIC_IS_TESTNET === "true";
-const OSMOSIS_RPC_OVERWRITE = process.env.NEXT_PUBLIC_OSMOSIS_RPC_OVERWRITE;
-const OSMOSIS_REST_OVERWRITE = process.env.NEXT_PUBLIC_OSMOSIS_REST_OVERWRITE;
-const OSMOSIS_EXPLORER_URL_OVERWRITE =
-  process.env.NEXT_PUBLIC_OSMOSIS_EXPLORER_URL_OVERWRITE;
-const OSMOSIS_CHAIN_ID_OVERWRITE =
-  process.env.NEXT_PUBLIC_OSMOSIS_CHAIN_ID_OVERWRITE;
-const OSMOSIS_CHAIN_NAME_OVERWRITE =
-  process.env.NEXT_PUBLIC_OSMOSIS_CHAIN_NAME_OVERWRITE;
+const MERLINS_RPC_OVERWRITE = process.env.NEXT_PUBLIC_MERLINS_RPC_OVERWRITE;
+const MERLINS_REST_OVERWRITE = process.env.NEXT_PUBLIC_MERLINS_REST_OVERWRITE;
+const MERLINS_EXPLORER_URL_OVERWRITE =
+  process.env.NEXT_PUBLIC_MERLINS_EXPLORER_URL_OVERWRITE;
+const MERLINS_CHAIN_ID_OVERWRITE =
+  process.env.NEXT_PUBLIC_MERLINS_CHAIN_ID_OVERWRITE;
+const MERLINS_CHAIN_NAME_OVERWRITE =
+  process.env.NEXT_PUBLIC_MERLINS_CHAIN_NAME_OVERWRITE;
 
 const chainInfos = (
   [
     {
       rpc:
-        OSMOSIS_RPC_OVERWRITE ??
+        MERLINS_RPC_OVERWRITE ??
         (IS_TESTNET
-          ? "https://rpc.testnet.osmosis.zone/"
-          : "https://rpc-osmosis.keplr.app/"),
+          ? "https://rpc.testnet.merlins.zone/"
+          : "https://rpc-merlins.keplr.app/"),
       rest:
-        OSMOSIS_REST_OVERWRITE ??
+        MERLINS_REST_OVERWRITE ??
         (IS_TESTNET
-          ? "https://lcd.testnet.osmosis.zone/"
-          : "https://lcd-osmosis.keplr.app/"),
+          ? "https://lcd.testnet.merlins.zone/"
+          : "https://lcd-merlins.keplr.app/"),
       chainId:
-        OSMOSIS_CHAIN_ID_OVERWRITE ??
-        (IS_TESTNET ? "osmo-test-4" : "osmosis-1"),
-      chainName: OSMOSIS_CHAIN_NAME_OVERWRITE ?? "Osmosis",
+        MERLINS_CHAIN_ID_OVERWRITE ??
+        (IS_TESTNET ? "fury-test-4" : "merlins-1"),
+      chainName: MERLINS_CHAIN_NAME_OVERWRITE ?? "Merlins",
       bip44: {
         coinType: 118,
       },
-      bech32Config: Bech32Address.defaultBech32Config("osmo"),
+      bech32Config: Bech32Address.defaultBech32Config("fury"),
       currencies: [
         {
-          coinDenom: "OSMO",
-          coinMinimalDenom: "uosmo",
+          coinDenom: "FURY",
+          coinMinimalDenom: "ufury",
           coinDecimals: 6,
-          // coinGeckoId: "osmosis",
-          coinGeckoId: "pool:uosmo",
-          coinImageUrl: "/tokens/osmo.svg",
+          // coinGeckoId: "merlins",
+          coinGeckoId: "pool:ufury",
+          coinImageUrl: "/tokens/fury.svg",
           isStakeCurrency: true,
           isFeeCurrency: true,
         },
@@ -60,10 +60,10 @@ const chainInfos = (
       },
       features: ["ibc-transfer", "ibc-go"],
       explorerUrlToTx:
-        OSMOSIS_EXPLORER_URL_OVERWRITE ??
+        MERLINS_EXPLORER_URL_OVERWRITE ??
         (IS_TESTNET
-          ? "https://testnet.mintscan.io/osmosis-testnet/txs/{txHash}"
-          : "https://www.mintscan.io/osmosis/txs/{txHash}"),
+          ? "https://testnet.mintscan.io/merlins-testnet/txs/{txHash}"
+          : "https://www.mintscan.io/merlins/txs/{txHash}"),
     },
     {
       rpc: "https://rpc-cosmoshub.keplr.app",
@@ -218,12 +218,7 @@ const chainInfos = (
           coinImageUrl: "/tokens/sienna.svg",
         },
       ],
-      features: [
-        "ibc-transfer",
-        "ibc-go",
-        "wasmd_0.24+",
-        "cosmwasm",
-      ],
+      features: ["ibc-transfer", "ibc-go", "wasmd_0.24+", "cosmwasm"],
       explorerUrlToTx:
         "https://secretnodes.com/secret/chains/secret-4/transactions/{txHash}",
     },
@@ -661,12 +656,7 @@ const chainInfos = (
           coinImageUrl: "/tokens/phmn.png",
         },
       ],
-      features: [
-        "ibc-transfer",
-        "ibc-go",
-        "wasmd_0.24+",
-        "cosmwasm",
-      ],
+      features: ["ibc-transfer", "ibc-go", "wasmd_0.24+", "cosmwasm"],
       explorerUrlToTx: "https://www.mintscan.io/juno/txs/{txHash}",
     },
     {
@@ -924,12 +914,7 @@ const chainInfos = (
         average: 0.03,
         high: 0.05,
       },
-      features: [
-        "ibc-transfer",
-        "ibc-go",
-        "wasmd_0.24+",
-        "cosmwasm",
-      ],
+      features: ["ibc-transfer", "ibc-go", "wasmd_0.24+", "cosmwasm"],
       explorerUrlToTx: "https://www.mintscan.io/ki-chain/txs/{txHash}",
     },
     {
@@ -1897,12 +1882,7 @@ const chainInfos = (
         average: 0.075,
         high: 0.1,
       },
-      features: [
-        "ibc-transfer",
-        "ibc-go",
-        "wasmd_0.24+",
-        "cosmwasm",
-      ],
+      features: ["ibc-transfer", "ibc-go", "wasmd_0.24+", "cosmwasm"],
       explorerUrlToTx: "https://tgrade.aneka.io/txs/{txHash}",
     },
     {
@@ -1975,12 +1955,7 @@ const chainInfos = (
         average: 0.05,
         high: 0.06,
       },
-      features: [
-        "ibc-transfer",
-        "ibc-go",
-        "wasmd_0.24+",
-        "cosmwasm",
-      ],
+      features: ["ibc-transfer", "ibc-go", "wasmd_0.24+", "cosmwasm"],
       explorerUrlToTx: "https://scan.odinprotocol.io/transactions/{txHash}",
     },
     {
@@ -2164,11 +2139,11 @@ const chainInfos = (
           coinImageUrl: "/tokens/ststars.svg",
         },
         {
-          coinDenom: "stOSMO",
-          coinMinimalDenom: "stuosmo",
+          coinDenom: "stFURY",
+          coinMinimalDenom: "stufury",
           coinDecimals: 6,
-          coinGeckoId: "pool:stuosmo",
-          coinImageUrl: "/tokens/stosmo.svg",
+          coinGeckoId: "pool:stufury",
+          coinImageUrl: "/tokens/stfury.svg",
         },
         {
           coinDenom: "stJUNO",

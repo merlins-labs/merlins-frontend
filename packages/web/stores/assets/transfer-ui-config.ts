@@ -212,8 +212,8 @@ export class ObservableTransferUIConfig {
   }
 
   @action
-  buyOsmo() {
-    this.launchFiatRampsModal("transak", "OSMO");
+  buyFury() {
+    this.launchFiatRampsModal("transak", "FURY");
   }
 
   // SECTION - methods for launching a particular modal
@@ -320,12 +320,12 @@ export class ObservableTransferUIConfig {
   @action
   protected launchSelectAssetSourceModal(
     direction: TransferDir,
-    balanceOnOsmosis: IBCBalance,
+    balanceOnMerlins: IBCBalance,
     sourceChainKey: SourceChainKey
   ) {
     const wallets = this._ethClientWallets as Wallet[];
     const applicableWallets = wallets.filter(({ key }) =>
-      balanceOnOsmosis.originBridgeInfo!.wallets.includes(key)
+      balanceOnMerlins.originBridgeInfo!.wallets.includes(key)
     );
     const alreadyConnectedWallet = applicableWallets.find(
       (wallet) => wallet.isConnected
@@ -339,10 +339,10 @@ export class ObservableTransferUIConfig {
       wallets,
       fiatRamps: this._isMobile
         ? []
-        : balanceOnOsmosis.fiatRamps?.map(({ rampKey }) => rampKey),
+        : balanceOnMerlins.fiatRamps?.map(({ rampKey }) => rampKey),
       onSelectSource: (key) => {
         const selectedWallet = wallets.find((wallet) => wallet.key === key);
-        const selectedFiatRamp = balanceOnOsmosis.fiatRamps?.find(
+        const selectedFiatRamp = balanceOnMerlins.fiatRamps?.find(
           ({ rampKey }) => rampKey === key
         );
 
@@ -352,14 +352,14 @@ export class ObservableTransferUIConfig {
             this.closeAllModals();
             this.launchBridgeTransferModal(
               direction,
-              balanceOnOsmosis,
+              balanceOnMerlins,
               selectedWallet,
               sourceChainKey,
               () => {
                 this.closeAllModals();
                 this.launchSelectAssetSourceModal(
                   direction,
-                  balanceOnOsmosis,
+                  balanceOnMerlins,
                   sourceChainKey
                 );
               },
@@ -367,7 +367,7 @@ export class ObservableTransferUIConfig {
                 this.closeAllModals();
                 this.launchSelectAssetSourceModal(
                   direction,
-                  balanceOnOsmosis,
+                  balanceOnMerlins,
                   sourceChainKey
                 );
               }
@@ -395,13 +395,13 @@ export class ObservableTransferUIConfig {
   @action
   protected launchBridgeTransferModal(
     direction: TransferDir,
-    balanceOnOsmosis: IBCBalance,
+    balanceOnMerlins: IBCBalance,
     connectedWalletClient: Wallet,
     sourceChainKey: SourceChainKey,
     onRequestSwitchWallet: () => void,
     onRequestBack?: () => void
   ) {
-    if (!balanceOnOsmosis.originBridgeInfo) {
+    if (!balanceOnMerlins.originBridgeInfo) {
       console.error("This IBC asset does not support bridge integration");
       return;
     }
@@ -412,7 +412,7 @@ export class ObservableTransferUIConfig {
       onRequestClose: () => this.closeAllModals(),
       onRequestSwitchWallet,
       onRequestBack,
-      balance: balanceOnOsmosis,
+      balance: balanceOnMerlins,
       walletClient: connectedWalletClient,
       sourceChainKey,
     };

@@ -20,40 +20,40 @@ export interface ChainInfoWithExplorer extends ChainInfo {
 
 export class ChainStore extends BaseChainStore<ChainInfoWithExplorer> {
   @observable
-  protected readonly osmosisChainId: string;
+  protected readonly merlinsChainId: string;
 
   constructor(
     embedChainInfos: ChainInfoWithExplorer[],
-    osmosisChainId: string
+    merlinsChainId: string
   ) {
     super(embedChainInfos);
 
-    this.osmosisChainId = osmosisChainId;
+    this.merlinsChainId = merlinsChainId;
 
     makeObservable(this);
   }
 
   @computed
-  get osmosis(): ChainInfoWithExplorer {
-    if (this.hasChain(this.osmosisChainId)) {
-      return this.getChain(this.osmosisChainId).raw;
+  get merlins(): ChainInfoWithExplorer {
+    if (this.hasChain(this.merlinsChainId)) {
+      return this.getChain(this.merlinsChainId).raw;
     }
 
-    throw new Error("osmosis chain not set");
+    throw new Error("merlins chain not set");
   }
 
   @computed
-  get osmosisObservable(): ChainInfo {
+  get merlinsObservable(): ChainInfo {
     // TODO: Is not designed to require this getter.
     //        However, due to bug in @keplr-wallet/store library,
     //        in the case of observable chain info, the .raw property needs to be handled separately.
     //        Created a temporary getter as a temporary fix.
     //        This method should be deleted once @keplr-wallet/stores has be fixed.
-    if (this.hasChain(this.osmosisChainId)) {
-      return this.getChain(this.osmosisChainId);
+    if (this.hasChain(this.merlinsChainId)) {
+      return this.getChain(this.merlinsChainId);
     }
 
-    throw new Error("osmosis chain not set");
+    throw new Error("merlins chain not set");
   }
 
   /** Fetch raw ChainInfo from coin denom. Trims channel info. */

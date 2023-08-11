@@ -8,12 +8,12 @@ export const UserAction: { [key: string]: boolean } = {
 };
 
 // Fiat ramps
-export const BUY_OSMO_TRANSAK = true;
+export const BUY_FURY_TRANSAK = true;
 
 export const HiddenPoolIds: string[] = [];
 
 export const UnPoolWhitelistedPoolIds: { [poolId: string]: boolean } = {
-  // #560 (UST/OSMO)
+  // #560 (UST/FURY)
   // #562 (UST/LUNA)
   // #567 (UST/EEUR)
   // #578 (UST/XKI)
@@ -829,13 +829,13 @@ export const ExternalIncentiveGaugeAllowList: {
   "678": [
     {
       gaugeId: "3013",
-      denom: "uosmo",
+      denom: "ufury",
     },
   ],
   "679": [
     {
       gaugeId: "3016",
-      denom: "uosmo",
+      denom: "ufury",
     },
   ],
   "690": [
@@ -1118,13 +1118,13 @@ export const ExternalIncentiveGaugeAllowList: {
     },
     {
       gaugeId: "29674",
-      denom: "uosmo",
+      denom: "ufury",
     },
   ],
   "806": [
     {
       gaugeId: "29683",
-      denom: "uosmo",
+      denom: "ufury",
     },
   ],
   "813": [

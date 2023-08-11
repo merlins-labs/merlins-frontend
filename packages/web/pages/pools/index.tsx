@@ -63,15 +63,15 @@ const Pools: NextPage = observer(function () {
     onLoadEvent: [EventName.Pools.pageViewed],
   });
 
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
   const queryCosmos = queriesStore.get(chainId).cosmos;
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
   const account = accountStore.getAccount(chainId);
 
-  const superfluidPoolIds = queryOsmosis.querySuperfluidPools.superfluidPoolIds;
+  const superfluidPoolIds = queryMerlins.querySuperfluidPools.superfluidPoolIds;
   const superfluidPools = new DataSorter(
     superfluidPoolIds
-      ?.map((poolId) => queryOsmosis.queryGammPools.getPool(poolId))
+      ?.map((poolId) => queryMerlins.queryGammPools.getPool(poolId))
       .filter((pool): pool is ObservableQueryPool => pool !== undefined)
       .map((superfluidPool) => ({
         id: superfluidPool.id,
@@ -80,7 +80,7 @@ const Pools: NextPage = observer(function () {
             superfluidPool.id,
             priceStore
           ),
-        apr: queryOsmosis.queryIncentivizedPools.computeMostApr(
+        apr: queryMerlins.queryIncentivizedPools.computeMostApr(
           superfluidPool.id,
           priceStore
         ),
@@ -163,7 +163,7 @@ const Pools: NextPage = observer(function () {
   const { superfluidPoolConfig: _, superfluidDelegateToValidator } =
     useSuperfluidPoolConfig(poolDetailConfig);
   const selectedPoolShareCurrency = lockLpTokenModalPoolId
-    ? queryOsmosis.queryGammPoolShare.getShareCurrency(lockLpTokenModalPoolId)
+    ? queryMerlins.queryGammPoolShare.getShareCurrency(lockLpTokenModalPoolId)
     : undefined;
   const { config: lockLpTokenConfig, lockToken } = useLockTokenConfig(
     selectedPoolShareCurrency
@@ -199,7 +199,7 @@ const Pools: NextPage = observer(function () {
   const onCreatePool = useCallback(async () => {
     try {
       if (createPoolConfig.poolType === "weighted") {
-        await account.osmosis.sendCreateBalancerPoolMsg(
+        await account.merlins.sendCreateBalancerPoolMsg(
           createPoolConfig.swapFee,
           createPoolConfig.assets.map((asset) => {
             if (!asset.percentage)
@@ -228,7 +228,7 @@ const Pools: NextPage = observer(function () {
           createPoolConfig.scalingFactorControllerAddress
             ? createPoolConfig.scalingFactorControllerAddress
             : undefined;
-        await account.osmosis.sendCreateStableswapPoolMsg(
+        await account.merlins.sendCreateStableswapPoolMsg(
           createPoolConfig.swapFee,
           createPoolConfig.assets.map((asset) => {
             if (!asset.scalingFactor)
@@ -258,7 +258,7 @@ const Pools: NextPage = observer(function () {
   }, [createPoolConfig, account]);
 
   // my pools
-  const myPoolIds = queryOsmosis.queryGammPoolShare.getOwnPools(
+  const myPoolIds = queryMerlins.queryGammPoolShare.getOwnPools(
     account.bech32Address
   );
   const poolCountShowMoreThreshold = isMobile ? 3 : 6;
@@ -268,15 +268,15 @@ const Pools: NextPage = observer(function () {
         ? myPoolIds.slice(0, poolCountShowMoreThreshold)
         : myPoolIds
       )
-        .map((myPoolId) => queryOsmosis.queryGammPools.getPool(myPoolId))
+        .map((myPoolId) => queryMerlins.queryGammPools.getPool(myPoolId))
         .filter((pool): pool is ObservableQueryPool => !!pool),
-    [isMobile, showMoreMyPools, myPoolIds, queryOsmosis.queryGammPools.response]
+    [isMobile, showMoreMyPools, myPoolIds, queryMerlins.queryGammPools.response]
   );
   const dustFilteredPools = useShowDustUserSetting(myPools, (pool) =>
     pool
       .computeTotalValueLocked(priceStore)
       .mul(
-        queryOsmosis.queryGammPoolShare.getAllGammShareRatio(
+        queryMerlins.queryGammPoolShare.getAllGammShareRatio(
           account.bech32Address,
           pool.id
         )
@@ -284,7 +284,7 @@ const Pools: NextPage = observer(function () {
   );
 
   return (
-    <main className="max-w-container m-auto bg-osmoverse-900 px-8 md:px-3">
+    <main className="max-w-container m-auto bg-furyverse-900 px-8 md:px-3">
       <CreatePoolModal
         isOpen={isCreatingPool}
         onRequestClose={() => setIsCreatingPool(false)}
@@ -336,7 +336,7 @@ const Pools: NextPage = observer(function () {
             <div className="mt-5 grid grid-cards md:gap-3">
               {dustFilteredPools.map((myPool) => {
                 const internalIncentiveApr =
-                  queryOsmosis.queryIncentivizedPools.computeMostApr(
+                  queryMerlins.queryIncentivizedPools.computeMostApr(
                     myPool.id,
                     priceStore
                   );
@@ -348,11 +348,11 @@ const Pools: NextPage = observer(function () {
                 const whitelistedGauges =
                   ExternalIncentiveGaugeAllowList?.[myPool.id] ?? undefined;
                 const highestDuration =
-                  queryOsmosis.queryLockableDurations.highestDuration;
+                  queryMerlins.queryLockableDurations.highestDuration;
 
                 const externalApr = (whitelistedGauges ?? []).reduce(
                   (sum, { gaugeId, denom }) => {
-                    const gauge = queryOsmosis.queryGauge.get(gaugeId);
+                    const gauge = queryMerlins.queryGauge.get(gaugeId);
 
                     if (
                       !gauge ||
@@ -364,7 +364,7 @@ const Pools: NextPage = observer(function () {
                     }
 
                     return sum.add(
-                      queryOsmosis.queryIncentivizedPools.computeExternalIncentiveGaugeAPR(
+                      queryMerlins.queryIncentivizedPools.computeExternalIncentiveGaugeAPR(
                         myPool.id,
                         gaugeId,
                         denom,
@@ -375,11 +375,11 @@ const Pools: NextPage = observer(function () {
                   new RatePretty(0)
                 );
                 const superfluidApr =
-                  queryOsmosis.querySuperfluidPools.isSuperfluidPool(myPool.id)
+                  queryMerlins.querySuperfluidPools.isSuperfluidPool(myPool.id)
                     ? new RatePretty(
                         queryCosmos.queryInflation.inflation
                           .mul(
-                            queryOsmosis.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+                            queryMerlins.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
                               myPool.id
                             )
                           )
@@ -394,7 +394,7 @@ const Pools: NextPage = observer(function () {
                 const poolLiquidity =
                   myPool.computeTotalValueLocked(priceStore);
                 const myBonded =
-                  queryOsmosis.queryGammPoolShare.getLockedGammShareValue(
+                  queryMerlins.queryGammPoolShare.getLockedGammShareValue(
                     account.bech32Address,
                     myPool.id,
                     poolLiquidity,
@@ -409,7 +409,7 @@ const Pools: NextPage = observer(function () {
                     ) : (
                       <MetricLoader
                         isLoading={
-                          queryOsmosis.queryIncentivizedPools.isAprFetching
+                          queryMerlins.queryIncentivizedPools.isAprFetching
                         }
                       >
                         <h6>{apr.maxDecimals(2).toString()}</h6>
@@ -425,7 +425,7 @@ const Pools: NextPage = observer(function () {
                         ? myPool
                             .computeTotalValueLocked(priceStore)
                             .mul(
-                              queryOsmosis.queryGammPoolShare
+                              queryMerlins.queryGammPoolShare
                                 .getAvailableGammShare(
                                   account.bech32Address,
                                   myPool.id
@@ -477,7 +477,7 @@ const Pools: NextPage = observer(function () {
                       coinDenom: poolAsset.amount.currency.coinDenom,
                     }))}
                     poolMetrics={myPoolMetrics}
-                    isSuperfluid={queryOsmosis.querySuperfluidPools.isSuperfluidPool(
+                    isSuperfluid={queryMerlins.querySuperfluidPools.isSuperfluidPool(
                       myPool.id
                     )}
                     mobileShowFirstLabel
@@ -497,7 +497,7 @@ const Pools: NextPage = observer(function () {
                             )
                             .join(" / "),
                           isSuperfluidPool:
-                            queryOsmosis.querySuperfluidPools.isSuperfluidPool(
+                            queryMerlins.querySuperfluidPools.isSuperfluidPool(
                               myPool.id
                             ),
                         },
@@ -670,7 +670,7 @@ const Pools: NextPage = observer(function () {
                             value: (
                               <MetricLoader
                                 isLoading={
-                                  queryOsmosis.queryIncentivizedPools
+                                  queryMerlins.queryIncentivizedPools
                                     .isAprFetching
                                 }
                               >
@@ -744,18 +744,18 @@ const Pools: NextPage = observer(function () {
         </>
       )}
       <section className="pb-4">
-        <div className="w-full flex items-center bg-osmoverse-800 rounded-full px-5 py-4">
+        <div className="w-full flex items-center bg-furyverse-800 rounded-full px-5 py-4">
           <span className="subtitle1 md:text-subtitle2 md:font-subtitle2 flex items-center gap-1">
             {t("pools.createPool.interestedCreate")}{" "}
             <u
-              className="text-wosmongton-300 flex items-center cursor-pointer"
+              className="text-wfuryngton-300 flex items-center cursor-pointer"
               onClick={() => setIsCreatingPool(true)}
             >
               {t("pools.createPool.startProcess")}
               <div className="flex items-center shrink-0">
                 <Image
                   alt="right arrow"
-                  src="/icons/arrow-right-wosmongton-300.svg"
+                  src="/icons/arrow-right-wfuryngton-300.svg"
                   height={24}
                   width={24}
                 />

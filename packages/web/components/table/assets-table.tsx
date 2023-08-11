@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FunctionComponent, useCallback, useMemo, useState } from "react";
 import { Dec } from "@keplr-wallet/unit";
-import { BUY_OSMO_TRANSAK, initialAssetsSort } from "../../config";
+import { BUY_FURY_TRANSAK, initialAssetsSort } from "../../config";
 import {
   IBCBalance,
   IBCCW20ContractBalance,
@@ -45,7 +45,7 @@ interface Props {
     externalUrl?: string
   ) => void;
   onDeposit: (chainId: string, coinDenom: string, externalUrl?: string) => void;
-  onBuyOsmo: () => void;
+  onBuyFury: () => void;
 }
 
 export const AssetsTable: FunctionComponent<Props> = observer(
@@ -54,7 +54,7 @@ export const AssetsTable: FunctionComponent<Props> = observer(
     ibcBalances,
     onDeposit: do_onDeposit,
     onWithdraw: do_onWithdraw,
-    onBuyOsmo,
+    onBuyFury,
   }) => {
     const { chainStore } = useStore();
     const { width, isMobile } = useWindowSize();
@@ -96,14 +96,14 @@ export const AssetsTable: FunctionComponent<Props> = observer(
     // Assemble cells with all data needed for any place in the table.
     const cells: TableCell[] = useMemo(
       () => [
-        // hardcode native Osmosis assets (OSMO, ION) at the top initially
+        // hardcode native Merlins assets (FURY, ION) at the top initially
         ...nativeBalances.map(({ balance, fiatValue }) => {
           const value = fiatValue?.maxDecimals(2);
 
           return {
             value: balance.toString(),
             currency: balance.currency,
-            chainId: chainStore.osmosis.chainId,
+            chainId: chainStore.merlins.chainId,
             chainName: "",
             coinDenom: balance.denom,
             coinImageUrl: balance.currency.coinImageUrl,
@@ -121,9 +121,9 @@ export const AssetsTable: FunctionComponent<Props> = observer(
                 ? value?.toDec().toString()
                 : "0",
             isCW20: false,
-            onBuyOsmo:
-              balance.denom === "OSMO" && BUY_OSMO_TRANSAK
-                ? onBuyOsmo
+            onBuyFury:
+              balance.denom === "FURY" && BUY_FURY_TRANSAK
+                ? onBuyFury
                 : undefined,
           };
         }),
@@ -178,7 +178,7 @@ export const AssetsTable: FunctionComponent<Props> = observer(
       ],
       [
         nativeBalances,
-        chainStore.osmosis.chainId,
+        chainStore.merlins.chainId,
         dustIbcBalances,
         onDeposit,
         onWithdraw,
@@ -314,7 +314,7 @@ export const AssetsTable: FunctionComponent<Props> = observer(
                   setHideZeroBalances(!hideZeroBalances);
                 }}
               >
-                <span className="text-osmoverse-200">
+                <span className="text-furyverse-200">
                   {t("assets.table.hideZero")}
                 </span>
               </Switch>
@@ -404,11 +404,11 @@ export const AssetsTable: FunctionComponent<Props> = observer(
             {tableData.map((assetData) => (
               <div
                 key={assetData.coinDenom}
-                className="w-full flex items-center place-content-between bg-osmoverse-800 rounded-xl px-3 py-3"
+                className="w-full flex items-center place-content-between bg-furyverse-800 rounded-xl px-3 py-3"
                 onClick={
                   assetData.chainId === undefined ||
                   (assetData.chainId &&
-                    assetData.chainId === chainStore.osmosis.chainId)
+                    assetData.chainId === chainStore.merlins.chainId)
                     ? undefined
                     : () => {
                         if (assetData.chainId && assetData.coinDenom) {
@@ -431,7 +431,7 @@ export const AssetsTable: FunctionComponent<Props> = observer(
                   <div className="flex flex-col shrink gap-1 text-ellipsis">
                     <h6>{assetData.coinDenom}</h6>
                     {assetData.chainName && (
-                      <span className="caption text-osmoverse-400">
+                      <span className="caption text-furyverse-400">
                         {assetData.chainName}
                       </span>
                     )}
@@ -449,7 +449,7 @@ export const AssetsTable: FunctionComponent<Props> = observer(
                   {!(
                     assetData.chainId === undefined ||
                     (assetData.chainId &&
-                      assetData.chainId === chainStore.osmosis.chainId)
+                      assetData.chainId === chainStore.merlins.chainId)
                   ) && (
                     <Image
                       alt="select asset"

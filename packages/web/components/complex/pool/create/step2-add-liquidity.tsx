@@ -45,7 +45,7 @@ export const Step2AddLiquidity: FunctionComponent<StepProps> = observer(
                     ) : (
                       <h5>{justCoinDenom}</h5>
                     )}
-                    <div className="text-osmoverse-400 text-sm md:text-xs md:caption font-semibold">
+                    <div className="text-furyverse-400 text-sm md:text-xs md:caption font-semibold">
                       {config.poolType === "weighted"
                         ? `${percentage}%`
                         : scalingFactor ?? "1"}
@@ -58,7 +58,7 @@ export const Step2AddLiquidity: FunctionComponent<StepProps> = observer(
                       {t("pools.createPool.available")}
                     </span>
                     <span
-                      className="caption text-wosmongton-300 cursor-pointer"
+                      className="caption text-wfuryngton-300 cursor-pointer"
                       onClick={() => amountConfig.setIsMax(true)}
                     >
                       {config.queryBalances

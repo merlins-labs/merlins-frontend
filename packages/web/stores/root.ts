@@ -12,12 +12,12 @@ import { ChainInfos, IBCAssetInfos } from "../config";
 import EventEmitter from "eventemitter3";
 import { ChainStore, ChainInfoWithExplorer } from "./chain";
 import {
-  OsmosisQueries,
+  MerlinsQueries,
   LPCurrencyRegistrar,
   QueriesExternalStore,
   IBCTransferHistoryStore,
   NonIbcBridgeHistoryStore,
-  OsmosisAccount,
+  MerlinsAccount,
   PoolFallbackPriceStore,
 } from "@osmosis-labs/stores";
 import { AppCurrency, Keplr } from "@keplr-wallet/types";
@@ -32,7 +32,7 @@ import { ObservableAssets } from "./assets";
 import { makeIndexedKVStore, makeLocalStorageKVStore } from "./kv-store";
 import { PoolPriceRoutes } from "../config";
 import { KeplrWalletConnectV1 } from "@keplr-wallet/wc-client";
-import { OsmoPixelsQueries } from "./pixels";
+import { FuryPixelsQueries } from "./pixels";
 import { NavBarStore } from "./nav-bar";
 import {
   UserSettings,
@@ -46,11 +46,11 @@ export class RootStore {
   public readonly chainStore: ChainStore;
 
   public readonly queriesStore: QueriesStore<
-    [CosmosQueries, CosmwasmQueries, OsmosisQueries]
+    [CosmosQueries, CosmwasmQueries, MerlinsQueries]
   >;
 
   public readonly accountStore: AccountStore<
-    [CosmosAccount, CosmwasmAccount, OsmosisAccount]
+    [CosmosAccount, CosmwasmAccount, MerlinsAccount]
   >;
 
   public readonly priceStore: PoolFallbackPriceStore;
@@ -65,7 +65,7 @@ export class RootStore {
   protected readonly lpCurrencyRegistrar: LPCurrencyRegistrar<ChainInfoWithExplorer>;
   protected readonly ibcCurrencyRegistrar: IBCCurrencyRegsitrar<ChainInfoWithExplorer>;
 
-  public readonly queryOsmoPixels: OsmoPixelsQueries;
+  public readonly queryFuryPixels: FuryPixelsQueries;
 
   public readonly navBarStore: NavBarStore;
 
@@ -77,8 +77,8 @@ export class RootStore {
   ) {
     this.chainStore = new ChainStore(
       ChainInfos,
-      process.env.NEXT_PUBLIC_OSMOSIS_CHAIN_ID_OVERWRITE ??
-        (IS_TESTNET ? "osmo-test-4" : "osmosis")
+      process.env.NEXT_PUBLIC_MERLINS_CHAIN_ID_OVERWRITE ??
+        (IS_TESTNET ? "fury-test-4" : "merlins")
     );
 
     const eventListener = (() => {
@@ -105,7 +105,7 @@ export class RootStore {
       this.chainStore,
       CosmosQueries.use(),
       CosmwasmQueries.use(),
-      OsmosisQueries.use(this.chainStore.osmosis.chainId)
+      MerlinsQueries.use(this.chainStore.merlins.chainId)
     );
 
     this.accountStore = new AccountStore(
@@ -154,11 +154,11 @@ export class RootStore {
         },
       }),
       CosmwasmAccount.use({ queriesStore: this.queriesStore }),
-      OsmosisAccount.use({ queriesStore: this.queriesStore })
+      MerlinsAccount.use({ queriesStore: this.queriesStore })
     );
 
     this.priceStore = new PoolFallbackPriceStore(
-      this.chainStore.osmosis.chainId,
+      this.chainStore.merlins.chainId,
       this.chainStore,
       makeIndexedKVStore("store_web_prices"),
       {
@@ -171,16 +171,16 @@ export class RootStore {
       },
       "usd",
       this.queriesStore.get(
-        this.chainStore.osmosis.chainId
-      ).osmosis!.queryGammPools,
+        this.chainStore.merlins.chainId
+      ).merlins!.queryGammPools,
       PoolPriceRoutes
     );
 
     this.queriesExternalStore = new QueriesExternalStore(
       makeIndexedKVStore("store_web_queries"),
       this.priceStore,
-      this.chainStore.osmosis.chainId,
-      IS_TESTNET ? "https://api.testnet.osmosis.zone/" : undefined
+      this.chainStore.merlins.chainId,
+      IS_TESTNET ? "https://api.testnet.merlins.zone/" : undefined
     );
 
     this.ibcTransferHistoryStore = new IBCTransferHistoryStore(
@@ -189,7 +189,7 @@ export class RootStore {
     );
     this.nonIbcBridgeHistoryStore = new NonIbcBridgeHistoryStore(
       this.queriesStore,
-      this.chainStore.osmosis.chainId,
+      this.chainStore.merlins.chainId,
       makeLocalStorageKVStore("nonibc_transfer_history"),
       [
         new AxelarTransferStatusSource(
@@ -205,7 +205,7 @@ export class RootStore {
       this.accountStore,
       this.queriesStore,
       this.priceStore,
-      this.chainStore.osmosis.chainId
+      this.chainStore.merlins.chainId
     );
 
     this.lpCurrencyRegistrar = new LPCurrencyRegistrar(this.chainStore);
@@ -249,13 +249,13 @@ export class RootStore {
       }
     );
 
-    this.queryOsmoPixels = new OsmoPixelsQueries(
-      makeIndexedKVStore("query_osmo_pixels"),
-      "https://pixels-osmosis.keplr.app"
+    this.queryFuryPixels = new FuryPixelsQueries(
+      makeIndexedKVStore("query_fury_pixels"),
+      "https://pixels-merlins.keplr.app"
     );
 
     this.navBarStore = new NavBarStore(
-      this.chainStore.osmosis.chainId,
+      this.chainStore.merlins.chainId,
       this.accountStore,
       this.queriesStore
     );

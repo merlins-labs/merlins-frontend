@@ -29,8 +29,8 @@ import dayjs from "dayjs";
 
 type PoolRaw = WeightedPoolRaw | StablePoolRaw;
 
-const STABLE_POOL_TYPE = "/osmosis.gamm.poolmodels.stableswap.v1beta1.Pool";
-// const WEIGHTED_POOL_TYPE = "/osmosis.gamm.v1beta1.Pool";
+const STABLE_POOL_TYPE = "/merlins.gamm.poolmodels.stableswap.v1beta1.Pool";
+// const WEIGHTED_POOL_TYPE = "/merlins.gamm.v1beta1.Pool";
 
 export class ObservableQueryPool extends ObservableChainQuery<{
   pool: PoolRaw;
@@ -53,7 +53,7 @@ export class ObservableQueryPool extends ObservableChainQuery<{
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/gamm/v1beta1/pools/${raw.id}`
+      `/merlins/gamm/v1beta1/pools/${raw.id}`
     );
 
     this.raw = raw;

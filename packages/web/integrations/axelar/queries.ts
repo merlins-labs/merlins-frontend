@@ -15,7 +15,7 @@ export type TransferStep = {
   denom: string;
 };
 
-/** Exclude `sign_batch` steps as we're only querying EVM->COSMOS transfers.
+/** Exclude `sign_batch` steps as we're only querying EVM->CFURYS transfers.
  *  `send asset => confirm deposit => vote confirm => ibc transfer`
  */
 export type TransferStatus = Array<{
@@ -28,7 +28,7 @@ export type TransferStatus = Array<{
     fee: number;
     /** i.e. `"polygon"` */
     sender_chain: string;
-    /** i.e. `"osmosis"` */
+    /** i.e. `"merlins"` */
     recipient_chain: string;
     /** Transferring a balance at or below fee const.
      *  Calculate fee constants here: https://docs.axelar.dev/resources/mainnet#cross-chain-relayer-gas-fee
@@ -53,7 +53,7 @@ export type TransferStatus = Array<{
     amount: number;
     /** i.e. `axelar...` */
     sender_address: string;
-    /** i.e. `osmo...` */
+    /** i.e. `fury...` */
     recipient_address: string;
   };
   status: "executed";

@@ -21,7 +21,7 @@ export class ObservableQueryPoolGaugeIds extends ObservableChainQuery<GaugeIdsWi
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/pool-incentives/v1beta1/gauge-ids/${poolId}`
+      `/merlins/pool-incentives/v1beta1/gauge-ids/${poolId}`
     );
 
     makeObservable(this);

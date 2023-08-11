@@ -32,8 +32,8 @@ export const LockTokensModal: FunctionComponent<
 
   const { chainStore, accountStore, queriesStore } = useStore();
 
-  const { chainId } = chainStore.osmosis;
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const { chainId } = chainStore.merlins;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
   const account = accountStore.getAccount(chainId);
   const { bech32Address } = account;
 
@@ -47,7 +47,7 @@ export const LockTokensModal: FunctionComponent<
       (denom) => chainStore.getChain(chainId).forceFindCurrency(denom),
       ExternalIncentiveGaugeAllowList[poolId]
     ) ?? [];
-  const availableToken = queryOsmosis.queryGammPoolShare.getAvailableGammShare(
+  const availableToken = queryMerlins.queryGammPoolShare.getAvailableGammShare(
     bech32Address,
     poolId
   );
@@ -189,7 +189,7 @@ export const LockTokensModal: FunctionComponent<
                 {superfluidApr && `(+${superfluidApr.maxDecimals(0)} APR)`}
               </h6>
               {poolDetailConfig?.longestDuration && (
-                <span className="caption text-osmoverse-300">
+                <span className="caption text-furyverse-300">
                   {t("lockToken.bondingRequirement", {
                     numDays: poolDetailConfig.longestDuration
                       .asDays()
@@ -207,7 +207,7 @@ export const LockTokensModal: FunctionComponent<
               <div className="flex gap-1 caption">
                 <span>{t("lockToken.availableToken")}</span>
                 <span
-                  className="text-wosmongton-300 cursor-pointer"
+                  className="text-wfuryngton-300 cursor-pointer"
                   onClick={() => config.setIsMax(true)}
                 >
                   {t("pool.sharesAmount", {
@@ -245,14 +245,14 @@ const LockupItem: FunctionComponent<{
     className={classNames(
       "rounded-xl w-full md:px-3 px-5 md:py-3.5 py-5 cursor-pointer transition-colors",
       isSelected
-        ? "bg-osmoverse-700 -m-px !border-[3px] border-osmoverse-200"
-        : "border border-osmoverse-600 hover:border-2 hover:border-osmoverse-200 hover:-m-px"
+        ? "bg-furyverse-700 -m-px !border-[3px] border-furyverse-200"
+        : "border border-furyverse-600 hover:border-2 hover:border-furyverse-200 hover:-m-px"
     )}
   >
     <div className="flex w-full place-content-between flex-col text-center">
       <h5>{duration}</h5>
       {apr && (
-        <p className="subtitle1 md:m-0 mt-1 text-wosmongton-200">{apr}</p>
+        <p className="subtitle1 md:m-0 mt-1 text-wfuryngton-200">{apr}</p>
       )}
     </div>
   </button>

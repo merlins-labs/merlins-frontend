@@ -27,23 +27,23 @@ import {
   ObservableQuerySuperfluidPools,
   ObservableQuerySuperfluidUndelegations,
   ObservableQuerySuperfluidAssetMultiplier,
-  ObservableQuerySuperfluidOsmoEquivalent,
+  ObservableQuerySuperfluidFuryEquivalent,
   ObservableQuerySuperfluidParams,
 } from "./superfluid-pools";
 
-export interface OsmosisQueries {
-  osmosis?: OsmosisQueriesImpl;
+export interface MerlinsQueries {
+  merlins?: MerlinsQueriesImpl;
 }
 
-export const OsmosisQueries = {
+export const MerlinsQueries = {
   use(
-    osmosisChainId: string
+    merlinsChainId: string
   ): (
     queriesSetBase: QueriesSetBase,
     kvStore: KVStore,
     chainId: string,
     chainGetter: ChainGetter
-  ) => OsmosisQueries {
+  ) => MerlinsQueries {
     return (
       queriesSetBase: QueriesSetBase,
       kvStore: KVStore,
@@ -51,9 +51,9 @@ export const OsmosisQueries = {
       chainGetter: ChainGetter
     ) => {
       return {
-        osmosis:
-          chainId === osmosisChainId
-            ? new OsmosisQueriesImpl(
+        merlins:
+          chainId === merlinsChainId
+            ? new MerlinsQueriesImpl(
                 queriesSetBase,
                 kvStore,
                 chainId,
@@ -65,8 +65,8 @@ export const OsmosisQueries = {
   },
 };
 
-/** Root queries store for all Osmosis queries. */
-export class OsmosisQueriesImpl {
+/** Root queries store for all Merlins queries. */
+export class MerlinsQueriesImpl {
   public readonly queryGammPools: DeepReadonly<ObservableQueryPools>;
   public readonly queryGammNumPools: DeepReadonly<ObservableQueryNumPools>;
   public readonly queryGammPoolShare: DeepReadonly<ObservableQueryGammPoolShare>;
@@ -94,7 +94,7 @@ export class OsmosisQueriesImpl {
   public readonly querySuperfluidUndelegations: DeepReadonly<ObservableQuerySuperfluidUndelegations>;
   public readonly querySuperfluidParams: DeepReadonly<ObservableQuerySuperfluidParams>;
   public readonly querySuperfluidAssetMultiplier: DeepReadonly<ObservableQuerySuperfluidAssetMultiplier>;
-  public readonly querySuperfluidOsmoEquivalent: DeepReadonly<ObservableQuerySuperfluidOsmoEquivalent>;
+  public readonly querySuperfluidFuryEquivalent: DeepReadonly<ObservableQuerySuperfluidFuryEquivalent>;
 
   constructor(
     queries: QueriesSetBase,
@@ -215,8 +215,8 @@ export class OsmosisQueriesImpl {
         chainId,
         chainGetter
       );
-    this.querySuperfluidOsmoEquivalent =
-      new ObservableQuerySuperfluidOsmoEquivalent(
+    this.querySuperfluidFuryEquivalent =
+      new ObservableQuerySuperfluidFuryEquivalent(
         chainId,
         chainGetter,
         this.querySuperfluidParams,

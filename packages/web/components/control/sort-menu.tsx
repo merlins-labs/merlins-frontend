@@ -33,8 +33,8 @@ export const SortMenu: FunctionComponent<Props> = ({
       className={classNames(
         "relative shrink-0 px-6 py-2 cursor-pointer transition-colors",
         dropdownOpen
-          ? "rounded-t-xl border-t border-x border-osmoverse-600"
-          : "border rounded-xl border-osmoverse-500"
+          ? "rounded-t-xl border-t border-x border-furyverse-600"
+          : "border rounded-xl border-furyverse-500"
       )}
       onClick={() => {
         if (!disabled) {
@@ -80,7 +80,7 @@ export const SortMenu: FunctionComponent<Props> = ({
             }
           }}
         >
-          <span className="block m-auto ml-2 leading-loose text-osmoverse-200 min-w-[3.75rem] select-none text-center body2 md:caption overflow-hidden">
+          <span className="block m-auto ml-2 leading-loose text-furyverse-200 min-w-[3.75rem] select-none text-center body2 md:caption overflow-hidden">
             {isMobile
               ? t("components.sort.SORTMobile")
               : t("components.sort.SORT")}

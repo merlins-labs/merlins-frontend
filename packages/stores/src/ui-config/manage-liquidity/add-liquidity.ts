@@ -20,7 +20,7 @@ import {
 } from "../../queries";
 import { ManageLiquidityConfigBase } from "./base";
 import { NotInitializedError, CalculatingShareOutAmountError } from "./errors";
-import { OSMO_MEDIUM_TX_FEE } from ".";
+import { FURY_MEDIUM_TX_FEE } from ".";
 
 /** Use to config user input UI for eventually sending a valid add liquidity msg.
  *  Supports specifying a single asset LP amount, or evenly adding liquidity from an aribtrary number of pool assets.
@@ -149,12 +149,12 @@ export class ObservableAddLiquidityConfig extends ManageLiquidityConfigBase {
     this._isSingleAmountIn = value;
 
     if (value === true) {
-      // set to OSMO if possible
-      const osmoIndex = this.poolAssetConfigs.findIndex(
-        (poolAssetConfig) => poolAssetConfig.sendCurrency.coinDenom === "OSMO"
+      // set to FURY if possible
+      const furyIndex = this.poolAssetConfigs.findIndex(
+        (poolAssetConfig) => poolAssetConfig.sendCurrency.coinDenom === "FURY"
       );
-      if (osmoIndex !== -1) {
-        this.setSingleAmountInConfigIndex(osmoIndex);
+      if (furyIndex !== -1) {
+        this.setSingleAmountInConfigIndex(furyIndex);
         return;
       }
 
@@ -490,32 +490,32 @@ export class ObservableAddLiquidityConfig extends ManageLiquidityConfigBase {
       }
       feasibleMaxFound = true;
 
-      const osmoIndex = this.poolAssetConfigs.findIndex((poolAssetConfig) => {
-        return poolAssetConfig.sendCurrency.coinMinimalDenom === "uosmo";
+      const furyIndex = this.poolAssetConfigs.findIndex((poolAssetConfig) => {
+        return poolAssetConfig.sendCurrency.coinMinimalDenom === "ufury";
       });
 
-      if (osmoIndex !== -1) {
-        const osmoOutAmountInfo = outAmountInfoList.find(
-          (outAmountInfo) => outAmountInfo.coinMinimalDenom === "uosmo"
+      if (furyIndex !== -1) {
+        const furyOutAmountInfo = outAmountInfoList.find(
+          (outAmountInfo) => outAmountInfo.coinMinimalDenom === "ufury"
         );
-        if (!osmoOutAmountInfo) return;
-        const osmoBalanceInfo = balancePrettyList.find(
-          (balance) => balance.currency.coinMinimalDenom === "uosmo"
+        if (!furyOutAmountInfo) return;
+        const furyBalanceInfo = balancePrettyList.find(
+          (balance) => balance.currency.coinMinimalDenom === "ufury"
         );
-        if (!osmoBalanceInfo) return;
-        const osmoOutAmount = osmoBalanceInfo
+        if (!furyBalanceInfo) return;
+        const furyOutAmount = furyBalanceInfo
           .toDec()
-          .sub(new Dec(OSMO_MEDIUM_TX_FEE))
-          .lt(osmoOutAmountInfo.outAmount.toDec())
-          ? osmoOutAmountInfo.outAmount.sub(new Dec(OSMO_MEDIUM_TX_FEE))
-          : osmoOutAmountInfo.outAmount;
+          .sub(new Dec(FURY_MEDIUM_TX_FEE))
+          .lt(furyOutAmountInfo.outAmount.toDec())
+          ? furyOutAmountInfo.outAmount.sub(new Dec(FURY_MEDIUM_TX_FEE))
+          : furyOutAmountInfo.outAmount;
 
         return this.setAmountAt(
-          osmoIndex,
-          osmoOutAmount
+          furyIndex,
+          furyOutAmount
             .trim(true)
             .shrink(true)
-            /** osmo is used to pay tx fees, should have some padding left for future tx? if no padding needed maxDecimals to 6 else 2*/
+            /** fury is used to pay tx fees, should have some padding left for future tx? if no padding needed maxDecimals to 6 else 2*/
             .maxDecimals(6)
             .locale(false)
             .toString(),

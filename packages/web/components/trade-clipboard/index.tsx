@@ -41,7 +41,7 @@ export const TradeClipboard: FunctionComponent<{
       priceStore,
     } = useStore();
     const t = useTranslation();
-    const { chainId } = chainStore.osmosis;
+    const { chainId } = chainStore.merlins;
     const { isMobile } = useWindowSize();
     const { logEvent } = useAmplitudeAnalytics();
 
@@ -62,15 +62,15 @@ export const TradeClipboard: FunctionComponent<{
       pools
     );
     // Some validators allow 0 fee tx.
-    // Therefore, users can send tx at 0 fee even though they have no OSMO,
-    // Users who have OSMO pay a fee by default so that tx is processed faster.
+    // Therefore, users can send tx at 0 fee even though they have no FURY,
+    // Users who have FURY pay a fee by default so that tx is processed faster.
     let preferZeroFee = true;
-    const queryOsmo = queries.queryBalances.getQueryBech32Address(
+    const queryFury = queries.queryBalances.getQueryBech32Address(
       account.bech32Address
     ).stakable;
     if (
-      // If user has an OSMO 0.001 or higher, he pay the fee by default.
-      queryOsmo.balance.toDec().gt(DecUtils.getTenExponentN(-3))
+      // If user has an FURY 0.001 or higher, he pay the fee by default.
+      queryFury.balance.toDec().gt(DecUtils.getTenExponentN(-3))
     ) {
       preferZeroFee = false;
     }
@@ -87,7 +87,7 @@ export const TradeClipboard: FunctionComponent<{
 
     const feeConfig = useFakeFeeConfig(
       chainStore,
-      chainStore.osmosis.chainId,
+      chainStore.merlins.chainId,
       gasForecasted,
       preferZeroFee
     );
@@ -253,7 +253,7 @@ export const TradeClipboard: FunctionComponent<{
           i++
         ) {
           const pool = tradeTokenInConfig.optimizedRoutePaths[0].pools[i];
-          const tokenOutCurrency = chainStore.osmosisObservable.currencies.find(
+          const tokenOutCurrency = chainStore.merlinsObservable.currencies.find(
             (cur) =>
               cur.coinMinimalDenom ===
               tradeTokenInConfig.optimizedRoutePaths[0].tokenOutDenoms[i]
@@ -277,7 +277,7 @@ export const TradeClipboard: FunctionComponent<{
           });
         }
 
-        const tokenInCurrency = chainStore.osmosisObservable.currencies.find(
+        const tokenInCurrency = chainStore.merlinsObservable.currencies.find(
           (cur) =>
             cur.coinMinimalDenom ===
             tradeTokenInConfig.optimizedRoutePaths[0].tokenInDenom
@@ -313,7 +313,7 @@ export const TradeClipboard: FunctionComponent<{
             },
           ]);
           if (routes.length === 1) {
-            await account.osmosis.sendSwapExactAmountInMsg(
+            await account.merlins.sendSwapExactAmountInMsg(
               routes[0].poolId,
               tokenIn,
               routes[0].tokenOutCurrency,
@@ -322,7 +322,7 @@ export const TradeClipboard: FunctionComponent<{
               {
                 amount: [
                   {
-                    denom: chainStore.osmosis.stakeCurrency.coinMinimalDenom,
+                    denom: chainStore.merlins.stakeCurrency.coinMinimalDenom,
                     amount: "0",
                   },
                 ],
@@ -345,7 +345,7 @@ export const TradeClipboard: FunctionComponent<{
               }
             );
           } else {
-            await account.osmosis.sendMultihopSwapExactAmountInMsg(
+            await account.merlins.sendMultihopSwapExactAmountInMsg(
               routes,
               tokenIn,
               maxSlippage,
@@ -353,7 +353,7 @@ export const TradeClipboard: FunctionComponent<{
               {
                 amount: [
                   {
-                    denom: chainStore.osmosis.stakeCurrency.coinMinimalDenom,
+                    denom: chainStore.merlins.stakeCurrency.coinMinimalDenom,
                     amount: "0",
                   },
                 ],
@@ -388,7 +388,7 @@ export const TradeClipboard: FunctionComponent<{
     return (
       <div
         className={classNames(
-          "relative rounded-[18px] flex flex-col gap-8 md:gap-6 bg-osmoverse-800 px-6 md:px-3 pt-12 md:pt-4 pb-8 md:pb-4",
+          "relative rounded-[18px] flex flex-col gap-8 md:gap-6 bg-furyverse-800 px-6 md:px-3 pt-12 md:pt-4 pb-8 md:pb-4",
           containerClassName
         )}
       >
@@ -416,12 +416,12 @@ export const TradeClipboard: FunctionComponent<{
           </button>
           {isSettingOpen && (
             <div
-              className="absolute bottom-[-0.5rem] right-0 translate-y-full bg-osmoverse-800 rounded-2xl p-[1.875rem] md:p-5 z-40 w-full max-w-[23.875rem]"
+              className="absolute bottom-[-0.5rem] right-0 translate-y-full bg-furyverse-800 rounded-2xl p-[1.875rem] md:p-5 z-40 w-full max-w-[23.875rem]"
               onClick={(e) => e.stopPropagation()}
             >
               <h6>{t("swap.settings.title")}</h6>
               <div className="flex items-center mt-2.5">
-                <div className="subtitle1 text-osmoverse-200 mr-2">
+                <div className="subtitle1 text-furyverse-200 mr-2">
                   {t("swap.settings.slippage")}
                 </div>
                 <InfoTooltip content={t("swap.settings.slippageInfo")} />
@@ -433,8 +433,8 @@ export const TradeClipboard: FunctionComponent<{
                     <li
                       key={slippage.index}
                       className={classNames(
-                        "flex items-center justify-center w-full h-8 cursor-pointer rounded-lg bg-osmoverse-700",
-                        { "border-2 border-wosmongton-200": slippage.selected }
+                        "flex items-center justify-center w-full h-8 cursor-pointer rounded-lg bg-furyverse-700",
+                        { "border-2 border-wfuryngton-200": slippage.selected }
                       )}
                       onClick={(e) => {
                         e.preventDefault();
@@ -457,13 +457,13 @@ export const TradeClipboard: FunctionComponent<{
                   className={classNames(
                     "flex items-center justify-center w-full h-8 cursor-pointer rounded-lg",
                     slippageConfig.isManualSlippage
-                      ? "border-2 border-wosmongton-200 text-white-high"
-                      : "text-osmoverse-500",
+                      ? "border-2 border-wfuryngton-200 text-white-high"
+                      : "text-furyverse-500",
                     slippageConfig.isManualSlippage
                       ? slippageConfig.manualSlippageError
                         ? "bg-missionError"
-                        : "bg-osmoverse-900"
-                      : "bg-osmoverse-900"
+                        : "bg-furyverse-900"
+                      : "bg-furyverse-900"
                   )}
                   onClick={(e) => {
                     e.preventDefault();
@@ -478,7 +478,7 @@ export const TradeClipboard: FunctionComponent<{
                     className="bg-transparent px-0 w-fit"
                     inputClassName={`bg-transparent text-center ${
                       !slippageConfig.isManualSlippage
-                        ? "text-osmoverse-500"
+                        ? "text-furyverse-500"
                         : "text-white-high"
                     }`}
                     style="no-border"
@@ -502,7 +502,7 @@ export const TradeClipboard: FunctionComponent<{
                   />
                   <span
                     className={classNames("shrink-0", {
-                      "text-osmoverse-500": !slippageConfig.isManualSlippage,
+                      "text-furyverse-500": !slippageConfig.isManualSlippage,
                     })}
                   >
                     %
@@ -516,7 +516,7 @@ export const TradeClipboard: FunctionComponent<{
         <div className="relative flex flex-col gap-3">
           <div
             className={classNames(
-              "bg-osmoverse-900 rounded-xl md:rounded-xl px-4 md:px-3 py-[22px] md:py-2.5 transition-all",
+              "bg-furyverse-900 rounded-xl md:rounded-xl px-4 md:px-3 py-[22px] md:py-2.5 transition-all",
               !switchOutBack ? "ease-outBack" : "ease-inBack",
               {
                 "opacity-30": isAnimatingSwitch,
@@ -542,7 +542,7 @@ export const TradeClipboard: FunctionComponent<{
                 <span className="caption text-sm md:text-xs text-white-full">
                   {t("swap.available")}
                 </span>
-                <span className="caption text-sm md:text-xs text-wosmongton-300 ml-1.5">
+                <span className="caption text-sm md:text-xs text-wfuryngton-300 ml-1.5">
                   {queries.queryBalances
                     .getQueryBech32Address(account.bech32Address)
                     .getBalanceFromCurrency(tradeTokenInConfig.sendCurrency)
@@ -557,7 +557,7 @@ export const TradeClipboard: FunctionComponent<{
                   className={classNames(
                     "text-xs py-1 px-1.5",
                     tradeTokenInConfig.fraction === 1
-                      ? "bg-wosmongton-100/40"
+                      ? "bg-wfuryngton-100/40"
                       : "bg-transparent"
                   )}
                   onClick={() => {
@@ -582,7 +582,7 @@ export const TradeClipboard: FunctionComponent<{
                   className={classNames(
                     "text-xs py-1 px-1.5",
                     tradeTokenInConfig.fraction === 0.5
-                      ? "bg-wosmongton-100/40"
+                      ? "bg-wfuryngton-100/40"
                       : "bg-transparent"
                   )}
                   onClick={() => {
@@ -676,7 +676,7 @@ export const TradeClipboard: FunctionComponent<{
                 />
                 <div
                   className={classNames(
-                    "subtitle1 md:caption text-osmoverse-300 transition-opacity",
+                    "subtitle1 md:caption text-furyverse-300 transition-opacity",
                     inAmountValue ? "opacity-100" : "opacity-0"
                   )}
                 >{`≈ ${inAmountValue || "0"}`}</div>
@@ -715,7 +715,7 @@ export const TradeClipboard: FunctionComponent<{
               className={classNames(
                 "w-full h-full rounded-full flex items-center",
                 {
-                  "bg-osmoverse-700": !isHoveringSwitchButton,
+                  "bg-furyverse-700": !isHoveringSwitchButton,
                   "bg-[#4E477C]": isHoveringSwitchButton,
                 }
               )}
@@ -758,7 +758,7 @@ export const TradeClipboard: FunctionComponent<{
 
           <div
             className={classNames(
-              "bg-osmoverse-900 rounded-xl md:rounded-xl px-4 md:px-3 py-[22px] md:py-2.5 transition-all",
+              "bg-furyverse-900 rounded-xl md:rounded-xl px-4 md:px-3 py-[22px] md:py-2.5 transition-all",
               !switchOutBack ? "ease-outBack" : "ease-inBack",
               {
                 "opacity-30": isAnimatingSwitch,
@@ -838,7 +838,7 @@ export const TradeClipboard: FunctionComponent<{
                 }`}</h5>
                 <div
                   className={classNames(
-                    "subtitle1 md:caption text-osmoverse-300 transition-opacity",
+                    "subtitle1 md:caption text-furyverse-300 transition-opacity",
                     outAmountValue ? "opacity-100" : "opacity-0"
                   )}
                 >
@@ -850,7 +850,7 @@ export const TradeClipboard: FunctionComponent<{
 
           <div
             className={classNames(
-              "relative rounded-lg bg-osmoverse-900 px-4 md:px-3 transition-all ease-inOutBack duration-300 overflow-hidden",
+              "relative rounded-lg bg-furyverse-900 px-4 md:px-3 transition-all ease-inOutBack duration-300 overflow-hidden",
               showEstimateDetails ? "h-56 py-6" : "h-11 py-[10px]"
             )}
           >
@@ -868,7 +868,7 @@ export const TradeClipboard: FunctionComponent<{
             >
               <div
                 className={classNames("subtitle2 transition-all", {
-                  "text-osmoverse-600": !isEstimateDetailRelevant,
+                  "text-furyverse-600": !isEstimateDetailRelevant,
                 })}
               >
                 {`1 ${
@@ -924,7 +924,7 @@ export const TradeClipboard: FunctionComponent<{
                 <div
                   className={classNames(
                     "caption",
-                    showPriceImpactWarning ? "text-error" : "text-osmoverse-200"
+                    showPriceImpactWarning ? "text-error" : "text-furyverse-200"
                   )}
                 >
                   {`-${tradeTokenInConfig.expectedSwapResult.priceImpact.toString()}`}
@@ -936,7 +936,7 @@ export const TradeClipboard: FunctionComponent<{
                     fee: tradeTokenInConfig.expectedSwapResult.swapFee.toString(),
                   })}
                 </div>
-                <div className="caption text-osmoverse-200">
+                <div className="caption text-furyverse-200">
                   {`≈ ${
                     priceStore.calculatePrice(
                       tradeTokenInConfig.expectedSwapResult.tokenInFeeAmount
@@ -947,7 +947,7 @@ export const TradeClipboard: FunctionComponent<{
               <hr className="text-white-faint" />
               <div className="flex justify-between">
                 <div className="caption">{t("swap.expectedOutput")}</div>
-                <div className="caption text-osmoverse-200 whitespace-nowrap">
+                <div className="caption text-furyverse-200 whitespace-nowrap">
                   {`≈ ${tradeTokenInConfig.expectedSwapResult.amount.toString()} `}
                 </div>
               </div>
@@ -959,7 +959,7 @@ export const TradeClipboard: FunctionComponent<{
                 </div>
                 <div
                   className={classNames(
-                    "caption flex flex-col text-right gap-0.5 text-osmoverse-200"
+                    "caption flex flex-col text-right gap-0.5 text-furyverse-200"
                   )}
                 >
                   <span className="whitespace-nowrap">

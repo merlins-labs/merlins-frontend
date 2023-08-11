@@ -20,29 +20,29 @@ import { ChainInfo } from "@keplr-wallet/types";
 import { MemoryKVStore } from "@keplr-wallet/common";
 import { MockKeplr } from "@keplr-wallet/provider-mock";
 import { Bech32Address } from "@keplr-wallet/cosmos";
-import { OsmosisQueries, OsmosisAccount } from "..";
+import { MerlinsQueries, MerlinsAccount } from "..";
 
-export const chainId = "localosmosis";
+export const chainId = "localmerlins";
 
 export const TestChainInfos: ChainInfo[] = [
   {
     rpc: "http://127.0.0.1:26657",
     rest: "http://127.0.0.1:1317",
     chainId: chainId,
-    chainName: "OSMOSIS",
+    chainName: "MERLINS",
     stakeCurrency: {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
+      coinDenom: "FURY",
+      coinMinimalDenom: "ufury",
       coinDecimals: 6,
     },
     bip44: {
       coinType: 118,
     },
-    bech32Config: Bech32Address.defaultBech32Config("osmo"),
+    bech32Config: Bech32Address.defaultBech32Config("fury"),
     currencies: [
       {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
+        coinDenom: "FURY",
+        coinMinimalDenom: "ufury",
         coinDecimals: 6,
       },
       {
@@ -68,8 +68,8 @@ export const TestChainInfos: ChainInfo[] = [
     ],
     feeCurrencies: [
       {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
+        coinDenom: "FURY",
+        coinMinimalDenom: "ufury",
         coinDecimals: 6,
       },
     ],
@@ -80,10 +80,10 @@ export const TestChainInfos: ChainInfo[] = [
 export class RootStore {
   public readonly chainStore: ChainStore;
   public readonly queriesStore: QueriesStore<
-    [CosmosQueries, CosmwasmQueries, OsmosisQueries]
+    [CosmosQueries, CosmwasmQueries, MerlinsQueries]
   >;
   public readonly accountStore: AccountStore<
-    [CosmosAccount, CosmwasmAccount, OsmosisAccount]
+    [CosmosAccount, CosmwasmAccount, MerlinsAccount]
   >;
 
   constructor(
@@ -151,7 +151,7 @@ export class RootStore {
       this.chainStore,
       CosmosQueries.use(),
       CosmwasmQueries.use(),
-      OsmosisQueries.use(chainId)
+      MerlinsQueries.use(chainId)
     );
 
     this.accountStore = new AccountStore(
@@ -178,7 +178,7 @@ export class RootStore {
         wsObject: WebSocket as any,
       }),
       CosmwasmAccount.use({ queriesStore: this.queriesStore }),
-      OsmosisAccount.use({ queriesStore: this.queriesStore })
+      MerlinsAccount.use({ queriesStore: this.queriesStore })
     );
   }
 }
@@ -275,11 +275,11 @@ export async function initLocalnet(): Promise<void> {
 
   await new Promise<void>((resolve, reject) => {
     exec(
-      // change osmosisd version in /localnet/Dockerfile
+      // change merlinsd version in /localnet/Dockerfile
       // comment to speed up test time
-      `docker build --tag osmosis/localnet ./localnet &&
-       docker rm --force osmosis_localnet && 
-       docker run -d -p 1317:1317 -p 26657:26657 -p 9090:9090 --user root --name osmosis_localnet osmosis/localnet`,
+      `docker build --tag merlins/localnet ./localnet &&
+       docker rm --force merlins_localnet && 
+       docker run -d -p 1317:1317 -p 26657:26657 -p 9090:9090 --user root --name merlins_localnet merlins/localnet`,
       (error, _stdout, _stderr) => {
         if (error) {
           reject(new Error(`run localnet error: ${error.message}`));
@@ -315,7 +315,7 @@ export async function initLocalnet(): Promise<void> {
 
 export async function removeLocalnet() {
   await new Promise<void>((resolve, reject) => {
-    exec(`docker rm --force osmosis_localnet`, (error, _stdout, _stderr) => {
+    exec(`docker rm --force merlins_localnet`, (error, _stdout, _stderr) => {
       if (error) {
         reject(new Error(`remove localnet error: ${error.message}`));
         return;

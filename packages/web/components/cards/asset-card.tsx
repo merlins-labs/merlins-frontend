@@ -39,7 +39,7 @@ export const AssetCard: FunctionComponent<
   >
     <div
       className={classNames(
-        "flex flex-col gap-3 place-content-between w-full bg-osmoverse-800 rounded-[0.875rem] p-9",
+        "flex flex-col gap-3 place-content-between w-full bg-furyverse-800 rounded-[0.875rem] p-9",
         contentClassName
       )}
     >
@@ -73,7 +73,7 @@ export const AssetCard: FunctionComponent<
           <h6>{truncateString(coinDenom, 12)}</h6>
         </div>
         {coinDenomCaption && (
-          <span className="subtitle1 text-osmoverse-300">
+          <span className="subtitle1 text-furyverse-300">
             {coinDenomCaption}
           </span>
         )}
@@ -81,7 +81,7 @@ export const AssetCard: FunctionComponent<
       <div className="flex items-center place-content-between gap-2.5">
         {metrics.map(({ label, value }, index) => (
           <div key={index} className="flex flex-col text-left">
-            <span className="subtitle1 text-osmoverse-400">{label}</span>
+            <span className="subtitle1 text-furyverse-400">{label}</span>
             <h6>{value}</h6>
           </div>
         ))}

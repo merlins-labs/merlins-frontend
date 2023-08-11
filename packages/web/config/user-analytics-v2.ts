@@ -1,5 +1,5 @@
 /** # User Events Constants
- *  Logged to Amplitude at https://analytics.amplitude.com/osmosis-zone/
+ *  Logged to Amplitude at https://analytics.amplitude.com/merlins-zone/
  */
 
 // Should be in sync with: https://docs.google.com/spreadsheets/d/18w8VwJmmRdb_E-XkE1UjkqhLxCyhqVVhWlzDgTtbRWo/edit?usp=sharing
@@ -42,8 +42,8 @@ export type UserProperties = {
   totalAssetsPrice: number;
   unbondedAssetsPrice: number;
   bondedAssetsPrice: number;
-  stakedOsmoPrice: number;
-  osmoBalance: number;
+  stakedFuryPrice: number;
+  furyBalance: number;
   myPoolsCount: number;
 };
 

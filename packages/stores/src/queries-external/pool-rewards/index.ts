@@ -58,7 +58,7 @@ export class ObservableQueryAccountsPoolRewards extends HasMapStore<ObservableQu
   constructor(
     kvStore: KVStore,
     priceStore: IPriceStore,
-    poolRewardsBaseUrl = "https://api-osmosis-chain.imperator.co"
+    poolRewardsBaseUrl = "https://api-merlins-chain.imperator.co"
   ) {
     super(
       (bech32Address) =>

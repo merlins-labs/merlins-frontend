@@ -20,20 +20,20 @@ export const Button: FunctionComponent<
         size === "sm" ? "h-10 px-5" : "h-[56px] px-6",
         mode === "tertiary" ? "rounded-md" : "rounded-xl",
         {
-          "border-2 border-wosmongton-700 bg-wosmongton-700 hover:bg-wosmongton-400 hover:border-wosmongton-400":
+          "border-2 border-wfuryngton-700 bg-wfuryngton-700 hover:bg-wfuryngton-400 hover:border-wfuryngton-400":
             mode === "primary" && !props.disabled,
-          "border-2 border-osmoverse-500 bg-osmoverse-500 text-osmoverse-100":
+          "border-2 border-furyverse-500 bg-furyverse-500 text-furyverse-100":
             (mode === "primary" || mode === "primary-warning") &&
             props.disabled,
           "border-0 bg-gradient-negative": mode === "primary-warning",
           "bg-transparent border-2":
             mode === "secondary" || mode === "tertiary",
-          "border-wosmongton-400 hover:border-wosmongton-200":
+          "border-wfuryngton-400 hover:border-wfuryngton-200":
             mode === "secondary" && !props.disabled,
-          "border-osmoverse-600 text-osmoverse-400":
+          "border-furyverse-600 text-furyverse-400":
             mode === "secondary" && props.disabled,
-          "border-osmoverse-400": mode === "tertiary" && !props.disabled,
-          "text-osmoverse-1000":
+          "border-furyverse-400": mode === "tertiary" && !props.disabled,
+          "text-furyverse-1000":
             IS_FRONTIER &&
             !props.disabled &&
             (mode === "primary" || mode === "primary-warning"),

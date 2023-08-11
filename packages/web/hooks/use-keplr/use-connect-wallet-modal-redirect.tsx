@@ -8,7 +8,7 @@ import { t } from "react-multi-lang";
 
 /** FOR USE IN MODALS
  *
- *  If your modal contains a user action that is only possible with a connected wallet on the Osmosis account.
+ *  If your modal contains a user action that is only possible with a connected wallet on the Merlins account.
  *  This hook allows your modal to temporarily redirect to the `keplr-connection-selection` modal.
  *  If the user connects Keplr, your modal will appear after. If the user closes the connection
  *  selection modal, your modal will no longer appear, even if they connect Keplr later.
@@ -26,22 +26,22 @@ export function useConnectWalletModalRedirect(
 ) {
   const keplr = useKeplr();
   const { accountStore, chainStore } = useStore();
-  const { chainId } = chainStore.osmosis;
-  const osmosisAccount = accountStore.getAccount(chainId);
+  const { chainId } = chainStore.merlins;
+  const merlinsAccount = accountStore.getAccount(chainId);
 
   const [walletInitiallyConnected] = useState(
-    () => osmosisAccount.walletStatus === WalletStatus.Loaded
+    () => merlinsAccount.walletStatus === WalletStatus.Loaded
   );
   const [showSelf, setShowSelf] = useState(true);
 
   useEffect(() => {
     if (
       !walletInitiallyConnected &&
-      osmosisAccount.walletStatus === WalletStatus.Loaded
+      merlinsAccount.walletStatus === WalletStatus.Loaded
     ) {
       setShowSelf(true);
     }
-  }, [osmosisAccount.walletStatus]);
+  }, [merlinsAccount.walletStatus]);
 
   // prevent ibc-transfer dialog from randomly appearing if they connect wallet later
   useEffect(() => {
@@ -57,14 +57,14 @@ export function useConnectWalletModalRedirect(
   return {
     showModalBase: showSelf,
     accountActionButton:
-      osmosisAccount.walletStatus === WalletStatus.Loaded ? (
+      merlinsAccount.walletStatus === WalletStatus.Loaded ? (
         <Button {...actionButtonProps}>{actionButtonProps.children}</Button>
       ) : (
         <Button
           {...actionButtonProps}
           disabled={false}
           onClick={() => {
-            osmosisAccount.init(); // show select connect modal
+            merlinsAccount.init(); // show select connect modal
             setShowSelf(false);
           }}
         >
@@ -79,6 +79,6 @@ export function useConnectWalletModalRedirect(
           </h6>
         </Button>
       ),
-    walletConnected: osmosisAccount.walletStatus === WalletStatus.Loaded,
+    walletConnected: merlinsAccount.walletStatus === WalletStatus.Loaded,
   };
 }

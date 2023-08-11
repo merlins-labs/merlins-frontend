@@ -25,7 +25,7 @@ export class ObservableQueryAccountLockedInner extends ObservableChainQuery<Acco
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/lockup/v1beta1/account_locked_longer_duration/${bech32Address}`
+      `/merlins/lockup/v1beta1/account_locked_longer_duration/${bech32Address}`
     );
 
     makeObservable(this);
@@ -204,7 +204,7 @@ export class ObservableQueryAccountLockedInner extends ObservableChainQuery<Acco
       const matchedLocks = this.response.data.locks
         .filter((lock) => {
           // Accepts the lock duration with jitter (~1hour 1minute)
-          // see: https://github.com/osmosis-labs/osmosis-frontend/issues/771
+          // see: https://github.com/merlins-labs/merlins-frontend/issues/771
           return (
             Math.abs(
               Number.parseInt(lock.duration.replace("s", "")) -

@@ -57,8 +57,8 @@ export const TabBox: FunctionComponent<
           >
             {typeof title === "string" ? (
               <span
-                className={classNames("subtitle1 text-wosmongton-100", {
-                  "border-b-4 border-wosmongton-100": selectedTabI === index,
+                className={classNames("subtitle1 text-wfuryngton-100", {
+                  "border-b-4 border-wfuryngton-100": selectedTabI === index,
                   "border-b opacity-40 border-white-full/[.12] hover:opacity-60":
                     selectedTabI !== index,
                 })}

@@ -20,7 +20,7 @@ export class ObservableQueryAccountUnlockingCoinsInner extends ObservableChainQu
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/lockup/v1beta1/account_unlocking_coins/${bech32Address}`
+      `/merlins/lockup/v1beta1/account_unlocking_coins/${bech32Address}`
     );
 
     makeObservable(this);

@@ -8,7 +8,7 @@ import {
 } from "@keplr-wallet/stores";
 import { IS_FRONTIER } from "../../config";
 import { ChainStore } from "../chain";
-import { OsmosisQueries, IPriceStore } from "@osmosis-labs/stores";
+import { MerlinsQueries, IPriceStore } from "@osmosis-labs/stores";
 import { makeIBCMinimalDenom } from "./utils";
 import {
   IBCAsset,
@@ -18,7 +18,7 @@ import {
 } from "./types";
 
 /**
- * Wrapper around IBC asset config and stores to provide memoized metrics about osmosis assets.
+ * Wrapper around IBC asset config and stores to provide memoized metrics about merlins assets.
  */
 export class ObservableAssets {
   constructor(
@@ -39,7 +39,7 @@ export class ObservableAssets {
       };
     },
     protected readonly queriesStore: QueriesStore<
-      [CosmosQueries, CosmwasmQueries, OsmosisQueries]
+      [CosmosQueries, CosmwasmQueries, MerlinsQueries]
     >,
     protected readonly priceStore: IPriceStore,
     protected readonly chainId: string
@@ -114,7 +114,7 @@ export class ObservableAssets {
           );
         }
 
-        // If this is a multihop ibc, need to special case because the denom on osmosis
+        // If this is a multihop ibc, need to special case because the denom on merlins
         // isn't H(source_denom), but rather H(ibc_path)
         let sourceDenom: string | undefined;
         if (ibcAsset.ibcTransferPathDenom) {
@@ -184,7 +184,7 @@ export class ObservableAssets {
   @computed
   get lockedCoins(): CoinPretty[] {
     return (
-      this.queries.osmosis?.queryLockedCoins.get(this.account.bech32Address)
+      this.queries.merlins?.queryLockedCoins.get(this.account.bech32Address)
         .lockedCoins ?? []
     );
   }
@@ -216,7 +216,7 @@ export class ObservableAssets {
           "gamm/pool/",
           ""
         );
-        const pool = this.queries.osmosis?.queryGammPools.getPool(poolId);
+        const pool = this.queries.merlins?.queryGammPools.getPool(poolId);
         if (pool) {
           const tvl = pool.computeTotalValueLocked(this.priceStore);
           const totalShare = pool.totalShare;

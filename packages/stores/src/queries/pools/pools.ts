@@ -32,7 +32,7 @@ export class ObservableQueryPools extends ObservableChainQuery<Pools> {
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/gamm/v1beta1/pools?pagination.limit=${limit}`
+      `/merlins/gamm/v1beta1/pools?pagination.limit=${limit}`
     );
 
     makeObservable(this);
@@ -41,7 +41,7 @@ export class ObservableQueryPools extends ObservableChainQuery<Pools> {
       const numPools = queryNumPools.numPools;
       if (numPools > limit) {
         limit = numPools;
-        this.setUrl(`/osmosis/gamm/v1beta1/pools?pagination.limit=${limit}`);
+        this.setUrl(`/merlins/gamm/v1beta1/pools?pagination.limit=${limit}`);
       }
     });
   }

@@ -18,15 +18,15 @@ describe("Exit Pool Tx", () => {
 
     // And prepare the pool
     await new Promise<any>((resolve) => {
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0",
         [
           {
             weight: "200",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -54,12 +54,12 @@ describe("Exit Pool Tx", () => {
     // refresh stores
     await queriesStore
       .get(chainId)
-      .osmosis!.queryGammNumPools.waitFreshResponse();
-    await queriesStore.get(chainId).osmosis!.queryGammPools.waitFreshResponse();
+      .merlins!.queryGammNumPools.waitFreshResponse();
+    await queriesStore.get(chainId).merlins!.queryGammPools.waitFreshResponse();
 
     // set poolId
     const numPools =
-      queriesStore.get(chainId).osmosis!.queryGammNumPools.numPools;
+      queriesStore.get(chainId).merlins!.queryGammNumPools.numPools;
     poolId = numPools.toString();
   });
 
@@ -67,7 +67,7 @@ describe("Exit Pool Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     await expect(
-      account.osmosis.sendExitPoolMsg(poolId!, "0")
+      account.merlins.sendExitPoolMsg(poolId!, "0")
     ).rejects.not.toBeNull();
   });
 
@@ -76,7 +76,7 @@ describe("Exit Pool Tx", () => {
 
     // Share는 최초로 100개가 발행된다 그러므로 여기서 50개를 exit하는 건 성공한다.
     await new Promise<any>((resolve, rejects) => {
-      account.osmosis
+      account.merlins
         .sendExitPoolMsg(poolId!, "50", "0", "", (tx) => {
           resolve(tx);
         })
@@ -89,7 +89,7 @@ describe("Exit Pool Tx", () => {
 
     // Share는 최초로 100개가 발행된다 그러므로 여기서 50개를 exit하는 건 성공한다.
     await new Promise<any>((resolve, rejects) => {
-      account.osmosis
+      account.merlins
         .sendExitPoolMsg(poolId!, "50", "1", "", (tx) => {
           resolve(tx);
         })
@@ -102,7 +102,7 @@ describe("Exit Pool Tx", () => {
 
     // Share는 최초로 100개가 발행된다 그러므로 여기서 100.01개를 exit하는 건 실패한다.
     await expect(
-      account.osmosis.sendExitPoolMsg(poolId!, "100.01", "1")
+      account.merlins.sendExitPoolMsg(poolId!, "100.01", "1")
     ).rejects.not.toBeNull();
   });
 });

@@ -1,7 +1,7 @@
 import { Dec, Int } from "@keplr-wallet/unit";
 import {
-  isOsmoRoutedMultihop,
-  getOsmoRoutedMultihopTotalSwapFee,
+  isFuryRoutedMultihop,
+  getFuryRoutedMultihopTotalSwapFee,
 } from "@osmosis-labs/math";
 import { Pool } from "./interface";
 import { NoPoolsError, NotEnoughLiquidityError } from "./errors";
@@ -284,7 +284,7 @@ export class OptimizedRoutes {
     effectivePriceOutOverIn: Dec;
     tokenInFeeAmount: Int;
     swapFee: Dec;
-    multiHopOsmoDiscount: boolean;
+    multiHopFuryDiscount: boolean;
     priceImpact: Dec;
   } {
     if (routes.length === 0) {
@@ -296,8 +296,8 @@ export class OptimizedRoutes {
     let totalAfterSpotPriceInOverOut: Dec = new Dec(0);
     let totalEffectivePriceInOverOut: Dec = new Dec(0);
     let totalSwapFee: Dec = new Dec(0);
-    /** Special case when routing through _only_ 2 OSMO pools. */
-    let isMultihopOsmoFeeDiscount = false;
+    /** Special case when routing through _only_ 2 FURY pools. */
+    let isMultihopFuryFeeDiscount = false;
 
     let sumAmount = new Int(0);
     for (const path of routes) {
@@ -340,7 +340,7 @@ export class OptimizedRoutes {
         let poolSwapFee = pool.swapFee;
         if (
           routes.length === 1 &&
-          isOsmoRoutedMultihop(
+          isFuryRoutedMultihop(
             routes[0].pools.map((routePool) => ({
               id: routePool.id,
               isIncentivized: this._incentivizedPoolIds.includes(routePool.id),
@@ -349,8 +349,8 @@ export class OptimizedRoutes {
             this.stakeCurrencyMinDenom
           )
         ) {
-          isMultihopOsmoFeeDiscount = true;
-          const { maxSwapFee, swapFeeSum } = getOsmoRoutedMultihopTotalSwapFee(
+          isMultihopFuryFeeDiscount = true;
+          const { maxSwapFee, swapFeeSum } = getFuryRoutedMultihopTotalSwapFee(
             routes[0].pools
           );
           poolSwapFee = maxSwapFee.mul(poolSwapFee.quo(swapFeeSum));
@@ -371,7 +371,7 @@ export class OptimizedRoutes {
             ...tokenOut,
             tokenInFeeAmount: new Int(0),
             swapFee,
-            multiHopOsmoDiscount: false,
+            multiHopFuryDiscount: false,
           };
         }
 
@@ -429,7 +429,7 @@ export class OptimizedRoutes {
         new Dec(sumAmount).mulTruncate(new Dec(1).sub(totalSwapFee)).round()
       ),
       swapFee: totalSwapFee,
-      multiHopOsmoDiscount: isMultihopOsmoFeeDiscount,
+      multiHopFuryDiscount: isMultihopFuryFeeDiscount,
       priceImpact,
     };
   }

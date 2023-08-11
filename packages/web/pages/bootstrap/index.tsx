@@ -11,7 +11,7 @@ import { PromotedLBPPoolIds } from "../../config";
 
 const BootstrapPage: NextPage = observer(() => {
   return (
-    <div className="w-full h-full bg-osmoverse-900">
+    <div className="w-full h-full bg-furyverse-900">
       <div className="pt-10 md:pt-20 px-5 pb-5 md:p-10">
         <div className="max-w-page mx-auto">
           <LBPOverview
@@ -20,7 +20,7 @@ const BootstrapPage: NextPage = observer(() => {
           />
         </div>
       </div>
-      <div className="bg-osmoverse-800 p-5 md:p-10">
+      <div className="bg-furyverse-800 p-5 md:p-10">
         <div className="max-w-page mx-auto">
           <SynthesisList />
         </div>
@@ -35,7 +35,7 @@ export const LBPOverview: FunctionComponent<{
 }> = observer(({ title, poolIds }) => {
   const { chainStore, queriesStore, priceStore } = useStore();
 
-  const queries = queriesStore.get(chainStore.osmosis.chainId).osmosis!;
+  const queries = queriesStore.get(chainStore.merlins.chainId).merlins!;
   const pools = poolIds
     .map((poolId) => {
       return queries.queryGammPools.getPool(poolId);
@@ -117,7 +117,7 @@ const SynthesisItem: FunctionComponent<{
 }> = observer(({ poolId, name, baseDenom }) => {
   const { chainStore, queriesStore, priceStore } = useStore();
 
-  const queries = queriesStore.get(chainStore.osmosis.chainId).osmosis!;
+  const queries = queriesStore.get(chainStore.merlins.chainId).merlins!;
 
   const pool = queries.queryGammPools.getPool(poolId);
 
@@ -128,12 +128,12 @@ const SynthesisItem: FunctionComponent<{
   }
 
   const baseCurrency = chainStore
-    .getChain(chainStore.osmosis.chainId)
+    .getChain(chainStore.merlins.chainId)
     .forceFindCurrency(baseDenom);
 
   return (
     <li
-      className="w-full rounded-xl p-5 md:py-6 md:px-7.5 bg-osmoverse-700 cursor-pointer border border-transparent border-opacity-40"
+      className="w-full rounded-xl p-5 md:py-6 md:px-7.5 bg-furyverse-700 cursor-pointer border border-transparent border-opacity-40"
       onClick={(e) => {
         e.preventDefault();
 

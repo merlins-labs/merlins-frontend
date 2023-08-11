@@ -5,7 +5,7 @@ import { Msg } from "@cosmjs/launchpad";
 import * as PoolMath from "@osmosis-labs/math";
 
 /**
- * Helpers for constructing Amino messages involving min amount estimates for Osmosis.
+ * Helpers for constructing Amino messages involving min amount estimates for Merlins.
  * Amino Ref: https://github.com/tendermint/go-amino/
  *
  * Note: not an exhaustive list.

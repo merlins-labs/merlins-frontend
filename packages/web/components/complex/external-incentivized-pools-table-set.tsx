@@ -42,13 +42,13 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
     const { logEvent } = useAmplitudeAnalytics();
     const t = useTranslation();
 
-    const { chainId } = chainStore.osmosis;
+    const { chainId } = chainStore.merlins;
     const queryCosmos = queriesStore.get(chainId).cosmos;
-    const queryOsmosis = queriesStore.get(chainId).osmosis!;
+    const queryMerlins = queriesStore.get(chainId).merlins!;
     const account = accountStore.getAccount(chainId);
 
     const pools = Object.keys(ExternalIncentiveGaugeAllowList).map((poolId) =>
-      queryOsmosis.queryGammPools.getPool(poolId)
+      queryMerlins.queryGammPools.getPool(poolId)
     );
 
     const externalIncentivizedPools = useMemo(
@@ -69,7 +69,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
             }
             const gaugeIds = data.map((d) => d.gaugeId);
             const gauges = gaugeIds.map((gaugeId) =>
-              queryOsmosis.queryGauge.get(gaugeId)
+              queryMerlins.queryGauge.get(gaugeId)
             );
 
             let maxRemainingEpoch = 0;
@@ -92,7 +92,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
           const data = Array.isArray(inner) ? inner : [inner];
           const gaugeIds = data.map((d) => d.gaugeId);
           const gauges = gaugeIds.map((gaugeId) => {
-            return queryOsmosis.queryGauge.get(gaugeId);
+            return queryMerlins.queryGauge.get(gaugeId);
           });
           const incentiveDenom = data[0].denom;
           const currency = chainStore
@@ -115,7 +115,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
 
           const poolTvl = pool.computeTotalValueLocked(priceStore);
           const myLiquidity = poolTvl.mul(
-            queryOsmosis.queryGammPoolShare.getAllGammShareRatio(
+            queryMerlins.queryGammPoolShare.getAllGammShareRatio(
               account.bech32Address,
               pool.id
             )
@@ -123,7 +123,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
 
           // sum aprs for highest duration
           const internalIncentiveApr =
-            queryOsmosis.queryIncentivizedPools.computeMostApr(
+            queryMerlins.queryIncentivizedPools.computeMostApr(
               pool.id,
               priceStore
             );
@@ -135,11 +135,11 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
           const whitelistedGauges =
             ExternalIncentiveGaugeAllowList?.[pool.id] ?? undefined;
           const highestDuration =
-            queryOsmosis.queryLockableDurations.highestDuration;
+            queryMerlins.queryLockableDurations.highestDuration;
 
           const externalApr = (whitelistedGauges ?? []).reduce(
             (sum, { gaugeId, denom }) => {
-              const gauge = queryOsmosis.queryGauge.get(gaugeId);
+              const gauge = queryMerlins.queryGauge.get(gaugeId);
 
               if (
                 !gauge ||
@@ -151,7 +151,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
               }
 
               return sum.add(
-                queryOsmosis.queryIncentivizedPools.computeExternalIncentiveGaugeAPR(
+                queryMerlins.queryIncentivizedPools.computeExternalIncentiveGaugeAPR(
                   pool.id,
                   gaugeId,
                   denom,
@@ -162,11 +162,11 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
             new RatePretty(0)
           );
           const superfluidApr =
-            queryOsmosis.querySuperfluidPools.isSuperfluidPool(pool.id)
+            queryMerlins.querySuperfluidPools.isSuperfluidPool(pool.id)
               ? new RatePretty(
                   queryCosmos.queryInflation.inflation
                     .mul(
-                      queryOsmosis.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+                      queryMerlins.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
                         pool.id
                       )
                     )
@@ -189,7 +189,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
                   0
                 )
               : poolTvl.mul(
-                  queryOsmosis.queryGammPoolShare
+                  queryMerlins.queryGammPoolShare
                     .getAvailableGammShare(account.bech32Address, pool.id)
                     .quo(pool.totalShare)
                 ),
@@ -213,11 +213,11 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
       [
         chainId,
         externalIncentivizedPools,
-        queryOsmosis.queryIncentivizedPools.response,
-        queryOsmosis.querySuperfluidPools.response,
+        queryMerlins.queryIncentivizedPools.response,
+        queryMerlins.querySuperfluidPools.response,
         queryCosmos.queryInflation.isFetching,
         queriesExternalStore.queryGammPoolFeeMetrics.response,
-        queryOsmosis.queryGammPools.response,
+        queryMerlins.queryGammPools.response,
         priceStore,
         account,
         chainStore,
@@ -364,7 +364,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
                   .map((poolAsset) => poolAsset.weightFraction?.toString())
                   .join(" / "),
                 isSuperfluidPool:
-                  queryOsmosis.querySuperfluidPools.isSuperfluidPool(
+                  queryMerlins.querySuperfluidPools.isSuperfluidPool(
                     poolWithFeeMetrics.pool.id
                   ),
               },
@@ -391,7 +391,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
             { value: poolWithMetrics.liquidity.toString() },
             {
               value: poolWithMetrics.apr?.toString(),
-              isLoading: queryOsmosis.queryIncentivizedPools.isAprFetching,
+              isLoading: queryMerlins.queryIncentivizedPools.isAprFetching,
             },
             { value: poolWithMetrics.epochsRemaining?.toString() },
             { value: poolWithMetrics.myLiquidity?.toString() },
@@ -412,7 +412,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
             },
           ];
         }),
-      [allData, queryOsmosis.queryIncentivizedPools.isAprFetching]
+      [allData, queryMerlins.queryIncentivizedPools.isAprFetching]
     );
 
     if (isMobile) {
@@ -454,7 +454,7 @@ export const ExternalIncentivizedPoolsTableSet: FunctionComponent<{
                     },
               ],
             ],
-            isSuperfluid: queryOsmosis.querySuperfluidPools.isSuperfluidPool(
+            isSuperfluid: queryMerlins.querySuperfluidPools.isSuperfluidPool(
               poolData.pool.id
             ),
           }))}

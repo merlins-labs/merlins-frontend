@@ -16,15 +16,15 @@ export const PoolsOverview: FunctionComponent<{} & CustomClasses> = ({
   const { chainStore, priceStore, queriesStore } = useStore();
   const { width } = useWindowSize();
 
-  const { chainId } = chainStore.osmosis;
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const { chainId } = chainStore.merlins;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
   const t = useTranslation();
 
-  const osmoPrice = priceStore.calculatePrice(
+  const furyPrice = priceStore.calculatePrice(
     new CoinPretty(
-      chainStore.osmosis.stakeCurrency,
+      chainStore.merlins.stakeCurrency,
       DecUtils.getTenExponentNInPrecisionRange(
-        chainStore.osmosis.stakeCurrency.coinDecimals
+        chainStore.merlins.stakeCurrency.coinDecimals
       )
     )
   );
@@ -33,7 +33,7 @@ export const PoolsOverview: FunctionComponent<{} & CustomClasses> = ({
   const [timeRemaining, setTimeRemaining] = useState<string | null>(null);
   useEffect(() => {
     const updateTimeRemaining = () => {
-      const queryEpoch = queryOsmosis.queryEpochs.getEpoch(
+      const queryEpoch = queryMerlins.queryEpochs.getEpoch(
         REWARD_EPOCH_IDENTIFIER
       );
       const now = new Date();
@@ -60,19 +60,19 @@ export const PoolsOverview: FunctionComponent<{} & CustomClasses> = ({
   return (
     <div
       className={classNames(
-        "relative flex md:flex-col items-center md:items-start gap-32 lg:gap-8 md:gap-3 h-48 md:h-fit rounded-[32px] bg-osmoverse-1000 px-20 lg:px-10 md:px-4 md:py-5",
+        "relative flex md:flex-col items-center md:items-start gap-32 lg:gap-8 md:gap-3 h-48 md:h-fit rounded-[32px] bg-furyverse-1000 px-20 lg:px-10 md:px-4 md:py-5",
         className
       )}
     >
       <div className="flex flex-col gap-5 md:gap-2">
         <h6 className="md:font-subtitle1 md:text-subtitle1">
-          {t("pools.priceOsmo")}
+          {t("pools.priceFury")}
         </h6>
-        <h2 className="text-wosmongton-100 md:font-h4 md:text-h4">
-          {osmoPrice?.toString()}
+        <h2 className="text-wfuryngton-100 md:font-h4 md:text-h4">
+          {furyPrice?.toString()}
         </h2>
       </div>
-      <div className="flex flex-col gap-5 md:gap-2 bg-osmoverse-1000/80 shadow-2xl z-40 pr-2 rounded-2xl">
+      <div className="flex flex-col gap-5 md:gap-2 bg-furyverse-1000/80 shadow-2xl z-40 pr-2 rounded-2xl">
         <h6 className="md:font-subtitle1 md:text-subtitle1">
           {t("pools.rewardDistribution")}
         </h6>

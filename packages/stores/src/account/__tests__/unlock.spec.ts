@@ -22,24 +22,24 @@ describe("Unbond Token Tx", () => {
 
   beforeEach(async () => {
     await waitAccountLoaded(account);
-    // LocalOsmosis has no configured durations
-    const queriesOsmosis = queriesStore.get(chainId).osmosis!;
-    const queriesAccountLocked = queriesOsmosis.queryAccountLocked.get(
+    // LocalMerlins has no configured durations
+    const queriesMerlins = queriesStore.get(chainId).merlins!;
+    const queriesAccountLocked = queriesMerlins.queryAccountLocked.get(
       account.bech32Address
     );
 
     const durationSeconds = 1;
     const coin = {
       currency: {
-        coinDenom: "OSMO",
-        coinMinimalDenom: "uosmo",
+        coinDenom: "FURY",
+        coinMinimalDenom: "ufury",
         coinDecimals: 6,
       },
       amount: "1",
     };
 
     await new Promise<any>(async (resolve, reject) => {
-      await account.osmosis
+      await account.merlins
         .sendLockTokensMsg(durationSeconds, [coin], undefined, (tx) => {
           resolve(tx);
         })
@@ -56,7 +56,7 @@ describe("Unbond Token Tx", () => {
 
   it("unlocks tokens", async () => {
     const tx = await new Promise<any>(async (resolve, reject) => {
-      await account.osmosis
+      await account.merlins
         .sendBeginUnlockingMsg(userLockIds!, undefined, (tx) => {
           resolve(tx);
         })

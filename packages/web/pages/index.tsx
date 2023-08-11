@@ -10,10 +10,10 @@ import { useAmplitudeAnalytics } from "../hooks";
 
 const Home: NextPage = observer(function () {
   const { chainStore, queriesStore } = useStore();
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
 
   const queries = queriesStore.get(chainId);
-  const queryPools = queries.osmosis!.queryGammPools;
+  const queryPools = queries.merlins!.queryGammPools;
 
   // If pool has already passed once, it will be passed immediately without recalculation.
   const poolsPassed = useRef<Map<string, boolean>>(new Map());
@@ -45,8 +45,8 @@ const Home: NextPage = observer(function () {
               return false;
             }
 
-            // Only pools with at least 1000 osmo are dealt with.
-            if (asset.amount.currency.coinMinimalDenom === "uosmo") {
+            // Only pools with at least 1000 fury are dealt with.
+            if (asset.amount.currency.coinMinimalDenom === "ufury") {
               if (asset.amount.toDec().gt(new Dec(1000))) {
                 hasEnoughAssets = true;
                 break;
@@ -137,7 +137,7 @@ const Home: NextPage = observer(function () {
   });
 
   return (
-    <main className="relative bg-osmoverse-900 h-full">
+    <main className="relative bg-furyverse-900 h-full">
       <div className="absolute w-full h-full bg-home-bg-pattern bg-repeat-x bg-cover">
         <svg
           className="absolute w-full h-full lg:hidden"
@@ -149,8 +149,8 @@ const Home: NextPage = observer(function () {
           <g>
             {!IS_FRONTIER && (
               <ProgressiveSvgImage
-                lowResXlinkHref="/images/osmosis-home-bg-low.png"
-                xlinkHref="/images/osmosis-home-bg.png"
+                lowResXlinkHref="/images/merlins-home-bg-low.png"
+                xlinkHref="/images/merlins-home-bg.png"
                 x="56"
                 y="220"
                 width="578.7462"
@@ -160,13 +160,13 @@ const Home: NextPage = observer(function () {
             <ProgressiveSvgImage
               lowResXlinkHref={
                 IS_FRONTIER
-                  ? "/images/osmosis-cowboy-woz-low.png"
-                  : "/images/osmosis-home-fg-low.png"
+                  ? "/images/merlins-cowboy-woz-low.png"
+                  : "/images/merlins-home-fg-low.png"
               }
               xlinkHref={
                 IS_FRONTIER
-                  ? "/images/osmosis-cowboy-woz.png"
-                  : "/images/osmosis-home-fg.png"
+                  ? "/images/merlins-cowboy-woz.png"
+                  : "/images/merlins-home-fg.png"
               }
               x={IS_FRONTIER ? "-100" : "61"}
               y={IS_FRONTIER ? "100" : "682"}

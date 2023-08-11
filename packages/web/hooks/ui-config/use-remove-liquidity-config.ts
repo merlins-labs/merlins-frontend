@@ -6,20 +6,20 @@ import {
   CosmwasmQueries,
 } from "@keplr-wallet/stores";
 import {
-  OsmosisQueries,
+  MerlinsQueries,
   ObservableRemoveLiquidityConfig,
 } from "@osmosis-labs/stores";
 import { useStore } from "../../stores";
 
 /** Maintains a single instance of `ObservableRemoveLiquidityConfig` for React view lifecycle.
- *  Updates `osmosisChainId`, `poolId`, `bech32Address`, and `queryOsmosis.queryGammPoolShare` on render.
+ *  Updates `merlinsChainId`, `poolId`, `bech32Address`, and `queryMerlins.queryGammPoolShare` on render.
  *  `percentage` default: `"50"`.
  */
 export function useRemoveLiquidityConfig(
   chainGetter: ChainGetter,
-  osmosisChainId: string,
+  merlinsChainId: string,
   poolId: string,
-  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, OsmosisQueries]>,
+  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, MerlinsQueries]>,
   initialPercent = "50"
 ): {
   config: ObservableRemoveLiquidityConfig;
@@ -27,33 +27,33 @@ export function useRemoveLiquidityConfig(
 } {
   const { accountStore } = useStore();
 
-  const account = accountStore.getAccount(osmosisChainId);
+  const account = accountStore.getAccount(merlinsChainId);
   const { bech32Address } = account;
 
-  const queryOsmosis = queriesStore.get(osmosisChainId).osmosis!;
+  const queryMerlins = queriesStore.get(merlinsChainId).merlins!;
   const [config] = useState(() => {
     const c = new ObservableRemoveLiquidityConfig(
       chainGetter,
-      osmosisChainId,
+      merlinsChainId,
       poolId,
       bech32Address,
       queriesStore,
-      queryOsmosis.queryGammPoolShare,
-      queryOsmosis.queryGammPools,
+      queryMerlins.queryGammPoolShare,
+      queryMerlins.queryGammPools,
       initialPercent
     );
     c.setPercentage(initialPercent);
     return c;
   });
-  config.setChain(osmosisChainId);
+  config.setChain(merlinsChainId);
   config.setSender(bech32Address);
   config.setPoolId(poolId);
-  config.setQueryPoolShare(queryOsmosis.queryGammPoolShare);
+  config.setQueryPoolShare(queryMerlins.queryGammPoolShare);
 
   const removeLiquidity = useCallback(() => {
     return new Promise<void>(async (resolve, reject) => {
       try {
-        await account.osmosis.sendExitPoolMsg(
+        await account.merlins.sendExitPoolMsg(
           config.poolId,
           config.poolShareWithPercentage.toDec().toString(),
           undefined,

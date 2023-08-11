@@ -96,7 +96,7 @@ export const AddLiquidity: FunctionComponent<
             return (
               <div
                 key={currency.coinDenom}
-                className="flex flex-col gap-1 w-full md:p-3 p-4 border border-osmoverse-700 md:rounded-xl rounded-2xl"
+                className="flex flex-col gap-1 w-full md:p-3 p-4 border border-furyverse-700 md:rounded-xl rounded-2xl"
               >
                 <div className="flex items-center w-full place-content-between">
                   {addLiquidityConfig.isSingleAmountIn ? (
@@ -140,7 +140,7 @@ export const AddLiquidity: FunctionComponent<
                         {assetBalance && (
                           <span
                             className={classNames(
-                              "text-wosmongton-300 my-auto",
+                              "text-wfuryngton-300 my-auto",
                               assetBalance?.toDec().isZero()
                                 ? "opacity-70"
                                 : "cursor-pointer"
@@ -153,7 +153,7 @@ export const AddLiquidity: FunctionComponent<
                       </div>
                     )}
                     <div className="flex items-center place-content-end gap-1">
-                      <div className="flex flex-col rounded-lg bg-osmoverse-1000 p-1">
+                      <div className="flex flex-col rounded-lg bg-furyverse-1000 p-1">
                         <InputBox
                           style="no-border"
                           type="number"
@@ -163,7 +163,7 @@ export const AddLiquidity: FunctionComponent<
                           placeholder=""
                         />
                         {!isMobile && (
-                          <span className="text-right text-xs font-caption text-osmoverse-400 leading-5 pr-3">
+                          <span className="text-right text-xs font-caption text-furyverse-400 leading-5 pr-3">
                             {!inputAmountValue ||
                             inputAmountValue.toDec().isZero() ? (
                               <br />
@@ -186,7 +186,7 @@ export const AddLiquidity: FunctionComponent<
                 </div>
                 {isPeggedCurrency && (
                   <Info
-                    className="text-wosmongton-100"
+                    className="text-wfuryngton-100"
                     borderClassName="bg-gradient-neutral"
                     textClassName="w-full text-center"
                     message={t("addLiquidity.stablecoinWarning", {
@@ -203,7 +203,7 @@ export const AddLiquidity: FunctionComponent<
           })}
         </div>
         {addLiquidityConfig.singleAmountInPriceImpact && (
-          <div className="flex place-content-between p-4 caption text-osmoverse-300">
+          <div className="flex place-content-between p-4 caption text-furyverse-300">
             <span>Price impact</span>
             <span>
               {addLiquidityConfig.singleAmountInPriceImpact.toString()}

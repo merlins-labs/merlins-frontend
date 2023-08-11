@@ -42,7 +42,7 @@ export const COLOR_SET = [
 const focusScale = 1;
 
 const Pixels: NextPage = observer(function () {
-  const { queryOsmoPixels } = useStore();
+  const { queryFuryPixels } = useStore();
   const router = useRouter();
 
   const [pixelIndex, setPixelIndex] = useState([-1, -1]);
@@ -124,10 +124,10 @@ const Pixels: NextPage = observer(function () {
   const lastDrawnPixelsData = useRef<string>("");
 
   useEffect(() => {
-    if (queryOsmoPixels.queryPixels.response) {
+    if (queryFuryPixels.queryPixels.response) {
       const resHash = Buffer.from(
         Hash.sha256(
-          Buffer.from(JSON.stringify(queryOsmoPixels.queryPixels.response.data))
+          Buffer.from(JSON.stringify(queryFuryPixels.queryPixels.response.data))
         )
       ).toString("hex");
 
@@ -140,7 +140,7 @@ const Pixels: NextPage = observer(function () {
         return;
       }
 
-      const pixels = queryOsmoPixels.queryPixels.response.data;
+      const pixels = queryFuryPixels.queryPixels.response.data;
 
       for (const xStr of Object.keys(pixels)) {
         const x = parseInt(xStr);
@@ -166,7 +166,7 @@ const Pixels: NextPage = observer(function () {
 
       lastDrawnPixelsData.current = resHash;
     }
-  }, [queryOsmoPixels.queryPixels.response]);
+  }, [queryFuryPixels.queryPixels.response]);
 
   const getZoomCoordinate = (x: number, y: number, scale?: number) => {
     if (
@@ -291,12 +291,12 @@ const Pixels: NextPage = observer(function () {
     }
   }, []);
 
-  const status = queryOsmoPixels.queryStatus;
+  const status = queryFuryPixels.queryStatus;
 
   return (
     <main>
-      <div className="w-full h-screen bg-osmoverse-900">
-        <div className="absolute pointer-events-none top-10 left-1/2 z-[11]  py-2 px-8 bg-wosmongton-200 flex items-center rounded-lg">
+      <div className="w-full h-screen bg-furyverse-900">
+        <div className="absolute pointer-events-none top-10 left-1/2 z-[11]  py-2 px-8 bg-wfuryngton-200 flex items-center rounded-lg">
           {`${new IntPretty(
             new Dec(status.response?.data.numDots ?? 0)
           )} pixels placed`}
@@ -338,7 +338,7 @@ const Pixels: NextPage = observer(function () {
                       borderRadius: "8px",
                       pointerEvents: "all",
                     }}
-                    className={"bg-wosmongton-200"}
+                    className={"bg-wfuryngton-200"}
                     onClick={() => zoomOut()}
                   >
                     -
@@ -356,7 +356,7 @@ const Pixels: NextPage = observer(function () {
                       borderRadius: "8px",
                       pointerEvents: "all",
                     }}
-                    className={"bg-wosmongton-200"}
+                    className={"bg-wfuryngton-200"}
                     onClick={() => zoomIn()}
                   >
                     +
@@ -398,7 +398,7 @@ const Pixels: NextPage = observer(function () {
           }}
         </TransformWrapper>
         <div className="relative">
-          <div className="absolute pointer-events-none bottom-[40px] left-1/2 -translate-x-1/2 z-[11] py-2 px-8 bg-wosmongton-200 flex items-center rounded-lg">
+          <div className="absolute pointer-events-none bottom-[40px] left-1/2 -translate-x-1/2 z-[11] py-2 px-8 bg-wfuryngton-200 flex items-center rounded-lg">
             Pixels has ended. Thank you for playing.
           </div>
         </div>

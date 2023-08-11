@@ -10,7 +10,7 @@ export class ObservableQuerySuperfluidPools extends ObservableChainQuery<Superfl
       kvStore,
       chainId,
       chainGetter,
-      "/osmosis/superfluid/v1beta1/all_assets"
+      "/merlins/superfluid/v1beta1/all_assets"
     );
 
     makeObservable(this);

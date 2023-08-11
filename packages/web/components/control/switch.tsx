@@ -21,7 +21,7 @@ export const Switch: FunctionComponent<
 }) => (
   <label
     className={classNames(
-      "flex shrink-0 items-center gap-2 subtitle2 md:subtitle1 select-none text-osmoverse-200",
+      "flex shrink-0 items-center gap-2 subtitle2 md:subtitle1 select-none text-furyverse-200",
       {
         "cursor-pointer": !disabled,
       },
@@ -41,12 +41,12 @@ export const Switch: FunctionComponent<
     <input
       type="checkbox"
       className={classNames(
-        "cursor-pointer w-[52px] h-[32px] rounded-full appearance-none bg-osmoverse-600 transition ease-inOutBack duration-200 relative",
+        "cursor-pointer w-[52px] h-[32px] rounded-full appearance-none bg-furyverse-600 transition ease-inOutBack duration-200 relative",
         "after:h-7 after:w-7 after:rounded-full after:bg-white-high after:absolute after:left-[2px] after:top-[2px] after:transform after:ease-inOutBack after:scale-100 after:transition after:duration-200", // dot
         "checked:after:transform checked:after:scale-100 checked:after:translate-x-[20px]", // dot on transform
         disabled
-          ? "cursor-default after:bg-osmoverse-500 bg-osmoverse-600"
-          : "checked:bg-wosmongton-500",
+          ? "cursor-default after:bg-furyverse-500 bg-furyverse-600"
+          : "checked:bg-wfuryngton-500",
         className
       )}
       checked={isOn}

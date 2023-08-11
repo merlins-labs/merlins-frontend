@@ -95,7 +95,7 @@ const Assets: NextPage = observer(() => {
 
   useEffect(() => {
     setUserProperty(
-      "osmoBalance",
+      "furyBalance",
       Number(
         nativeBalances[0].balance.maxDecimals(6).hideDenom(true).toString()
       )
@@ -142,7 +142,7 @@ const Assets: NextPage = observer(() => {
   );
 
   return (
-    <main className="max-w-container mx-auto flex flex-col gap-20 md:gap-8 bg-osmoverse-900 p-8 md:p-4">
+    <main className="max-w-container mx-auto flex flex-col gap-20 md:gap-8 bg-furyverse-900 p-8 md:p-4">
       <AssetsOverview />
       {isMobile && preTransferModalProps && (
         <PreTransferModal {...preTransferModalProps} />
@@ -174,10 +174,10 @@ const Assets: NextPage = observer(() => {
         ibcBalances={ibcBalances}
         onDeposit={onTableDeposit}
         onWithdraw={onTableWithdraw}
-        onBuyOsmo={() => transferConfig?.buyOsmo()}
+        onBuyFury={() => transferConfig?.buyFury()}
       />
       {!isMobile && <PoolAssets />}
-      <section className="bg-osmoverse-900">
+      <section className="bg-furyverse-900">
         <DepoolingTable
           className="p-10 md:p-5 max-w-container mx-auto"
           tableClassName="md:w-screen md:-mx-5"
@@ -222,7 +222,7 @@ const AssetsOverview: FunctionComponent = observer(() => {
       Number(bondedAssetsValue.trim(true).toDec().toString(2))
     );
     setUserProperty(
-      "stakedOsmoPrice",
+      "stakedFuryPrice",
       Number(stakedAssetsValue.trim(true).toDec().toString(2))
     );
   }, [
@@ -235,14 +235,14 @@ const AssetsOverview: FunctionComponent = observer(() => {
   const Metric: FunctionComponent<Metric> = ({ label, value }) => (
     <div className="flex flex-col gap-5 md:gap-2 shrink-0">
       <h6 className="md:text-subtitle1 md:font-subtitle1">{label}</h6>
-      <h2 className="lg:text-h3 lg:font-h3 md:text-h4 md:font-h4 text-wosmongton-100">
+      <h2 className="lg:text-h3 lg:font-h3 md:text-h4 md:font-h4 text-wfuryngton-100">
         {value}
       </h2>
     </div>
   );
 
   return (
-    <div className="w-full flex md:flex-col items-center md:items-start gap-[100px] lg:gap-5 md:gap-3 bg-osmoverse-1000 rounded-[32px] px-20 lg:px-10 md:px-4 py-10 md:py-5">
+    <div className="w-full flex md:flex-col items-center md:items-start gap-[100px] lg:gap-5 md:gap-3 bg-furyverse-1000 rounded-[32px] px-20 lg:px-10 md:px-4 py-10 md:py-5">
       <Metric
         label={t("assets.totalAssets")}
         value={totalAssetsValue.toString()}
@@ -264,13 +264,13 @@ const PoolAssets: FunctionComponent = observer(() => {
   const { setUserProperty } = useAmplitudeAnalytics();
   const t = useTranslation();
 
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
   const { bech32Address } = accountStore.getAccount(chainId);
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
 
   const ownedPoolIds = queriesStore
     .get(chainId)
-    .osmosis!.queryGammPoolShare.getOwnPools(bech32Address);
+    .merlins!.queryGammPoolShare.getOwnPools(bech32Address);
   const [showAllPools, setShowAllPools] = useState(false);
 
   useEffect(() => {
@@ -278,11 +278,11 @@ const PoolAssets: FunctionComponent = observer(() => {
   }, [ownedPoolIds.length]);
 
   const dustedPoolIds = useShowDustUserSetting(ownedPoolIds, (poolId) =>
-    queryOsmosis.queryGammPools
+    queryMerlins.queryGammPools
       .getPool(poolId)
       ?.computeTotalValueLocked(priceStore)
       .mul(
-        queryOsmosis.queryGammPoolShare.getAllGammShareRatio(
+        queryMerlins.queryGammPoolShare.getAllGammShareRatio(
           bech32Address,
           poolId
         )
@@ -350,21 +350,21 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
     } = useStore();
     const t = useTranslation();
 
-    const queryCosmos = queriesStore.get(chainStore.osmosis.chainId).cosmos;
-    const queryOsmosis = queriesStore.get(chainStore.osmosis.chainId).osmosis!;
+    const queryCosmos = queriesStore.get(chainStore.merlins.chainId).cosmos;
+    const queryMerlins = queriesStore.get(chainStore.merlins.chainId).merlins!;
     const { bech32Address } = accountStore.getAccount(
-      chainStore.osmosis.chainId
+      chainStore.merlins.chainId
     );
 
     const pools = poolIds
       .map((poolId) => {
-        const pool = queryOsmosis.queryGammPools.getPool(poolId);
+        const pool = queryMerlins.queryGammPools.getPool(poolId);
 
         if (!pool) {
           return undefined;
         }
         const internalIncentiveApr =
-          queryOsmosis.queryIncentivizedPools.computeMostApr(
+          queryMerlins.queryIncentivizedPools.computeMostApr(
             pool.id,
             priceStore
           );
@@ -376,11 +376,11 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
         const whitelistedGauges =
           ExternalIncentiveGaugeAllowList?.[pool.id] ?? undefined;
         const highestDuration =
-          queryOsmosis.queryLockableDurations.highestDuration;
+          queryMerlins.queryLockableDurations.highestDuration;
 
         const externalApr = (whitelistedGauges ?? []).reduce(
           (sum, { gaugeId, denom }) => {
-            const gauge = queryOsmosis.queryGauge.get(gaugeId);
+            const gauge = queryMerlins.queryGauge.get(gaugeId);
 
             if (
               !gauge ||
@@ -392,7 +392,7 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
             }
 
             return sum.add(
-              queryOsmosis.queryIncentivizedPools.computeExternalIncentiveGaugeAPR(
+              queryMerlins.queryIncentivizedPools.computeExternalIncentiveGaugeAPR(
                 pool.id,
                 gaugeId,
                 denom,
@@ -403,11 +403,11 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
           new RatePretty(0)
         );
         const superfluidApr =
-          queryOsmosis.querySuperfluidPools.isSuperfluidPool(pool.id)
+          queryMerlins.querySuperfluidPools.isSuperfluidPool(pool.id)
             ? new RatePretty(
                 queryCosmos.queryInflation.inflation
                   .mul(
-                    queryOsmosis.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+                    queryMerlins.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
                       pool.id
                     )
                   )
@@ -420,14 +420,14 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
           .add(superfluidApr);
 
         const tvl = pool.computeTotalValueLocked(priceStore);
-        const shareRatio = queryOsmosis.queryGammPoolShare.getAllGammShareRatio(
+        const shareRatio = queryMerlins.queryGammPoolShare.getAllGammShareRatio(
           bech32Address,
           pool.id
         );
         const actualShareRatio = shareRatio.moveDecimalPointLeft(2);
 
         const lockedShareRatio =
-          queryOsmosis.queryGammPoolShare.getLockedGammShareRatio(
+          queryMerlins.queryGammPoolShare.getLockedGammShareRatio(
             bech32Address,
             pool.id
           );
@@ -438,13 +438,13 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
           pool,
           tvl.mul(actualShareRatio).moveDecimalPointRight(2),
           [
-            queryOsmosis.queryIncentivizedPools.isIncentivized(poolId)
+            queryMerlins.queryIncentivizedPools.isIncentivized(poolId)
               ? {
                   label: t("assets.poolCards.APR"),
                   value: (
                     <MetricLoader
                       isLoading={
-                        queryOsmosis.queryIncentivizedPools.isAprFetching
+                        queryMerlins.queryIncentivizedPools.isAprFetching
                       }
                     >
                       <h6>{apr.maxDecimals(2).toString()}</h6>
@@ -466,7 +466,7 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
               label: t("assets.poolCards.liquidity"),
               value: priceFormatter(pool.computeTotalValueLocked(priceStore)),
             },
-            queryOsmosis.queryIncentivizedPools.isIncentivized(poolId)
+            queryMerlins.queryIncentivizedPools.isIncentivized(poolId)
               ? {
                   label: t("assets.poolCards.bonded"),
                   value: tvl.mul(actualLockedShareRatio).toString(),
@@ -501,7 +501,7 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
             poolId={pool.id}
             poolAssets={pool.poolAssets.map((asset) => asset.amount.currency)}
             poolMetrics={metrics}
-            isSuperfluid={queryOsmosis.querySuperfluidPools.isSuperfluidPool(
+            isSuperfluid={queryMerlins.querySuperfluidPools.isSuperfluidPool(
               pool.id
             )}
             onClick={() =>
@@ -516,7 +516,7 @@ const PoolCardsDisplayer: FunctionComponent<{ poolIds: string[] }> = observer(
                     .map((poolAsset) => poolAsset.weightFraction?.toString())
                     .join(" / "),
                   isSuperfluidPool:
-                    queryOsmosis.querySuperfluidPools.isSuperfluidPool(pool.id),
+                    queryMerlins.querySuperfluidPools.isSuperfluidPool(pool.id),
                 },
               ])
             }

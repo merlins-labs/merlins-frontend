@@ -28,7 +28,7 @@
   "pools": {
     "title": "活躍流動性池",
     "poolId": "流動性池 #{id}",
-    "priceOsmo": "OSMO 價格",
+    "priceFury": "FURY 價格",
     "rewardDistribution": "距下次獎勵分發還有",
     "myPools": "我的流動性池",
     "APR": "年利率(APR)",
@@ -90,7 +90,7 @@
         "three": "步驟 {step} / {nbStep} - 確認代幣比例及幣額"
       },
       "infoMessage": "流動性池建立費",
-      "infoCaption": "已被傳送到 Osmosis 社群資金池",
+      "infoCaption": "已被傳送到 Merlins 社群資金池",
       "buttonCreate": "建立新池",
       "buttonNext": "下一步",
       "buttonBack": "上一步",
@@ -187,7 +187,7 @@
     "bondedAmount": "鎖定數量",
     "estimation": "估計超流體質押量",
     "estimationMobile": "估計超流體質押量",
-    "estimationInfo": "此質押價值會浮動，此估計是基於在此流動性池中的OSMO數量",
+    "estimationInfo": "此質押價值會浮動，此估計是基於在此流動性池中的FURY數量",
     "buttonBond": "鎖定及質押",
     "columns": {
       "validator": "驗證人",
@@ -198,7 +198,7 @@
     "totalAssets": "總額",
     "unbondedAssets": "未鎖定",
     "bondedAssets": "已鎖定",
-    "stakedAssets": "已質押的OSMO",
+    "stakedAssets": "已質押的FURY",
     "myPools": "我的流動性池",
     "transferAssetSelect": {
       "deposit": "存入",
@@ -268,7 +268,7 @@
       "search": "以符號搜尋",
       "title": "資產",
       "hideZero": "隱藏結餘為零的項目",
-      "buyOsmo": "買",
+      "buyFury": "買",
       "preTransfer": {
         "deposit": "存入",
         "withdraw": "轉出",
@@ -328,7 +328,7 @@
     "info": "統計數據",
     "signOut": "斷開連接",
     "help": "取得Support Lab的幫助",
-    "learnMoreFrontier": "了解更多<br/>關於<br2/> <name>Osmosis Frontier</name>"
+    "learnMoreFrontier": "了解更多<br/>關於<br2/> <name>Merlins Frontier</name>"
   },
   "settings": {
     "title": "設定",
@@ -374,7 +374,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr 手機版"
   },
-  "connectDisclaimer": "連接錢包即表示您已經閱讀和理解 Osmosis 的",
+  "connectDisclaimer": "連接錢包即表示您已經閱讀和理解 Merlins 的",
   "protocolDisclaimer": "協定免責聲明",
   "Transaction Failed": "交易失敗",
   "Transaction Successful": "交易成功",

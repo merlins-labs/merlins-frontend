@@ -28,7 +28,7 @@
   "pools": {
     "title": "Aktif Havuzlar",
     "poolId": "Havuz #{id}",
-    "priceOsmo": "OSMO Fiyatı",
+    "priceFury": "FURY Fiyatı",
     "rewardDistribution": "Ödül dağıtımına kalan süre",
     "myPools": "Havuzlarım",
     "APR": "APR",
@@ -90,7 +90,7 @@
         "three": "Adım {step} / {nbStep} - Havuz oranını ve token miktarını onaylayın"
       },
       "infoMessage": "Havuz Oluşturma Ücreti",
-      "infoCaption": "Osmosis topluluk havuzuna transfer edilir",
+      "infoCaption": "Merlins topluluk havuzuna transfer edilir",
       "buttonCreate": "Havuz Oluştur",
       "buttonNext": "Sonraki",
       "buttonBack": "Önceki",
@@ -187,7 +187,7 @@
     "bondedAmount": "Bağlı Miktar",
     "estimation": "Takribi Superfluid Delegasyon",
     "estimationMobile": "Takribi Delegasyon",
-    "estimationInfo": "Bu delegasyonun değeri dalgalanabilir ve takribi olarak havuzdaki OSMO miktarına göre hesaplanır.",
+    "estimationInfo": "Bu delegasyonun değeri dalgalanabilir ve takribi olarak havuzdaki FURY miktarına göre hesaplanır.",
     "buttonBond": "Bağla & Stake Et",
     "columns": {
       "validator": "Validatör",
@@ -198,7 +198,7 @@
     "totalAssets": "Toplam",
     "unbondedAssets": "Bağlı Olmayan",
     "bondedAssets": "Bağlı",
-    "stakedAssets": "Stake Edilmiş OSMO",
+    "stakedAssets": "Stake Edilmiş FURY",
     "myPools": "Havuzlarım",
     "transferAssetSelect": {
       "deposit": "Yatır",
@@ -268,7 +268,7 @@
       "search": "Sembole göre filtrele",
       "title": "Varlıklar",
       "hideZero": "Sıfır bakiyeyi gizle",
-      "buyOsmo": "Al",
+      "buyFury": "Al",
       "preTransfer": {
         "deposit": "Yatır",
         "withdraw": "Çek",
@@ -328,7 +328,7 @@
     "info": "Bilgi",
     "signOut": "Bağlantıyı Kes",
     "help": "Destek Ekibinden Yardım İste",
-    "learnMoreFrontier": "<name>Osmosis Frontier</name><br/>Hakkında<br2/>Daha Fazla Bilgi"
+    "learnMoreFrontier": "<name>Merlins Frontier</name><br/>Hakkında<br2/>Daha Fazla Bilgi"
   },
   "settings": {
     "title": "Ayarlar",
@@ -374,7 +374,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr Mobil"
   },
-  "connectDisclaimer": "Cüzdanı bağlayarak, Osmosis'i okuyup anladığınızı kabul etmiş olursunuz.",
+  "connectDisclaimer": "Cüzdanı bağlayarak, Merlins'i okuyup anladığınızı kabul etmiş olursunuz.",
   "protocolDisclaimer": "Protokol Sorumluluk Reddi",
   "Transaction Failed": "İşlem Başarısız",
   "Transaction Successful": "İşlem Başarılı",

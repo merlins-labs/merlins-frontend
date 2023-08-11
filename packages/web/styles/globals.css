@@ -11,7 +11,7 @@
     @apply text-white-full;
   }
   body {
-    @apply bg-osmoverse-900;
+    @apply bg-furyverse-900;
   }
 
   h1 {
@@ -72,7 +72,7 @@
     -moz-appearance: textfield;
   }
   input {
-    @apply caret-osmoverse-100;
+    @apply caret-furyverse-100;
   }
 
   table {
@@ -80,7 +80,7 @@
   }
 
   thead > tr {
-    @apply bg-osmoverse-700 text-osmoverse-400;
+    @apply bg-furyverse-700 text-furyverse-400;
   }
 
   thead > tr > th:first-child {
@@ -137,17 +137,17 @@
   /* WebKit (Chrome, Safari) */
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    @apply -translate-y-1/3 h-[24px] w-[24px] rounded-full bg-osmoverse-100;
+    @apply -translate-y-1/3 h-[24px] w-[24px] rounded-full bg-furyverse-100;
   }
 
   /* Firefox */
   input[type="range"]::-moz-range-thumb {
-    @apply h-[20px] w-[20px] mt-[1px] rounded-full bg-osmoverse-100;
+    @apply h-[20px] w-[20px] mt-[1px] rounded-full bg-furyverse-100;
   }
 
   /* IE */
   input[type="range"]::-ms-thumb {
-    @apply h-[24px] w-[24px] rounded-full bg-osmoverse-100;
+    @apply h-[24px] w-[24px] rounded-full bg-furyverse-100;
   }
 
   /* Track */

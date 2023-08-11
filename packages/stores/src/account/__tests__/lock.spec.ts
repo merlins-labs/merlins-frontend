@@ -19,19 +19,19 @@ describe("Lock Token Tx", () => {
   beforeEach(async () => {
     await waitAccountLoaded(account);
 
-    // LocalOsmosis has no configured durations
+    // LocalMerlins has no configured durations
   });
 
   it("locks tokens", async () => {
     const tx = await new Promise<any>(async (resolve, reject) => {
-      await account.osmosis
+      await account.merlins
         .sendLockTokensMsg(
           600,
           [
             {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "1",
@@ -51,7 +51,7 @@ describe("Lock Token Tx", () => {
         attributes: [
           {
             key: "amount",
-            value: "1000000uosmo",
+            value: "1000000ufury",
           },
         ],
       },

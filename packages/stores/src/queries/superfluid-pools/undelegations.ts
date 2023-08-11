@@ -25,7 +25,7 @@ export class ObservableQuerySuperfluidUndelegationsInner extends ObservableChain
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/superfluid/v1beta1/superfluid_undelegations_by_delegator/${delegatorBech32Address}`
+      `/merlins/superfluid/v1beta1/superfluid_undelegations_by_delegator/${delegatorBech32Address}`
     );
 
     makeObservable(this);

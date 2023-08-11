@@ -29,13 +29,13 @@ export const MainLayout: FunctionComponent<{
     <React.Fragment>
       {showFixedLogo && (
         <div className="z-50 fixed w-sidebar px-5 pt-6">
-          <OsmosisFullLogo onClick={() => router.push("/")} />
+          <MerlinsFullLogo onClick={() => router.push("/")} />
         </div>
       )}
-      <article className="fixed md:hidden flex flex-col inset-y-0 z-40 bg-osmoverse-800 px-2 py-6 w-sidebar overflow-x-hidden">
+      <article className="fixed md:hidden flex flex-col inset-y-0 z-40 bg-furyverse-800 px-2 py-6 w-sidebar overflow-x-hidden">
         {showBlockLogo && (
           <div className="grow-0 ml-2 z-50 w-sidebar mx-auto">
-            <OsmosisFullLogo width={166} onClick={() => router.push("/")} />
+            <MerlinsFullLogo width={166} onClick={() => router.push("/")} />
           </div>
         )}
         <MainMenu menus={menus} />
@@ -45,22 +45,22 @@ export const MainLayout: FunctionComponent<{
         title={selectedMenuItem?.label ?? ""}
         menus={menus}
       />
-      <div className="ml-sidebar md:ml-0 h-content md:h-content-mobile bg-osmoverse-900">
+      <div className="ml-sidebar md:ml-0 h-content md:h-content-mobile bg-furyverse-900">
         {children}
       </div>
     </React.Fragment>
   );
 });
 
-const OsmosisFullLogo: FunctionComponent<{
+const MerlinsFullLogo: FunctionComponent<{
   width?: number;
   height?: number;
   onClick?: () => void;
 }> = ({ width = 178, height = 48, onClick }) => (
   <Image
     className="hover:cursor-pointer"
-    src={IS_FRONTIER ? "/osmosis-logo-frontier.svg" : "/osmosis-logo-main.svg"}
-    alt="osmosis logo"
+    src={IS_FRONTIER ? "/merlins-logo-frontier.svg" : "/merlins-logo-main.svg"}
+    alt="merlins logo"
     width={width}
     height={height}
     onClick={(e) => {

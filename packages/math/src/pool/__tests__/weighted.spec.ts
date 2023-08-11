@@ -5,7 +5,7 @@ import { Dec } from "@keplr-wallet/unit";
 
 const powPrecision = new Dec("0.00000001");
 
-describe("Test osmosis math", () => {
+describe("Test merlins math", () => {
   test("Test pow", () => {
     const s = pow(new Dec("1.68"), new Dec("0.32"));
     const expected = new Dec("1.18058965");

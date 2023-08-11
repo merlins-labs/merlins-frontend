@@ -35,7 +35,7 @@ export class ObservableQueryIncentivizedPools extends ObservableChainQuery<Incen
       kvStore,
       chainId,
       chainGetter,
-      "/osmosis/pool-incentives/v1beta1/incentivized_pools"
+      "/merlins/pool-incentives/v1beta1/incentivized_pools"
     );
 
     makeObservable(this);
@@ -61,7 +61,7 @@ export class ObservableQueryIncentivizedPools extends ObservableChainQuery<Incen
     return this.incentivizedPools.includes(poolId);
   });
 
-  /** Internal incentives (OSMO). */
+  /** Internal incentives (FURY). */
   readonly getIncentivizedGaugeId = computedFn(
     (poolId: string, duration: Duration): string | undefined => {
       if (!this.response) {

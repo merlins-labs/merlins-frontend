@@ -8,7 +8,7 @@ import {
 } from "@keplr-wallet/stores";
 import {
   basicIbcTransfer,
-  OsmosisAccount,
+  MerlinsAccount,
   IBCTransferHistory,
   UncommitedHistory,
 } from "@osmosis-labs/stores";
@@ -27,7 +27,7 @@ import { useFakeFeeConfig, useAmountConfig } from "..";
  * @param destChannelId IBC route destination channel id.
  * @param isWithdraw Specifies whether transfer is a withdrawal.
  * @param ics20ContractAddress Smart contract address should counterparty currency be a CW20 token.
- * @returns [osmosis account, counterparty account, observable amount config, isLoading, IBC transfer callback, custom withdrawal address manager if withdrawing]
+ * @returns [merlins account, counterparty account, observable amount config, isLoading, IBC transfer callback, custom withdrawal address manager if withdrawing]
  */
 export function useIbcTransfer({
   currency,
@@ -37,8 +37,8 @@ export function useIbcTransfer({
   isWithdraw,
   ics20ContractAddress,
 }: IbcTransfer): [
-  AccountSetBase & CosmosAccount & CosmwasmAccount & OsmosisAccount,
-  AccountSetBase & CosmosAccount & CosmwasmAccount & OsmosisAccount,
+  AccountSetBase & CosmosAccount & CosmwasmAccount & MerlinsAccount,
+  AccountSetBase & CosmosAccount & CosmwasmAccount & MerlinsAccount,
   AmountConfig,
   boolean,
   (
@@ -54,7 +54,7 @@ export function useIbcTransfer({
   CustomCounterpartyConfig | undefined
 ] {
   const { chainStore, accountStore, queriesStore } = useStore();
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
 
   const account = accountStore.getAccount(chainId);
   const counterpartyAccount = accountStore.getAccount(counterpartyChainId);

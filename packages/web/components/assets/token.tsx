@@ -35,10 +35,10 @@ export const Token: FunctionComponent<
           <h5>{truncateString(justCoinDenom)}</h5>
         )}
         {networkName && !isMobile && (
-          <span className="subtitle2 text-osmoverse-400">{networkName}</span>
+          <span className="subtitle2 text-furyverse-400">{networkName}</span>
         )}
         {poolShare && isMobile && (
-          <span className="caption text-osmoverse-400">
+          <span className="caption text-furyverse-400">
             {poolShare.toString()}
           </span>
         )}

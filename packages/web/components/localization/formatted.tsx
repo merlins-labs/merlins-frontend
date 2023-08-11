@@ -192,7 +192,7 @@ const getFormattedComponent = ({
  * "I'm text warning with <em className="font-bold">important</em> text."
  *
  * @param translationKey the translation key is used to find de translation in translation file. (ex: "pool.title").
- * @param values the values is used to pass data to the translation. (ex: {poolName: "ATOM / OSMO"}).
+ * @param values the values is used to pass data to the translation. (ex: {poolName: "ATOM / FURY"}).
  * @param components the components is used replace components in translation (ex: {"<text>": <p>}).
  * @returns an JSX element.
  */

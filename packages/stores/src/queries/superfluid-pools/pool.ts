@@ -19,7 +19,7 @@ import {
   ObservableQuerySuperfluidPools,
   ObservableQuerySuperfluidDelegations,
   ObservableQuerySuperfluidUndelegations,
-  ObservableQuerySuperfluidOsmoEquivalent,
+  ObservableQuerySuperfluidFuryEquivalent,
 } from "../superfluid-pools";
 
 /** Convenience store getting common superfluid data for a pool via superfluid stores. */
@@ -37,7 +37,7 @@ export class ObservableQuerySuperfluidPool extends UserConfig {
       queryAccountLocked: ObservableQueryAccountLocked;
       querySuperfluidDelegations: ObservableQuerySuperfluidDelegations;
       querySuperfluidUndelegations: ObservableQuerySuperfluidUndelegations;
-      querySuperfluidOsmoEquivalent: ObservableQuerySuperfluidOsmoEquivalent;
+      querySuperfluidFuryEquivalent: ObservableQuerySuperfluidFuryEquivalent;
     },
     protected readonly priceStore: IPriceStore
   ) {
@@ -67,7 +67,7 @@ export class ObservableQuerySuperfluidPool extends UserConfig {
             ? new RatePretty(
                 this.queryInflation.inflation
                   .mul(
-                    this.queries.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+                    this.queries.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
                       this.queryPoolDetails.pool.id
                     )
                   )
@@ -85,7 +85,7 @@ export class ObservableQuerySuperfluidPool extends UserConfig {
     return new RatePretty(
       this.queryInflation.inflation
         .mul(
-          this.queries.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+          this.queries.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
             this.queryPoolDetails.pool.id
           )
         )
@@ -154,7 +154,7 @@ export class ObservableQuerySuperfluidPool extends UserConfig {
               }
 
               let superfluidApr = this.queryInflation.inflation.mul(
-                this.queries.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+                this.queries.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
                   this.queryPoolDetails.pool.id
                 )
               );
@@ -183,7 +183,7 @@ export class ObservableQuerySuperfluidPool extends UserConfig {
                 inactive: jailed ? "jailed" : inactive ? "inactive" : undefined,
                 apr: new RatePretty(superfluidApr.moveDecimalPointLeft(2)),
                 amount:
-                  this.queries.querySuperfluidOsmoEquivalent.calculateOsmoEquivalent(
+                  this.queries.querySuperfluidFuryEquivalent.calculateFuryEquivalent(
                     amount
                   ),
               };

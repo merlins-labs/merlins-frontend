@@ -5,7 +5,7 @@ import { CloseButton } from "../buttons";
 import { ButtonProps } from "../buttons/types";
 import { CustomClasses, Disableable, InputProps } from "../types";
 
-/* https://www.figma.com/file/wQjMyxY0EnEk29gBzGDMe5/Osmosis-Component?node-id=3938%3A15177 */
+/* https://www.figma.com/file/wQjMyxY0EnEk29gBzGDMe5/Merlins-Component?node-id=3938%3A15177 */
 
 /** Accessory button for the input box. */
 export interface Button extends ButtonProps, CustomClasses, Disableable {
@@ -51,15 +51,15 @@ export const InputBox: FunctionComponent<Props> = ({
   return (
     <div
       className={classNames(
-        "flex flex-nowrap justify-between w-full h-fit rounded-lg px-2 text-white-high bg-osmoverse-1000",
+        "flex flex-nowrap justify-between w-full h-fit rounded-lg px-2 text-white-high bg-furyverse-1000",
         {
           border: style !== "no-border",
-          "border-osmoverse-200":
+          "border-furyverse-200":
             style !== "no-border" && (style === "active" || inputFocused),
-          "border-osmoverse-1000":
+          "border-furyverse-1000":
             style !== "no-border" && style === "enabled" && !inputFocused,
           "border-missionError": style === "error",
-          "cursor-default bg-osmoverse-800 border-white-disabled": disabled,
+          "cursor-default bg-furyverse-800 border-white-disabled": disabled,
         },
         className
       )}
@@ -89,7 +89,7 @@ export const InputBox: FunctionComponent<Props> = ({
             ref={inputRef}
             id="text-input"
             className={classNames(
-              "w-full appearance-none bg-transparent align-middle leading-10 md:leading-0 pt-px md:p-0 placeholder:text-osmoverse-500",
+              "w-full appearance-none bg-transparent align-middle leading-10 md:leading-0 pt-px md:p-0 placeholder:text-furyverse-500",
               {
                 "text-white-disabled": disabled,
                 "text-white-high": currentValue != "" && !disabled,
@@ -133,10 +133,10 @@ export const InputBox: FunctionComponent<Props> = ({
                   <button
                     key={index}
                     className={classNames(
-                      "button h-[1.375rem] border-2 border-wosmongton-200 rounded-lg mt-2.5 bg-wosmongton-200/30 select-none",
+                      "button h-[1.375rem] border-2 border-wfuryngton-200 rounded-lg mt-2.5 bg-wfuryngton-200/30 select-none",
                       {
                         "opacity-30": disabled || labelButtonDisabled,
-                        "hover:bg-wosmongton-200/60":
+                        "hover:bg-wfuryngton-200/60":
                           !disabled && !labelButtonDisabled,
                       },
                       className

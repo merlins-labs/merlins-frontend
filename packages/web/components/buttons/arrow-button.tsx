@@ -7,7 +7,7 @@ export const ArrowButton: FunctionComponent<
 > = (props) => (
   <button
     className={classNames(
-      "flex items-center gap-1 text-wosmongton-200 hover:gap-2 transition-all",
+      "flex items-center gap-1 text-wfuryngton-200 hover:gap-2 transition-all",
       props.className
     )}
     {...props}

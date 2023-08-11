@@ -24,7 +24,7 @@ export class ObservableQueryGuageById extends ObservableChainQuery<GaugeById> {
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/incentives/v1beta1/gauge_by_id/${id}`
+      `/merlins/incentives/v1beta1/gauge_by_id/${id}`
     );
   }
 

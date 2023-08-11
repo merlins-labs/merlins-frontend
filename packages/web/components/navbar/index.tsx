@@ -32,7 +32,7 @@ export const NavBar: FunctionComponent<
     <>
       <div
         className={classNames(
-          "fixed z-50 flex place-content-between md:place-content-start lg:gap-5 items-center bg-osmoverse-900 h-navbar md:h-navbar-mobile w-[calc(100vw_-_12.875rem)] md:w-full px-8 md:px-4",
+          "fixed z-50 flex place-content-between md:place-content-start lg:gap-5 items-center bg-furyverse-900 h-navbar md:h-navbar-mobile w-[calc(100vw_-_12.875rem)] md:w-full px-8 md:px-4",
           className
         )}
       >
@@ -51,7 +51,7 @@ export const NavBar: FunctionComponent<
           )}
           {mobileNavMenuOptionsOpen && (
             <div
-              className="absolute flex flex-col gap-2 w-52 top-[100%] top-navbar-mobile py-4 px-3 bg-osmoverse-800 rounded-3xl"
+              className="absolute flex flex-col gap-2 w-52 top-[100%] top-navbar-mobile py-4 px-3 bg-furyverse-800 rounded-3xl"
               onClick={(e) => {
                 e.stopPropagation();
               }}
@@ -108,7 +108,7 @@ export const NavBar: FunctionComponent<
       {/* Back-layer element to occupy space for the caller */}
       <div
         className={classNames(
-          "bg-osmoverse-900 h-navbar md:h-navbar-mobile",
+          "bg-furyverse-900 h-navbar md:h-navbar-mobile",
           backElementClassNames
         )}
       />
@@ -130,7 +130,7 @@ const NavBarButton: FunctionComponent<
       {...props}
       onMouseOver={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="flex bg-osmoverse-700 items-center px-3 py-2 rounded-xl hover:bg-osmoverse-600 transition-colors"
+      className="flex bg-furyverse-700 items-center px-3 py-2 rounded-xl hover:bg-furyverse-600 transition-colors"
     >
       <Image
         alt="settings"
@@ -149,7 +149,7 @@ const SettingsDropdown: FunctionComponent<{
   const t = useTranslation();
   return (
     <div
-      className="absolute top-[110%] md:top-navbar-mobile left-[50%] md:left-0 -translate-x-1/2 md:translate-x-0 flex flex-col gap-10 min-w-[385px] md:w-[90vw] md:min-w-min md:max-w-[385px] text-left bg-osmoverse-800 p-8 rounded-3xl"
+      className="absolute top-[110%] md:top-navbar-mobile left-[50%] md:left-0 -translate-x-1/2 md:translate-x-0 flex flex-col gap-10 min-w-[385px] md:w-[90vw] md:min-w-min md:max-w-[385px] text-left bg-furyverse-800 p-8 rounded-3xl"
       onClick={(e) => e.stopPropagation()}
     >
       <h5>{t("settings.title")}</h5>
@@ -159,7 +159,7 @@ const SettingsDropdown: FunctionComponent<{
             className="flex items-center w-full place-content-between"
             key={setting.id}
           >
-            <span className="flex-nowrap subtitle1 text-osmoverse-100">
+            <span className="flex-nowrap subtitle1 text-furyverse-100">
               {setting.getLabel(t)}
             </span>
             {setting.controlComponent(setting.state as any, setting.setState)}
@@ -174,7 +174,7 @@ const WalletInfo: FunctionComponent<CustomClasses> = observer(
   ({ className }) => {
     const {
       chainStore: {
-        osmosis: { chainId },
+        merlins: { chainId },
       },
       accountStore,
       navBarStore,
@@ -216,7 +216,7 @@ const WalletInfo: FunctionComponent<CustomClasses> = observer(
           </Button>
         ) : (
           <div
-            className="flex items-center gap-3 place-content-between px-2 py-1 rounded-xl border border-osmoverse-700"
+            className="flex items-center gap-3 place-content-between px-2 py-1 rounded-xl border border-furyverse-700"
             onMouseOver={() => {
               if (!isMobile) setHoverWalletInfo(true);
             }}

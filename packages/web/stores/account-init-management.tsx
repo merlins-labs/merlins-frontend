@@ -6,7 +6,7 @@ import { useKeplr } from "../hooks";
 import { KeplrWalletConnectV1 } from "@keplr-wallet/wc-client";
 import { useAmplitudeAnalytics } from "../hooks/use-amplitude-analytics";
 
-/** Manages the initialization of the Osmosis account. */
+/** Manages the initialization of the Merlins account. */
 export const AccountInitManagement: FunctionComponent = observer(
   ({ children }) => {
     const { chainStore, accountStore } = useStore();
@@ -14,7 +14,7 @@ export const AccountInitManagement: FunctionComponent = observer(
 
     const keplr = useKeplr();
 
-    const chainInfo = chainStore.osmosis;
+    const chainInfo = chainStore.merlins;
     const account = accountStore.getAccount(chainInfo.chainId);
 
     const [accountHasInit, setAccountHasInit] = useState(false);
@@ -22,7 +22,7 @@ export const AccountInitManagement: FunctionComponent = observer(
     useEffect(() => {
       // Initially, try to get keplr from window, and keplr's mode is "mobile-web",
       // it means that user enters the website via keplr app's in app browser.
-      // And, it means explicitly press the osmosis button on the keplr's dApps introduction page.
+      // And, it means explicitly press the merlins button on the keplr's dApps introduction page.
       // So, try to init account immediately.
       getKeplrFromWindow().then((keplr) => {
         if (keplr && keplr.mode === "mobile-web") {
@@ -32,7 +32,7 @@ export const AccountInitManagement: FunctionComponent = observer(
       });
     }, []);
 
-    // Init Osmosis account w/ desired connection type (wallet connect, extension)
+    // Init Merlins account w/ desired connection type (wallet connect, extension)
     // if prev connected Keplr in this browser.
     useEffect(() => {
       if (typeof localStorage !== "undefined") {
@@ -76,7 +76,7 @@ export const AccountInitManagement: FunctionComponent = observer(
       }
     }, [account, account.walletStatus, accountStore, chainStore.chainInfos]);
 
-    // React to changes in Osmosis account state; store desired connection type in browser
+    // React to changes in Merlins account state; store desired connection type in browser
     // clear Keplr sessions, disconnect account.
     useEffect(() => {
       if (account.walletStatus === WalletStatus.Loaded) {

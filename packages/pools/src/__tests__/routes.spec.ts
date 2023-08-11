@@ -23,7 +23,7 @@ describe("OptimizedRoutes", () => {
           denom: "uion",
           amount: new Int("100"),
         },
-        "uosmo",
+        "ufury",
         10
       );
 
@@ -32,11 +32,11 @@ describe("OptimizedRoutes", () => {
     });
     test("routes through 2 pools", () => {
       const pools = [
-        makeWeightedPool(), // uion => uosmo
+        makeWeightedPool(), // uion => ufury
         makeWeightedPool({
-          // uosmo => ujuno
+          // ufury => ujuno
           id: "2",
-          firstPoolAsset: { denom: "uosmo" },
+          firstPoolAsset: { denom: "ufury" },
           secondPoolAsset: { denom: "ujuno" },
         }),
       ];
@@ -86,7 +86,7 @@ describe("OptimizedRoutes", () => {
     });
     test("throws if no route found", () => {
       const pools = [
-        makeWeightedPool(), // uion => uosmo
+        makeWeightedPool(), // uion => ufury
         makeStablePool({
           // uust => uusdc
           id: "2",
@@ -158,7 +158,7 @@ describe("OptimizedRoutes", () => {
     // });
   });
 
-  describe("OSMO fee discount", () => {
+  describe("FURY fee discount", () => {
     test("2 pools with 1% fee", () => {
       const pools = [
         makeWeightedPool({
@@ -167,12 +167,12 @@ describe("OptimizedRoutes", () => {
         }),
         makeWeightedPool({
           id: "2",
-          firstPoolAsset: { denom: "uosmo", amount: "100000000000000" },
+          firstPoolAsset: { denom: "ufury", amount: "100000000000000" },
           secondPoolAsset: { denom: "ujuno", amount: "100000000000000" },
         }),
       ];
 
-      const discountedRouter = new OptimizedRoutes(pools, ["1", "2"], "uosmo");
+      const discountedRouter = new OptimizedRoutes(pools, ["1", "2"], "ufury");
       // no incentivized pool ids, and a random denom is given
       const nondiscountedRouter = new OptimizedRoutes(pools, [], "ufoo");
 
@@ -211,7 +211,7 @@ describe("OptimizedRoutes", () => {
         makeWeightedPool({
           id: "2",
           swapFee: "0.1", // 10% swap fee
-          firstPoolAsset: { denom: "uosmo", amount: "100000000000000" },
+          firstPoolAsset: { denom: "ufury", amount: "100000000000000" },
           secondPoolAsset: { denom: "ujuno", amount: "100000000000000" },
         }),
       ];
@@ -222,21 +222,21 @@ describe("OptimizedRoutes", () => {
         }),
         makeWeightedPool({
           id: "2",
-          firstPoolAsset: { denom: "uosmo", amount: "100000000000000" },
+          firstPoolAsset: { denom: "ufury", amount: "100000000000000" },
           secondPoolAsset: { denom: "ujuno", amount: "100000000000000" },
         }),
       ];
 
-      // both pools incentivized, w/ osmo as discount out currency
+      // both pools incentivized, w/ fury as discount out currency
       const largeFeeRouter = new OptimizedRoutes(
         poolsWithALargeFee,
         ["1", "2"],
-        "uosmo"
+        "ufury"
       );
       const smallFeeRouter = new OptimizedRoutes(
         poolsWithSameOnePercFee,
         ["1", "2"],
-        "uosmo"
+        "ufury"
       );
 
       const largeFeeRoutes = largeFeeRouter.getOptimizedRoutesByTokenIn(
@@ -272,7 +272,7 @@ describe("OptimizedRoutes", () => {
     //       }),
     //       makeWeightedPool({
     //         id: "2",
-    //         firstPoolAsset: { denom: "uosmo", amount: "100000000000000" },
+    //         firstPoolAsset: { denom: "ufury", amount: "100000000000000" },
     //         secondPoolAsset: { denom: "uust", amount: "100000000000000" },
     //       }),
     //       makeWeightedPool({
@@ -282,7 +282,7 @@ describe("OptimizedRoutes", () => {
     //       }),
     //     ];
 
-    //     const discountedRouter = new OptimizedRoutes(pools, ["1", "2"], "uosmo");
+    //     const discountedRouter = new OptimizedRoutes(pools, ["1", "2"], "ufury");
     //     // no incentivized pool ids, and a random denom is given
     //     const nondiscountedRouter = new OptimizedRoutes(pools, [], "ufoo");
 
@@ -348,7 +348,7 @@ function makeWeightedPool(
         weight: "5368709120",
       },
       secondPoolAsset: {
-        denom: "uosmo",
+        denom: "ufury",
         amount: "10000",
         weight: "5368709120",
       },
@@ -358,7 +358,7 @@ function makeWeightedPool(
   );
   return new WeightedPool(
     JSON.parse(
-      `{"@type":"/osmosis.gamm.v1beta1.Pool","address":"osmo1500hy75krs9e8t50aav6fahk8sxhajn9ctp40qwvvn8tcprkk6wszun4a5","id":"${id}","pool_params":{"swap_fee":"${swapFee}","exit_fee":"0.010000000000000000","smooth_weight_change_params":null},"future_pool_governor":"168h","total_shares":{"denom":"gamm/pool/${id}","amount":"100000000000000000000"},"pool_assets":[{"token":{"denom":"${firstPoolAsset.denom}","amount":"${firstPoolAsset.amount}"},"weight":"${firstPoolAsset.weight}"},{"token":{"denom":"${secondPoolAsset.denom}","amount":"${secondPoolAsset.amount}"},"weight":"${secondPoolAsset.weight}"}],"total_weight":"${totalWeight}"}`
+      `{"@type":"/merlins.gamm.v1beta1.Pool","address":"fury1500hy75krs9e8t50aav6fahk8sxhajn9ctp40qwvvn8tcprkk6wszun4a5","id":"${id}","pool_params":{"swap_fee":"${swapFee}","exit_fee":"0.010000000000000000","smooth_weight_change_params":null},"future_pool_governor":"168h","total_shares":{"denom":"gamm/pool/${id}","amount":"100000000000000000000"},"pool_assets":[{"token":{"denom":"${firstPoolAsset.denom}","amount":"${firstPoolAsset.amount}"},"weight":"${firstPoolAsset.weight}"},{"token":{"denom":"${secondPoolAsset.denom}","amount":"${secondPoolAsset.amount}"},"weight":"${secondPoolAsset.weight}"}],"total_weight":"${totalWeight}"}`
     )
   );
 }
@@ -394,7 +394,7 @@ function makeStablePool(
         scalingFactor: "1",
       },
       secondPoolAsset: {
-        denom: "uosmo",
+        denom: "ufury",
         amount: "10000",
         scalingFactor: "1",
       },
@@ -403,7 +403,7 @@ function makeStablePool(
   );
   return new StablePool(
     JSON.parse(
-      `{"@type":"/osmosis.gamm.poolmodels.stableswap.v1beta1.Pool","address":"osmo1mw0ac6rwlp5r8wapwk3zs6g29h8fcscxqakdzw9emkne6c8wjp9q0t3v8t","id":"${id}","pool_params":{"swap_fee":"${swapFee}","exit_fee":"0.010000000000000000"},"future_pool_governor":"","total_shares":{"denom":"gamm/pool/${id}","amount":"100000000000000000000"},"pool_liquidity":[{"denom":"${firstPoolAsset.denom}","amount":"${firstPoolAsset.amount}"},{"denom":"${secondPoolAsset.denom}","amount":"${secondPoolAsset.amount}"}],"scaling_factors":["${firstPoolAsset.scalingFactor}","${secondPoolAsset.scalingFactor}"],"scaling_factor_controller":""}`
+      `{"@type":"/merlins.gamm.poolmodels.stableswap.v1beta1.Pool","address":"fury1mw0ac6rwlp5r8wapwk3zs6g29h8fcscxqakdzw9emkne6c8wjp9q0t3v8t","id":"${id}","pool_params":{"swap_fee":"${swapFee}","exit_fee":"0.010000000000000000"},"future_pool_governor":"","total_shares":{"denom":"gamm/pool/${id}","amount":"100000000000000000000"},"pool_liquidity":[{"denom":"${firstPoolAsset.denom}","amount":"${firstPoolAsset.amount}"},{"denom":"${secondPoolAsset.denom}","amount":"${secondPoolAsset.amount}"}],"scaling_factors":["${firstPoolAsset.scalingFactor}","${secondPoolAsset.scalingFactor}"],"scaling_factor_controller":""}`
     )
   );
 }

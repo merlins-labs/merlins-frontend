@@ -2,21 +2,20 @@
   "name": "@osmosis-labs/pools",
   "version": "4.0.0",
   "main": "build/index.js",
-  "author": "osmosis-labs",
-  "homepage": "https://github.com/osmosis-labs/osmosis-frontend/tree/master/packages/pools#readme",
+  "author": "merlins-labs",
+  "homepage": "https://github.com/merlins-labs/merlins-frontend/tree/master/packages/pools#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/osmosis-labs/osmosis-frontend"
+    "url": "https://github.com/merlins-labs/merlins-frontend"
   },
   "bugs": {
-    "url": "https://github.com/osmosis-labs/osmosis-frontend/issues"
+    "url": "https://github.com/merlins-labs/merlins-frontend/issues"
   },
   "keywords": [
-    "osmosis",
+    "merlins",
     "pools"
   ],
   "license": "Apache-2.0",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },

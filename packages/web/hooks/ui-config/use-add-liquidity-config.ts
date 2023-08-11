@@ -6,52 +6,52 @@ import {
   CosmwasmQueries,
 } from "@keplr-wallet/stores";
 import {
-  OsmosisQueries,
+  MerlinsQueries,
   ObservableAddLiquidityConfig,
 } from "@osmosis-labs/stores";
 import { useStore } from "../../stores";
 
 /** Maintains a single instance of `ObservableAddLiquidityConfig` for React view lifecycle.
- *  Updates `osmosisChainId`, `poolId`, `bech32Address`, and `queryOsmosis.queryGammPoolShare` on render.
+ *  Updates `merlinsChainId`, `poolId`, `bech32Address`, and `queryMerlins.queryGammPoolShare` on render.
  */
 export function useAddLiquidityConfig(
   chainGetter: ChainGetter,
-  osmosisChainId: string,
+  merlinsChainId: string,
   poolId: string,
-  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, OsmosisQueries]>
+  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, MerlinsQueries]>
 ): {
   config: ObservableAddLiquidityConfig;
   addLiquidity: () => Promise<void>;
 } {
   const { accountStore } = useStore();
 
-  const account = accountStore.getAccount(osmosisChainId);
+  const account = accountStore.getAccount(merlinsChainId);
   const { bech32Address } = account;
 
-  const queryOsmosis = queriesStore.get(osmosisChainId).osmosis!;
+  const queryMerlins = queriesStore.get(merlinsChainId).merlins!;
   const [config] = useState(
     () =>
       new ObservableAddLiquidityConfig(
         chainGetter,
-        osmosisChainId,
+        merlinsChainId,
         poolId,
         bech32Address,
         queriesStore,
-        queryOsmosis.queryGammPoolShare,
-        queryOsmosis.queryGammPools,
-        queriesStore.get(osmosisChainId).queryBalances
+        queryMerlins.queryGammPoolShare,
+        queryMerlins.queryGammPools,
+        queriesStore.get(merlinsChainId).queryBalances
       )
   );
-  config.setChain(osmosisChainId);
+  config.setChain(merlinsChainId);
   config.setSender(bech32Address);
   config.setPoolId(poolId);
-  config.setQueryPoolShare(queryOsmosis.queryGammPoolShare);
+  config.setQueryPoolShare(queryMerlins.queryGammPoolShare);
 
   const addLiquidity = useCallback(async () => {
     return new Promise<void>(async (resolve, reject) => {
       try {
         if (config.isSingleAmountIn && config.singleAmountInConfig) {
-          await account.osmosis.sendJoinSwapExternAmountInMsg(
+          await account.merlins.sendJoinSwapExternAmountInMsg(
             config.poolId,
             {
               currency: config.singleAmountInConfig.sendCurrency,
@@ -62,7 +62,7 @@ export function useAddLiquidityConfig(
             resolve
           );
         } else if (config.shareOutAmount) {
-          await account.osmosis.sendJoinPoolMsg(
+          await account.merlins.sendJoinPoolMsg(
             config.poolId,
             config.shareOutAmount.toDec().toString(),
             undefined,
@@ -76,7 +76,7 @@ export function useAddLiquidityConfig(
       }
     });
   }, [
-    account.osmosis,
+    account.merlins,
     config.isSingleAmountIn,
     config.singleAmountInConfig,
     config.sender,

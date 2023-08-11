@@ -11,13 +11,13 @@ export class ObservableQueryLockableDurations extends ObservableChainQuery<Locka
       kvStore,
       chainId,
       chainGetter,
-      "/osmosis/pool-incentives/v1beta1/lockable_durations"
+      "/merlins/pool-incentives/v1beta1/lockable_durations"
     );
 
     makeObservable(this);
   }
 
-  /** On chain param: bond durations capable of receiving internal (OSMO) mint incentives, assuming pool is marked incentivized. */
+  /** On chain param: bond durations capable of receiving internal (FURY) mint incentives, assuming pool is marked incentivized. */
   @computed
   get lockableDurations(): Duration[] {
     if (!this.response) {

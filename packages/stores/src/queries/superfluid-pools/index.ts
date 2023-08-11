@@ -5,4 +5,4 @@ export * from "./params";
 export * from "./pool";
 export * from "./asset-multiplier";
 export * from "./types";
-export * from "./osmo-equivalent";
+export * from "./fury-equivalent";

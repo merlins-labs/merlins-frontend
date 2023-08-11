@@ -468,9 +468,9 @@ export const IBCAssetInfos: (IBCAsset & {
     destChannelId: "channel-8",
     coinMinimalDenom: "inj",
     depositUrlOverride:
-      "https://hub.injective.network/bridge/?destination=osmosis&origin=injective&token=inj",
+      "https://hub.injective.network/bridge/?destination=merlins&origin=injective&token=inj",
     withdrawUrlOverride:
-      "https://hub.injective.network/bridge/?destination=injective&origin=osmosis&token=inj",
+      "https://hub.injective.network/bridge/?destination=injective&origin=merlins&token=inj",
     isVerified: true,
   },
   {
@@ -803,9 +803,9 @@ export const IBCAssetInfos: (IBCAsset & {
     destChannelId: "channel-3",
     coinMinimalDenom: "ukuji",
     depositUrlOverride:
-      "https://blue.kujira.app/ibc?destination=osmosis-1&denom=ukuji",
+      "https://blue.kujira.app/ibc?destination=merlins-1&denom=ukuji",
     // withdrawUrlOverride:
-    //   "https://blue.kujira.app/ibc?destination=kaiyo-1&source=osmosis-1&denom=ukuji",
+    //   "https://blue.kujira.app/ibc?destination=kaiyo-1&source=merlins-1&denom=ukuji",
     isVerified: true,
   },
   {
@@ -1012,7 +1012,7 @@ export const IBCAssetInfos: (IBCAsset & {
     counterpartyChainId: "stride-1",
     sourceChannelId: "channel-326",
     destChannelId: "channel-5",
-    coinMinimalDenom: "stuosmo",
+    coinMinimalDenom: "stufury",
     isVerified: true,
   },
   {
@@ -1037,9 +1037,9 @@ export const IBCAssetInfos: (IBCAsset & {
     coinMinimalDenom:
       "factory:kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7:uusk",
     depositUrlOverride:
-      "https://blue.kujira.app/ibc?destination=osmosis-1&source=kaiyo-1&denom=factory%2Fkujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7%2Fuusk",
+      "https://blue.kujira.app/ibc?destination=merlins-1&source=kaiyo-1&denom=factory%2Fkujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7%2Fuusk",
     withdrawUrlOverride:
-      "https://blue.kujira.app/ibc?destination=kaiyo-1&source=osmosis-1&denom=ibc%2F44492EAB24B72E3FB59B9FA619A22337FB74F95D8808FE6BC78CC0E6C18DC2EC",
+      "https://blue.kujira.app/ibc?destination=kaiyo-1&source=merlins-1&denom=ibc%2F44492EAB24B72E3FB59B9FA619A22337FB74F95D8808FE6BC78CC0E6C18DC2EC",
   },
   {
     counterpartyChainId: "FUND-MainNet-2",
@@ -1102,9 +1102,9 @@ export const IBCAssetInfos: (IBCAsset & {
     counterpartyChainId: "beezee-1",
     sourceChannelId: "channel-340",
     destChannelId: "channel-0",
-    coinMinimalDenom: "ubze",      
+    coinMinimalDenom: "ubze",
   },
-  {    
+  {
     counterpartyChainId: "juno-1",
     sourceChannelId: "channel-169",
     destChannelId: "channel-47",

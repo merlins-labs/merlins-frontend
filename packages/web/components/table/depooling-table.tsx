@@ -15,12 +15,12 @@ export const DepoolingTable: FunctionComponent<
 > = observer(({ poolId, tableClassName, className }) => {
   const { chainStore, accountStore, queriesStore } = useStore();
   const t = useTranslation();
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
   const { isMobile } = useWindowSize();
 
-  const queriesOsmosis = queriesStore.get(chainId).osmosis!;
+  const queriesMerlins = queriesStore.get(chainId).merlins!;
   const account = accountStore.getAccount(chainId);
-  const accountLockedResponse = queriesOsmosis.queryAccountLocked.get(
+  const accountLockedResponse = queriesMerlins.queryAccountLocked.get(
     account.bech32Address
   ).response;
 
@@ -41,7 +41,7 @@ export const DepoolingTable: FunctionComponent<
     return null;
   }
 
-  const unlockingTokensExceptLPShares = queriesOsmosis.queryAccountLocked
+  const unlockingTokensExceptLPShares = queriesMerlins.queryAccountLocked
     .get(account.bech32Address)
     .unlockingCoins.filter(
       (unlocking) =>

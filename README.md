@@ -1,10 +1,10 @@
-# Osmosis Frontend 👩‍🔬⚗️🧪
+# Merlins Frontend 👩‍🔬⚗️🧪
 
-![osmosis-banner-1200w](https://user-images.githubusercontent.com/4606373/167008669-fb3cafa8-e66e-4cdf-8599-3308039cc58c.png)
+![merlins-banner-1200w](https://user-images.githubusercontent.com/4606373/167008669-fb3cafa8-e66e-4cdf-8599-3308039cc58c.png)
 
 ## Development 💻
 
-Our [frontend](https://app.osmosis.zone) is built with the following tools:
+Our [frontend](https://app.merlins.zone) is built with the following tools:
 
 - [TypeScript](https://www.typescriptlang.org/): type checking
 - [React](https://reactjs.org/): ui
@@ -23,7 +23,7 @@ yarn && yarn build && yarn start
 
 ### Contributing 👨‍💻
 
-We welcome and encourage contributions! We recommend looking for [issues labeled with "good-first-issue"](https://github.com/osmosis-labs/osmosis-frontend/contribute).
+We welcome and encourage contributions! We recommend looking for [issues labeled with "good-first-issue"](https://github.com/merlins-labs/merlins-frontend/contribute).
 
 Make sure [node](https://nodejs.org/en/) >= 16 and [yarn](https://yarnpkg.com/getting-started/install) is installed.
 

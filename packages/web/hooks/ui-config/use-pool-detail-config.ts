@@ -5,23 +5,23 @@ import { useStore } from "../../stores";
 export function usePoolDetailConfig(poolId?: string) {
   const { chainStore, accountStore, queriesStore, priceStore } = useStore();
 
-  const { chainId } = chainStore.osmosis;
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const { chainId } = chainStore.merlins;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
   const account = accountStore.getAccount(chainId);
   const { bech32Address } = account;
   const fiat = priceStore.getFiatCurrency(priceStore.defaultVsCurrency)!;
 
-  const pool = poolId ? queryOsmosis.queryGammPools.getPool(poolId) : undefined;
+  const pool = poolId ? queryMerlins.queryGammPools.getPool(poolId) : undefined;
 
   const [poolDetailConfig, setPoolDetailConfig] =
     useState<ObservableQueryPoolDetails | null>(null);
   useEffect(() => {
     if (!poolDetailConfig && pool && fiat) {
       setPoolDetailConfig(
-        new ObservableQueryPoolDetails(fiat, pool, queryOsmosis, priceStore)
+        new ObservableQueryPoolDetails(fiat, pool, queryMerlins, priceStore)
       );
     }
-  }, [pool, poolDetailConfig, fiat, queryOsmosis, priceStore]);
+  }, [pool, poolDetailConfig, fiat, queryMerlins, priceStore]);
 
   useEffect(
     () => poolDetailConfig?.setBech32Address(bech32Address),

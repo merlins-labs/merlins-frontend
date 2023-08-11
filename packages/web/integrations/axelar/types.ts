@@ -63,7 +63,7 @@ export type SourceChainConfig = {
    */
   erc20ContractAddress?: string;
 
-  /** For IBC transfer from CosmosCounterparty<->via Axelar<->Osmosis */
+  /** For IBC transfer from CosmosCounterparty<->via Axelar<->Merlins */
   ibcConfig?: {
     /** on cosmos counterparty */
     sourceChannelId: string;

@@ -11,11 +11,11 @@ import { Currency } from "@keplr-wallet/types";
 import { estimateSwapExactAmountOut } from "@osmosis-labs/math";
 import { ObservableQueryPool } from "src/queries";
 
-// https://docs.osmosis.zone/developing/osmosis-core/modules/spec-gamm.html#swap-exact-amount-out
+// https://docs.merlins.zone/developing/merlins-core/modules/spec-gamm.html#swap-exact-amount-out
 
 jest.setTimeout(60000);
 
-describe("Test Osmosis Swap Exact Amount Out Tx", () => {
+describe("Test Merlins Swap Exact Amount Out Tx", () => {
   const { accountStore, queriesStore } = new RootStore();
   let queryPool: ObservableQueryPool | undefined;
 
@@ -26,15 +26,15 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
 
     // And prepare the pool
     await new Promise<any>((resolve) => {
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0",
         [
           {
             weight: "200",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -62,25 +62,25 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     // refresh stores
     await queriesStore
       .get(chainId)
-      .osmosis!.queryGammNumPools.waitFreshResponse();
-    await queriesStore.get(chainId).osmosis!.queryGammPools.waitFreshResponse();
+      .merlins!.queryGammNumPools.waitFreshResponse();
+    await queriesStore.get(chainId).merlins!.queryGammPools.waitFreshResponse();
 
     // set poolId
     const numPools =
-      queriesStore.get(chainId).osmosis!.queryGammNumPools.numPools;
+      queriesStore.get(chainId).merlins!.queryGammNumPools.numPools;
     const poolId = numPools.toString();
 
     // get query pool
     queryPool = queriesStore
       .get(chainId)
-      .osmosis!.queryGammPools.getPool(poolId);
+      .merlins!.queryGammPools.getPool(poolId);
   });
 
   test("should fail with unregistered pool asset", async () => {
     const account = accountStore.getAccount(chainId);
 
     await expect(
-      account.osmosis.sendSwapExactAmountOutMsg(
+      account.merlins.sendSwapExactAmountOutMsg(
         queryPool!.id,
         {
           coinDenom: "ION",
@@ -103,7 +103,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     await expect(
-      account.osmosis.sendSwapExactAmountOutMsg(
+      account.merlins.sendSwapExactAmountOutMsg(
         queryPool!.id,
         {
           coinDenom: "Kwon",
@@ -126,8 +126,8 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     const tokenInCurrency = {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
+      coinDenom: "FURY",
+      coinMinimalDenom: "ufury",
       coinDecimals: 6,
     };
     const tokenOut = {
@@ -146,7 +146,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     );
 
     const tx = await new Promise<any>((resolve, reject) => {
-      account.osmosis
+      account.merlins
         .sendSwapExactAmountOutMsg(
           queryPool!.id,
           tokenInCurrency,
@@ -166,7 +166,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
         attributes: [
           {
             key: "action",
-            value: "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut",
+            value: "/merlins.gamm.v1beta1.MsgSwapExactAmountOut",
           },
           { key: "module", value: "gamm" },
           {
@@ -206,8 +206,8 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     const tokenInCurrency = {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
+      coinDenom: "FURY",
+      coinMinimalDenom: "ufury",
       coinDecimals: 6,
     };
     const tokenOut = {
@@ -235,7 +235,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     expect(doubleSlippage.toDec().gt(new Dec(0))).toBeTruthy();
 
     const tx = await new Promise<any>((resolve, reject) => {
-      account.osmosis
+      account.merlins
         .sendSwapExactAmountOutMsg(
           queryPool!.id,
           tokenInCurrency,
@@ -255,7 +255,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
         attributes: [
           {
             key: "action",
-            value: "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut",
+            value: "/merlins.gamm.v1beta1.MsgSwapExactAmountOut",
           },
           { key: "module", value: "gamm" },
           {
@@ -295,8 +295,8 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     const tokenInCurrency = {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
+      coinDenom: "FURY",
+      coinMinimalDenom: "ufury",
       coinDecimals: 6,
     };
     const tokenOut = {
@@ -317,7 +317,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     expect(estimated.priceImpact.toDec().gt(new Dec(0))).toBeTruthy();
 
     const tx = await new Promise<any>((resolve, reject) => {
-      account.osmosis
+      account.merlins
         .sendSwapExactAmountOutMsg(
           queryPool!.id,
           tokenInCurrency,
@@ -337,7 +337,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
         attributes: [
           {
             key: "action",
-            value: "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut",
+            value: "/merlins.gamm.v1beta1.MsgSwapExactAmountOut",
           },
           { key: "module", value: "gamm" },
           {
@@ -377,8 +377,8 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     const tokenInCurrency = {
-      coinDenom: "OSMO",
-      coinMinimalDenom: "uosmo",
+      coinDenom: "FURY",
+      coinMinimalDenom: "ufury",
       coinDecimals: 6,
     };
     const tokenOut = {
@@ -407,7 +407,7 @@ describe("Test Osmosis Swap Exact Amount Out Tx", () => {
 
     await expect(
       new Promise<any>((resolve, reject) => {
-        account.osmosis
+        account.merlins
           .sendSwapExactAmountOutMsg(
             queryPool!.id,
             tokenInCurrency,

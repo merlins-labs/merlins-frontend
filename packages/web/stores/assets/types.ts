@@ -4,9 +4,9 @@ import { FiatRampKey, OriginBridgeInfo } from "../../integrations/bridge-info";
 
 export interface IBCAsset {
   counterpartyChainId: string;
-  // Souce channel id based on the Osmosis chain
+  // Souce channel id based on the Merlins chain
   sourceChannelId: string;
-  // Destination channel id from Osmosis chain
+  // Destination channel id from Merlins chain
   destChannelId: string;
   coinMinimalDenom: string;
   // In some reasons, ibc channel is in unstable status.
@@ -18,7 +18,7 @@ export interface IBCAsset {
   // If the asset is from ics20-cw20
   ics20ContractAddress?: string;
 
-  // If this is a multihop ibc, need to special case because the denom on osmosis
+  // If this is a multihop ibc, need to special case because the denom on merlins
   // isn't H(source_denom), but rather H(ibc_path)
   ibcTransferPathDenom?: string;
 

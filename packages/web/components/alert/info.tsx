@@ -29,7 +29,7 @@ export const Info: FunctionComponent<
     >
       <span
         className={classNames(
-          "subtitle1 text-wosmongton-100 md:caption",
+          "subtitle1 text-wfuryngton-100 md:caption",
           textClassName
         )}
       >
@@ -45,7 +45,7 @@ export const Info: FunctionComponent<
     >
       <div
         className={classNames(
-          "flex grow place-content-between md:gap-1 px-3 py-2 md:p-2 bg-osmoverse-800 rounded-2xlinset",
+          "flex grow place-content-between md:gap-1 px-3 py-2 md:p-2 bg-furyverse-800 rounded-2xlinset",
           {
             "items-center": !data,
           },
@@ -66,7 +66,7 @@ export const Info: FunctionComponent<
           {caption && (
             <span
               className={classNames(
-                "text-wosmongton-100 body2 md:caption",
+                "text-wfuryngton-100 body2 md:caption",
                 textClassName
               )}
             >

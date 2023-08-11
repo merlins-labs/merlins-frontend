@@ -105,19 +105,19 @@ export const AllPoolsTableSet: FunctionComponent<{
       do_setIsPoolTvlFiltered(isFiltered);
     }, []);
 
-    const { chainId } = chainStore.osmosis;
-    const queriesOsmosis = queriesStore.get(chainId).osmosis!;
+    const { chainId } = chainStore.merlins;
+    const queriesMerlins = queriesStore.get(chainId).merlins!;
     const account = accountStore.getAccount(chainId);
     const fiat = priceStore.getFiatCurrency(priceStore.defaultVsCurrency)!;
 
-    const allPools = queriesOsmosis.queryGammPools.getAllPools();
+    const allPools = queriesMerlins.queryGammPools.getAllPools();
 
     const allPoolsWithMetrics: PoolWithMetrics[] = useMemo(
       () =>
         allPools.map((pool) => {
           const poolTvl = pool.computeTotalValueLocked(priceStore);
           const myLiquidity = poolTvl.mul(
-            queriesOsmosis.queryGammPoolShare.getAllGammShareRatio(
+            queriesMerlins.queryGammPoolShare.getAllGammShareRatio(
               account.bech32Address,
               pool.id
             )
@@ -134,7 +134,7 @@ export const AllPoolsTableSet: FunctionComponent<{
             myAvailableLiquidity: myLiquidity.toDec().isZero()
               ? new PricePretty(fiat, 0)
               : poolTvl.mul(
-                  queriesOsmosis.queryGammPoolShare
+                  queriesMerlins.queryGammPoolShare
                     .getAvailableGammShare(account.bech32Address, pool.id)
                     .quo(pool.totalShare)
                 ),
@@ -155,11 +155,11 @@ export const AllPoolsTableSet: FunctionComponent<{
         // `useMemo` is needed in this file to avoid "debounce" with the hundreds of re-renders by mobx as the 200+ API requests come in and populate 1000+ observables (otherwise the UI is unresponsive for 30+ seconds)
         // also, the higher level `useMemo`s (i.e. this one) gain the most performance as other React renders are prevented down the line as data is calculated (remember, renders are initiated by both mobx and react)
         allPools,
-        queriesOsmosis.queryGammPools.response,
+        queriesMerlins.queryGammPools.response,
         queriesExternalStore.queryGammPoolFeeMetrics.response,
-        queriesOsmosis.queryAccountLocked.get(account.bech32Address).response,
-        queriesOsmosis.queryLockedCoins.get(account.bech32Address).response,
-        queriesOsmosis.queryUnlockingCoins.get(account.bech32Address).response,
+        queriesMerlins.queryAccountLocked.get(account.bech32Address).response,
+        queriesMerlins.queryLockedCoins.get(account.bech32Address).response,
+        queriesMerlins.queryUnlockingCoins.get(account.bech32Address).response,
         priceStore.response,
         queriesExternalStore.queryGammPoolFeeMetrics.response,
         account.bech32Address,
@@ -172,14 +172,14 @@ export const AllPoolsTableSet: FunctionComponent<{
         poolWithMetrics: PoolWithMetrics
       ) => {
         if (
-          queriesOsmosis.queryIncentivizedPools.incentivizedPools.some(
+          queriesMerlins.queryIncentivizedPools.incentivizedPools.some(
             (incentivizedPoolId) =>
               poolWithMetrics.pool.id === incentivizedPoolId
           )
         ) {
           incentivizedPools.push({
             ...poolWithMetrics,
-            apr: queriesOsmosis.queryIncentivizedPools
+            apr: queriesMerlins.queryIncentivizedPools
               .computeMostApr(poolWithMetrics.pool.id, priceStore)
               .add(
                 // swap fees
@@ -190,14 +190,14 @@ export const AllPoolsTableSet: FunctionComponent<{
               )
               .add(
                 // superfluid apr
-                queriesOsmosis.querySuperfluidPools.isSuperfluidPool(
+                queriesMerlins.querySuperfluidPools.isSuperfluidPool(
                   poolWithMetrics.pool.id
                 )
                   ? new RatePretty(
                       queriesStore
                         .get(chainId)
                         .cosmos.queryInflation.inflation.mul(
-                          queriesOsmosis.querySuperfluidOsmoEquivalent.estimatePoolAPROsmoEquivalentMultiplier(
+                          queriesMerlins.querySuperfluidFuryEquivalent.estimatePoolAPRFuryEquivalentMultiplier(
                             poolWithMetrics.pool.id
                           )
                         )
@@ -375,7 +375,7 @@ export const AllPoolsTableSet: FunctionComponent<{
                   .map((poolAsset) => poolAsset.weightFraction?.toString())
                   .join(" / "),
                 isSuperfluidPool:
-                  queriesOsmosis.querySuperfluidPools.isSuperfluidPool(
+                  queriesMerlins.querySuperfluidPools.isSuperfluidPool(
                     poolWithFeeMetrics.pool.id
                   ),
               },
@@ -417,7 +417,7 @@ export const AllPoolsTableSet: FunctionComponent<{
                 ? poolWithMetrics.apr?.toString()
                 : poolWithMetrics.myLiquidity?.toString(),
               isLoading: isIncentivizedPools
-                ? queriesOsmosis.queryIncentivizedPools.isAprFetching
+                ? queriesMerlins.queryIncentivizedPools.isAprFetching
                 : false,
             },
             {
@@ -440,7 +440,7 @@ export const AllPoolsTableSet: FunctionComponent<{
       [
         allData,
         isIncentivizedPools,
-        queriesOsmosis.queryIncentivizedPools.isAprFetching,
+        queriesMerlins.queryIncentivizedPools.isAprFetching,
       ]
     );
 
@@ -532,7 +532,7 @@ export const AllPoolsTableSet: FunctionComponent<{
               ],
             ],
             isSuperfluidPool:
-              queriesOsmosis.querySuperfluidPools.isSuperfluidPool(
+              queriesMerlins.querySuperfluidPools.isSuperfluidPool(
                 poolData.pool.id
               ),
           }))}
@@ -577,7 +577,7 @@ export const AllPoolsTableSet: FunctionComponent<{
               className="mr-2"
               labelPosition="left"
             >
-              <span className="subtitle1 text-osmoverse-200">
+              <span className="subtitle1 text-furyverse-200">
                 {tvlFilterLabel}
               </span>
             </Switch>

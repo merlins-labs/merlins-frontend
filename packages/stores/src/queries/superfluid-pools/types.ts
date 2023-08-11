@@ -9,7 +9,7 @@ export type SuperfluidParams = {
 };
 
 export type SuperfluidAssetMultiplier = {
-  osmo_equivalent_multiplier: {
+  fury_equivalent_multiplier: {
     // Int
     epoch_number: string;
     denom: string;

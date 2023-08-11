@@ -55,7 +55,7 @@ export class ObservableQueryEpochs extends ObservableChainQuery<Epochs> {
   protected map: Map<string, ObservableQueryEpochsInner> = new Map();
 
   constructor(kvStore: KVStore, chainId: string, chainGetter: ChainGetter) {
-    super(kvStore, chainId, chainGetter, "/osmosis/epochs/v1beta1/epochs");
+    super(kvStore, chainId, chainGetter, "/merlins/epochs/v1beta1/epochs");
   }
 
   getEpoch(identifier: string) {

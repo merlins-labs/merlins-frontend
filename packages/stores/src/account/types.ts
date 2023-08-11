@@ -1,6 +1,6 @@
 import { MsgOpt } from "@keplr-wallet/stores";
 
-export interface OsmosisMsgOpts {
+export interface MerlinsMsgOpts {
   readonly createBalancerPool: MsgOpt;
   readonly createStableswapPool: MsgOpt;
   readonly joinPool: MsgOpt & {
@@ -24,71 +24,71 @@ export interface OsmosisMsgOpts {
   readonly unPoolWhitelistedPool: MsgOpt;
 }
 
-export const defaultMsgOpts: OsmosisMsgOpts = {
+export const defaultMsgOpts: MerlinsMsgOpts = {
   createBalancerPool: {
-    type: "osmosis/gamm/create-balancer-pool",
+    type: "merlins/gamm/create-balancer-pool",
     gas: 350000,
   },
   createStableswapPool: {
-    type: "osmosis/gamm/create-stableswap-pool",
+    type: "merlins/gamm/create-stableswap-pool",
     gas: 350000,
   },
   joinPool: {
-    type: "osmosis/gamm/join-pool",
+    type: "merlins/gamm/join-pool",
     gas: 240000,
     shareCoinDecimals: 18,
   },
   joinSwapExternAmountIn: {
-    type: "osmosis/gamm/join-swap-extern-amount-in",
+    type: "merlins/gamm/join-swap-extern-amount-in",
     gas: 140000,
     shareCoinDecimals: 18,
   },
   exitPool: {
-    type: "osmosis/gamm/exit-pool",
+    type: "merlins/gamm/exit-pool",
     gas: 280000,
     shareCoinDecimals: 18,
   },
   swapExactAmountIn: {
-    type: "osmosis/gamm/swap-exact-amount-in",
+    type: "merlins/gamm/swap-exact-amount-in",
     gas: 250000,
   },
   swapExactAmountOut: {
-    type: "osmosis/gamm/swap-exact-amount-out",
+    type: "merlins/gamm/swap-exact-amount-out",
     gas: 250000,
   },
   lockTokens: {
-    type: "osmosis/lockup/lock-tokens",
+    type: "merlins/lockup/lock-tokens",
     gas: 450000,
   },
   superfluidDelegate: {
-    type: "osmosis/superfluid-delegate",
+    type: "merlins/superfluid-delegate",
     gas: 500000,
   },
   lockAndSuperfluidDelegate: {
-    type: "osmosis/lock-and-superfluid-delegate",
+    type: "merlins/lock-and-superfluid-delegate",
     gas: 500000,
   },
   beginUnlocking: {
-    type: "osmosis/lockup/begin-unlock-period-lock",
+    type: "merlins/lockup/begin-unlock-period-lock",
     // Gas per msg
     gas: 140000,
   },
   superfluidUndelegate: {
-    type: "osmosis/superfluid-undelegate",
+    type: "merlins/superfluid-undelegate",
     gas: 300000,
   },
   superfluidUnbondLock: {
-    type: "osmosis/superfluid-unbond-lock",
+    type: "merlins/superfluid-unbond-lock",
     // Gas per msg
     gas: 300000,
   },
   unlockPeriodLock: {
-    type: "osmosis/lockup/unlock-period-lock",
+    type: "merlins/lockup/unlock-period-lock",
     // Gas per msg
     gas: 140000,
   },
   unPoolWhitelistedPool: {
-    type: "osmosis/unpool-whitelisted-pool",
+    type: "merlins/unpool-whitelisted-pool",
     gas: 3000000,
   },
 };

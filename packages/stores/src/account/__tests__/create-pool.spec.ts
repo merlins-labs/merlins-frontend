@@ -22,7 +22,7 @@ describe("Create Pool Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     await expect(
-      account.osmosis.sendCreateBalancerPoolMsg("0", [], "", (_) => {})
+      account.merlins.sendCreateBalancerPoolMsg("0", [], "", (_) => {})
     ).rejects.not.toBeNull();
   });
 
@@ -30,15 +30,15 @@ describe("Create Pool Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     await expect(
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0",
         [
           {
             weight: "100",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -55,15 +55,15 @@ describe("Create Pool Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     await expect(
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0",
         [
           {
             weight: "100",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -73,8 +73,8 @@ describe("Create Pool Tx", () => {
             weight: "100",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -91,15 +91,15 @@ describe("Create Pool Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     const tx = await new Promise<any>((resolve) => {
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0",
         [
           {
             weight: "100",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -131,7 +131,7 @@ describe("Create Pool Tx", () => {
           {
             key: "action",
             value:
-              "/osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool",
+              "/merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool",
           },
           { key: "module", value: "gamm" },
           {
@@ -146,7 +146,7 @@ describe("Create Pool Tx", () => {
     deepContained(
       {
         type: "transfer",
-        attributes: [{ key: "amount", value: "100000000uion,100000000uosmo" }],
+        attributes: [{ key: "amount", value: "100000000uion,100000000ufury" }],
       },
       getEventFromTx(tx, "transfer")
     );
@@ -156,15 +156,15 @@ describe("Create Pool Tx", () => {
     const account = accountStore.getAccount(chainId);
 
     const tx = await new Promise<any>((resolve) => {
-      account.osmosis.sendCreateBalancerPoolMsg(
+      account.merlins.sendCreateBalancerPoolMsg(
         "0.1",
         [
           {
             weight: "100",
             token: {
               currency: {
-                coinDenom: "OSMO",
-                coinMinimalDenom: "uosmo",
+                coinDenom: "FURY",
+                coinMinimalDenom: "ufury",
                 coinDecimals: 6,
               },
               amount: "100",
@@ -196,7 +196,7 @@ describe("Create Pool Tx", () => {
           {
             key: "action",
             value:
-              "/osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool",
+              "/merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool",
           },
           { key: "module", value: "gamm" },
           {
@@ -211,7 +211,7 @@ describe("Create Pool Tx", () => {
     deepContained(
       {
         type: "transfer",
-        attributes: [{ key: "amount", value: "100000000uion,100000000uosmo" }],
+        attributes: [{ key: "amount", value: "100000000uion,100000000ufury" }],
       },
       getEventFromTx(tx, "transfer")
     );

@@ -28,7 +28,7 @@
   "pools": {
     "title": "Piscinas Activas",
     "poolId": "Piscina #{id}",
-    "priceOsmo": "Precio de OSMO",
+    "priceFury": "Precio de FURY",
     "rewardDistribution": "Distribución de recompensas en",
     "myPools": "Mis Piscinas",
     "APR": "TPA",
@@ -90,7 +90,7 @@
         "three": "Paso {step} / {nbstep} - Confirmar la proporción de la piscina y la cantidad de token"
       },
       "infoMessage": "Tarifa de creación de piscina",
-      "infoCaption": "Transferido a la piscina comunitaria de Osmosis",
+      "infoCaption": "Transferido a la piscina comunitaria de Merlins",
       "buttonCreate": "Crear Piscina",
       "buttonNext": "Siguiente",
       "buttonBack": "Anterior",
@@ -187,7 +187,7 @@
     "bondedAmount": "Monto abonado",
     "estimation": "Delegación superfluida estimada",
     "estimationMobile": "Est. Delegación",
-    "estimationInfo": "El valor de esta delegación fluctúa y se estima en función de la cantidad de OSMO en la piscina.",
+    "estimationInfo": "El valor de esta delegación fluctúa y se estima en función de la cantidad de FURY en la piscina.",
     "buttonBond": "Abonar y Generar Interés",
     "columns": {
       "validator": "Validador",
@@ -198,7 +198,7 @@
     "totalAssets": "Total",
     "unbondedAssets": "No abonado",
     "bondedAssets": "Abonado",
-    "stakedAssets": "OSMO Abonado",
+    "stakedAssets": "FURY Abonado",
     "myPools": "Mis piscinas",
     "transferAssetSelect": {
       "deposit": "Depositar",
@@ -268,7 +268,7 @@
       "search": "Filtrar por símbolo",
       "title": "Activos",
       "hideZero": "Ocultar saldos cero",
-      "buyOsmo": "Comprar",
+      "buyFury": "Comprar",
       "preTransfer": {
         "deposit": "Depositar",
         "withdraw": "Retirar",
@@ -328,7 +328,7 @@
     "info": "Estadísticas",
     "signOut": "Desconectar",
     "help": "Obtener ayuda para el laboratorio de soporte",
-    "learnMoreFrontier": "Obtenga más información <br/> sobre <br2/> <name> Osmosis Frontier </name>"
+    "learnMoreFrontier": "Obtenga más información <br/> sobre <br2/> <name> Merlins Frontier </name>"
   },
   "settings": {
     "title": "Ajustes",
@@ -374,7 +374,7 @@
     "walletConnect": "Controlar la billetera",
     "mobile": "Keplr móvil"
   },
-  "connectDisclaimer": "Al conectar una billetera, reconoce que ha leído y comprende Osmosis",
+  "connectDisclaimer": "Al conectar una billetera, reconoce que ha leído y comprende Merlins",
   "protocolDisclaimer": "Deslindo de responsabilidad al protocolo",
   "Transaction Failed": "Transacción fallida",
   "Transaction Successful": "Transacción exitosa",

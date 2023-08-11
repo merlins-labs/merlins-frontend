@@ -1,5 +1,5 @@
 {
-  "name": "osmosis-frontend",
+  "name": "merlins-frontend",
   "version": "0.0.1",
   "description": "",
   "private": true,
@@ -33,13 +33,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osmosis-labs/osmosis-frontend.git"
+    "url": "git+https://github.com/merlins-labs/merlins-frontend.git"
   },
-  "author": "osmosis-labs",
+  "author": "merlins-labs",
   "bugs": {
-    "url": "https://github.com/osmosis-labs/osmosis-frontend/issues"
+    "url": "https://github.com/merlins-labs/merlins-frontend/issues"
   },
-  "homepage": "https://github.com/osmosis-labs/osmosis-frontend#readme",
+  "homepage": "https://github.com/merlins-labs/merlins-frontend#readme",
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
@@ -55,6 +55,5 @@
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.2",
     "typescript": "4.5.4"
-  },
-  "dependencies": {}
+  }
 }

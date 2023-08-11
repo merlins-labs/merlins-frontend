@@ -6,7 +6,7 @@ import { AppCurrency } from "@keplr-wallet/types";
 import { computedFn } from "mobx-utils";
 import { ObservableQueryPools } from "../pools";
 
-export class ObservableQuerySuperfluidOsmoEquivalent {
+export class ObservableQuerySuperfluidFuryEquivalent {
   constructor(
     protected readonly chainId: string,
     protected readonly chainGetter: ChainGetter,
@@ -15,9 +15,9 @@ export class ObservableQuerySuperfluidOsmoEquivalent {
     protected readonly _queryPools: ObservableQueryPools
   ) {}
 
-  readonly calculateOsmoEquivalent = computedFn(
+  readonly calculateFuryEquivalent = computedFn(
     (coinPretty: CoinPretty): CoinPretty => {
-      const multiplier = this.calculateOsmoEquivalentMultiplier(
+      const multiplier = this.calculateFuryEquivalentMultiplier(
         coinPretty.currency
       );
 
@@ -34,19 +34,19 @@ export class ObservableQuerySuperfluidOsmoEquivalent {
     }
   );
 
-  readonly calculateOsmoEquivalentMultiplier = computedFn(
+  readonly calculateFuryEquivalentMultiplier = computedFn(
     (currency: AppCurrency): Dec => {
       const minimumRiskFactor = this._querySuperfluidParams.minimumRiskFactor;
       const assetMultiplier = this._querySuperfluidAssetMultiplier.getDenom(
         currency.coinMinimalDenom
       ).multiplier;
 
-      const osmoCurrency = this.chainGetter.getChain(
+      const furyCurrency = this.chainGetter.getChain(
         this.chainId
       ).stakeCurrency;
 
       const multipication = DecUtils.getTenExponentN(
-        currency.coinDecimals - osmoCurrency.coinDecimals
+        currency.coinDecimals - furyCurrency.coinDecimals
       );
 
       return assetMultiplier
@@ -58,16 +58,16 @@ export class ObservableQuerySuperfluidOsmoEquivalent {
   /**
    * Estimate the multiplication value to compute the superfluid's APR. We assume that arbitrage trading is going well, not the exact value on the current chain, and estimate only by looking at the pool weight.
    */
-  readonly estimatePoolAPROsmoEquivalentMultiplier = computedFn(
+  readonly estimatePoolAPRFuryEquivalentMultiplier = computedFn(
     (poolId: string): Dec => {
       const pool = this._queryPools.getPool(poolId);
       if (pool && pool.weightedPoolInfo) {
-        const osmoCurrency = this.chainGetter.getChain(
+        const furyCurrency = this.chainGetter.getChain(
           this.chainId
         ).stakeCurrency;
 
         const poolAsset = pool.weightedPoolInfo.assets.find(
-          ({ denom }) => denom === osmoCurrency.coinMinimalDenom
+          ({ denom }) => denom === furyCurrency.coinMinimalDenom
         );
         if (
           poolAsset &&

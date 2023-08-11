@@ -1,13 +1,13 @@
 import { Dec } from "@keplr-wallet/unit";
 
-// Section: OSMO Multihop discount
+// Section: FURY Multihop discount
 
 /**
- * Can provide a swap fee discount if true. Introduced in Osmosis v13.
+ * Can provide a swap fee discount if true. Introduced in Merlins v13.
  *
- * Osmosis addition: https://github.com/osmosis-labs/osmosis/pull/2454
- * Invariants should match: `isOsmoRoutedMultihop` https://github.com/osmosis-labs/osmosis/blob/main/x/gamm/keeper/multihop.go#L266 */
-export function isOsmoRoutedMultihop(
+ * Merlins addition: https://github.com/merlins-labs/merlins/pull/2454
+ * Invariants should match: `isFuryRoutedMultihop` https://github.com/merlins-labs/merlins/blob/main/x/gamm/keeper/multihop.go#L266 */
+export function isFuryRoutedMultihop(
   pools: {
     id: string;
     isIncentivized: boolean;
@@ -35,16 +35,16 @@ export function isOsmoRoutedMultihop(
 }
 
 /**
- * Get's the special swap fee discount for routing through 2 OSMO pools as defined in `isOsmoRoutedMultihop`.
+ * Get's the special swap fee discount for routing through 2 FURY pools as defined in `isFuryRoutedMultihop`.
  *
- * Should match: https://github.com/osmosis-labs/osmosis/blob/d868b873fe55942d50f1e6e74900cf8bf1f90f25/x/gamm/keeper/multihop.go#L288-L305
+ * Should match: https://github.com/merlins-labs/merlins/blob/d868b873fe55942d50f1e6e74900cf8bf1f90f25/x/gamm/keeper/multihop.go#L288-L305
  *
  * Formula is:
  *
  * swapFeeSum = swapFee1 + swapFee2 + ... + swapFeeN
  * maxSwapFee = max(swapFee1, swapFee2, swapFeeSum / n)
  */
-export function getOsmoRoutedMultihopTotalSwapFee(pools: { swapFee: Dec }[]): {
+export function getFuryRoutedMultihopTotalSwapFee(pools: { swapFee: Dec }[]): {
   swapFeeSum: Dec;
   maxSwapFee: Dec;
 } {

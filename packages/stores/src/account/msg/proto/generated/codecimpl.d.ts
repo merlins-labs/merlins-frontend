@@ -939,8 +939,8 @@ export namespace cosmos {
   }
 }
 
-/** Namespace osmosis. */
-export namespace osmosis {
+/** Namespace merlins. */
+export namespace merlins {
   /** Namespace gamm. */
   namespace gamm {
     /** Namespace v1beta1. */
@@ -978,8 +978,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgJoinPoolResponse
          */
         public joinPool(
-          request: osmosis.gamm.v1beta1.IMsgJoinPool,
-          callback: osmosis.gamm.v1beta1.Msg.JoinPoolCallback
+          request: merlins.gamm.v1beta1.IMsgJoinPool,
+          callback: merlins.gamm.v1beta1.Msg.JoinPoolCallback
         ): void;
 
         /**
@@ -988,8 +988,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public joinPool(
-          request: osmosis.gamm.v1beta1.IMsgJoinPool
-        ): Promise<osmosis.gamm.v1beta1.MsgJoinPoolResponse>;
+          request: merlins.gamm.v1beta1.IMsgJoinPool
+        ): Promise<merlins.gamm.v1beta1.MsgJoinPoolResponse>;
 
         /**
          * Calls ExitPool.
@@ -997,8 +997,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgExitPoolResponse
          */
         public exitPool(
-          request: osmosis.gamm.v1beta1.IMsgExitPool,
-          callback: osmosis.gamm.v1beta1.Msg.ExitPoolCallback
+          request: merlins.gamm.v1beta1.IMsgExitPool,
+          callback: merlins.gamm.v1beta1.Msg.ExitPoolCallback
         ): void;
 
         /**
@@ -1007,8 +1007,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public exitPool(
-          request: osmosis.gamm.v1beta1.IMsgExitPool
-        ): Promise<osmosis.gamm.v1beta1.MsgExitPoolResponse>;
+          request: merlins.gamm.v1beta1.IMsgExitPool
+        ): Promise<merlins.gamm.v1beta1.MsgExitPoolResponse>;
 
         /**
          * Calls SwapExactAmountIn.
@@ -1016,8 +1016,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgSwapExactAmountInResponse
          */
         public swapExactAmountIn(
-          request: osmosis.gamm.v1beta1.IMsgSwapExactAmountIn,
-          callback: osmosis.gamm.v1beta1.Msg.SwapExactAmountInCallback
+          request: merlins.gamm.v1beta1.IMsgSwapExactAmountIn,
+          callback: merlins.gamm.v1beta1.Msg.SwapExactAmountInCallback
         ): void;
 
         /**
@@ -1026,8 +1026,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public swapExactAmountIn(
-          request: osmosis.gamm.v1beta1.IMsgSwapExactAmountIn
-        ): Promise<osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse>;
+          request: merlins.gamm.v1beta1.IMsgSwapExactAmountIn
+        ): Promise<merlins.gamm.v1beta1.MsgSwapExactAmountInResponse>;
 
         /**
          * Calls SwapExactAmountOut.
@@ -1035,8 +1035,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgSwapExactAmountOutResponse
          */
         public swapExactAmountOut(
-          request: osmosis.gamm.v1beta1.IMsgSwapExactAmountOut,
-          callback: osmosis.gamm.v1beta1.Msg.SwapExactAmountOutCallback
+          request: merlins.gamm.v1beta1.IMsgSwapExactAmountOut,
+          callback: merlins.gamm.v1beta1.Msg.SwapExactAmountOutCallback
         ): void;
 
         /**
@@ -1045,8 +1045,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public swapExactAmountOut(
-          request: osmosis.gamm.v1beta1.IMsgSwapExactAmountOut
-        ): Promise<osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse>;
+          request: merlins.gamm.v1beta1.IMsgSwapExactAmountOut
+        ): Promise<merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse>;
 
         /**
          * Calls JoinSwapExternAmountIn.
@@ -1054,8 +1054,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgJoinSwapExternAmountInResponse
          */
         public joinSwapExternAmountIn(
-          request: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountIn,
-          callback: osmosis.gamm.v1beta1.Msg.JoinSwapExternAmountInCallback
+          request: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountIn,
+          callback: merlins.gamm.v1beta1.Msg.JoinSwapExternAmountInCallback
         ): void;
 
         /**
@@ -1064,8 +1064,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public joinSwapExternAmountIn(
-          request: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountIn
-        ): Promise<osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse>;
+          request: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountIn
+        ): Promise<merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse>;
 
         /**
          * Calls JoinSwapShareAmountOut.
@@ -1073,8 +1073,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgJoinSwapShareAmountOutResponse
          */
         public joinSwapShareAmountOut(
-          request: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOut,
-          callback: osmosis.gamm.v1beta1.Msg.JoinSwapShareAmountOutCallback
+          request: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOut,
+          callback: merlins.gamm.v1beta1.Msg.JoinSwapShareAmountOutCallback
         ): void;
 
         /**
@@ -1083,8 +1083,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public joinSwapShareAmountOut(
-          request: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOut
-        ): Promise<osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse>;
+          request: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOut
+        ): Promise<merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse>;
 
         /**
          * Calls ExitSwapExternAmountOut.
@@ -1092,8 +1092,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgExitSwapExternAmountOutResponse
          */
         public exitSwapExternAmountOut(
-          request: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOut,
-          callback: osmosis.gamm.v1beta1.Msg.ExitSwapExternAmountOutCallback
+          request: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOut,
+          callback: merlins.gamm.v1beta1.Msg.ExitSwapExternAmountOutCallback
         ): void;
 
         /**
@@ -1102,8 +1102,8 @@ export namespace osmosis {
          * @returns Promise
          */
         public exitSwapExternAmountOut(
-          request: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOut
-        ): Promise<osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse>;
+          request: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOut
+        ): Promise<merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse>;
 
         /**
          * Calls ExitSwapShareAmountIn.
@@ -1111,8 +1111,8 @@ export namespace osmosis {
          * @param callback Node-style callback called with the error, if any, and MsgExitSwapShareAmountInResponse
          */
         public exitSwapShareAmountIn(
-          request: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountIn,
-          callback: osmosis.gamm.v1beta1.Msg.ExitSwapShareAmountInCallback
+          request: merlins.gamm.v1beta1.IMsgExitSwapShareAmountIn,
+          callback: merlins.gamm.v1beta1.Msg.ExitSwapShareAmountInCallback
         ): void;
 
         /**
@@ -1121,89 +1121,89 @@ export namespace osmosis {
          * @returns Promise
          */
         public exitSwapShareAmountIn(
-          request: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountIn
-        ): Promise<osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse>;
+          request: merlins.gamm.v1beta1.IMsgExitSwapShareAmountIn
+        ): Promise<merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse>;
       }
 
       namespace Msg {
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#joinPool}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#joinPool}.
          * @param error Error, if any
          * @param [response] MsgJoinPoolResponse
          */
         type JoinPoolCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgJoinPoolResponse
+          response?: merlins.gamm.v1beta1.MsgJoinPoolResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#exitPool}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#exitPool}.
          * @param error Error, if any
          * @param [response] MsgExitPoolResponse
          */
         type ExitPoolCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgExitPoolResponse
+          response?: merlins.gamm.v1beta1.MsgExitPoolResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#swapExactAmountIn}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#swapExactAmountIn}.
          * @param error Error, if any
          * @param [response] MsgSwapExactAmountInResponse
          */
         type SwapExactAmountInCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse
+          response?: merlins.gamm.v1beta1.MsgSwapExactAmountInResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#swapExactAmountOut}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#swapExactAmountOut}.
          * @param error Error, if any
          * @param [response] MsgSwapExactAmountOutResponse
          */
         type SwapExactAmountOutCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse
+          response?: merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#joinSwapExternAmountIn}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#joinSwapExternAmountIn}.
          * @param error Error, if any
          * @param [response] MsgJoinSwapExternAmountInResponse
          */
         type JoinSwapExternAmountInCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse
+          response?: merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#joinSwapShareAmountOut}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#joinSwapShareAmountOut}.
          * @param error Error, if any
          * @param [response] MsgJoinSwapShareAmountOutResponse
          */
         type JoinSwapShareAmountOutCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse
+          response?: merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#exitSwapExternAmountOut}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#exitSwapExternAmountOut}.
          * @param error Error, if any
          * @param [response] MsgExitSwapExternAmountOutResponse
          */
         type ExitSwapExternAmountOutCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse
+          response?: merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse
         ) => void;
 
         /**
-         * Callback as used by {@link osmosis.gamm.v1beta1.Msg#exitSwapShareAmountIn}.
+         * Callback as used by {@link merlins.gamm.v1beta1.Msg#exitSwapShareAmountIn}.
          * @param error Error, if any
          * @param [response] MsgExitSwapShareAmountInResponse
          */
         type ExitSwapShareAmountInCallback = (
           error: Error | null,
-          response?: osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse
+          response?: merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse
         ) => void;
       }
 
@@ -1228,7 +1228,7 @@ export namespace osmosis {
          * Constructs a new MsgJoinPool.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgJoinPool);
+        constructor(p?: merlins.gamm.v1beta1.IMsgJoinPool);
 
         /** MsgJoinPool sender. */
         public sender: string;
@@ -1248,17 +1248,17 @@ export namespace osmosis {
          * @returns MsgJoinPool instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgJoinPool
-        ): osmosis.gamm.v1beta1.MsgJoinPool;
+          properties?: merlins.gamm.v1beta1.IMsgJoinPool
+        ): merlins.gamm.v1beta1.MsgJoinPool;
 
         /**
-         * Encodes the specified MsgJoinPool message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgJoinPool.verify|verify} messages.
+         * Encodes the specified MsgJoinPool message. Does not implicitly {@link merlins.gamm.v1beta1.MsgJoinPool.verify|verify} messages.
          * @param m MsgJoinPool message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgJoinPool,
+          m: merlins.gamm.v1beta1.IMsgJoinPool,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1273,7 +1273,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgJoinPool;
+        ): merlins.gamm.v1beta1.MsgJoinPool;
 
         /**
          * Creates a MsgJoinPool message from a plain object. Also converts values to their respective internal types.
@@ -1282,7 +1282,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgJoinPool;
+        }): merlins.gamm.v1beta1.MsgJoinPool;
 
         /**
          * Creates a plain object from a MsgJoinPool message. Also converts values to other types if specified.
@@ -1291,7 +1291,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgJoinPool,
+          m: merlins.gamm.v1beta1.MsgJoinPool,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1317,7 +1317,7 @@ export namespace osmosis {
          * Constructs a new MsgJoinPoolResponse.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgJoinPoolResponse);
+        constructor(p?: merlins.gamm.v1beta1.IMsgJoinPoolResponse);
 
         /** MsgJoinPoolResponse shareOutAmount. */
         public shareOutAmount: string;
@@ -1331,17 +1331,17 @@ export namespace osmosis {
          * @returns MsgJoinPoolResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgJoinPoolResponse
-        ): osmosis.gamm.v1beta1.MsgJoinPoolResponse;
+          properties?: merlins.gamm.v1beta1.IMsgJoinPoolResponse
+        ): merlins.gamm.v1beta1.MsgJoinPoolResponse;
 
         /**
-         * Encodes the specified MsgJoinPoolResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgJoinPoolResponse.verify|verify} messages.
+         * Encodes the specified MsgJoinPoolResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgJoinPoolResponse.verify|verify} messages.
          * @param m MsgJoinPoolResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgJoinPoolResponse,
+          m: merlins.gamm.v1beta1.IMsgJoinPoolResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1356,7 +1356,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgJoinPoolResponse;
+        ): merlins.gamm.v1beta1.MsgJoinPoolResponse;
 
         /**
          * Creates a MsgJoinPoolResponse message from a plain object. Also converts values to their respective internal types.
@@ -1365,7 +1365,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgJoinPoolResponse;
+        }): merlins.gamm.v1beta1.MsgJoinPoolResponse;
 
         /**
          * Creates a plain object from a MsgJoinPoolResponse message. Also converts values to other types if specified.
@@ -1374,7 +1374,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgJoinPoolResponse,
+          m: merlins.gamm.v1beta1.MsgJoinPoolResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1406,7 +1406,7 @@ export namespace osmosis {
          * Constructs a new MsgExitPool.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgExitPool);
+        constructor(p?: merlins.gamm.v1beta1.IMsgExitPool);
 
         /** MsgExitPool sender. */
         public sender: string;
@@ -1426,17 +1426,17 @@ export namespace osmosis {
          * @returns MsgExitPool instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgExitPool
-        ): osmosis.gamm.v1beta1.MsgExitPool;
+          properties?: merlins.gamm.v1beta1.IMsgExitPool
+        ): merlins.gamm.v1beta1.MsgExitPool;
 
         /**
-         * Encodes the specified MsgExitPool message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgExitPool.verify|verify} messages.
+         * Encodes the specified MsgExitPool message. Does not implicitly {@link merlins.gamm.v1beta1.MsgExitPool.verify|verify} messages.
          * @param m MsgExitPool message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgExitPool,
+          m: merlins.gamm.v1beta1.IMsgExitPool,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1451,7 +1451,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgExitPool;
+        ): merlins.gamm.v1beta1.MsgExitPool;
 
         /**
          * Creates a MsgExitPool message from a plain object. Also converts values to their respective internal types.
@@ -1460,7 +1460,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgExitPool;
+        }): merlins.gamm.v1beta1.MsgExitPool;
 
         /**
          * Creates a plain object from a MsgExitPool message. Also converts values to other types if specified.
@@ -1469,7 +1469,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgExitPool,
+          m: merlins.gamm.v1beta1.MsgExitPool,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1492,7 +1492,7 @@ export namespace osmosis {
          * Constructs a new MsgExitPoolResponse.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgExitPoolResponse);
+        constructor(p?: merlins.gamm.v1beta1.IMsgExitPoolResponse);
 
         /** MsgExitPoolResponse tokenOut. */
         public tokenOut: cosmos.base.v1beta1.ICoin[];
@@ -1503,17 +1503,17 @@ export namespace osmosis {
          * @returns MsgExitPoolResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgExitPoolResponse
-        ): osmosis.gamm.v1beta1.MsgExitPoolResponse;
+          properties?: merlins.gamm.v1beta1.IMsgExitPoolResponse
+        ): merlins.gamm.v1beta1.MsgExitPoolResponse;
 
         /**
-         * Encodes the specified MsgExitPoolResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgExitPoolResponse.verify|verify} messages.
+         * Encodes the specified MsgExitPoolResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgExitPoolResponse.verify|verify} messages.
          * @param m MsgExitPoolResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgExitPoolResponse,
+          m: merlins.gamm.v1beta1.IMsgExitPoolResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1528,7 +1528,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgExitPoolResponse;
+        ): merlins.gamm.v1beta1.MsgExitPoolResponse;
 
         /**
          * Creates a MsgExitPoolResponse message from a plain object. Also converts values to their respective internal types.
@@ -1537,7 +1537,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgExitPoolResponse;
+        }): merlins.gamm.v1beta1.MsgExitPoolResponse;
 
         /**
          * Creates a plain object from a MsgExitPoolResponse message. Also converts values to other types if specified.
@@ -1546,7 +1546,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgExitPoolResponse,
+          m: merlins.gamm.v1beta1.MsgExitPoolResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1572,7 +1572,7 @@ export namespace osmosis {
          * Constructs a new SwapAmountInRoute.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.ISwapAmountInRoute);
+        constructor(p?: merlins.gamm.v1beta1.ISwapAmountInRoute);
 
         /** SwapAmountInRoute poolId. */
         public poolId: Long;
@@ -1586,17 +1586,17 @@ export namespace osmosis {
          * @returns SwapAmountInRoute instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.ISwapAmountInRoute
-        ): osmosis.gamm.v1beta1.SwapAmountInRoute;
+          properties?: merlins.gamm.v1beta1.ISwapAmountInRoute
+        ): merlins.gamm.v1beta1.SwapAmountInRoute;
 
         /**
-         * Encodes the specified SwapAmountInRoute message. Does not implicitly {@link osmosis.gamm.v1beta1.SwapAmountInRoute.verify|verify} messages.
+         * Encodes the specified SwapAmountInRoute message. Does not implicitly {@link merlins.gamm.v1beta1.SwapAmountInRoute.verify|verify} messages.
          * @param m SwapAmountInRoute message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.ISwapAmountInRoute,
+          m: merlins.gamm.v1beta1.ISwapAmountInRoute,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1611,7 +1611,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.SwapAmountInRoute;
+        ): merlins.gamm.v1beta1.SwapAmountInRoute;
 
         /**
          * Creates a SwapAmountInRoute message from a plain object. Also converts values to their respective internal types.
@@ -1620,7 +1620,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.SwapAmountInRoute;
+        }): merlins.gamm.v1beta1.SwapAmountInRoute;
 
         /**
          * Creates a plain object from a SwapAmountInRoute message. Also converts values to other types if specified.
@@ -1629,7 +1629,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.SwapAmountInRoute,
+          m: merlins.gamm.v1beta1.SwapAmountInRoute,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1646,7 +1646,7 @@ export namespace osmosis {
         sender?: string | null;
 
         /** MsgSwapExactAmountIn routes */
-        routes?: osmosis.gamm.v1beta1.ISwapAmountInRoute[] | null;
+        routes?: merlins.gamm.v1beta1.ISwapAmountInRoute[] | null;
 
         /** MsgSwapExactAmountIn tokenIn */
         tokenIn?: cosmos.base.v1beta1.ICoin | null;
@@ -1661,13 +1661,13 @@ export namespace osmosis {
          * Constructs a new MsgSwapExactAmountIn.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgSwapExactAmountIn);
+        constructor(p?: merlins.gamm.v1beta1.IMsgSwapExactAmountIn);
 
         /** MsgSwapExactAmountIn sender. */
         public sender: string;
 
         /** MsgSwapExactAmountIn routes. */
-        public routes: osmosis.gamm.v1beta1.ISwapAmountInRoute[];
+        public routes: merlins.gamm.v1beta1.ISwapAmountInRoute[];
 
         /** MsgSwapExactAmountIn tokenIn. */
         public tokenIn?: cosmos.base.v1beta1.ICoin | null;
@@ -1681,17 +1681,17 @@ export namespace osmosis {
          * @returns MsgSwapExactAmountIn instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgSwapExactAmountIn
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountIn;
+          properties?: merlins.gamm.v1beta1.IMsgSwapExactAmountIn
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountIn;
 
         /**
-         * Encodes the specified MsgSwapExactAmountIn message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgSwapExactAmountIn.verify|verify} messages.
+         * Encodes the specified MsgSwapExactAmountIn message. Does not implicitly {@link merlins.gamm.v1beta1.MsgSwapExactAmountIn.verify|verify} messages.
          * @param m MsgSwapExactAmountIn message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgSwapExactAmountIn,
+          m: merlins.gamm.v1beta1.IMsgSwapExactAmountIn,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1706,7 +1706,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountIn;
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountIn;
 
         /**
          * Creates a MsgSwapExactAmountIn message from a plain object. Also converts values to their respective internal types.
@@ -1715,7 +1715,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgSwapExactAmountIn;
+        }): merlins.gamm.v1beta1.MsgSwapExactAmountIn;
 
         /**
          * Creates a plain object from a MsgSwapExactAmountIn message. Also converts values to other types if specified.
@@ -1724,7 +1724,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgSwapExactAmountIn,
+          m: merlins.gamm.v1beta1.MsgSwapExactAmountIn,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1749,7 +1749,7 @@ export namespace osmosis {
          * Constructs a new MsgSwapExactAmountInResponse.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgSwapExactAmountInResponse);
+        constructor(p?: merlins.gamm.v1beta1.IMsgSwapExactAmountInResponse);
 
         /** MsgSwapExactAmountInResponse tokenOutAmount. */
         public tokenOutAmount: string;
@@ -1760,17 +1760,17 @@ export namespace osmosis {
          * @returns MsgSwapExactAmountInResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgSwapExactAmountInResponse
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse;
+          properties?: merlins.gamm.v1beta1.IMsgSwapExactAmountInResponse
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountInResponse;
 
         /**
-         * Encodes the specified MsgSwapExactAmountInResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse.verify|verify} messages.
+         * Encodes the specified MsgSwapExactAmountInResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgSwapExactAmountInResponse.verify|verify} messages.
          * @param m MsgSwapExactAmountInResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgSwapExactAmountInResponse,
+          m: merlins.gamm.v1beta1.IMsgSwapExactAmountInResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1785,7 +1785,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse;
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountInResponse;
 
         /**
          * Creates a MsgSwapExactAmountInResponse message from a plain object. Also converts values to their respective internal types.
@@ -1794,7 +1794,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse;
+        }): merlins.gamm.v1beta1.MsgSwapExactAmountInResponse;
 
         /**
          * Creates a plain object from a MsgSwapExactAmountInResponse message. Also converts values to other types if specified.
@@ -1803,7 +1803,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse,
+          m: merlins.gamm.v1beta1.MsgSwapExactAmountInResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1829,7 +1829,7 @@ export namespace osmosis {
          * Constructs a new SwapAmountOutRoute.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.ISwapAmountOutRoute);
+        constructor(p?: merlins.gamm.v1beta1.ISwapAmountOutRoute);
 
         /** SwapAmountOutRoute poolId. */
         public poolId: Long;
@@ -1843,17 +1843,17 @@ export namespace osmosis {
          * @returns SwapAmountOutRoute instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.ISwapAmountOutRoute
-        ): osmosis.gamm.v1beta1.SwapAmountOutRoute;
+          properties?: merlins.gamm.v1beta1.ISwapAmountOutRoute
+        ): merlins.gamm.v1beta1.SwapAmountOutRoute;
 
         /**
-         * Encodes the specified SwapAmountOutRoute message. Does not implicitly {@link osmosis.gamm.v1beta1.SwapAmountOutRoute.verify|verify} messages.
+         * Encodes the specified SwapAmountOutRoute message. Does not implicitly {@link merlins.gamm.v1beta1.SwapAmountOutRoute.verify|verify} messages.
          * @param m SwapAmountOutRoute message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.ISwapAmountOutRoute,
+          m: merlins.gamm.v1beta1.ISwapAmountOutRoute,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1868,7 +1868,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.SwapAmountOutRoute;
+        ): merlins.gamm.v1beta1.SwapAmountOutRoute;
 
         /**
          * Creates a SwapAmountOutRoute message from a plain object. Also converts values to their respective internal types.
@@ -1877,7 +1877,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.SwapAmountOutRoute;
+        }): merlins.gamm.v1beta1.SwapAmountOutRoute;
 
         /**
          * Creates a plain object from a SwapAmountOutRoute message. Also converts values to other types if specified.
@@ -1886,7 +1886,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.SwapAmountOutRoute,
+          m: merlins.gamm.v1beta1.SwapAmountOutRoute,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -1903,7 +1903,7 @@ export namespace osmosis {
         sender?: string | null;
 
         /** MsgSwapExactAmountOut routes */
-        routes?: osmosis.gamm.v1beta1.ISwapAmountOutRoute[] | null;
+        routes?: merlins.gamm.v1beta1.ISwapAmountOutRoute[] | null;
 
         /** MsgSwapExactAmountOut tokenInMaxAmount */
         tokenInMaxAmount?: string | null;
@@ -1918,13 +1918,13 @@ export namespace osmosis {
          * Constructs a new MsgSwapExactAmountOut.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgSwapExactAmountOut);
+        constructor(p?: merlins.gamm.v1beta1.IMsgSwapExactAmountOut);
 
         /** MsgSwapExactAmountOut sender. */
         public sender: string;
 
         /** MsgSwapExactAmountOut routes. */
-        public routes: osmosis.gamm.v1beta1.ISwapAmountOutRoute[];
+        public routes: merlins.gamm.v1beta1.ISwapAmountOutRoute[];
 
         /** MsgSwapExactAmountOut tokenInMaxAmount. */
         public tokenInMaxAmount: string;
@@ -1938,17 +1938,17 @@ export namespace osmosis {
          * @returns MsgSwapExactAmountOut instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgSwapExactAmountOut
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountOut;
+          properties?: merlins.gamm.v1beta1.IMsgSwapExactAmountOut
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountOut;
 
         /**
-         * Encodes the specified MsgSwapExactAmountOut message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgSwapExactAmountOut.verify|verify} messages.
+         * Encodes the specified MsgSwapExactAmountOut message. Does not implicitly {@link merlins.gamm.v1beta1.MsgSwapExactAmountOut.verify|verify} messages.
          * @param m MsgSwapExactAmountOut message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgSwapExactAmountOut,
+          m: merlins.gamm.v1beta1.IMsgSwapExactAmountOut,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -1963,7 +1963,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountOut;
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountOut;
 
         /**
          * Creates a MsgSwapExactAmountOut message from a plain object. Also converts values to their respective internal types.
@@ -1972,7 +1972,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgSwapExactAmountOut;
+        }): merlins.gamm.v1beta1.MsgSwapExactAmountOut;
 
         /**
          * Creates a plain object from a MsgSwapExactAmountOut message. Also converts values to other types if specified.
@@ -1981,7 +1981,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgSwapExactAmountOut,
+          m: merlins.gamm.v1beta1.MsgSwapExactAmountOut,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2006,7 +2006,7 @@ export namespace osmosis {
          * Constructs a new MsgSwapExactAmountOutResponse.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgSwapExactAmountOutResponse);
+        constructor(p?: merlins.gamm.v1beta1.IMsgSwapExactAmountOutResponse);
 
         /** MsgSwapExactAmountOutResponse tokenInAmount. */
         public tokenInAmount: string;
@@ -2017,17 +2017,17 @@ export namespace osmosis {
          * @returns MsgSwapExactAmountOutResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgSwapExactAmountOutResponse
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse;
+          properties?: merlins.gamm.v1beta1.IMsgSwapExactAmountOutResponse
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse;
 
         /**
-         * Encodes the specified MsgSwapExactAmountOutResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse.verify|verify} messages.
+         * Encodes the specified MsgSwapExactAmountOutResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse.verify|verify} messages.
          * @param m MsgSwapExactAmountOutResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgSwapExactAmountOutResponse,
+          m: merlins.gamm.v1beta1.IMsgSwapExactAmountOutResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2042,7 +2042,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse;
+        ): merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse;
 
         /**
          * Creates a MsgSwapExactAmountOutResponse message from a plain object. Also converts values to their respective internal types.
@@ -2051,7 +2051,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse;
+        }): merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse;
 
         /**
          * Creates a plain object from a MsgSwapExactAmountOutResponse message. Also converts values to other types if specified.
@@ -2060,7 +2060,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse,
+          m: merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2092,7 +2092,7 @@ export namespace osmosis {
          * Constructs a new MsgJoinSwapExternAmountIn.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountIn);
+        constructor(p?: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountIn);
 
         /** MsgJoinSwapExternAmountIn sender. */
         public sender: string;
@@ -2112,17 +2112,17 @@ export namespace osmosis {
          * @returns MsgJoinSwapExternAmountIn instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountIn
-        ): osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn;
+          properties?: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountIn
+        ): merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn;
 
         /**
-         * Encodes the specified MsgJoinSwapExternAmountIn message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn.verify|verify} messages.
+         * Encodes the specified MsgJoinSwapExternAmountIn message. Does not implicitly {@link merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn.verify|verify} messages.
          * @param m MsgJoinSwapExternAmountIn message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountIn,
+          m: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountIn,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2137,7 +2137,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn;
+        ): merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn;
 
         /**
          * Creates a MsgJoinSwapExternAmountIn message from a plain object. Also converts values to their respective internal types.
@@ -2146,7 +2146,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn;
+        }): merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn;
 
         /**
          * Creates a plain object from a MsgJoinSwapExternAmountIn message. Also converts values to other types if specified.
@@ -2155,7 +2155,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn,
+          m: merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2181,7 +2181,7 @@ export namespace osmosis {
          * @param [p] Properties to set
          */
         constructor(
-          p?: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountInResponse
+          p?: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountInResponse
         );
 
         /** MsgJoinSwapExternAmountInResponse shareOutAmount. */
@@ -2193,17 +2193,17 @@ export namespace osmosis {
          * @returns MsgJoinSwapExternAmountInResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountInResponse
-        ): osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse;
+          properties?: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountInResponse
+        ): merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse;
 
         /**
-         * Encodes the specified MsgJoinSwapExternAmountInResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse.verify|verify} messages.
+         * Encodes the specified MsgJoinSwapExternAmountInResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse.verify|verify} messages.
          * @param m MsgJoinSwapExternAmountInResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgJoinSwapExternAmountInResponse,
+          m: merlins.gamm.v1beta1.IMsgJoinSwapExternAmountInResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2218,7 +2218,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse;
+        ): merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse;
 
         /**
          * Creates a MsgJoinSwapExternAmountInResponse message from a plain object. Also converts values to their respective internal types.
@@ -2227,7 +2227,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse;
+        }): merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse;
 
         /**
          * Creates a plain object from a MsgJoinSwapExternAmountInResponse message. Also converts values to other types if specified.
@@ -2236,7 +2236,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse,
+          m: merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2271,7 +2271,7 @@ export namespace osmosis {
          * Constructs a new MsgJoinSwapShareAmountOut.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOut);
+        constructor(p?: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOut);
 
         /** MsgJoinSwapShareAmountOut sender. */
         public sender: string;
@@ -2294,17 +2294,17 @@ export namespace osmosis {
          * @returns MsgJoinSwapShareAmountOut instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOut
-        ): osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut;
+          properties?: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOut
+        ): merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut;
 
         /**
-         * Encodes the specified MsgJoinSwapShareAmountOut message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut.verify|verify} messages.
+         * Encodes the specified MsgJoinSwapShareAmountOut message. Does not implicitly {@link merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut.verify|verify} messages.
          * @param m MsgJoinSwapShareAmountOut message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOut,
+          m: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOut,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2319,7 +2319,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut;
+        ): merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut;
 
         /**
          * Creates a MsgJoinSwapShareAmountOut message from a plain object. Also converts values to their respective internal types.
@@ -2328,7 +2328,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut;
+        }): merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut;
 
         /**
          * Creates a plain object from a MsgJoinSwapShareAmountOut message. Also converts values to other types if specified.
@@ -2337,7 +2337,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut,
+          m: merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2363,7 +2363,7 @@ export namespace osmosis {
          * @param [p] Properties to set
          */
         constructor(
-          p?: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOutResponse
+          p?: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOutResponse
         );
 
         /** MsgJoinSwapShareAmountOutResponse tokenInAmount. */
@@ -2375,17 +2375,17 @@ export namespace osmosis {
          * @returns MsgJoinSwapShareAmountOutResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOutResponse
-        ): osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse;
+          properties?: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOutResponse
+        ): merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse;
 
         /**
-         * Encodes the specified MsgJoinSwapShareAmountOutResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse.verify|verify} messages.
+         * Encodes the specified MsgJoinSwapShareAmountOutResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse.verify|verify} messages.
          * @param m MsgJoinSwapShareAmountOutResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgJoinSwapShareAmountOutResponse,
+          m: merlins.gamm.v1beta1.IMsgJoinSwapShareAmountOutResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2400,7 +2400,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse;
+        ): merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse;
 
         /**
          * Creates a MsgJoinSwapShareAmountOutResponse message from a plain object. Also converts values to their respective internal types.
@@ -2409,7 +2409,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse;
+        }): merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse;
 
         /**
          * Creates a plain object from a MsgJoinSwapShareAmountOutResponse message. Also converts values to other types if specified.
@@ -2418,7 +2418,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse,
+          m: merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2453,7 +2453,7 @@ export namespace osmosis {
          * Constructs a new MsgExitSwapShareAmountIn.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountIn);
+        constructor(p?: merlins.gamm.v1beta1.IMsgExitSwapShareAmountIn);
 
         /** MsgExitSwapShareAmountIn sender. */
         public sender: string;
@@ -2476,17 +2476,17 @@ export namespace osmosis {
          * @returns MsgExitSwapShareAmountIn instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountIn
-        ): osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn;
+          properties?: merlins.gamm.v1beta1.IMsgExitSwapShareAmountIn
+        ): merlins.gamm.v1beta1.MsgExitSwapShareAmountIn;
 
         /**
-         * Encodes the specified MsgExitSwapShareAmountIn message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn.verify|verify} messages.
+         * Encodes the specified MsgExitSwapShareAmountIn message. Does not implicitly {@link merlins.gamm.v1beta1.MsgExitSwapShareAmountIn.verify|verify} messages.
          * @param m MsgExitSwapShareAmountIn message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountIn,
+          m: merlins.gamm.v1beta1.IMsgExitSwapShareAmountIn,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2501,7 +2501,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn;
+        ): merlins.gamm.v1beta1.MsgExitSwapShareAmountIn;
 
         /**
          * Creates a MsgExitSwapShareAmountIn message from a plain object. Also converts values to their respective internal types.
@@ -2510,7 +2510,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn;
+        }): merlins.gamm.v1beta1.MsgExitSwapShareAmountIn;
 
         /**
          * Creates a plain object from a MsgExitSwapShareAmountIn message. Also converts values to other types if specified.
@@ -2519,7 +2519,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn,
+          m: merlins.gamm.v1beta1.MsgExitSwapShareAmountIn,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2544,7 +2544,7 @@ export namespace osmosis {
          * Constructs a new MsgExitSwapShareAmountInResponse.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountInResponse);
+        constructor(p?: merlins.gamm.v1beta1.IMsgExitSwapShareAmountInResponse);
 
         /** MsgExitSwapShareAmountInResponse tokenOutAmount. */
         public tokenOutAmount: string;
@@ -2555,17 +2555,17 @@ export namespace osmosis {
          * @returns MsgExitSwapShareAmountInResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountInResponse
-        ): osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse;
+          properties?: merlins.gamm.v1beta1.IMsgExitSwapShareAmountInResponse
+        ): merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse;
 
         /**
-         * Encodes the specified MsgExitSwapShareAmountInResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse.verify|verify} messages.
+         * Encodes the specified MsgExitSwapShareAmountInResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse.verify|verify} messages.
          * @param m MsgExitSwapShareAmountInResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgExitSwapShareAmountInResponse,
+          m: merlins.gamm.v1beta1.IMsgExitSwapShareAmountInResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2580,7 +2580,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse;
+        ): merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse;
 
         /**
          * Creates a MsgExitSwapShareAmountInResponse message from a plain object. Also converts values to their respective internal types.
@@ -2589,7 +2589,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse;
+        }): merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse;
 
         /**
          * Creates a plain object from a MsgExitSwapShareAmountInResponse message. Also converts values to other types if specified.
@@ -2598,7 +2598,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse,
+          m: merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2630,7 +2630,7 @@ export namespace osmosis {
          * Constructs a new MsgExitSwapExternAmountOut.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOut);
+        constructor(p?: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOut);
 
         /** MsgExitSwapExternAmountOut sender. */
         public sender: string;
@@ -2650,17 +2650,17 @@ export namespace osmosis {
          * @returns MsgExitSwapExternAmountOut instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOut
-        ): osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut;
+          properties?: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOut
+        ): merlins.gamm.v1beta1.MsgExitSwapExternAmountOut;
 
         /**
-         * Encodes the specified MsgExitSwapExternAmountOut message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut.verify|verify} messages.
+         * Encodes the specified MsgExitSwapExternAmountOut message. Does not implicitly {@link merlins.gamm.v1beta1.MsgExitSwapExternAmountOut.verify|verify} messages.
          * @param m MsgExitSwapExternAmountOut message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOut,
+          m: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOut,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2675,7 +2675,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut;
+        ): merlins.gamm.v1beta1.MsgExitSwapExternAmountOut;
 
         /**
          * Creates a MsgExitSwapExternAmountOut message from a plain object. Also converts values to their respective internal types.
@@ -2684,7 +2684,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut;
+        }): merlins.gamm.v1beta1.MsgExitSwapExternAmountOut;
 
         /**
          * Creates a plain object from a MsgExitSwapExternAmountOut message. Also converts values to other types if specified.
@@ -2693,7 +2693,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut,
+          m: merlins.gamm.v1beta1.MsgExitSwapExternAmountOut,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2719,7 +2719,7 @@ export namespace osmosis {
          * @param [p] Properties to set
          */
         constructor(
-          p?: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOutResponse
+          p?: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOutResponse
         );
 
         /** MsgExitSwapExternAmountOutResponse shareInAmount. */
@@ -2731,17 +2731,17 @@ export namespace osmosis {
          * @returns MsgExitSwapExternAmountOutResponse instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOutResponse
-        ): osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse;
+          properties?: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOutResponse
+        ): merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse;
 
         /**
-         * Encodes the specified MsgExitSwapExternAmountOutResponse message. Does not implicitly {@link osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse.verify|verify} messages.
+         * Encodes the specified MsgExitSwapExternAmountOutResponse message. Does not implicitly {@link merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse.verify|verify} messages.
          * @param m MsgExitSwapExternAmountOutResponse message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IMsgExitSwapExternAmountOutResponse,
+          m: merlins.gamm.v1beta1.IMsgExitSwapExternAmountOutResponse,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2756,7 +2756,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse;
+        ): merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse;
 
         /**
          * Creates a MsgExitSwapExternAmountOutResponse message from a plain object. Also converts values to their respective internal types.
@@ -2765,7 +2765,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse;
+        }): merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse;
 
         /**
          * Creates a plain object from a MsgExitSwapExternAmountOutResponse message. Also converts values to other types if specified.
@@ -2774,7 +2774,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse,
+          m: merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2794,10 +2794,10 @@ export namespace osmosis {
         duration?: google.protobuf.IDuration | null;
 
         /** SmoothWeightChangeParams initialPoolWeights */
-        initialPoolWeights?: osmosis.gamm.v1beta1.IPoolAsset[] | null;
+        initialPoolWeights?: merlins.gamm.v1beta1.IPoolAsset[] | null;
 
         /** SmoothWeightChangeParams targetPoolWeights */
-        targetPoolWeights?: osmosis.gamm.v1beta1.IPoolAsset[] | null;
+        targetPoolWeights?: merlins.gamm.v1beta1.IPoolAsset[] | null;
       }
 
       /** Represents a SmoothWeightChangeParams. */
@@ -2806,7 +2806,7 @@ export namespace osmosis {
          * Constructs a new SmoothWeightChangeParams.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.ISmoothWeightChangeParams);
+        constructor(p?: merlins.gamm.v1beta1.ISmoothWeightChangeParams);
 
         /** SmoothWeightChangeParams startTime. */
         public startTime?: google.protobuf.ITimestamp | null;
@@ -2815,10 +2815,10 @@ export namespace osmosis {
         public duration?: google.protobuf.IDuration | null;
 
         /** SmoothWeightChangeParams initialPoolWeights. */
-        public initialPoolWeights: osmosis.gamm.v1beta1.IPoolAsset[];
+        public initialPoolWeights: merlins.gamm.v1beta1.IPoolAsset[];
 
         /** SmoothWeightChangeParams targetPoolWeights. */
-        public targetPoolWeights: osmosis.gamm.v1beta1.IPoolAsset[];
+        public targetPoolWeights: merlins.gamm.v1beta1.IPoolAsset[];
 
         /**
          * Creates a new SmoothWeightChangeParams instance using the specified properties.
@@ -2826,17 +2826,17 @@ export namespace osmosis {
          * @returns SmoothWeightChangeParams instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.ISmoothWeightChangeParams
-        ): osmosis.gamm.v1beta1.SmoothWeightChangeParams;
+          properties?: merlins.gamm.v1beta1.ISmoothWeightChangeParams
+        ): merlins.gamm.v1beta1.SmoothWeightChangeParams;
 
         /**
-         * Encodes the specified SmoothWeightChangeParams message. Does not implicitly {@link osmosis.gamm.v1beta1.SmoothWeightChangeParams.verify|verify} messages.
+         * Encodes the specified SmoothWeightChangeParams message. Does not implicitly {@link merlins.gamm.v1beta1.SmoothWeightChangeParams.verify|verify} messages.
          * @param m SmoothWeightChangeParams message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.ISmoothWeightChangeParams,
+          m: merlins.gamm.v1beta1.ISmoothWeightChangeParams,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2851,7 +2851,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.SmoothWeightChangeParams;
+        ): merlins.gamm.v1beta1.SmoothWeightChangeParams;
 
         /**
          * Creates a SmoothWeightChangeParams message from a plain object. Also converts values to their respective internal types.
@@ -2860,7 +2860,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.SmoothWeightChangeParams;
+        }): merlins.gamm.v1beta1.SmoothWeightChangeParams;
 
         /**
          * Creates a plain object from a SmoothWeightChangeParams message. Also converts values to other types if specified.
@@ -2869,7 +2869,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.SmoothWeightChangeParams,
+          m: merlins.gamm.v1beta1.SmoothWeightChangeParams,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2889,7 +2889,7 @@ export namespace osmosis {
         exitFee?: string | null;
 
         /** PoolParams smoothWeightChangeParams */
-        smoothWeightChangeParams?: osmosis.gamm.v1beta1.ISmoothWeightChangeParams | null;
+        smoothWeightChangeParams?: merlins.gamm.v1beta1.ISmoothWeightChangeParams | null;
       }
 
       /** Represents a PoolParams. */
@@ -2898,7 +2898,7 @@ export namespace osmosis {
          * Constructs a new PoolParams.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IPoolParams);
+        constructor(p?: merlins.gamm.v1beta1.IPoolParams);
 
         /** PoolParams swapFee. */
         public swapFee: string;
@@ -2907,7 +2907,7 @@ export namespace osmosis {
         public exitFee: string;
 
         /** PoolParams smoothWeightChangeParams. */
-        public smoothWeightChangeParams?: osmosis.gamm.v1beta1.ISmoothWeightChangeParams | null;
+        public smoothWeightChangeParams?: merlins.gamm.v1beta1.ISmoothWeightChangeParams | null;
 
         /**
          * Creates a new PoolParams instance using the specified properties.
@@ -2915,17 +2915,17 @@ export namespace osmosis {
          * @returns PoolParams instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IPoolParams
-        ): osmosis.gamm.v1beta1.PoolParams;
+          properties?: merlins.gamm.v1beta1.IPoolParams
+        ): merlins.gamm.v1beta1.PoolParams;
 
         /**
-         * Encodes the specified PoolParams message. Does not implicitly {@link osmosis.gamm.v1beta1.PoolParams.verify|verify} messages.
+         * Encodes the specified PoolParams message. Does not implicitly {@link merlins.gamm.v1beta1.PoolParams.verify|verify} messages.
          * @param m PoolParams message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IPoolParams,
+          m: merlins.gamm.v1beta1.IPoolParams,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -2940,7 +2940,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.PoolParams;
+        ): merlins.gamm.v1beta1.PoolParams;
 
         /**
          * Creates a PoolParams message from a plain object. Also converts values to their respective internal types.
@@ -2949,7 +2949,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.PoolParams;
+        }): merlins.gamm.v1beta1.PoolParams;
 
         /**
          * Creates a plain object from a PoolParams message. Also converts values to other types if specified.
@@ -2958,7 +2958,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.PoolParams,
+          m: merlins.gamm.v1beta1.PoolParams,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -2984,7 +2984,7 @@ export namespace osmosis {
          * Constructs a new PoolAsset.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IPoolAsset);
+        constructor(p?: merlins.gamm.v1beta1.IPoolAsset);
 
         /** PoolAsset token. */
         public token?: cosmos.base.v1beta1.ICoin | null;
@@ -2998,17 +2998,17 @@ export namespace osmosis {
          * @returns PoolAsset instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IPoolAsset
-        ): osmosis.gamm.v1beta1.PoolAsset;
+          properties?: merlins.gamm.v1beta1.IPoolAsset
+        ): merlins.gamm.v1beta1.PoolAsset;
 
         /**
-         * Encodes the specified PoolAsset message. Does not implicitly {@link osmosis.gamm.v1beta1.PoolAsset.verify|verify} messages.
+         * Encodes the specified PoolAsset message. Does not implicitly {@link merlins.gamm.v1beta1.PoolAsset.verify|verify} messages.
          * @param m PoolAsset message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IPoolAsset,
+          m: merlins.gamm.v1beta1.IPoolAsset,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -3023,7 +3023,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.PoolAsset;
+        ): merlins.gamm.v1beta1.PoolAsset;
 
         /**
          * Creates a PoolAsset message from a plain object. Also converts values to their respective internal types.
@@ -3032,7 +3032,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.PoolAsset;
+        }): merlins.gamm.v1beta1.PoolAsset;
 
         /**
          * Creates a plain object from a PoolAsset message. Also converts values to other types if specified.
@@ -3041,7 +3041,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.PoolAsset,
+          m: merlins.gamm.v1beta1.PoolAsset,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -3061,7 +3061,7 @@ export namespace osmosis {
         id?: Long | null;
 
         /** Pool poolParams */
-        poolParams?: osmosis.gamm.v1beta1.IPoolParams | null;
+        poolParams?: merlins.gamm.v1beta1.IPoolParams | null;
 
         /** Pool futurePoolGovernor */
         futurePoolGovernor?: string | null;
@@ -3070,7 +3070,7 @@ export namespace osmosis {
         totalShares?: cosmos.base.v1beta1.ICoin | null;
 
         /** Pool poolAssets */
-        poolAssets?: osmosis.gamm.v1beta1.IPoolAsset[] | null;
+        poolAssets?: merlins.gamm.v1beta1.IPoolAsset[] | null;
 
         /** Pool totalWeight */
         totalWeight?: string | null;
@@ -3082,7 +3082,7 @@ export namespace osmosis {
          * Constructs a new Pool.
          * @param [p] Properties to set
          */
-        constructor(p?: osmosis.gamm.v1beta1.IPool);
+        constructor(p?: merlins.gamm.v1beta1.IPool);
 
         /** Pool address. */
         public address: string;
@@ -3091,7 +3091,7 @@ export namespace osmosis {
         public id: Long;
 
         /** Pool poolParams. */
-        public poolParams?: osmosis.gamm.v1beta1.IPoolParams | null;
+        public poolParams?: merlins.gamm.v1beta1.IPoolParams | null;
 
         /** Pool futurePoolGovernor. */
         public futurePoolGovernor: string;
@@ -3100,7 +3100,7 @@ export namespace osmosis {
         public totalShares?: cosmos.base.v1beta1.ICoin | null;
 
         /** Pool poolAssets. */
-        public poolAssets: osmosis.gamm.v1beta1.IPoolAsset[];
+        public poolAssets: merlins.gamm.v1beta1.IPoolAsset[];
 
         /** Pool totalWeight. */
         public totalWeight: string;
@@ -3111,17 +3111,17 @@ export namespace osmosis {
          * @returns Pool instance
          */
         public static create(
-          properties?: osmosis.gamm.v1beta1.IPool
-        ): osmosis.gamm.v1beta1.Pool;
+          properties?: merlins.gamm.v1beta1.IPool
+        ): merlins.gamm.v1beta1.Pool;
 
         /**
-         * Encodes the specified Pool message. Does not implicitly {@link osmosis.gamm.v1beta1.Pool.verify|verify} messages.
+         * Encodes the specified Pool message. Does not implicitly {@link merlins.gamm.v1beta1.Pool.verify|verify} messages.
          * @param m Pool message or plain object to encode
          * @param [w] Writer to encode to
          * @returns Writer
          */
         public static encode(
-          m: osmosis.gamm.v1beta1.IPool,
+          m: merlins.gamm.v1beta1.IPool,
           w?: $protobuf.Writer
         ): $protobuf.Writer;
 
@@ -3136,7 +3136,7 @@ export namespace osmosis {
         public static decode(
           r: $protobuf.Reader | Uint8Array,
           l?: number
-        ): osmosis.gamm.v1beta1.Pool;
+        ): merlins.gamm.v1beta1.Pool;
 
         /**
          * Creates a Pool message from a plain object. Also converts values to their respective internal types.
@@ -3145,7 +3145,7 @@ export namespace osmosis {
          */
         public static fromObject(d: {
           [k: string]: any;
-        }): osmosis.gamm.v1beta1.Pool;
+        }): merlins.gamm.v1beta1.Pool;
 
         /**
          * Creates a plain object from a Pool message. Also converts values to other types if specified.
@@ -3154,7 +3154,7 @@ export namespace osmosis {
          * @returns Plain object
          */
         public static toObject(
-          m: osmosis.gamm.v1beta1.Pool,
+          m: merlins.gamm.v1beta1.Pool,
           o?: $protobuf.IConversionOptions
         ): { [k: string]: any };
 
@@ -3205,8 +3205,8 @@ export namespace osmosis {
              * @param callback Node-style callback called with the error, if any, and MsgCreateBalancerPoolResponse
              */
             public createBalancerPool(
-              request: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool,
-              callback: osmosis.gamm.poolmodels.balancer.v1beta1.Msg.CreateBalancerPoolCallback
+              request: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool,
+              callback: merlins.gamm.poolmodels.balancer.v1beta1.Msg.CreateBalancerPoolCallback
             ): void;
 
             /**
@@ -3215,19 +3215,19 @@ export namespace osmosis {
              * @returns Promise
              */
             public createBalancerPool(
-              request: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool
-            ): Promise<osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse>;
+              request: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool
+            ): Promise<merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse>;
           }
 
           namespace Msg {
             /**
-             * Callback as used by {@link osmosis.gamm.poolmodels.balancer.v1beta1.Msg#createBalancerPool}.
+             * Callback as used by {@link merlins.gamm.poolmodels.balancer.v1beta1.Msg#createBalancerPool}.
              * @param error Error, if any
              * @param [response] MsgCreateBalancerPoolResponse
              */
             type CreateBalancerPoolCallback = (
               error: Error | null,
-              response?: osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse
+              response?: merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse
             ) => void;
           }
 
@@ -3237,10 +3237,10 @@ export namespace osmosis {
             sender?: string | null;
 
             /** MsgCreateBalancerPool poolParams */
-            poolParams?: osmosis.gamm.v1beta1.IPoolParams | null;
+            poolParams?: merlins.gamm.v1beta1.IPoolParams | null;
 
             /** MsgCreateBalancerPool poolAssets */
-            poolAssets?: osmosis.gamm.v1beta1.IPoolAsset[] | null;
+            poolAssets?: merlins.gamm.v1beta1.IPoolAsset[] | null;
 
             /** MsgCreateBalancerPool futurePoolGovernor */
             futurePoolGovernor?: string | null;
@@ -3253,17 +3253,17 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool
+              p?: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool
             );
 
             /** MsgCreateBalancerPool sender. */
             public sender: string;
 
             /** MsgCreateBalancerPool poolParams. */
-            public poolParams?: osmosis.gamm.v1beta1.IPoolParams | null;
+            public poolParams?: merlins.gamm.v1beta1.IPoolParams | null;
 
             /** MsgCreateBalancerPool poolAssets. */
-            public poolAssets: osmosis.gamm.v1beta1.IPoolAsset[];
+            public poolAssets: merlins.gamm.v1beta1.IPoolAsset[];
 
             /** MsgCreateBalancerPool futurePoolGovernor. */
             public futurePoolGovernor: string;
@@ -3274,17 +3274,17 @@ export namespace osmosis {
              * @returns MsgCreateBalancerPool instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool
-            ): osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool;
+              properties?: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool
+            ): merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool;
 
             /**
-             * Encodes the specified MsgCreateBalancerPool message. Does not implicitly {@link osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.verify|verify} messages.
+             * Encodes the specified MsgCreateBalancerPool message. Does not implicitly {@link merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.verify|verify} messages.
              * @param m MsgCreateBalancerPool message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool,
+              m: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPool,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3299,7 +3299,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool;
+            ): merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool;
 
             /**
              * Creates a MsgCreateBalancerPool message from a plain object. Also converts values to their respective internal types.
@@ -3308,7 +3308,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool;
+            }): merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool;
 
             /**
              * Creates a plain object from a MsgCreateBalancerPool message. Also converts values to other types if specified.
@@ -3317,7 +3317,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool,
+              m: merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -3343,7 +3343,7 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPoolResponse
+              p?: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPoolResponse
             );
 
             /** MsgCreateBalancerPoolResponse poolId. */
@@ -3355,17 +3355,17 @@ export namespace osmosis {
              * @returns MsgCreateBalancerPoolResponse instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPoolResponse
-            ): osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse;
+              properties?: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPoolResponse
+            ): merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse;
 
             /**
-             * Encodes the specified MsgCreateBalancerPoolResponse message. Does not implicitly {@link osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse.verify|verify} messages.
+             * Encodes the specified MsgCreateBalancerPoolResponse message. Does not implicitly {@link merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse.verify|verify} messages.
              * @param m MsgCreateBalancerPoolResponse message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPoolResponse,
+              m: merlins.gamm.poolmodels.balancer.v1beta1.IMsgCreateBalancerPoolResponse,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3380,7 +3380,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse;
+            ): merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse;
 
             /**
              * Creates a MsgCreateBalancerPoolResponse message from a plain object. Also converts values to their respective internal types.
@@ -3389,7 +3389,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse;
+            }): merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse;
 
             /**
              * Creates a plain object from a MsgCreateBalancerPoolResponse message. Also converts values to other types if specified.
@@ -3398,7 +3398,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse,
+              m: merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -3431,7 +3431,7 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams
+              p?: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams
             );
 
             /** PoolParams swapFee. */
@@ -3446,17 +3446,17 @@ export namespace osmosis {
              * @returns PoolParams instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams;
+              properties?: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams;
 
             /**
-             * Encodes the specified PoolParams message. Does not implicitly {@link osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.verify|verify} messages.
+             * Encodes the specified PoolParams message. Does not implicitly {@link merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.verify|verify} messages.
              * @param m PoolParams message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3471,7 +3471,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams;
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams;
 
             /**
              * Creates a PoolParams message from a plain object. Also converts values to their respective internal types.
@@ -3480,7 +3480,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams;
+            }): merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams;
 
             /**
              * Creates a plain object from a PoolParams message. Also converts values to other types if specified.
@@ -3489,7 +3489,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -3509,7 +3509,7 @@ export namespace osmosis {
             id?: Long | null;
 
             /** Pool poolParams */
-            poolParams?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
+            poolParams?: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
 
             /** Pool futurePoolGovernor */
             futurePoolGovernor?: string | null;
@@ -3533,7 +3533,7 @@ export namespace osmosis {
              * Constructs a new Pool.
              * @param [p] Properties to set
              */
-            constructor(p?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPool);
+            constructor(p?: merlins.gamm.poolmodels.stableswap.v1beta1.IPool);
 
             /** Pool address. */
             public address: string;
@@ -3542,7 +3542,7 @@ export namespace osmosis {
             public id: Long;
 
             /** Pool poolParams. */
-            public poolParams?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
+            public poolParams?: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
 
             /** Pool futurePoolGovernor. */
             public futurePoolGovernor: string;
@@ -3565,17 +3565,17 @@ export namespace osmosis {
              * @returns Pool instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPool
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.Pool;
+              properties?: merlins.gamm.poolmodels.stableswap.v1beta1.IPool
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.Pool;
 
             /**
-             * Encodes the specified Pool message. Does not implicitly {@link osmosis.gamm.poolmodels.stableswap.v1beta1.Pool.verify|verify} messages.
+             * Encodes the specified Pool message. Does not implicitly {@link merlins.gamm.poolmodels.stableswap.v1beta1.Pool.verify|verify} messages.
              * @param m Pool message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.IPool,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.IPool,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3590,7 +3590,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.Pool;
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.Pool;
 
             /**
              * Creates a Pool message from a plain object. Also converts values to their respective internal types.
@@ -3599,7 +3599,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.stableswap.v1beta1.Pool;
+            }): merlins.gamm.poolmodels.stableswap.v1beta1.Pool;
 
             /**
              * Creates a plain object from a Pool message. Also converts values to other types if specified.
@@ -3608,7 +3608,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.Pool,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.Pool,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -3652,8 +3652,8 @@ export namespace osmosis {
              * @param callback Node-style callback called with the error, if any, and MsgCreateStableswapPoolResponse
              */
             public createStableswapPool(
-              request: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool,
-              callback: osmosis.gamm.poolmodels.stableswap.v1beta1.Msg.CreateStableswapPoolCallback
+              request: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool,
+              callback: merlins.gamm.poolmodels.stableswap.v1beta1.Msg.CreateStableswapPoolCallback
             ): void;
 
             /**
@@ -3662,8 +3662,8 @@ export namespace osmosis {
              * @returns Promise
              */
             public createStableswapPool(
-              request: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool
-            ): Promise<osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse>;
+              request: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool
+            ): Promise<merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse>;
 
             /**
              * Calls StableSwapAdjustScalingFactors.
@@ -3671,8 +3671,8 @@ export namespace osmosis {
              * @param callback Node-style callback called with the error, if any, and MsgStableSwapAdjustScalingFactorsResponse
              */
             public stableSwapAdjustScalingFactors(
-              request: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors,
-              callback: osmosis.gamm.poolmodels.stableswap.v1beta1.Msg.StableSwapAdjustScalingFactorsCallback
+              request: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors,
+              callback: merlins.gamm.poolmodels.stableswap.v1beta1.Msg.StableSwapAdjustScalingFactorsCallback
             ): void;
 
             /**
@@ -3681,29 +3681,29 @@ export namespace osmosis {
              * @returns Promise
              */
             public stableSwapAdjustScalingFactors(
-              request: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors
-            ): Promise<osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse>;
+              request: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors
+            ): Promise<merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse>;
           }
 
           namespace Msg {
             /**
-             * Callback as used by {@link osmosis.gamm.poolmodels.stableswap.v1beta1.Msg#createStableswapPool}.
+             * Callback as used by {@link merlins.gamm.poolmodels.stableswap.v1beta1.Msg#createStableswapPool}.
              * @param error Error, if any
              * @param [response] MsgCreateStableswapPoolResponse
              */
             type CreateStableswapPoolCallback = (
               error: Error | null,
-              response?: osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse
+              response?: merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse
             ) => void;
 
             /**
-             * Callback as used by {@link osmosis.gamm.poolmodels.stableswap.v1beta1.Msg#stableSwapAdjustScalingFactors}.
+             * Callback as used by {@link merlins.gamm.poolmodels.stableswap.v1beta1.Msg#stableSwapAdjustScalingFactors}.
              * @param error Error, if any
              * @param [response] MsgStableSwapAdjustScalingFactorsResponse
              */
             type StableSwapAdjustScalingFactorsCallback = (
               error: Error | null,
-              response?: osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse
+              response?: merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse
             ) => void;
           }
 
@@ -3713,7 +3713,7 @@ export namespace osmosis {
             sender?: string | null;
 
             /** MsgCreateStableswapPool poolParams */
-            poolParams?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
+            poolParams?: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
 
             /** MsgCreateStableswapPool initialPoolLiquidity */
             initialPoolLiquidity?: cosmos.base.v1beta1.ICoin[] | null;
@@ -3735,14 +3735,14 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool
+              p?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool
             );
 
             /** MsgCreateStableswapPool sender. */
             public sender: string;
 
             /** MsgCreateStableswapPool poolParams. */
-            public poolParams?: osmosis.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
+            public poolParams?: merlins.gamm.poolmodels.stableswap.v1beta1.IPoolParams | null;
 
             /** MsgCreateStableswapPool initialPoolLiquidity. */
             public initialPoolLiquidity: cosmos.base.v1beta1.ICoin[];
@@ -3762,17 +3762,17 @@ export namespace osmosis {
              * @returns MsgCreateStableswapPool instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool;
+              properties?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool;
 
             /**
-             * Encodes the specified MsgCreateStableswapPool message. Does not implicitly {@link osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.verify|verify} messages.
+             * Encodes the specified MsgCreateStableswapPool message. Does not implicitly {@link merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.verify|verify} messages.
              * @param m MsgCreateStableswapPool message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPool,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3787,7 +3787,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool;
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool;
 
             /**
              * Creates a MsgCreateStableswapPool message from a plain object. Also converts values to their respective internal types.
@@ -3796,7 +3796,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool;
+            }): merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool;
 
             /**
              * Creates a plain object from a MsgCreateStableswapPool message. Also converts values to other types if specified.
@@ -3805,7 +3805,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -3831,7 +3831,7 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPoolResponse
+              p?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPoolResponse
             );
 
             /** MsgCreateStableswapPoolResponse poolId. */
@@ -3843,17 +3843,17 @@ export namespace osmosis {
              * @returns MsgCreateStableswapPoolResponse instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPoolResponse
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse;
+              properties?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPoolResponse
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse;
 
             /**
-             * Encodes the specified MsgCreateStableswapPoolResponse message. Does not implicitly {@link osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse.verify|verify} messages.
+             * Encodes the specified MsgCreateStableswapPoolResponse message. Does not implicitly {@link merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse.verify|verify} messages.
              * @param m MsgCreateStableswapPoolResponse message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPoolResponse,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgCreateStableswapPoolResponse,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3868,7 +3868,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse;
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse;
 
             /**
              * Creates a MsgCreateStableswapPoolResponse message from a plain object. Also converts values to their respective internal types.
@@ -3877,7 +3877,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse;
+            }): merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse;
 
             /**
              * Creates a plain object from a MsgCreateStableswapPoolResponse message. Also converts values to other types if specified.
@@ -3886,7 +3886,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -3918,7 +3918,7 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors
+              p?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors
             );
 
             /** MsgStableSwapAdjustScalingFactors sender. */
@@ -3936,17 +3936,17 @@ export namespace osmosis {
              * @returns MsgStableSwapAdjustScalingFactors instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors;
+              properties?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors;
 
             /**
-             * Encodes the specified MsgStableSwapAdjustScalingFactors message. Does not implicitly {@link osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors.verify|verify} messages.
+             * Encodes the specified MsgStableSwapAdjustScalingFactors message. Does not implicitly {@link merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors.verify|verify} messages.
              * @param m MsgStableSwapAdjustScalingFactors message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactors,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -3961,7 +3961,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors;
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors;
 
             /**
              * Creates a MsgStableSwapAdjustScalingFactors message from a plain object. Also converts values to their respective internal types.
@@ -3970,7 +3970,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors;
+            }): merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors;
 
             /**
              * Creates a plain object from a MsgStableSwapAdjustScalingFactors message. Also converts values to other types if specified.
@@ -3979,7 +3979,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -4002,7 +4002,7 @@ export namespace osmosis {
              * @param [p] Properties to set
              */
             constructor(
-              p?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactorsResponse
+              p?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactorsResponse
             );
 
             /**
@@ -4011,17 +4011,17 @@ export namespace osmosis {
              * @returns MsgStableSwapAdjustScalingFactorsResponse instance
              */
             public static create(
-              properties?: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactorsResponse
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse;
+              properties?: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactorsResponse
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse;
 
             /**
-             * Encodes the specified MsgStableSwapAdjustScalingFactorsResponse message. Does not implicitly {@link osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse.verify|verify} messages.
+             * Encodes the specified MsgStableSwapAdjustScalingFactorsResponse message. Does not implicitly {@link merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse.verify|verify} messages.
              * @param m MsgStableSwapAdjustScalingFactorsResponse message or plain object to encode
              * @param [w] Writer to encode to
              * @returns Writer
              */
             public static encode(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactorsResponse,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.IMsgStableSwapAdjustScalingFactorsResponse,
               w?: $protobuf.Writer
             ): $protobuf.Writer;
 
@@ -4036,7 +4036,7 @@ export namespace osmosis {
             public static decode(
               r: $protobuf.Reader | Uint8Array,
               l?: number
-            ): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse;
+            ): merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse;
 
             /**
              * Creates a MsgStableSwapAdjustScalingFactorsResponse message from a plain object. Also converts values to their respective internal types.
@@ -4045,7 +4045,7 @@ export namespace osmosis {
              */
             public static fromObject(d: {
               [k: string]: any;
-            }): osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse;
+            }): merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse;
 
             /**
              * Creates a plain object from a MsgStableSwapAdjustScalingFactorsResponse message. Also converts values to other types if specified.
@@ -4054,7 +4054,7 @@ export namespace osmosis {
              * @returns Plain object
              */
             public static toObject(
-              m: osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse,
+              m: merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse,
               o?: $protobuf.IConversionOptions
             ): { [k: string]: any };
 
@@ -4104,8 +4104,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgSuperfluidDelegateResponse
        */
       public superfluidDelegate(
-        request: osmosis.superfluid.IMsgSuperfluidDelegate,
-        callback: osmosis.superfluid.Msg.SuperfluidDelegateCallback
+        request: merlins.superfluid.IMsgSuperfluidDelegate,
+        callback: merlins.superfluid.Msg.SuperfluidDelegateCallback
       ): void;
 
       /**
@@ -4114,8 +4114,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public superfluidDelegate(
-        request: osmosis.superfluid.IMsgSuperfluidDelegate
-      ): Promise<osmosis.superfluid.MsgSuperfluidDelegateResponse>;
+        request: merlins.superfluid.IMsgSuperfluidDelegate
+      ): Promise<merlins.superfluid.MsgSuperfluidDelegateResponse>;
 
       /**
        * Calls SuperfluidUndelegate.
@@ -4123,8 +4123,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgSuperfluidUndelegateResponse
        */
       public superfluidUndelegate(
-        request: osmosis.superfluid.IMsgSuperfluidUndelegate,
-        callback: osmosis.superfluid.Msg.SuperfluidUndelegateCallback
+        request: merlins.superfluid.IMsgSuperfluidUndelegate,
+        callback: merlins.superfluid.Msg.SuperfluidUndelegateCallback
       ): void;
 
       /**
@@ -4133,8 +4133,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public superfluidUndelegate(
-        request: osmosis.superfluid.IMsgSuperfluidUndelegate
-      ): Promise<osmosis.superfluid.MsgSuperfluidUndelegateResponse>;
+        request: merlins.superfluid.IMsgSuperfluidUndelegate
+      ): Promise<merlins.superfluid.MsgSuperfluidUndelegateResponse>;
 
       /**
        * Calls SuperfluidUnbondLock.
@@ -4142,8 +4142,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgSuperfluidUnbondLockResponse
        */
       public superfluidUnbondLock(
-        request: osmosis.superfluid.IMsgSuperfluidUnbondLock,
-        callback: osmosis.superfluid.Msg.SuperfluidUnbondLockCallback
+        request: merlins.superfluid.IMsgSuperfluidUnbondLock,
+        callback: merlins.superfluid.Msg.SuperfluidUnbondLockCallback
       ): void;
 
       /**
@@ -4152,8 +4152,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public superfluidUnbondLock(
-        request: osmosis.superfluid.IMsgSuperfluidUnbondLock
-      ): Promise<osmosis.superfluid.MsgSuperfluidUnbondLockResponse>;
+        request: merlins.superfluid.IMsgSuperfluidUnbondLock
+      ): Promise<merlins.superfluid.MsgSuperfluidUnbondLockResponse>;
 
       /**
        * Calls LockAndSuperfluidDelegate.
@@ -4161,8 +4161,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgLockAndSuperfluidDelegateResponse
        */
       public lockAndSuperfluidDelegate(
-        request: osmosis.superfluid.IMsgLockAndSuperfluidDelegate,
-        callback: osmosis.superfluid.Msg.LockAndSuperfluidDelegateCallback
+        request: merlins.superfluid.IMsgLockAndSuperfluidDelegate,
+        callback: merlins.superfluid.Msg.LockAndSuperfluidDelegateCallback
       ): void;
 
       /**
@@ -4171,8 +4171,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public lockAndSuperfluidDelegate(
-        request: osmosis.superfluid.IMsgLockAndSuperfluidDelegate
-      ): Promise<osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse>;
+        request: merlins.superfluid.IMsgLockAndSuperfluidDelegate
+      ): Promise<merlins.superfluid.MsgLockAndSuperfluidDelegateResponse>;
 
       /**
        * Calls UnPoolWhitelistedPool.
@@ -4180,8 +4180,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgUnPoolWhitelistedPoolResponse
        */
       public unPoolWhitelistedPool(
-        request: osmosis.superfluid.IMsgUnPoolWhitelistedPool,
-        callback: osmosis.superfluid.Msg.UnPoolWhitelistedPoolCallback
+        request: merlins.superfluid.IMsgUnPoolWhitelistedPool,
+        callback: merlins.superfluid.Msg.UnPoolWhitelistedPoolCallback
       ): void;
 
       /**
@@ -4190,59 +4190,59 @@ export namespace osmosis {
        * @returns Promise
        */
       public unPoolWhitelistedPool(
-        request: osmosis.superfluid.IMsgUnPoolWhitelistedPool
-      ): Promise<osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse>;
+        request: merlins.superfluid.IMsgUnPoolWhitelistedPool
+      ): Promise<merlins.superfluid.MsgUnPoolWhitelistedPoolResponse>;
     }
 
     namespace Msg {
       /**
-       * Callback as used by {@link osmosis.superfluid.Msg#superfluidDelegate}.
+       * Callback as used by {@link merlins.superfluid.Msg#superfluidDelegate}.
        * @param error Error, if any
        * @param [response] MsgSuperfluidDelegateResponse
        */
       type SuperfluidDelegateCallback = (
         error: Error | null,
-        response?: osmosis.superfluid.MsgSuperfluidDelegateResponse
+        response?: merlins.superfluid.MsgSuperfluidDelegateResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.superfluid.Msg#superfluidUndelegate}.
+       * Callback as used by {@link merlins.superfluid.Msg#superfluidUndelegate}.
        * @param error Error, if any
        * @param [response] MsgSuperfluidUndelegateResponse
        */
       type SuperfluidUndelegateCallback = (
         error: Error | null,
-        response?: osmosis.superfluid.MsgSuperfluidUndelegateResponse
+        response?: merlins.superfluid.MsgSuperfluidUndelegateResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.superfluid.Msg#superfluidUnbondLock}.
+       * Callback as used by {@link merlins.superfluid.Msg#superfluidUnbondLock}.
        * @param error Error, if any
        * @param [response] MsgSuperfluidUnbondLockResponse
        */
       type SuperfluidUnbondLockCallback = (
         error: Error | null,
-        response?: osmosis.superfluid.MsgSuperfluidUnbondLockResponse
+        response?: merlins.superfluid.MsgSuperfluidUnbondLockResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.superfluid.Msg#lockAndSuperfluidDelegate}.
+       * Callback as used by {@link merlins.superfluid.Msg#lockAndSuperfluidDelegate}.
        * @param error Error, if any
        * @param [response] MsgLockAndSuperfluidDelegateResponse
        */
       type LockAndSuperfluidDelegateCallback = (
         error: Error | null,
-        response?: osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse
+        response?: merlins.superfluid.MsgLockAndSuperfluidDelegateResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.superfluid.Msg#unPoolWhitelistedPool}.
+       * Callback as used by {@link merlins.superfluid.Msg#unPoolWhitelistedPool}.
        * @param error Error, if any
        * @param [response] MsgUnPoolWhitelistedPoolResponse
        */
       type UnPoolWhitelistedPoolCallback = (
         error: Error | null,
-        response?: osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse
+        response?: merlins.superfluid.MsgUnPoolWhitelistedPoolResponse
       ) => void;
     }
 
@@ -4264,7 +4264,7 @@ export namespace osmosis {
        * Constructs a new MsgSuperfluidDelegate.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgSuperfluidDelegate);
+      constructor(p?: merlins.superfluid.IMsgSuperfluidDelegate);
 
       /** MsgSuperfluidDelegate sender. */
       public sender: string;
@@ -4281,17 +4281,17 @@ export namespace osmosis {
        * @returns MsgSuperfluidDelegate instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgSuperfluidDelegate
-      ): osmosis.superfluid.MsgSuperfluidDelegate;
+        properties?: merlins.superfluid.IMsgSuperfluidDelegate
+      ): merlins.superfluid.MsgSuperfluidDelegate;
 
       /**
-       * Encodes the specified MsgSuperfluidDelegate message. Does not implicitly {@link osmosis.superfluid.MsgSuperfluidDelegate.verify|verify} messages.
+       * Encodes the specified MsgSuperfluidDelegate message. Does not implicitly {@link merlins.superfluid.MsgSuperfluidDelegate.verify|verify} messages.
        * @param m MsgSuperfluidDelegate message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgSuperfluidDelegate,
+        m: merlins.superfluid.IMsgSuperfluidDelegate,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4306,7 +4306,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgSuperfluidDelegate;
+      ): merlins.superfluid.MsgSuperfluidDelegate;
 
       /**
        * Creates a MsgSuperfluidDelegate message from a plain object. Also converts values to their respective internal types.
@@ -4315,7 +4315,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgSuperfluidDelegate;
+      }): merlins.superfluid.MsgSuperfluidDelegate;
 
       /**
        * Creates a plain object from a MsgSuperfluidDelegate message. Also converts values to other types if specified.
@@ -4324,7 +4324,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgSuperfluidDelegate,
+        m: merlins.superfluid.MsgSuperfluidDelegate,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4346,7 +4346,7 @@ export namespace osmosis {
        * Constructs a new MsgSuperfluidDelegateResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgSuperfluidDelegateResponse);
+      constructor(p?: merlins.superfluid.IMsgSuperfluidDelegateResponse);
 
       /**
        * Creates a new MsgSuperfluidDelegateResponse instance using the specified properties.
@@ -4354,17 +4354,17 @@ export namespace osmosis {
        * @returns MsgSuperfluidDelegateResponse instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgSuperfluidDelegateResponse
-      ): osmosis.superfluid.MsgSuperfluidDelegateResponse;
+        properties?: merlins.superfluid.IMsgSuperfluidDelegateResponse
+      ): merlins.superfluid.MsgSuperfluidDelegateResponse;
 
       /**
-       * Encodes the specified MsgSuperfluidDelegateResponse message. Does not implicitly {@link osmosis.superfluid.MsgSuperfluidDelegateResponse.verify|verify} messages.
+       * Encodes the specified MsgSuperfluidDelegateResponse message. Does not implicitly {@link merlins.superfluid.MsgSuperfluidDelegateResponse.verify|verify} messages.
        * @param m MsgSuperfluidDelegateResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgSuperfluidDelegateResponse,
+        m: merlins.superfluid.IMsgSuperfluidDelegateResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4379,7 +4379,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgSuperfluidDelegateResponse;
+      ): merlins.superfluid.MsgSuperfluidDelegateResponse;
 
       /**
        * Creates a MsgSuperfluidDelegateResponse message from a plain object. Also converts values to their respective internal types.
@@ -4388,7 +4388,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgSuperfluidDelegateResponse;
+      }): merlins.superfluid.MsgSuperfluidDelegateResponse;
 
       /**
        * Creates a plain object from a MsgSuperfluidDelegateResponse message. Also converts values to other types if specified.
@@ -4397,7 +4397,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgSuperfluidDelegateResponse,
+        m: merlins.superfluid.MsgSuperfluidDelegateResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4423,7 +4423,7 @@ export namespace osmosis {
        * Constructs a new MsgSuperfluidUndelegate.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgSuperfluidUndelegate);
+      constructor(p?: merlins.superfluid.IMsgSuperfluidUndelegate);
 
       /** MsgSuperfluidUndelegate sender. */
       public sender: string;
@@ -4437,17 +4437,17 @@ export namespace osmosis {
        * @returns MsgSuperfluidUndelegate instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgSuperfluidUndelegate
-      ): osmosis.superfluid.MsgSuperfluidUndelegate;
+        properties?: merlins.superfluid.IMsgSuperfluidUndelegate
+      ): merlins.superfluid.MsgSuperfluidUndelegate;
 
       /**
-       * Encodes the specified MsgSuperfluidUndelegate message. Does not implicitly {@link osmosis.superfluid.MsgSuperfluidUndelegate.verify|verify} messages.
+       * Encodes the specified MsgSuperfluidUndelegate message. Does not implicitly {@link merlins.superfluid.MsgSuperfluidUndelegate.verify|verify} messages.
        * @param m MsgSuperfluidUndelegate message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgSuperfluidUndelegate,
+        m: merlins.superfluid.IMsgSuperfluidUndelegate,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4462,7 +4462,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgSuperfluidUndelegate;
+      ): merlins.superfluid.MsgSuperfluidUndelegate;
 
       /**
        * Creates a MsgSuperfluidUndelegate message from a plain object. Also converts values to their respective internal types.
@@ -4471,7 +4471,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgSuperfluidUndelegate;
+      }): merlins.superfluid.MsgSuperfluidUndelegate;
 
       /**
        * Creates a plain object from a MsgSuperfluidUndelegate message. Also converts values to other types if specified.
@@ -4480,7 +4480,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgSuperfluidUndelegate,
+        m: merlins.superfluid.MsgSuperfluidUndelegate,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4502,7 +4502,7 @@ export namespace osmosis {
        * Constructs a new MsgSuperfluidUndelegateResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgSuperfluidUndelegateResponse);
+      constructor(p?: merlins.superfluid.IMsgSuperfluidUndelegateResponse);
 
       /**
        * Creates a new MsgSuperfluidUndelegateResponse instance using the specified properties.
@@ -4510,17 +4510,17 @@ export namespace osmosis {
        * @returns MsgSuperfluidUndelegateResponse instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgSuperfluidUndelegateResponse
-      ): osmosis.superfluid.MsgSuperfluidUndelegateResponse;
+        properties?: merlins.superfluid.IMsgSuperfluidUndelegateResponse
+      ): merlins.superfluid.MsgSuperfluidUndelegateResponse;
 
       /**
-       * Encodes the specified MsgSuperfluidUndelegateResponse message. Does not implicitly {@link osmosis.superfluid.MsgSuperfluidUndelegateResponse.verify|verify} messages.
+       * Encodes the specified MsgSuperfluidUndelegateResponse message. Does not implicitly {@link merlins.superfluid.MsgSuperfluidUndelegateResponse.verify|verify} messages.
        * @param m MsgSuperfluidUndelegateResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgSuperfluidUndelegateResponse,
+        m: merlins.superfluid.IMsgSuperfluidUndelegateResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4535,7 +4535,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgSuperfluidUndelegateResponse;
+      ): merlins.superfluid.MsgSuperfluidUndelegateResponse;
 
       /**
        * Creates a MsgSuperfluidUndelegateResponse message from a plain object. Also converts values to their respective internal types.
@@ -4544,7 +4544,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgSuperfluidUndelegateResponse;
+      }): merlins.superfluid.MsgSuperfluidUndelegateResponse;
 
       /**
        * Creates a plain object from a MsgSuperfluidUndelegateResponse message. Also converts values to other types if specified.
@@ -4553,7 +4553,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgSuperfluidUndelegateResponse,
+        m: merlins.superfluid.MsgSuperfluidUndelegateResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4579,7 +4579,7 @@ export namespace osmosis {
        * Constructs a new MsgSuperfluidUnbondLock.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgSuperfluidUnbondLock);
+      constructor(p?: merlins.superfluid.IMsgSuperfluidUnbondLock);
 
       /** MsgSuperfluidUnbondLock sender. */
       public sender: string;
@@ -4593,17 +4593,17 @@ export namespace osmosis {
        * @returns MsgSuperfluidUnbondLock instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgSuperfluidUnbondLock
-      ): osmosis.superfluid.MsgSuperfluidUnbondLock;
+        properties?: merlins.superfluid.IMsgSuperfluidUnbondLock
+      ): merlins.superfluid.MsgSuperfluidUnbondLock;
 
       /**
-       * Encodes the specified MsgSuperfluidUnbondLock message. Does not implicitly {@link osmosis.superfluid.MsgSuperfluidUnbondLock.verify|verify} messages.
+       * Encodes the specified MsgSuperfluidUnbondLock message. Does not implicitly {@link merlins.superfluid.MsgSuperfluidUnbondLock.verify|verify} messages.
        * @param m MsgSuperfluidUnbondLock message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgSuperfluidUnbondLock,
+        m: merlins.superfluid.IMsgSuperfluidUnbondLock,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4618,7 +4618,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgSuperfluidUnbondLock;
+      ): merlins.superfluid.MsgSuperfluidUnbondLock;
 
       /**
        * Creates a MsgSuperfluidUnbondLock message from a plain object. Also converts values to their respective internal types.
@@ -4627,7 +4627,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgSuperfluidUnbondLock;
+      }): merlins.superfluid.MsgSuperfluidUnbondLock;
 
       /**
        * Creates a plain object from a MsgSuperfluidUnbondLock message. Also converts values to other types if specified.
@@ -4636,7 +4636,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgSuperfluidUnbondLock,
+        m: merlins.superfluid.MsgSuperfluidUnbondLock,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4658,7 +4658,7 @@ export namespace osmosis {
        * Constructs a new MsgSuperfluidUnbondLockResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgSuperfluidUnbondLockResponse);
+      constructor(p?: merlins.superfluid.IMsgSuperfluidUnbondLockResponse);
 
       /**
        * Creates a new MsgSuperfluidUnbondLockResponse instance using the specified properties.
@@ -4666,17 +4666,17 @@ export namespace osmosis {
        * @returns MsgSuperfluidUnbondLockResponse instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgSuperfluidUnbondLockResponse
-      ): osmosis.superfluid.MsgSuperfluidUnbondLockResponse;
+        properties?: merlins.superfluid.IMsgSuperfluidUnbondLockResponse
+      ): merlins.superfluid.MsgSuperfluidUnbondLockResponse;
 
       /**
-       * Encodes the specified MsgSuperfluidUnbondLockResponse message. Does not implicitly {@link osmosis.superfluid.MsgSuperfluidUnbondLockResponse.verify|verify} messages.
+       * Encodes the specified MsgSuperfluidUnbondLockResponse message. Does not implicitly {@link merlins.superfluid.MsgSuperfluidUnbondLockResponse.verify|verify} messages.
        * @param m MsgSuperfluidUnbondLockResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgSuperfluidUnbondLockResponse,
+        m: merlins.superfluid.IMsgSuperfluidUnbondLockResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4691,7 +4691,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgSuperfluidUnbondLockResponse;
+      ): merlins.superfluid.MsgSuperfluidUnbondLockResponse;
 
       /**
        * Creates a MsgSuperfluidUnbondLockResponse message from a plain object. Also converts values to their respective internal types.
@@ -4700,7 +4700,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgSuperfluidUnbondLockResponse;
+      }): merlins.superfluid.MsgSuperfluidUnbondLockResponse;
 
       /**
        * Creates a plain object from a MsgSuperfluidUnbondLockResponse message. Also converts values to other types if specified.
@@ -4709,7 +4709,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgSuperfluidUnbondLockResponse,
+        m: merlins.superfluid.MsgSuperfluidUnbondLockResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4740,7 +4740,7 @@ export namespace osmosis {
        * Constructs a new MsgLockAndSuperfluidDelegate.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgLockAndSuperfluidDelegate);
+      constructor(p?: merlins.superfluid.IMsgLockAndSuperfluidDelegate);
 
       /** MsgLockAndSuperfluidDelegate sender. */
       public sender: string;
@@ -4757,17 +4757,17 @@ export namespace osmosis {
        * @returns MsgLockAndSuperfluidDelegate instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgLockAndSuperfluidDelegate
-      ): osmosis.superfluid.MsgLockAndSuperfluidDelegate;
+        properties?: merlins.superfluid.IMsgLockAndSuperfluidDelegate
+      ): merlins.superfluid.MsgLockAndSuperfluidDelegate;
 
       /**
-       * Encodes the specified MsgLockAndSuperfluidDelegate message. Does not implicitly {@link osmosis.superfluid.MsgLockAndSuperfluidDelegate.verify|verify} messages.
+       * Encodes the specified MsgLockAndSuperfluidDelegate message. Does not implicitly {@link merlins.superfluid.MsgLockAndSuperfluidDelegate.verify|verify} messages.
        * @param m MsgLockAndSuperfluidDelegate message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgLockAndSuperfluidDelegate,
+        m: merlins.superfluid.IMsgLockAndSuperfluidDelegate,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4782,7 +4782,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgLockAndSuperfluidDelegate;
+      ): merlins.superfluid.MsgLockAndSuperfluidDelegate;
 
       /**
        * Creates a MsgLockAndSuperfluidDelegate message from a plain object. Also converts values to their respective internal types.
@@ -4791,7 +4791,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgLockAndSuperfluidDelegate;
+      }): merlins.superfluid.MsgLockAndSuperfluidDelegate;
 
       /**
        * Creates a plain object from a MsgLockAndSuperfluidDelegate message. Also converts values to other types if specified.
@@ -4800,7 +4800,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgLockAndSuperfluidDelegate,
+        m: merlins.superfluid.MsgLockAndSuperfluidDelegate,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4825,7 +4825,7 @@ export namespace osmosis {
        * Constructs a new MsgLockAndSuperfluidDelegateResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgLockAndSuperfluidDelegateResponse);
+      constructor(p?: merlins.superfluid.IMsgLockAndSuperfluidDelegateResponse);
 
       /** MsgLockAndSuperfluidDelegateResponse ID. */
       public ID: Long;
@@ -4836,17 +4836,17 @@ export namespace osmosis {
        * @returns MsgLockAndSuperfluidDelegateResponse instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgLockAndSuperfluidDelegateResponse
-      ): osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse;
+        properties?: merlins.superfluid.IMsgLockAndSuperfluidDelegateResponse
+      ): merlins.superfluid.MsgLockAndSuperfluidDelegateResponse;
 
       /**
-       * Encodes the specified MsgLockAndSuperfluidDelegateResponse message. Does not implicitly {@link osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse.verify|verify} messages.
+       * Encodes the specified MsgLockAndSuperfluidDelegateResponse message. Does not implicitly {@link merlins.superfluid.MsgLockAndSuperfluidDelegateResponse.verify|verify} messages.
        * @param m MsgLockAndSuperfluidDelegateResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgLockAndSuperfluidDelegateResponse,
+        m: merlins.superfluid.IMsgLockAndSuperfluidDelegateResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4861,7 +4861,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse;
+      ): merlins.superfluid.MsgLockAndSuperfluidDelegateResponse;
 
       /**
        * Creates a MsgLockAndSuperfluidDelegateResponse message from a plain object. Also converts values to their respective internal types.
@@ -4870,7 +4870,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse;
+      }): merlins.superfluid.MsgLockAndSuperfluidDelegateResponse;
 
       /**
        * Creates a plain object from a MsgLockAndSuperfluidDelegateResponse message. Also converts values to other types if specified.
@@ -4879,7 +4879,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse,
+        m: merlins.superfluid.MsgLockAndSuperfluidDelegateResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4905,7 +4905,7 @@ export namespace osmosis {
        * Constructs a new MsgUnPoolWhitelistedPool.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgUnPoolWhitelistedPool);
+      constructor(p?: merlins.superfluid.IMsgUnPoolWhitelistedPool);
 
       /** MsgUnPoolWhitelistedPool sender. */
       public sender: string;
@@ -4919,17 +4919,17 @@ export namespace osmosis {
        * @returns MsgUnPoolWhitelistedPool instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgUnPoolWhitelistedPool
-      ): osmosis.superfluid.MsgUnPoolWhitelistedPool;
+        properties?: merlins.superfluid.IMsgUnPoolWhitelistedPool
+      ): merlins.superfluid.MsgUnPoolWhitelistedPool;
 
       /**
-       * Encodes the specified MsgUnPoolWhitelistedPool message. Does not implicitly {@link osmosis.superfluid.MsgUnPoolWhitelistedPool.verify|verify} messages.
+       * Encodes the specified MsgUnPoolWhitelistedPool message. Does not implicitly {@link merlins.superfluid.MsgUnPoolWhitelistedPool.verify|verify} messages.
        * @param m MsgUnPoolWhitelistedPool message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgUnPoolWhitelistedPool,
+        m: merlins.superfluid.IMsgUnPoolWhitelistedPool,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -4944,7 +4944,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgUnPoolWhitelistedPool;
+      ): merlins.superfluid.MsgUnPoolWhitelistedPool;
 
       /**
        * Creates a MsgUnPoolWhitelistedPool message from a plain object. Also converts values to their respective internal types.
@@ -4953,7 +4953,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgUnPoolWhitelistedPool;
+      }): merlins.superfluid.MsgUnPoolWhitelistedPool;
 
       /**
        * Creates a plain object from a MsgUnPoolWhitelistedPool message. Also converts values to other types if specified.
@@ -4962,7 +4962,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgUnPoolWhitelistedPool,
+        m: merlins.superfluid.MsgUnPoolWhitelistedPool,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -4987,7 +4987,7 @@ export namespace osmosis {
        * Constructs a new MsgUnPoolWhitelistedPoolResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.superfluid.IMsgUnPoolWhitelistedPoolResponse);
+      constructor(p?: merlins.superfluid.IMsgUnPoolWhitelistedPoolResponse);
 
       /** MsgUnPoolWhitelistedPoolResponse exitedLockIds. */
       public exitedLockIds: Long[];
@@ -4998,17 +4998,17 @@ export namespace osmosis {
        * @returns MsgUnPoolWhitelistedPoolResponse instance
        */
       public static create(
-        properties?: osmosis.superfluid.IMsgUnPoolWhitelistedPoolResponse
-      ): osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse;
+        properties?: merlins.superfluid.IMsgUnPoolWhitelistedPoolResponse
+      ): merlins.superfluid.MsgUnPoolWhitelistedPoolResponse;
 
       /**
-       * Encodes the specified MsgUnPoolWhitelistedPoolResponse message. Does not implicitly {@link osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse.verify|verify} messages.
+       * Encodes the specified MsgUnPoolWhitelistedPoolResponse message. Does not implicitly {@link merlins.superfluid.MsgUnPoolWhitelistedPoolResponse.verify|verify} messages.
        * @param m MsgUnPoolWhitelistedPoolResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.superfluid.IMsgUnPoolWhitelistedPoolResponse,
+        m: merlins.superfluid.IMsgUnPoolWhitelistedPoolResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5023,7 +5023,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse;
+      ): merlins.superfluid.MsgUnPoolWhitelistedPoolResponse;
 
       /**
        * Creates a MsgUnPoolWhitelistedPoolResponse message from a plain object. Also converts values to their respective internal types.
@@ -5032,7 +5032,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse;
+      }): merlins.superfluid.MsgUnPoolWhitelistedPoolResponse;
 
       /**
        * Creates a plain object from a MsgUnPoolWhitelistedPoolResponse message. Also converts values to other types if specified.
@@ -5041,7 +5041,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse,
+        m: merlins.superfluid.MsgUnPoolWhitelistedPoolResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5079,7 +5079,7 @@ export namespace osmosis {
        * Constructs a new PeriodLock.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IPeriodLock);
+      constructor(p?: merlins.lockup.IPeriodLock);
 
       /** PeriodLock ID. */
       public ID: Long;
@@ -5102,17 +5102,17 @@ export namespace osmosis {
        * @returns PeriodLock instance
        */
       public static create(
-        properties?: osmosis.lockup.IPeriodLock
-      ): osmosis.lockup.PeriodLock;
+        properties?: merlins.lockup.IPeriodLock
+      ): merlins.lockup.PeriodLock;
 
       /**
-       * Encodes the specified PeriodLock message. Does not implicitly {@link osmosis.lockup.PeriodLock.verify|verify} messages.
+       * Encodes the specified PeriodLock message. Does not implicitly {@link merlins.lockup.PeriodLock.verify|verify} messages.
        * @param m PeriodLock message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IPeriodLock,
+        m: merlins.lockup.IPeriodLock,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5127,7 +5127,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.PeriodLock;
+      ): merlins.lockup.PeriodLock;
 
       /**
        * Creates a PeriodLock message from a plain object. Also converts values to their respective internal types.
@@ -5136,7 +5136,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.PeriodLock;
+      }): merlins.lockup.PeriodLock;
 
       /**
        * Creates a plain object from a PeriodLock message. Also converts values to other types if specified.
@@ -5145,7 +5145,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.PeriodLock,
+        m: merlins.lockup.PeriodLock,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5165,7 +5165,7 @@ export namespace osmosis {
     /** Properties of a QueryCondition. */
     interface IQueryCondition {
       /** QueryCondition lockQueryType */
-      lockQueryType?: osmosis.lockup.LockQueryType | null;
+      lockQueryType?: merlins.lockup.LockQueryType | null;
 
       /** QueryCondition denom */
       denom?: string | null;
@@ -5183,10 +5183,10 @@ export namespace osmosis {
        * Constructs a new QueryCondition.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IQueryCondition);
+      constructor(p?: merlins.lockup.IQueryCondition);
 
       /** QueryCondition lockQueryType. */
-      public lockQueryType: osmosis.lockup.LockQueryType;
+      public lockQueryType: merlins.lockup.LockQueryType;
 
       /** QueryCondition denom. */
       public denom: string;
@@ -5203,17 +5203,17 @@ export namespace osmosis {
        * @returns QueryCondition instance
        */
       public static create(
-        properties?: osmosis.lockup.IQueryCondition
-      ): osmosis.lockup.QueryCondition;
+        properties?: merlins.lockup.IQueryCondition
+      ): merlins.lockup.QueryCondition;
 
       /**
-       * Encodes the specified QueryCondition message. Does not implicitly {@link osmosis.lockup.QueryCondition.verify|verify} messages.
+       * Encodes the specified QueryCondition message. Does not implicitly {@link merlins.lockup.QueryCondition.verify|verify} messages.
        * @param m QueryCondition message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IQueryCondition,
+        m: merlins.lockup.IQueryCondition,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5228,7 +5228,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.QueryCondition;
+      ): merlins.lockup.QueryCondition;
 
       /**
        * Creates a QueryCondition message from a plain object. Also converts values to their respective internal types.
@@ -5237,7 +5237,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.QueryCondition;
+      }): merlins.lockup.QueryCondition;
 
       /**
        * Creates a plain object from a QueryCondition message. Also converts values to other types if specified.
@@ -5246,7 +5246,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.QueryCondition,
+        m: merlins.lockup.QueryCondition,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5278,7 +5278,7 @@ export namespace osmosis {
        * Constructs a new SyntheticLock.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.ISyntheticLock);
+      constructor(p?: merlins.lockup.ISyntheticLock);
 
       /** SyntheticLock underlyingLockId. */
       public underlyingLockId: Long;
@@ -5298,17 +5298,17 @@ export namespace osmosis {
        * @returns SyntheticLock instance
        */
       public static create(
-        properties?: osmosis.lockup.ISyntheticLock
-      ): osmosis.lockup.SyntheticLock;
+        properties?: merlins.lockup.ISyntheticLock
+      ): merlins.lockup.SyntheticLock;
 
       /**
-       * Encodes the specified SyntheticLock message. Does not implicitly {@link osmosis.lockup.SyntheticLock.verify|verify} messages.
+       * Encodes the specified SyntheticLock message. Does not implicitly {@link merlins.lockup.SyntheticLock.verify|verify} messages.
        * @param m SyntheticLock message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.ISyntheticLock,
+        m: merlins.lockup.ISyntheticLock,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5323,7 +5323,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.SyntheticLock;
+      ): merlins.lockup.SyntheticLock;
 
       /**
        * Creates a SyntheticLock message from a plain object. Also converts values to their respective internal types.
@@ -5332,7 +5332,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.SyntheticLock;
+      }): merlins.lockup.SyntheticLock;
 
       /**
        * Creates a plain object from a SyntheticLock message. Also converts values to other types if specified.
@@ -5341,7 +5341,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.SyntheticLock,
+        m: merlins.lockup.SyntheticLock,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5385,8 +5385,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgLockTokensResponse
        */
       public lockTokens(
-        request: osmosis.lockup.IMsgLockTokens,
-        callback: osmosis.lockup.Msg.LockTokensCallback
+        request: merlins.lockup.IMsgLockTokens,
+        callback: merlins.lockup.Msg.LockTokensCallback
       ): void;
 
       /**
@@ -5395,8 +5395,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public lockTokens(
-        request: osmosis.lockup.IMsgLockTokens
-      ): Promise<osmosis.lockup.MsgLockTokensResponse>;
+        request: merlins.lockup.IMsgLockTokens
+      ): Promise<merlins.lockup.MsgLockTokensResponse>;
 
       /**
        * Calls BeginUnlockingAll.
@@ -5404,8 +5404,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgBeginUnlockingAllResponse
        */
       public beginUnlockingAll(
-        request: osmosis.lockup.IMsgBeginUnlockingAll,
-        callback: osmosis.lockup.Msg.BeginUnlockingAllCallback
+        request: merlins.lockup.IMsgBeginUnlockingAll,
+        callback: merlins.lockup.Msg.BeginUnlockingAllCallback
       ): void;
 
       /**
@@ -5414,8 +5414,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public beginUnlockingAll(
-        request: osmosis.lockup.IMsgBeginUnlockingAll
-      ): Promise<osmosis.lockup.MsgBeginUnlockingAllResponse>;
+        request: merlins.lockup.IMsgBeginUnlockingAll
+      ): Promise<merlins.lockup.MsgBeginUnlockingAllResponse>;
 
       /**
        * Calls BeginUnlocking.
@@ -5423,8 +5423,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgBeginUnlockingResponse
        */
       public beginUnlocking(
-        request: osmosis.lockup.IMsgBeginUnlocking,
-        callback: osmosis.lockup.Msg.BeginUnlockingCallback
+        request: merlins.lockup.IMsgBeginUnlocking,
+        callback: merlins.lockup.Msg.BeginUnlockingCallback
       ): void;
 
       /**
@@ -5433,8 +5433,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public beginUnlocking(
-        request: osmosis.lockup.IMsgBeginUnlocking
-      ): Promise<osmosis.lockup.MsgBeginUnlockingResponse>;
+        request: merlins.lockup.IMsgBeginUnlocking
+      ): Promise<merlins.lockup.MsgBeginUnlockingResponse>;
 
       /**
        * Calls ExtendLockup.
@@ -5442,8 +5442,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgExtendLockupResponse
        */
       public extendLockup(
-        request: osmosis.lockup.IMsgExtendLockup,
-        callback: osmosis.lockup.Msg.ExtendLockupCallback
+        request: merlins.lockup.IMsgExtendLockup,
+        callback: merlins.lockup.Msg.ExtendLockupCallback
       ): void;
 
       /**
@@ -5452,8 +5452,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public extendLockup(
-        request: osmosis.lockup.IMsgExtendLockup
-      ): Promise<osmosis.lockup.MsgExtendLockupResponse>;
+        request: merlins.lockup.IMsgExtendLockup
+      ): Promise<merlins.lockup.MsgExtendLockupResponse>;
 
       /**
        * Calls ForceUnlock.
@@ -5461,8 +5461,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgForceUnlockResponse
        */
       public forceUnlock(
-        request: osmosis.lockup.IMsgForceUnlock,
-        callback: osmosis.lockup.Msg.ForceUnlockCallback
+        request: merlins.lockup.IMsgForceUnlock,
+        callback: merlins.lockup.Msg.ForceUnlockCallback
       ): void;
 
       /**
@@ -5471,59 +5471,59 @@ export namespace osmosis {
        * @returns Promise
        */
       public forceUnlock(
-        request: osmosis.lockup.IMsgForceUnlock
-      ): Promise<osmosis.lockup.MsgForceUnlockResponse>;
+        request: merlins.lockup.IMsgForceUnlock
+      ): Promise<merlins.lockup.MsgForceUnlockResponse>;
     }
 
     namespace Msg {
       /**
-       * Callback as used by {@link osmosis.lockup.Msg#lockTokens}.
+       * Callback as used by {@link merlins.lockup.Msg#lockTokens}.
        * @param error Error, if any
        * @param [response] MsgLockTokensResponse
        */
       type LockTokensCallback = (
         error: Error | null,
-        response?: osmosis.lockup.MsgLockTokensResponse
+        response?: merlins.lockup.MsgLockTokensResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.lockup.Msg#beginUnlockingAll}.
+       * Callback as used by {@link merlins.lockup.Msg#beginUnlockingAll}.
        * @param error Error, if any
        * @param [response] MsgBeginUnlockingAllResponse
        */
       type BeginUnlockingAllCallback = (
         error: Error | null,
-        response?: osmosis.lockup.MsgBeginUnlockingAllResponse
+        response?: merlins.lockup.MsgBeginUnlockingAllResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.lockup.Msg#beginUnlocking}.
+       * Callback as used by {@link merlins.lockup.Msg#beginUnlocking}.
        * @param error Error, if any
        * @param [response] MsgBeginUnlockingResponse
        */
       type BeginUnlockingCallback = (
         error: Error | null,
-        response?: osmosis.lockup.MsgBeginUnlockingResponse
+        response?: merlins.lockup.MsgBeginUnlockingResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.lockup.Msg#extendLockup}.
+       * Callback as used by {@link merlins.lockup.Msg#extendLockup}.
        * @param error Error, if any
        * @param [response] MsgExtendLockupResponse
        */
       type ExtendLockupCallback = (
         error: Error | null,
-        response?: osmosis.lockup.MsgExtendLockupResponse
+        response?: merlins.lockup.MsgExtendLockupResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.lockup.Msg#forceUnlock}.
+       * Callback as used by {@link merlins.lockup.Msg#forceUnlock}.
        * @param error Error, if any
        * @param [response] MsgForceUnlockResponse
        */
       type ForceUnlockCallback = (
         error: Error | null,
-        response?: osmosis.lockup.MsgForceUnlockResponse
+        response?: merlins.lockup.MsgForceUnlockResponse
       ) => void;
     }
 
@@ -5545,7 +5545,7 @@ export namespace osmosis {
        * Constructs a new MsgLockTokens.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgLockTokens);
+      constructor(p?: merlins.lockup.IMsgLockTokens);
 
       /** MsgLockTokens owner. */
       public owner: string;
@@ -5562,17 +5562,17 @@ export namespace osmosis {
        * @returns MsgLockTokens instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgLockTokens
-      ): osmosis.lockup.MsgLockTokens;
+        properties?: merlins.lockup.IMsgLockTokens
+      ): merlins.lockup.MsgLockTokens;
 
       /**
-       * Encodes the specified MsgLockTokens message. Does not implicitly {@link osmosis.lockup.MsgLockTokens.verify|verify} messages.
+       * Encodes the specified MsgLockTokens message. Does not implicitly {@link merlins.lockup.MsgLockTokens.verify|verify} messages.
        * @param m MsgLockTokens message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgLockTokens,
+        m: merlins.lockup.IMsgLockTokens,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5587,7 +5587,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgLockTokens;
+      ): merlins.lockup.MsgLockTokens;
 
       /**
        * Creates a MsgLockTokens message from a plain object. Also converts values to their respective internal types.
@@ -5596,7 +5596,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgLockTokens;
+      }): merlins.lockup.MsgLockTokens;
 
       /**
        * Creates a plain object from a MsgLockTokens message. Also converts values to other types if specified.
@@ -5605,7 +5605,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgLockTokens,
+        m: merlins.lockup.MsgLockTokens,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5628,7 +5628,7 @@ export namespace osmosis {
        * Constructs a new MsgLockTokensResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgLockTokensResponse);
+      constructor(p?: merlins.lockup.IMsgLockTokensResponse);
 
       /** MsgLockTokensResponse ID. */
       public ID: Long;
@@ -5639,17 +5639,17 @@ export namespace osmosis {
        * @returns MsgLockTokensResponse instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgLockTokensResponse
-      ): osmosis.lockup.MsgLockTokensResponse;
+        properties?: merlins.lockup.IMsgLockTokensResponse
+      ): merlins.lockup.MsgLockTokensResponse;
 
       /**
-       * Encodes the specified MsgLockTokensResponse message. Does not implicitly {@link osmosis.lockup.MsgLockTokensResponse.verify|verify} messages.
+       * Encodes the specified MsgLockTokensResponse message. Does not implicitly {@link merlins.lockup.MsgLockTokensResponse.verify|verify} messages.
        * @param m MsgLockTokensResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgLockTokensResponse,
+        m: merlins.lockup.IMsgLockTokensResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5664,7 +5664,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgLockTokensResponse;
+      ): merlins.lockup.MsgLockTokensResponse;
 
       /**
        * Creates a MsgLockTokensResponse message from a plain object. Also converts values to their respective internal types.
@@ -5673,7 +5673,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgLockTokensResponse;
+      }): merlins.lockup.MsgLockTokensResponse;
 
       /**
        * Creates a plain object from a MsgLockTokensResponse message. Also converts values to other types if specified.
@@ -5682,7 +5682,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgLockTokensResponse,
+        m: merlins.lockup.MsgLockTokensResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5705,7 +5705,7 @@ export namespace osmosis {
        * Constructs a new MsgBeginUnlockingAll.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgBeginUnlockingAll);
+      constructor(p?: merlins.lockup.IMsgBeginUnlockingAll);
 
       /** MsgBeginUnlockingAll owner. */
       public owner: string;
@@ -5716,17 +5716,17 @@ export namespace osmosis {
        * @returns MsgBeginUnlockingAll instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgBeginUnlockingAll
-      ): osmosis.lockup.MsgBeginUnlockingAll;
+        properties?: merlins.lockup.IMsgBeginUnlockingAll
+      ): merlins.lockup.MsgBeginUnlockingAll;
 
       /**
-       * Encodes the specified MsgBeginUnlockingAll message. Does not implicitly {@link osmosis.lockup.MsgBeginUnlockingAll.verify|verify} messages.
+       * Encodes the specified MsgBeginUnlockingAll message. Does not implicitly {@link merlins.lockup.MsgBeginUnlockingAll.verify|verify} messages.
        * @param m MsgBeginUnlockingAll message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgBeginUnlockingAll,
+        m: merlins.lockup.IMsgBeginUnlockingAll,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5741,7 +5741,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgBeginUnlockingAll;
+      ): merlins.lockup.MsgBeginUnlockingAll;
 
       /**
        * Creates a MsgBeginUnlockingAll message from a plain object. Also converts values to their respective internal types.
@@ -5750,7 +5750,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgBeginUnlockingAll;
+      }): merlins.lockup.MsgBeginUnlockingAll;
 
       /**
        * Creates a plain object from a MsgBeginUnlockingAll message. Also converts values to other types if specified.
@@ -5759,7 +5759,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgBeginUnlockingAll,
+        m: merlins.lockup.MsgBeginUnlockingAll,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5773,7 +5773,7 @@ export namespace osmosis {
     /** Properties of a MsgBeginUnlockingAllResponse. */
     interface IMsgBeginUnlockingAllResponse {
       /** MsgBeginUnlockingAllResponse unlocks */
-      unlocks?: osmosis.lockup.IPeriodLock[] | null;
+      unlocks?: merlins.lockup.IPeriodLock[] | null;
     }
 
     /** Represents a MsgBeginUnlockingAllResponse. */
@@ -5784,10 +5784,10 @@ export namespace osmosis {
        * Constructs a new MsgBeginUnlockingAllResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgBeginUnlockingAllResponse);
+      constructor(p?: merlins.lockup.IMsgBeginUnlockingAllResponse);
 
       /** MsgBeginUnlockingAllResponse unlocks. */
-      public unlocks: osmosis.lockup.IPeriodLock[];
+      public unlocks: merlins.lockup.IPeriodLock[];
 
       /**
        * Creates a new MsgBeginUnlockingAllResponse instance using the specified properties.
@@ -5795,17 +5795,17 @@ export namespace osmosis {
        * @returns MsgBeginUnlockingAllResponse instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgBeginUnlockingAllResponse
-      ): osmosis.lockup.MsgBeginUnlockingAllResponse;
+        properties?: merlins.lockup.IMsgBeginUnlockingAllResponse
+      ): merlins.lockup.MsgBeginUnlockingAllResponse;
 
       /**
-       * Encodes the specified MsgBeginUnlockingAllResponse message. Does not implicitly {@link osmosis.lockup.MsgBeginUnlockingAllResponse.verify|verify} messages.
+       * Encodes the specified MsgBeginUnlockingAllResponse message. Does not implicitly {@link merlins.lockup.MsgBeginUnlockingAllResponse.verify|verify} messages.
        * @param m MsgBeginUnlockingAllResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgBeginUnlockingAllResponse,
+        m: merlins.lockup.IMsgBeginUnlockingAllResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5820,7 +5820,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgBeginUnlockingAllResponse;
+      ): merlins.lockup.MsgBeginUnlockingAllResponse;
 
       /**
        * Creates a MsgBeginUnlockingAllResponse message from a plain object. Also converts values to their respective internal types.
@@ -5829,7 +5829,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgBeginUnlockingAllResponse;
+      }): merlins.lockup.MsgBeginUnlockingAllResponse;
 
       /**
        * Creates a plain object from a MsgBeginUnlockingAllResponse message. Also converts values to other types if specified.
@@ -5838,7 +5838,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgBeginUnlockingAllResponse,
+        m: merlins.lockup.MsgBeginUnlockingAllResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5867,7 +5867,7 @@ export namespace osmosis {
        * Constructs a new MsgBeginUnlocking.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgBeginUnlocking);
+      constructor(p?: merlins.lockup.IMsgBeginUnlocking);
 
       /** MsgBeginUnlocking owner. */
       public owner: string;
@@ -5884,17 +5884,17 @@ export namespace osmosis {
        * @returns MsgBeginUnlocking instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgBeginUnlocking
-      ): osmosis.lockup.MsgBeginUnlocking;
+        properties?: merlins.lockup.IMsgBeginUnlocking
+      ): merlins.lockup.MsgBeginUnlocking;
 
       /**
-       * Encodes the specified MsgBeginUnlocking message. Does not implicitly {@link osmosis.lockup.MsgBeginUnlocking.verify|verify} messages.
+       * Encodes the specified MsgBeginUnlocking message. Does not implicitly {@link merlins.lockup.MsgBeginUnlocking.verify|verify} messages.
        * @param m MsgBeginUnlocking message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgBeginUnlocking,
+        m: merlins.lockup.IMsgBeginUnlocking,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5909,7 +5909,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgBeginUnlocking;
+      ): merlins.lockup.MsgBeginUnlocking;
 
       /**
        * Creates a MsgBeginUnlocking message from a plain object. Also converts values to their respective internal types.
@@ -5918,7 +5918,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgBeginUnlocking;
+      }): merlins.lockup.MsgBeginUnlocking;
 
       /**
        * Creates a plain object from a MsgBeginUnlocking message. Also converts values to other types if specified.
@@ -5927,7 +5927,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgBeginUnlocking,
+        m: merlins.lockup.MsgBeginUnlocking,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -5950,7 +5950,7 @@ export namespace osmosis {
        * Constructs a new MsgBeginUnlockingResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgBeginUnlockingResponse);
+      constructor(p?: merlins.lockup.IMsgBeginUnlockingResponse);
 
       /** MsgBeginUnlockingResponse success. */
       public success: boolean;
@@ -5961,17 +5961,17 @@ export namespace osmosis {
        * @returns MsgBeginUnlockingResponse instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgBeginUnlockingResponse
-      ): osmosis.lockup.MsgBeginUnlockingResponse;
+        properties?: merlins.lockup.IMsgBeginUnlockingResponse
+      ): merlins.lockup.MsgBeginUnlockingResponse;
 
       /**
-       * Encodes the specified MsgBeginUnlockingResponse message. Does not implicitly {@link osmosis.lockup.MsgBeginUnlockingResponse.verify|verify} messages.
+       * Encodes the specified MsgBeginUnlockingResponse message. Does not implicitly {@link merlins.lockup.MsgBeginUnlockingResponse.verify|verify} messages.
        * @param m MsgBeginUnlockingResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgBeginUnlockingResponse,
+        m: merlins.lockup.IMsgBeginUnlockingResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -5986,7 +5986,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgBeginUnlockingResponse;
+      ): merlins.lockup.MsgBeginUnlockingResponse;
 
       /**
        * Creates a MsgBeginUnlockingResponse message from a plain object. Also converts values to their respective internal types.
@@ -5995,7 +5995,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgBeginUnlockingResponse;
+      }): merlins.lockup.MsgBeginUnlockingResponse;
 
       /**
        * Creates a plain object from a MsgBeginUnlockingResponse message. Also converts values to other types if specified.
@@ -6004,7 +6004,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgBeginUnlockingResponse,
+        m: merlins.lockup.MsgBeginUnlockingResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6033,7 +6033,7 @@ export namespace osmosis {
        * Constructs a new MsgExtendLockup.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgExtendLockup);
+      constructor(p?: merlins.lockup.IMsgExtendLockup);
 
       /** MsgExtendLockup owner. */
       public owner: string;
@@ -6050,17 +6050,17 @@ export namespace osmosis {
        * @returns MsgExtendLockup instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgExtendLockup
-      ): osmosis.lockup.MsgExtendLockup;
+        properties?: merlins.lockup.IMsgExtendLockup
+      ): merlins.lockup.MsgExtendLockup;
 
       /**
-       * Encodes the specified MsgExtendLockup message. Does not implicitly {@link osmosis.lockup.MsgExtendLockup.verify|verify} messages.
+       * Encodes the specified MsgExtendLockup message. Does not implicitly {@link merlins.lockup.MsgExtendLockup.verify|verify} messages.
        * @param m MsgExtendLockup message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgExtendLockup,
+        m: merlins.lockup.IMsgExtendLockup,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6075,7 +6075,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgExtendLockup;
+      ): merlins.lockup.MsgExtendLockup;
 
       /**
        * Creates a MsgExtendLockup message from a plain object. Also converts values to their respective internal types.
@@ -6084,7 +6084,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgExtendLockup;
+      }): merlins.lockup.MsgExtendLockup;
 
       /**
        * Creates a plain object from a MsgExtendLockup message. Also converts values to other types if specified.
@@ -6093,7 +6093,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgExtendLockup,
+        m: merlins.lockup.MsgExtendLockup,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6116,7 +6116,7 @@ export namespace osmosis {
        * Constructs a new MsgExtendLockupResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgExtendLockupResponse);
+      constructor(p?: merlins.lockup.IMsgExtendLockupResponse);
 
       /** MsgExtendLockupResponse success. */
       public success: boolean;
@@ -6127,17 +6127,17 @@ export namespace osmosis {
        * @returns MsgExtendLockupResponse instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgExtendLockupResponse
-      ): osmosis.lockup.MsgExtendLockupResponse;
+        properties?: merlins.lockup.IMsgExtendLockupResponse
+      ): merlins.lockup.MsgExtendLockupResponse;
 
       /**
-       * Encodes the specified MsgExtendLockupResponse message. Does not implicitly {@link osmosis.lockup.MsgExtendLockupResponse.verify|verify} messages.
+       * Encodes the specified MsgExtendLockupResponse message. Does not implicitly {@link merlins.lockup.MsgExtendLockupResponse.verify|verify} messages.
        * @param m MsgExtendLockupResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgExtendLockupResponse,
+        m: merlins.lockup.IMsgExtendLockupResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6152,7 +6152,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgExtendLockupResponse;
+      ): merlins.lockup.MsgExtendLockupResponse;
 
       /**
        * Creates a MsgExtendLockupResponse message from a plain object. Also converts values to their respective internal types.
@@ -6161,7 +6161,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgExtendLockupResponse;
+      }): merlins.lockup.MsgExtendLockupResponse;
 
       /**
        * Creates a plain object from a MsgExtendLockupResponse message. Also converts values to other types if specified.
@@ -6170,7 +6170,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgExtendLockupResponse,
+        m: merlins.lockup.MsgExtendLockupResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6199,7 +6199,7 @@ export namespace osmosis {
        * Constructs a new MsgForceUnlock.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgForceUnlock);
+      constructor(p?: merlins.lockup.IMsgForceUnlock);
 
       /** MsgForceUnlock owner. */
       public owner: string;
@@ -6216,17 +6216,17 @@ export namespace osmosis {
        * @returns MsgForceUnlock instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgForceUnlock
-      ): osmosis.lockup.MsgForceUnlock;
+        properties?: merlins.lockup.IMsgForceUnlock
+      ): merlins.lockup.MsgForceUnlock;
 
       /**
-       * Encodes the specified MsgForceUnlock message. Does not implicitly {@link osmosis.lockup.MsgForceUnlock.verify|verify} messages.
+       * Encodes the specified MsgForceUnlock message. Does not implicitly {@link merlins.lockup.MsgForceUnlock.verify|verify} messages.
        * @param m MsgForceUnlock message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgForceUnlock,
+        m: merlins.lockup.IMsgForceUnlock,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6241,7 +6241,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgForceUnlock;
+      ): merlins.lockup.MsgForceUnlock;
 
       /**
        * Creates a MsgForceUnlock message from a plain object. Also converts values to their respective internal types.
@@ -6250,7 +6250,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgForceUnlock;
+      }): merlins.lockup.MsgForceUnlock;
 
       /**
        * Creates a plain object from a MsgForceUnlock message. Also converts values to other types if specified.
@@ -6259,7 +6259,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgForceUnlock,
+        m: merlins.lockup.MsgForceUnlock,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6282,7 +6282,7 @@ export namespace osmosis {
        * Constructs a new MsgForceUnlockResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.lockup.IMsgForceUnlockResponse);
+      constructor(p?: merlins.lockup.IMsgForceUnlockResponse);
 
       /** MsgForceUnlockResponse success. */
       public success: boolean;
@@ -6293,17 +6293,17 @@ export namespace osmosis {
        * @returns MsgForceUnlockResponse instance
        */
       public static create(
-        properties?: osmosis.lockup.IMsgForceUnlockResponse
-      ): osmosis.lockup.MsgForceUnlockResponse;
+        properties?: merlins.lockup.IMsgForceUnlockResponse
+      ): merlins.lockup.MsgForceUnlockResponse;
 
       /**
-       * Encodes the specified MsgForceUnlockResponse message. Does not implicitly {@link osmosis.lockup.MsgForceUnlockResponse.verify|verify} messages.
+       * Encodes the specified MsgForceUnlockResponse message. Does not implicitly {@link merlins.lockup.MsgForceUnlockResponse.verify|verify} messages.
        * @param m MsgForceUnlockResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.lockup.IMsgForceUnlockResponse,
+        m: merlins.lockup.IMsgForceUnlockResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6318,7 +6318,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.lockup.MsgForceUnlockResponse;
+      ): merlins.lockup.MsgForceUnlockResponse;
 
       /**
        * Creates a MsgForceUnlockResponse message from a plain object. Also converts values to their respective internal types.
@@ -6327,7 +6327,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.lockup.MsgForceUnlockResponse;
+      }): merlins.lockup.MsgForceUnlockResponse;
 
       /**
        * Creates a plain object from a MsgForceUnlockResponse message. Also converts values to other types if specified.
@@ -6336,7 +6336,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.lockup.MsgForceUnlockResponse,
+        m: merlins.lockup.MsgForceUnlockResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6383,8 +6383,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgCreateGaugeResponse
        */
       public createGauge(
-        request: osmosis.incentives.IMsgCreateGauge,
-        callback: osmosis.incentives.Msg.CreateGaugeCallback
+        request: merlins.incentives.IMsgCreateGauge,
+        callback: merlins.incentives.Msg.CreateGaugeCallback
       ): void;
 
       /**
@@ -6393,8 +6393,8 @@ export namespace osmosis {
        * @returns Promise
        */
       public createGauge(
-        request: osmosis.incentives.IMsgCreateGauge
-      ): Promise<osmosis.incentives.MsgCreateGaugeResponse>;
+        request: merlins.incentives.IMsgCreateGauge
+      ): Promise<merlins.incentives.MsgCreateGaugeResponse>;
 
       /**
        * Calls AddToGauge.
@@ -6402,8 +6402,8 @@ export namespace osmosis {
        * @param callback Node-style callback called with the error, if any, and MsgAddToGaugeResponse
        */
       public addToGauge(
-        request: osmosis.incentives.IMsgAddToGauge,
-        callback: osmosis.incentives.Msg.AddToGaugeCallback
+        request: merlins.incentives.IMsgAddToGauge,
+        callback: merlins.incentives.Msg.AddToGaugeCallback
       ): void;
 
       /**
@@ -6412,29 +6412,29 @@ export namespace osmosis {
        * @returns Promise
        */
       public addToGauge(
-        request: osmosis.incentives.IMsgAddToGauge
-      ): Promise<osmosis.incentives.MsgAddToGaugeResponse>;
+        request: merlins.incentives.IMsgAddToGauge
+      ): Promise<merlins.incentives.MsgAddToGaugeResponse>;
     }
 
     namespace Msg {
       /**
-       * Callback as used by {@link osmosis.incentives.Msg#createGauge}.
+       * Callback as used by {@link merlins.incentives.Msg#createGauge}.
        * @param error Error, if any
        * @param [response] MsgCreateGaugeResponse
        */
       type CreateGaugeCallback = (
         error: Error | null,
-        response?: osmosis.incentives.MsgCreateGaugeResponse
+        response?: merlins.incentives.MsgCreateGaugeResponse
       ) => void;
 
       /**
-       * Callback as used by {@link osmosis.incentives.Msg#addToGauge}.
+       * Callback as used by {@link merlins.incentives.Msg#addToGauge}.
        * @param error Error, if any
        * @param [response] MsgAddToGaugeResponse
        */
       type AddToGaugeCallback = (
         error: Error | null,
-        response?: osmosis.incentives.MsgAddToGaugeResponse
+        response?: merlins.incentives.MsgAddToGaugeResponse
       ) => void;
     }
 
@@ -6447,7 +6447,7 @@ export namespace osmosis {
       owner?: string | null;
 
       /** MsgCreateGauge distributeTo */
-      distributeTo?: osmosis.lockup.IQueryCondition | null;
+      distributeTo?: merlins.lockup.IQueryCondition | null;
 
       /** MsgCreateGauge coins */
       coins?: cosmos.base.v1beta1.ICoin[] | null;
@@ -6465,7 +6465,7 @@ export namespace osmosis {
        * Constructs a new MsgCreateGauge.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.incentives.IMsgCreateGauge);
+      constructor(p?: merlins.incentives.IMsgCreateGauge);
 
       /** MsgCreateGauge isPerpetual. */
       public isPerpetual: boolean;
@@ -6474,7 +6474,7 @@ export namespace osmosis {
       public owner: string;
 
       /** MsgCreateGauge distributeTo. */
-      public distributeTo?: osmosis.lockup.IQueryCondition | null;
+      public distributeTo?: merlins.lockup.IQueryCondition | null;
 
       /** MsgCreateGauge coins. */
       public coins: cosmos.base.v1beta1.ICoin[];
@@ -6491,17 +6491,17 @@ export namespace osmosis {
        * @returns MsgCreateGauge instance
        */
       public static create(
-        properties?: osmosis.incentives.IMsgCreateGauge
-      ): osmosis.incentives.MsgCreateGauge;
+        properties?: merlins.incentives.IMsgCreateGauge
+      ): merlins.incentives.MsgCreateGauge;
 
       /**
-       * Encodes the specified MsgCreateGauge message. Does not implicitly {@link osmosis.incentives.MsgCreateGauge.verify|verify} messages.
+       * Encodes the specified MsgCreateGauge message. Does not implicitly {@link merlins.incentives.MsgCreateGauge.verify|verify} messages.
        * @param m MsgCreateGauge message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.incentives.IMsgCreateGauge,
+        m: merlins.incentives.IMsgCreateGauge,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6516,7 +6516,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.incentives.MsgCreateGauge;
+      ): merlins.incentives.MsgCreateGauge;
 
       /**
        * Creates a MsgCreateGauge message from a plain object. Also converts values to their respective internal types.
@@ -6525,7 +6525,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.incentives.MsgCreateGauge;
+      }): merlins.incentives.MsgCreateGauge;
 
       /**
        * Creates a plain object from a MsgCreateGauge message. Also converts values to other types if specified.
@@ -6534,7 +6534,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.incentives.MsgCreateGauge,
+        m: merlins.incentives.MsgCreateGauge,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6554,7 +6554,7 @@ export namespace osmosis {
        * Constructs a new MsgCreateGaugeResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.incentives.IMsgCreateGaugeResponse);
+      constructor(p?: merlins.incentives.IMsgCreateGaugeResponse);
 
       /**
        * Creates a new MsgCreateGaugeResponse instance using the specified properties.
@@ -6562,17 +6562,17 @@ export namespace osmosis {
        * @returns MsgCreateGaugeResponse instance
        */
       public static create(
-        properties?: osmosis.incentives.IMsgCreateGaugeResponse
-      ): osmosis.incentives.MsgCreateGaugeResponse;
+        properties?: merlins.incentives.IMsgCreateGaugeResponse
+      ): merlins.incentives.MsgCreateGaugeResponse;
 
       /**
-       * Encodes the specified MsgCreateGaugeResponse message. Does not implicitly {@link osmosis.incentives.MsgCreateGaugeResponse.verify|verify} messages.
+       * Encodes the specified MsgCreateGaugeResponse message. Does not implicitly {@link merlins.incentives.MsgCreateGaugeResponse.verify|verify} messages.
        * @param m MsgCreateGaugeResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.incentives.IMsgCreateGaugeResponse,
+        m: merlins.incentives.IMsgCreateGaugeResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6587,7 +6587,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.incentives.MsgCreateGaugeResponse;
+      ): merlins.incentives.MsgCreateGaugeResponse;
 
       /**
        * Creates a MsgCreateGaugeResponse message from a plain object. Also converts values to their respective internal types.
@@ -6596,7 +6596,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.incentives.MsgCreateGaugeResponse;
+      }): merlins.incentives.MsgCreateGaugeResponse;
 
       /**
        * Creates a plain object from a MsgCreateGaugeResponse message. Also converts values to other types if specified.
@@ -6605,7 +6605,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.incentives.MsgCreateGaugeResponse,
+        m: merlins.incentives.MsgCreateGaugeResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6634,7 +6634,7 @@ export namespace osmosis {
        * Constructs a new MsgAddToGauge.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.incentives.IMsgAddToGauge);
+      constructor(p?: merlins.incentives.IMsgAddToGauge);
 
       /** MsgAddToGauge owner. */
       public owner: string;
@@ -6651,17 +6651,17 @@ export namespace osmosis {
        * @returns MsgAddToGauge instance
        */
       public static create(
-        properties?: osmosis.incentives.IMsgAddToGauge
-      ): osmosis.incentives.MsgAddToGauge;
+        properties?: merlins.incentives.IMsgAddToGauge
+      ): merlins.incentives.MsgAddToGauge;
 
       /**
-       * Encodes the specified MsgAddToGauge message. Does not implicitly {@link osmosis.incentives.MsgAddToGauge.verify|verify} messages.
+       * Encodes the specified MsgAddToGauge message. Does not implicitly {@link merlins.incentives.MsgAddToGauge.verify|verify} messages.
        * @param m MsgAddToGauge message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.incentives.IMsgAddToGauge,
+        m: merlins.incentives.IMsgAddToGauge,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6676,7 +6676,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.incentives.MsgAddToGauge;
+      ): merlins.incentives.MsgAddToGauge;
 
       /**
        * Creates a MsgAddToGauge message from a plain object. Also converts values to their respective internal types.
@@ -6685,7 +6685,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.incentives.MsgAddToGauge;
+      }): merlins.incentives.MsgAddToGauge;
 
       /**
        * Creates a plain object from a MsgAddToGauge message. Also converts values to other types if specified.
@@ -6694,7 +6694,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.incentives.MsgAddToGauge,
+        m: merlins.incentives.MsgAddToGauge,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 
@@ -6714,7 +6714,7 @@ export namespace osmosis {
        * Constructs a new MsgAddToGaugeResponse.
        * @param [p] Properties to set
        */
-      constructor(p?: osmosis.incentives.IMsgAddToGaugeResponse);
+      constructor(p?: merlins.incentives.IMsgAddToGaugeResponse);
 
       /**
        * Creates a new MsgAddToGaugeResponse instance using the specified properties.
@@ -6722,17 +6722,17 @@ export namespace osmosis {
        * @returns MsgAddToGaugeResponse instance
        */
       public static create(
-        properties?: osmosis.incentives.IMsgAddToGaugeResponse
-      ): osmosis.incentives.MsgAddToGaugeResponse;
+        properties?: merlins.incentives.IMsgAddToGaugeResponse
+      ): merlins.incentives.MsgAddToGaugeResponse;
 
       /**
-       * Encodes the specified MsgAddToGaugeResponse message. Does not implicitly {@link osmosis.incentives.MsgAddToGaugeResponse.verify|verify} messages.
+       * Encodes the specified MsgAddToGaugeResponse message. Does not implicitly {@link merlins.incentives.MsgAddToGaugeResponse.verify|verify} messages.
        * @param m MsgAddToGaugeResponse message or plain object to encode
        * @param [w] Writer to encode to
        * @returns Writer
        */
       public static encode(
-        m: osmosis.incentives.IMsgAddToGaugeResponse,
+        m: merlins.incentives.IMsgAddToGaugeResponse,
         w?: $protobuf.Writer
       ): $protobuf.Writer;
 
@@ -6747,7 +6747,7 @@ export namespace osmosis {
       public static decode(
         r: $protobuf.Reader | Uint8Array,
         l?: number
-      ): osmosis.incentives.MsgAddToGaugeResponse;
+      ): merlins.incentives.MsgAddToGaugeResponse;
 
       /**
        * Creates a MsgAddToGaugeResponse message from a plain object. Also converts values to their respective internal types.
@@ -6756,7 +6756,7 @@ export namespace osmosis {
        */
       public static fromObject(d: {
         [k: string]: any;
-      }): osmosis.incentives.MsgAddToGaugeResponse;
+      }): merlins.incentives.MsgAddToGaugeResponse;
 
       /**
        * Creates a plain object from a MsgAddToGaugeResponse message. Also converts values to other types if specified.
@@ -6765,7 +6765,7 @@ export namespace osmosis {
        * @returns Plain object
        */
       public static toObject(
-        m: osmosis.incentives.MsgAddToGaugeResponse,
+        m: merlins.incentives.MsgAddToGaugeResponse,
         o?: $protobuf.IConversionOptions
       ): { [k: string]: any };
 

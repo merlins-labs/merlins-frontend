@@ -28,7 +28,7 @@
   "pools": {
     "title": "Bassins actifs",
     "poolId": "Pool n°{id}",
-    "priceOsmo": "Prix de l'OSMO",
+    "priceFury": "Prix de l'FURY",
     "rewardDistribution": "Distribution de la récompence dans",
     "myPools": "Mes Bassins",
     "APR": "TAP",
@@ -90,7 +90,7 @@
         "three": "Étape {step} / {nbStep} - Comfirmer le ratio du bassin et le montant des jetons"
       },
       "infoMessage": "Frais de création de bassin",
-      "infoCaption": "Transféré au bassin communautaire d'Osmosis",
+      "infoCaption": "Transféré au bassin communautaire d'Merlins",
       "buttonCreate": "Créer le bassin",
       "buttonNext": "Suivant",
       "buttonBack": "Retour",
@@ -186,7 +186,7 @@
     "bondedAmount": "Montant bloqué",
     "estimation": "Estimation délégation superfluide",
     "estimationMobile": "Est. délégation",
-    "estimationInfo": "La valeur de cette délégation fluctue et est estimée en fonction de la quantité d'OSMO dans le bassin.",
+    "estimationInfo": "La valeur de cette délégation fluctue et est estimée en fonction de la quantité d'FURY dans le bassin.",
     "buttonBond": "Lier & Déléguer",
     "columns": {
       "validator": "Validateur",
@@ -197,7 +197,7 @@
     "totalAssets": "Actifs totaux",
     "unbondedAssets": "Actifs non liés",
     "bondedAssets": "Actifs liés",
-    "stakedAssets": "OSMO cautionné",
+    "stakedAssets": "FURY cautionné",
     "myPools": "Mes Bassins",
     "transferAssetSelect": {
       "deposit": "Déposer",
@@ -267,7 +267,7 @@
       "search": "Rechercher par devise",
       "title": "Actifs",
       "hideZero": "Cacher les fonds à zéro",
-      "buyOsmo": "Acheter",
+      "buyFury": "Acheter",
       "preTransfer": {
         "deposit": "Déposer",
         "withdraw": "Retirer",
@@ -327,7 +327,7 @@
     "info": "Info",
     "signOut": "Déconnecter",
     "help": "Obtenir de l'aide",
-    "learnMoreFrontier": "En apprendre<br/>plus sur<br2/> <name>Osmosis Frontier</name>"
+    "learnMoreFrontier": "En apprendre<br/>plus sur<br2/> <name>Merlins Frontier</name>"
   },
   "settings": {
     "title": "Paramètres",
@@ -373,7 +373,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr Mobile"
   },
-  "connectDisclaimer": "En connectant un portefeuille, vous reconnaissez avoir lu et compris la politique Osmosis",
+  "connectDisclaimer": "En connectant un portefeuille, vous reconnaissez avoir lu et compris la politique Merlins",
   "protocolDisclaimer": "Clause de non-responsabilité du protocole",
   "Transaction Failed": "Échec de la transaction",
   "Transaction Successful": "Succès de la transaction",

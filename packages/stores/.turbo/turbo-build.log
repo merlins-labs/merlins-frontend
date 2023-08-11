@@ -1,0 +1,4 @@
+src/__tests_e2e__/test-wallet.ts(167,58): error TS2345: Argument of type 'DirectSignDoc' is not assignable to parameter of type '{ bodyBytes?: Uint8Array | null | undefined; authInfoBytes?: Uint8Array | null | undefined; chainId?: string | null | undefined; accountNumber?: Long | null | undefined; }'.
+  Types of property 'accountNumber' are incompatible.
+    Type 'Long.Long | null | undefined' is not assignable to type 'import("/Users/adrianross/merlin/merlins-frontend/node_modules/long/index") | null | undefined'.
+      Type 'Long' is missing the following properties from type 'Long': ge, eqz, le, rem, and 10 more.

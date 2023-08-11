@@ -39,11 +39,11 @@ export const ModalBase: FunctionComponent<ModalBaseProps> = ({
       }}
       bodyOpenClassName={classNames("overflow-hidden", bodyOpenClassName)}
       overlayClassName={classNames(
-        "fixed flex items-center inset-0 justify-center bg-osmoverse-1000/90 z-[9999]",
+        "fixed flex items-center inset-0 justify-center bg-furyverse-1000/90 z-[9999]",
         overlayClassName
       )}
       className={classNames(
-        "absolute outline-none md:w-[98%] w-full p-8 md:px-4 bg-osmoverse-800 rounded-2xl flex flex-col max-w-modal",
+        "absolute outline-none md:w-[98%] w-full p-8 md:px-4 bg-furyverse-800 rounded-2xl flex flex-col max-w-modal",
         className
       )}
     >

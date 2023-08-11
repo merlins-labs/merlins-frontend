@@ -12,40 +12,40 @@ import { Coin, CoinPretty, Dec, DecUtils, Int } from "@keplr-wallet/unit";
 import { Currency, KeplrSignOptions } from "@keplr-wallet/types";
 import * as WeightedPoolEstimates from "@osmosis-labs/math";
 import { Pool } from "@osmosis-labs/pools";
-import { OsmosisQueries } from "../queries";
-import { osmosis } from "./msg/proto";
+import { MerlinsQueries } from "../queries";
+import { merlins } from "./msg/proto";
 import * as Msgs from "./msg/make-msg";
-import { OsmosisMsgOpts, defaultMsgOpts } from "./types";
+import { MerlinsMsgOpts, defaultMsgOpts } from "./types";
 import { StdFee } from "@cosmjs/launchpad";
 import { BondStatus } from "@keplr-wallet/stores/build/query/cosmos/staking/types";
 
-export interface OsmosisAccount {
-  osmosis: OsmosisAccountImpl;
+export interface MerlinsAccount {
+  merlins: MerlinsAccountImpl;
 }
 
-export const OsmosisAccount = {
+export const MerlinsAccount = {
   use(options: {
     msgOptsCreator?: (
       chainId: string
-    ) => DeepPartial<OsmosisMsgOpts> | undefined;
-    queriesStore: IQueriesStore<CosmosQueries & OsmosisQueries>;
+    ) => DeepPartial<MerlinsMsgOpts> | undefined;
+    queriesStore: IQueriesStore<CosmosQueries & MerlinsQueries>;
   }): (
     base: AccountSetBaseSuper & CosmosAccount,
     chainGetter: ChainGetter,
     chainId: string
-  ) => OsmosisAccount {
+  ) => MerlinsAccount {
     return (base, chainGetter, chainId) => {
       const msgOptsFromCreator = options.msgOptsCreator
         ? options.msgOptsCreator(chainId)
         : undefined;
 
       return {
-        osmosis: new OsmosisAccountImpl(
+        merlins: new MerlinsAccountImpl(
           base,
           chainGetter,
           chainId,
           options.queriesStore,
-          deepmerge<OsmosisMsgOpts, DeepPartial<OsmosisMsgOpts>>(
+          deepmerge<MerlinsMsgOpts, DeepPartial<MerlinsMsgOpts>>(
             defaultMsgOpts,
             msgOptsFromCreator ? msgOptsFromCreator : {}
           )
@@ -55,15 +55,15 @@ export const OsmosisAccount = {
   },
 };
 
-export class OsmosisAccountImpl {
+export class MerlinsAccountImpl {
   constructor(
     protected readonly base: AccountSetBaseSuper & CosmosAccount,
     protected readonly chainGetter: ChainGetter,
     protected readonly chainId: string,
     protected readonly queriesStore: IQueriesStore<
-      CosmosQueries & OsmosisQueries
+      CosmosQueries & MerlinsQueries
     >,
-    protected readonly _msgOpts: OsmosisMsgOpts
+    protected readonly _msgOpts: MerlinsMsgOpts
   ) {}
 
   /**
@@ -136,9 +136,9 @@ export class OsmosisAccountImpl {
         protoMsgs: [
           {
             typeUrl:
-              "/osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool",
+              "/merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool",
             value:
-              osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.encode(
+              merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.encode(
                 {
                   sender: msg.value.sender,
                   poolParams: {
@@ -192,7 +192,7 @@ export class OsmosisAccountImpl {
    * @param swapFee The swap fee of the pool. Should set as the percentage. (Ex. 10% -> 10)
    * @param assets Assets that will be provided to the pool initially, with scaling factors. Token can be parsed as to primitive by convenience. `amount`s are not in micro.
    * @param memo Transaction memo.
-   * @param scalingFactorControllerAddress Osmo address of account permitted to change scaling factors later.
+   * @param scalingFactorControllerAddress Fury address of account permitted to change scaling factors later.
    * @param onFulfill Callback to handle tx fulfillment.
    */
   async sendCreateStableswapPoolMsg(
@@ -276,9 +276,9 @@ export class OsmosisAccountImpl {
         protoMsgs: [
           {
             typeUrl:
-              "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool",
+              "/merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool",
             value:
-              osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.encode(
+              merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.encode(
                 {
                   sender: msg.value.sender,
                   poolParams: {
@@ -332,7 +332,7 @@ export class OsmosisAccountImpl {
   /**
    * Join pool with multiple assets.
    *
-   * https://docs.osmosis.zone/developing/modules/spec-gamm.html#join-pool
+   * https://docs.merlins.zone/developing/modules/spec-gamm.html#join-pool
    * @param poolId Id of pool.
    * @param shareOutAmount LP share amount.
    * @param maxSlippage Max tolerated slippage. Default: 2.5.
@@ -418,8 +418,8 @@ export class OsmosisAccountImpl {
           aminoMsgs: [msg],
           protoMsgs: [
             {
-              typeUrl: "/osmosis.gamm.v1beta1.MsgJoinPool",
-              value: osmosis.gamm.v1beta1.MsgJoinPool.encode({
+              typeUrl: "/merlins.gamm.v1beta1.MsgJoinPool",
+              value: merlins.gamm.v1beta1.MsgJoinPool.encode({
                 sender: msg.value.sender,
                 poolId: Long.fromString(msg.value.pool_id),
                 shareOutAmount: msg.value.share_out_amount,
@@ -457,7 +457,7 @@ export class OsmosisAccountImpl {
   /**
    * Join pool with only one asset with a weighted pool.
    *
-   * https://docs.osmosis.zone/developing/modules/spec-gamm.html#join-swap-extern-amount-in
+   * https://docs.merlins.zone/developing/modules/spec-gamm.html#join-swap-extern-amount-in
    * @param poolId Id of pool to swap within.
    * @param tokenIn Token being swapped in. `tokenIn.amount` is NOT in micro amount.
    * @param maxSlippage Max tolerated slippage. Default: 2.5.
@@ -551,8 +551,8 @@ export class OsmosisAccountImpl {
           aminoMsgs: [msg],
           protoMsgs: [
             {
-              typeUrl: "/osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn",
-              value: osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn.encode({
+              typeUrl: "/merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn",
+              value: merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn.encode({
                 sender: msg.value.sender,
                 poolId: Long.fromString(msg.value.pool_id),
                 tokenIn: msg.value.token_in,
@@ -587,7 +587,7 @@ export class OsmosisAccountImpl {
   /**
    * Perform multiple swaps that are routed through multiple pools, with a desired input token.
    *
-   * https://docs.osmosis.zone/developing/modules/spec-gamm.html#swap-exact-amount-in
+   * https://docs.merlins.zone/developing/modules/spec-gamm.html#swap-exact-amount-in
    * @param routes Desired pools to swap through.
    * @param tokenIn Token being swapped.
    * @param maxSlippage Max tolerated slippage.
@@ -708,8 +708,8 @@ export class OsmosisAccountImpl {
           aminoMsgs: [msg],
           protoMsgs: [
             {
-              typeUrl: "/osmosis.gamm.v1beta1.MsgSwapExactAmountIn",
-              value: osmosis.gamm.v1beta1.MsgSwapExactAmountIn.encode({
+              typeUrl: "/merlins.gamm.v1beta1.MsgSwapExactAmountIn",
+              value: merlins.gamm.v1beta1.MsgSwapExactAmountIn.encode({
                 sender: msg.value.sender,
                 routes: msg.value.routes.map((route) => {
                   return {
@@ -755,7 +755,7 @@ export class OsmosisAccountImpl {
             });
 
           routes.forEach(({ poolId }) =>
-            queries.osmosis?.queryGammPools.getPool(poolId)?.waitFreshResponse()
+            queries.merlins?.queryGammPools.getPool(poolId)?.waitFreshResponse()
           );
         }
 
@@ -765,7 +765,7 @@ export class OsmosisAccountImpl {
   }
 
   /**
-   * https://docs.osmosis.zone/developing/modules/spec-gamm.html#swap-exact-amount-in
+   * https://docs.merlins.zone/developing/modules/spec-gamm.html#swap-exact-amount-in
    * @param poolId Id of pool to swap within.
    * @param tokenIn Token being swapped in. `tokenIn.amount` is NOT in micro.
    * @param tokenOutCurrency Currency of outgoing token.
@@ -848,8 +848,8 @@ export class OsmosisAccountImpl {
           aminoMsgs: [msg],
           protoMsgs: [
             {
-              typeUrl: "/osmosis.gamm.v1beta1.MsgSwapExactAmountIn",
-              value: osmosis.gamm.v1beta1.MsgSwapExactAmountIn.encode({
+              typeUrl: "/merlins.gamm.v1beta1.MsgSwapExactAmountIn",
+              value: merlins.gamm.v1beta1.MsgSwapExactAmountIn.encode({
                 sender: msg.value.sender,
                 routes: msg.value.routes.map(
                   (route: { pool_id: string; token_out_denom: string }) => {
@@ -899,7 +899,7 @@ export class OsmosisAccountImpl {
   }
 
   /**
-   * https://docs.osmosis.zone/developing/modules/spec-gamm.html#swap-exact-amount-out
+   * https://docs.merlins.zone/developing/modules/spec-gamm.html#swap-exact-amount-out
    * @param poolId Id of pool to swap within.
    * @param tokenInCurrency Currency of incoming token.
    * @param tokenOut Token being swapped. `tokenIn.amount` is NOT in micro.
@@ -980,8 +980,8 @@ export class OsmosisAccountImpl {
           aminoMsgs: [msg],
           protoMsgs: [
             {
-              typeUrl: "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut",
-              value: osmosis.gamm.v1beta1.MsgSwapExactAmountOut.encode({
+              typeUrl: "/merlins.gamm.v1beta1.MsgSwapExactAmountOut",
+              value: merlins.gamm.v1beta1.MsgSwapExactAmountOut.encode({
                 sender: msg.value.sender,
                 routes: msg.value.routes.map(
                   (route: { pool_id: string; token_in_denom: string }) => {
@@ -1030,7 +1030,7 @@ export class OsmosisAccountImpl {
   }
 
   /**
-   * https://docs.osmosis.zone/developing/modules/spec-gamm.html#exit-pool
+   * https://docs.merlins.zone/developing/modules/spec-gamm.html#exit-pool
    * @param poolId Id of pool to exit.
    * @param shareInAmount LP shares to redeem.
    * @param maxSlippage Max tolerated slippage. Default: 2.5.
@@ -1113,8 +1113,8 @@ export class OsmosisAccountImpl {
           aminoMsgs: [msg],
           protoMsgs: [
             {
-              typeUrl: "/osmosis.gamm.v1beta1.MsgExitPool",
-              value: osmosis.gamm.v1beta1.MsgExitPool.encode({
+              typeUrl: "/merlins.gamm.v1beta1.MsgExitPool",
+              value: merlins.gamm.v1beta1.MsgExitPool.encode({
                 sender: msg.value.sender,
                 poolId: Long.fromString(msg.value.pool_id),
                 shareInAmount: msg.value.share_in_amount,
@@ -1146,7 +1146,7 @@ export class OsmosisAccountImpl {
   }
 
   /**
-   * https://docs.osmosis.zone/developing/modules/spec-lockup.html#lock-tokens
+   * https://docs.merlins.zone/developing/modules/spec-lockup.html#lock-tokens
    * @param duration Duration, in seconds, to lock up the tokens.
    * @param tokens Tokens to lock. `amount`s are not in micro.
    * @param memo Transaction memo.
@@ -1190,8 +1190,8 @@ export class OsmosisAccountImpl {
         aminoMsgs: [msg],
         protoMsgs: [
           {
-            typeUrl: "/osmosis.lockup.MsgLockTokens",
-            value: osmosis.lockup.MsgLockTokens.encode({
+            typeUrl: "/merlins.lockup.MsgLockTokens",
+            value: merlins.lockup.MsgLockTokens.encode({
               owner: msg.value.owner,
               duration: {
                 seconds: Long.fromNumber(
@@ -1232,7 +1232,7 @@ export class OsmosisAccountImpl {
     );
   }
 
-  /** https://docs.osmosis.zone/overview/osmo.html#superfluid-staking
+  /** https://docs.merlins.zone/overview/fury.html#superfluid-staking
    * @param lockIds Ids of LP bonded locks.
    * @param validatorAddress Bech32 address of validator to delegate to.
    * @param memo Tx memo.
@@ -1257,8 +1257,8 @@ export class OsmosisAccountImpl {
 
     const protoMsgs = aminoMsgs.map((msg) => {
       return {
-        typeUrl: "/osmosis.superfluid.MsgSuperfluidDelegate",
-        value: osmosis.superfluid.MsgSuperfluidDelegate.encode({
+        typeUrl: "/merlins.superfluid.MsgSuperfluidDelegate",
+        value: merlins.superfluid.MsgSuperfluidDelegate.encode({
           sender: msg.value.sender,
           lockId: Long.fromString(msg.value.lock_id),
           valAddr: msg.value.val_addr,
@@ -1286,7 +1286,7 @@ export class OsmosisAccountImpl {
             .getQueryBech32Address(this.base.bech32Address)
             .fetch();
 
-          queries.osmosis?.queryAccountLocked
+          queries.merlins?.queryAccountLocked
             .get(this.base.bech32Address)
             .waitFreshResponse();
 
@@ -1294,7 +1294,7 @@ export class OsmosisAccountImpl {
             .getQueryStatus(BondStatus.Bonded)
             .waitFreshResponse();
 
-          queries.osmosis?.querySuperfluidDelegations
+          queries.merlins?.querySuperfluidDelegations
             .getQuerySuperfluidDelegations(this.base.bech32Address)
             .waitFreshResponse();
         }
@@ -1304,7 +1304,7 @@ export class OsmosisAccountImpl {
     );
   }
 
-  /** https://docs.osmosis.zone/overview/osmo.html#superfluid-staking
+  /** https://docs.merlins.zone/overview/fury.html#superfluid-staking
    * @param tokens LP tokens to delegate and lock. `amount`s are not in micro.
    * @param validatorAddress Validator address to delegate to.
    * @param memo Tx memo.
@@ -1347,8 +1347,8 @@ export class OsmosisAccountImpl {
         aminoMsgs: [msg],
         protoMsgs: [
           {
-            typeUrl: "/osmosis.superfluid.MsgLockAndSuperfluidDelegate",
-            value: osmosis.superfluid.MsgLockAndSuperfluidDelegate.encode({
+            typeUrl: "/merlins.superfluid.MsgLockAndSuperfluidDelegate",
+            value: merlins.superfluid.MsgLockAndSuperfluidDelegate.encode({
               sender: msg.value.sender,
               coins: msg.value.coins,
               valAddr: msg.value.val_addr,
@@ -1371,14 +1371,14 @@ export class OsmosisAccountImpl {
             .fetch();
 
           // Refresh the locked coins
-          queries.osmosis?.queryLockedCoins
+          queries.merlins?.queryLockedCoins
             .get(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.queryAccountLocked
+          queries.merlins?.queryAccountLocked
             .get(this.base.bech32Address)
             .waitFreshResponse();
 
-          queries.osmosis?.querySuperfluidDelegations
+          queries.merlins?.querySuperfluidDelegations
             .getQuerySuperfluidDelegations(this.base.bech32Address)
             .waitFreshResponse();
         }
@@ -1389,7 +1389,7 @@ export class OsmosisAccountImpl {
   }
 
   /**
-   * https://docs.osmosis.zone/developing/modules/spec-lockup.html#begin-unlock-by-id
+   * https://docs.merlins.zone/developing/modules/spec-lockup.html#begin-unlock-by-id
    * @param lockIds Ids of locks to unlock.
    * @param memo Transaction memo.
    * @param onFulfill Callback to handle tx fullfillment.
@@ -1412,8 +1412,8 @@ export class OsmosisAccountImpl {
 
     const protoMsgs = msgs.map((msg) => {
       return {
-        typeUrl: "/osmosis.lockup.MsgBeginUnlocking",
-        value: osmosis.lockup.MsgBeginUnlocking.encode({
+        typeUrl: "/merlins.lockup.MsgBeginUnlocking",
+        value: merlins.lockup.MsgBeginUnlocking.encode({
           owner: msg.value.owner,
           ID: Long.fromString(msg.value.ID),
         }).finish(),
@@ -1458,7 +1458,7 @@ export class OsmosisAccountImpl {
   }
 
   /**
-   * https://docs.osmosis.zone/developing/osmosis-core/modules/spec-superfluid.html#superfluid-unbond-lock
+   * https://docs.merlins.zone/developing/merlins-core/modules/spec-superfluid.html#superfluid-unbond-lock
    * @param locks IDs and whether the lock is synthetic
    * @param memo Transaction memo.
    * @param onFulfill Callback to handle tx fullfillment.
@@ -1512,8 +1512,8 @@ export class OsmosisAccountImpl {
       if (msg.type === this._msgOpts.beginUnlocking.type && msg.value.ID) {
         numBeginUnlocking++;
         return {
-          typeUrl: "/osmosis.lockup.MsgBeginUnlocking",
-          value: osmosis.lockup.MsgBeginUnlocking.encode({
+          typeUrl: "/merlins.lockup.MsgBeginUnlocking",
+          value: merlins.lockup.MsgBeginUnlocking.encode({
             owner: msg.value.owner,
             ID: Long.fromString(msg.value.ID),
           }).finish(),
@@ -1524,8 +1524,8 @@ export class OsmosisAccountImpl {
       ) {
         numSuperfluidUndelegate++;
         return {
-          typeUrl: "/osmosis.superfluid.MsgSuperfluidUndelegate",
-          value: osmosis.superfluid.MsgSuperfluidUndelegate.encode({
+          typeUrl: "/merlins.superfluid.MsgSuperfluidUndelegate",
+          value: merlins.superfluid.MsgSuperfluidUndelegate.encode({
             sender: msg.value.sender,
             lockId: Long.fromString(msg.value.lock_id),
           }).finish(),
@@ -1536,8 +1536,8 @@ export class OsmosisAccountImpl {
       ) {
         numSuperfluidUnbondLock++;
         return {
-          typeUrl: "/osmosis.superfluid.MsgSuperfluidUnbondLock",
-          value: osmosis.superfluid.MsgSuperfluidUnbondLock.encode({
+          typeUrl: "/merlins.superfluid.MsgSuperfluidUnbondLock",
+          value: merlins.superfluid.MsgSuperfluidUnbondLock.encode({
             sender: msg.value.sender,
             lockId: Long.fromString(msg.value.lock_id),
           }).finish(),
@@ -1572,20 +1572,20 @@ export class OsmosisAccountImpl {
             .fetch();
 
           // Refresh the locked coins
-          queries.osmosis?.queryLockedCoins
+          queries.merlins?.queryLockedCoins
             .get(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.queryUnlockingCoins
+          queries.merlins?.queryUnlockingCoins
             .get(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.queryAccountLocked
+          queries.merlins?.queryAccountLocked
             .get(this.base.bech32Address)
             .waitFreshResponse();
 
-          queries.osmosis?.querySuperfluidDelegations
+          queries.merlins?.querySuperfluidDelegations
             .getQuerySuperfluidDelegations(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.querySuperfluidUndelegations
+          queries.merlins?.querySuperfluidUndelegations
             .getQuerySuperfluidDelegations(this.base.bech32Address)
             .waitFreshResponse();
         }
@@ -1609,8 +1609,8 @@ export class OsmosisAccountImpl {
     };
 
     const protoMsg = {
-      typeUrl: "/osmosis.superfluid.MsgUnPoolWhitelistedPool",
-      value: osmosis.superfluid.MsgUnPoolWhitelistedPool.encode({
+      typeUrl: "/merlins.superfluid.MsgUnPoolWhitelistedPool",
+      value: merlins.superfluid.MsgUnPoolWhitelistedPool.encode({
         sender: msg.value.sender,
         poolId: Long.fromString(msg.value.pool_id),
       }).finish(),
@@ -1634,20 +1634,20 @@ export class OsmosisAccountImpl {
           const queries = this.queriesStore.get(this.chainId);
 
           // Refresh the unlocking coins
-          queries.osmosis?.queryLockedCoins
+          queries.merlins?.queryLockedCoins
             .get(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.queryUnlockingCoins
+          queries.merlins?.queryUnlockingCoins
             .get(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.queryAccountLocked
+          queries.merlins?.queryAccountLocked
             .get(this.base.bech32Address)
             .waitFreshResponse();
 
-          queries.osmosis?.querySuperfluidDelegations
+          queries.merlins?.querySuperfluidDelegations
             .getQuerySuperfluidDelegations(this.base.bech32Address)
             .waitFreshResponse();
-          queries.osmosis?.querySuperfluidUndelegations
+          queries.merlins?.querySuperfluidUndelegations
             .getQuerySuperfluidDelegations(this.base.bech32Address)
             .waitFreshResponse();
         }
@@ -1668,7 +1668,7 @@ export class OsmosisAccountImpl {
 
   protected get queries() {
     // eslint-disable-next-line
-    return this.queriesStore.get(this.chainId).osmosis!;
+    return this.queriesStore.get(this.chainId).merlins!;
   }
 
   protected makeCoinPretty = (coin: Coin): CoinPretty => {

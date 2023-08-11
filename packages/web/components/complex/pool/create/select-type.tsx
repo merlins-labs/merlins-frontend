@@ -16,7 +16,7 @@ export const SelectType: FunctionComponent<{
   const { chainStore, accountStore } = useStore();
   const t = useTranslation();
 
-  const account = accountStore.getAccount(chainStore.osmosis.chainId);
+  const account = accountStore.getAccount(chainStore.merlins.chainId);
 
   const [selectedType, setSelectedType] = useState<PoolType | null>(null);
 
@@ -34,9 +34,9 @@ export const SelectType: FunctionComponent<{
           >
             <div
               className={classNames(
-                "flex flex-col gap-4 bg-osmoverse-900 py-10 rounded-2xl",
+                "flex flex-col gap-4 bg-furyverse-900 py-10 rounded-2xl",
                 {
-                  "bg-wosmongton-500": selectedType === type,
+                  "bg-wfuryngton-500": selectedType === type,
                 }
               )}
             >

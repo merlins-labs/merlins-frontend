@@ -44,7 +44,7 @@ export const CompactPoolTableDisplay: FunctionComponent<{
       <div className="flex flex-wrap gap-3 items-center place-content-between">
         {minTvlToggleProps && (
           <Switch {...minTvlToggleProps} containerClassName="shrink flex-wrap">
-            <span className="text-osmoverse-200">
+            <span className="text-furyverse-200">
               {minTvlToggleProps.label}
             </span>
           </Switch>

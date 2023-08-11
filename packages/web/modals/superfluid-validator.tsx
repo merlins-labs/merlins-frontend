@@ -25,7 +25,7 @@ export const SuperfluidValidatorModal: FunctionComponent<Props> = observer(
     const { chainStore, queriesStore, accountStore } = useStore();
     const { isMobile } = useWindowSize();
 
-    const { chainId } = chainStore.osmosis;
+    const { chainId } = chainStore.merlins;
     const account = accountStore.getAccount(chainId);
     const queries = queriesStore.get(chainId);
     const queryValidators = queries.cosmos.queryValidators.getQueryStatus(
@@ -139,12 +139,12 @@ export const SuperfluidValidatorModal: FunctionComponent<Props> = observer(
                 makeClass: () =>
                   `!h-fit ${
                     address === selectedValidatorAddress
-                      ? "bg-osmoverse-800 border border-osmoverse-500"
+                      ? "bg-furyverse-800 border border-furyverse-500"
                       : isDelegated === 1
-                      ? "bg-osmoverse-800"
-                      : "bg-osmoverse-900"
+                      ? "bg-furyverse-800"
+                      : "bg-furyverse-900"
                   }`,
-                makeHoverClass: () => "bg-osmoverse-900",
+                makeHoverClass: () => "bg-furyverse-900",
                 onClick: () => setSelectedValidatorAddress(address),
               }))}
               data={searchedValidators.map(
@@ -155,7 +155,7 @@ export const SuperfluidValidatorModal: FunctionComponent<Props> = observer(
               )}
             />
           </div>
-          <div className="flex flex-col md:gap-2 gap-4 py-3 px-4 caption text-osmoverse-300">
+          <div className="flex flex-col md:gap-2 gap-4 py-3 px-4 caption text-furyverse-300">
             <div className="flex items-center place-content-between">
               <span>{t("superfluidValidator.bondedAmount")}</span>
               <span>{availableBondAmount.trim(true).toString()}</span>
@@ -168,8 +168,8 @@ export const SuperfluidValidatorModal: FunctionComponent<Props> = observer(
               </span>
               <span className="flex items-center">
                 ~
-                {queries.osmosis?.querySuperfluidOsmoEquivalent
-                  .calculateOsmoEquivalent(availableBondAmount)
+                {queries.merlins?.querySuperfluidFuryEquivalent
+                  .calculateFuryEquivalent(availableBondAmount)
                   .maxDecimals(3)
                   .trim(true)
                   .toString() ?? "0"}

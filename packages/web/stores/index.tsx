@@ -30,8 +30,8 @@ export const StoreProvider: FunctionComponent = ({ children }) => {
 
   const refresh = useCallback(() => {
     const queryPools = rootStore.queriesStore.get(
-      rootStore.chainStore.osmosis.chainId
-    ).osmosis!.queryGammPools;
+      rootStore.chainStore.merlins.chainId
+    ).merlins!.queryGammPools;
 
     if (!queryPools.isFetching) {
       queryPools.fetch();
@@ -43,7 +43,7 @@ export const StoreProvider: FunctionComponent = ({ children }) => {
       priceStore.fetch();
     }
   }, [
-    rootStore.chainStore.osmosis.chainId,
+    rootStore.chainStore.merlins.chainId,
     rootStore.priceStore,
     rootStore.queriesStore,
   ]);

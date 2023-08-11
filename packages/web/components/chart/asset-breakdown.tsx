@@ -27,7 +27,7 @@ export const AssetBreakdownChart: FunctionComponent<{
   return (
     <div
       className={classNames(
-        "grid w-full md:!grid-cols-2 md:p-6 md:rounded-2xl md:bg-osmoverse-900"
+        "grid w-full md:!grid-cols-2 md:p-6 md:rounded-2xl md:bg-furyverse-900"
       )}
       style={{
         gridTemplateColumns: gridTemplateColumns.join(" "),
@@ -46,12 +46,12 @@ export const AssetBreakdownChart: FunctionComponent<{
                   colorCycle[index % colorCycle.length]
                 )}
               />
-              <span className="subtitle1 md:body2 text-osmoverse-400">
+              <span className="subtitle1 md:body2 text-furyverse-400">
                 {amount.currency.coinDenom}:{" "}
                 {assetPercentages[index].toString()}%
               </span>
             </div>
-            <h5 className="md:subtitle2 text-osmoverse-100">
+            <h5 className="md:subtitle2 text-furyverse-100">
               {amount.maxDecimals(0).hideDenom(true).toString()}
             </h5>
           </div>

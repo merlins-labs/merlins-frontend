@@ -58,12 +58,12 @@ export const PreTransferModal: FunctionComponent<
     >
       <div className="flex flex-col gap-7 pt-5">
         <div className="flex flex-col gap-2 px-5 items-left">
-          <span className="caption text-osmoverse-400">
+          <span className="caption text-furyverse-400">
             {t("assets.table.preTransfer.currentBal")}
           </span>
           <h6>{selectedToken.trim(true).toString()}</h6>
           {tokenValue && (
-            <span className="subtitle2 text-osmoverse-400">
+            <span className="subtitle2 text-furyverse-400">
               {tokenValue?.toString()}
             </span>
           )}
@@ -73,7 +73,7 @@ export const PreTransferModal: FunctionComponent<
           {externalWithdrawUrl ? (
             <a
               className={classNames(
-                "flex w-full gap-1 text-button font-button h-10 justify-center items-center rounded-lg bg-wosmongton-200/30 border border-wosmongton-200",
+                "flex w-full gap-1 text-button font-button h-10 justify-center items-center rounded-lg bg-wfuryngton-200/30 border border-wfuryngton-200",
                 { "opacity-30": isUnstable }
               )}
               href={externalWithdrawUrl}
@@ -106,7 +106,7 @@ export const PreTransferModal: FunctionComponent<
           {externalDepositUrl ? (
             <a
               className={classNames(
-                "flex w-full gap-1 h-10 text-button font-button justify-center items-center rounded-lg bg-wosmongton-200",
+                "flex w-full gap-1 h-10 text-button font-button justify-center items-center rounded-lg bg-wfuryngton-200",
                 { "opacity-30": isUnstable }
               )}
               href={externalDepositUrl}

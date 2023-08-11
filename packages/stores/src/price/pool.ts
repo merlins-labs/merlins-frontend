@@ -19,7 +19,7 @@ export class PoolFallbackPriceStore
   protected _intermidiateRoutes: IntermediateRoute[] = [];
 
   constructor(
-    protected readonly osmosisChainId: string,
+    protected readonly merlinsChainId: string,
     protected readonly chainGetter: ChainGetter,
     kvStore: KVStore,
     supportedVsCurrencies: {
@@ -30,7 +30,7 @@ export class PoolFallbackPriceStore
     intermidiateRoutes: IntermediateRoute[]
   ) {
     super(kvStore, supportedVsCurrencies, defaultVsCurrency, {
-      baseURL: "https://prices.osmosis.zone/api/v3",
+      baseURL: "https://prices.merlins.zone/api/v3",
     });
 
     this._intermidiateRoutes = intermidiateRoutes;
@@ -64,18 +64,18 @@ export class PoolFallbackPriceStore
             return;
           }
 
-          const osmosisChainInfo = this.chainGetter.getChain(
-            this.osmosisChainId
+          const merlinsChainInfo = this.chainGetter.getChain(
+            this.merlinsChainId
           );
           // If the currencies are unknown yet,
           // it is assumed that the raw currency with the 0 decimals.
           // But, using this raw currency will make improper result because it will create greater spot price than expected.
           // So, if the currencies are unknown, block calculating the price.
           if (
-            !osmosisChainInfo.currencies.find(
+            !merlinsChainInfo.currencies.find(
               (cur) => cur.coinMinimalDenom === route.spotPriceSourceDenom
             ) ||
-            !osmosisChainInfo.currencies.find(
+            !merlinsChainInfo.currencies.find(
               (cur) => cur.coinMinimalDenom === route.spotPriceDestDenom
             )
           ) {

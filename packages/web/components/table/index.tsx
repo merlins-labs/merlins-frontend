@@ -86,7 +86,7 @@ export const Table = <TCell extends BaseCell>({
                   <div>
                     {colDef?.display ? (
                       typeof colDef.display === "string" ? (
-                        <span className="subtitle1 text-osmoverse-300">
+                        <span className="subtitle1 text-furyverse-300">
                           {colDef.display}
                         </span>
                       ) : (
@@ -145,9 +145,9 @@ export const Table = <TCell extends BaseCell>({
                 "h-20 transition-colors",
                 rowDef?.makeClass?.(rowIndex),
                 {
-                  "focus-within:bg-osmoverse-700 focus-within:outline-none":
+                  "focus-within:bg-furyverse-700 focus-within:outline-none":
                     rowDef?.link,
-                  " hover:bg-osmoverse-800 hover:cursor-pointer":
+                  " hover:bg-furyverse-800 hover:cursor-pointer":
                     rowDef?.onClick,
                 },
                 rowDef?.makeHoverClass

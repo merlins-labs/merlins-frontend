@@ -7,31 +7,31 @@ import {
 } from "@keplr-wallet/stores";
 import { Pool } from "@osmosis-labs/pools";
 import {
-  OsmosisQueries,
+  MerlinsQueries,
   ObservableTradeTokenInConfig,
 } from "@osmosis-labs/stores";
 
 /** Maintains a single instance of `ObservableTradeTokenInConfig` for React view lifecycle.
- *  Updates `osmosisChainId`, `bech32Address`, `pools` on render.
+ *  Updates `merlinsChainId`, `bech32Address`, `pools` on render.
  *  `percentage` default: `"50"`.
  * `requeryIntervalMs` specifies how often to refetch pool data based on current tokens.
  */
 export function useTradeTokenInConfig(
   chainGetter: ChainGetter,
-  osmosisChainId: string,
+  merlinsChainId: string,
   bech32Address: string,
-  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, OsmosisQueries]>,
+  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, MerlinsQueries]>,
   pools: Pool[],
   requeryIntervalMs = 8000
 ) {
-  const queriesOsmosis = queriesStore.get(osmosisChainId).osmosis!;
+  const queriesMerlins = queriesStore.get(merlinsChainId).merlins!;
 
   const [config] = useState(
     () =>
       new ObservableTradeTokenInConfig(
         chainGetter,
         queriesStore,
-        osmosisChainId,
+        merlinsChainId,
         bech32Address,
         undefined,
         pools
@@ -47,26 +47,26 @@ export function useTradeTokenInConfig(
 
       poolIds.forEach((poolId) => {
         queriesStore
-          .get(osmosisChainId)
-          .osmosis!.queryGammPools.getPool(poolId)
+          .get(merlinsChainId)
+          .merlins!.queryGammPools.getPool(poolId)
           ?.fetch();
       });
     }, requeryIntervalMs);
     return () => clearInterval(interval);
   }, [
     config.optimizedRoutePaths,
-    osmosisChainId,
+    merlinsChainId,
     queriesStore,
     requeryIntervalMs,
   ]);
 
   useEffect(() => {
     config.setIncentivizedPoolIds(
-      queriesOsmosis.queryIncentivizedPools.incentivizedPools
+      queriesMerlins.queryIncentivizedPools.incentivizedPools
     );
-  }, [queriesOsmosis.queryIncentivizedPools.response]);
+  }, [queriesMerlins.queryIncentivizedPools.response]);
 
-  config.setChain(osmosisChainId);
+  config.setChain(merlinsChainId);
   config.setSender(bech32Address);
   config.setPools(pools);
   return config;

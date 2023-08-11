@@ -8,7 +8,7 @@
   "registry": "https://registry.npmjs.org",
   "command": {
     "create": {
-      "homepage": "https://github.com/osmosis-labs/osmosis-frontend",
+      "homepage": "https://github.com/merlins-labs/merlins-frontend",
       "license": "SEE LICENSE IN LICENSE",
       "access": "public"
     },

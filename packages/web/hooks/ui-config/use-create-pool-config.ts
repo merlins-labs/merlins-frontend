@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   CreatePoolConfigOpts,
   ObservableCreatePoolConfig,
-  OsmosisQueries,
+  MerlinsQueries,
 } from "@osmosis-labs/stores";
 import {
   ChainGetter,
@@ -19,7 +19,7 @@ export function useCreatePoolConfig(
   chainGetter: ChainGetter,
   chainId: string,
   bech32Address: string,
-  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, OsmosisQueries]>,
+  queriesStore: QueriesStore<[CosmosQueries, CosmwasmQueries, MerlinsQueries]>,
   feeConfig?: IFeeConfig,
   opts?: CreatePoolConfigOpts
 ) {

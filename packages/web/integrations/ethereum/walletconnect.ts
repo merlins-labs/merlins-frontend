@@ -51,10 +51,10 @@ export class ObservableWalletConnect implements EthWallet {
         description: "Interchain Liquidity Lab",
         icons:
           typeof window !== "undefined"
-            ? [`${window.origin}/icons/OSMO.svg`]
+            ? [`${window.origin}/icons/FURY.svg`]
             : [],
-        name: "Osmosis",
-        url: "https://osmosis.zone/",
+        name: "Merlins",
+        url: "https://merlins.zone/",
       },
       qrcodeModal: {
         open: (uri) => runInAction(() => (this.sessionConnectUri = uri)),

@@ -30,7 +30,7 @@
   "pools": {
     "title": "Aktywne pule",
     "poolId": "Pula #{id}",
-    "priceOsmo": "Cena OSMO",
+    "priceFury": "Cena FURY",
     "rewardDistribution": "Dystrybucja nagród za",
     "myPools": "Moje Pule",
     "APR": "APR",
@@ -92,7 +92,7 @@
         "three": "Krok {step} / {nbStep} - Potwierdź proporcje puli i ilość tokenów"
       },
       "infoMessage": "Prowizja Tworzenia Puli",
-      "infoCaption": "Przeniesione do Puli Społecznośći Osmosis",
+      "infoCaption": "Przeniesione do Puli Społecznośći Merlins",
       "buttonCreate": "Stwórz Pulę",
       "buttonNext": "Dalej",
       "buttonBack": "Cofnij",
@@ -188,7 +188,7 @@
     "bondedAmount": "Związana ilość",
     "estimation": "Szacowana Superpłynna Delegacja",
     "estimationMobile": "Szac. Delegacja",
-    "estimationInfo": "Wartość tej delegacji zmienia się i jest szacowana na podstawie ilości OSMO w puli.",
+    "estimationInfo": "Wartość tej delegacji zmienia się i jest szacowana na podstawie ilości FURY w puli.",
     "buttonBond": "Zwiąż i Stakuj",
     "columns": {
       "validator": "Walidator",
@@ -199,7 +199,7 @@
     "totalAssets": "Suma",
     "unbondedAssets": "Rozwiązane",
     "bondedAssets": "Związane",
-    "stakedAssets": "Stakowane OSMO",
+    "stakedAssets": "Stakowane FURY",
     "myPools": "Moje Pule",
     "transferAssetSelect": {
       "deposit": "Wpłać",
@@ -269,7 +269,7 @@
       "search": "Filtruj po symbolu",
       "title": "Środki",
       "hideZero": "Ukryj puste salda",
-      "buyOsmo": "Kup",
+      "buyFury": "Kup",
       "preTransfer": {
         "deposit": "Wpłać",
         "withdraw": "Wypłać",
@@ -329,7 +329,7 @@
     "info": "Statystyki",
     "signOut": "Rozłącz",
     "help": "Uzyskaj Pomoc od Support Lab",
-    "learnMoreFrontier": "Dowiedz się więcej o <br/> <name>Osmosis Frontier</name>"
+    "learnMoreFrontier": "Dowiedz się więcej o <br/> <name>Merlins Frontier</name>"
   },
   "settings": {
     "title": "Ustawienia",
@@ -375,7 +375,7 @@
     "walletConnect": "WalletConnect",
     "mobile": "Keplr Mobilny"
   },
-  "connectDisclaimer": "Podłączając portfel, potwierdzasz, że przeczytałeś i zrozumiałeś Osmosis",
+  "connectDisclaimer": "Podłączając portfel, potwierdzasz, że przeczytałeś i zrozumiałeś Merlins",
   "protocolDisclaimer": "Zastrzeżenie Protokołu",
   "Transaction Failed": "Transakcja Nieudana",
   "Transaction Successful": "Transakcja Udana",

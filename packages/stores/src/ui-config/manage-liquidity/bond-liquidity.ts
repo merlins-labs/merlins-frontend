@@ -76,7 +76,7 @@ export class ObservableBondLiquidityConfig extends UserConfig {
     }
   );
 
-  /** Gets all durations for user to bond in, or has locked tokens for, with a breakdown of the assets incentivizing the duration. Internal OSMO incentives & swap fees included in breakdown. */
+  /** Gets all durations for user to bond in, or has locked tokens for, with a breakdown of the assets incentivizing the duration. Internal FURY incentives & swap fees included in breakdown. */
   readonly getAllowedBondDurations = computedFn(
     (
       findCurrency: (denom: string) => AppCurrency | undefined,

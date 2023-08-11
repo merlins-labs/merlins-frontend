@@ -10,7 +10,7 @@ export function useBondLiquidityConfig(bech32Address: string, poolId?: string) {
 
   const { poolDetailConfig } = usePoolDetailConfig(poolId);
   const { superfluidPoolConfig } = useSuperfluidPoolConfig(poolDetailConfig);
-  const queryOsmosis = queriesStore.get(chainStore.osmosis.chainId).osmosis!;
+  const queryMerlins = queriesStore.get(chainStore.merlins.chainId).merlins!;
 
   const [bondLiquidityConfig, setBondLiquidityConfig] =
     useState<ObservableBondLiquidityConfig | null>(null);
@@ -23,7 +23,7 @@ export function useBondLiquidityConfig(bech32Address: string, poolId?: string) {
           superfluidPoolConfig,
           priceStore,
           queriesExternalStore.queryGammPoolFeeMetrics,
-          queryOsmosis
+          queryMerlins
         )
       );
     }

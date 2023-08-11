@@ -17,10 +17,10 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
 } {
   const { chainStore, queriesStore, accountStore } = useStore();
 
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
 
   const account = accountStore.getAccount(chainId);
-  const queryOsmosis = queriesStore.get(chainId).osmosis!;
+  const queryMerlins = queriesStore.get(chainId).merlins!;
   const { bech32Address } = account;
 
   const config = useAmountConfig(
@@ -39,7 +39,7 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
           if (!config.sendCurrency.coinMinimalDenom.startsWith("gamm")) {
             throw new Error("Tried to lock non-gamm token");
           }
-          await account.osmosis.sendLockTokensMsg(
+          await account.merlins.sendLockTokensMsg(
             lockDuration.asSeconds(),
             [
               {
@@ -67,7 +67,7 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
 
           // refresh locks
           for (const lockId of blockGasLimitLockIds) {
-            await queryOsmosis.querySyntheticLockupsByLockId
+            await queryMerlins.querySyntheticLockupsByLockId
               .get(lockId)
               .waitFreshResponse();
           }
@@ -76,12 +76,12 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
           const locks = blockGasLimitLockIds.map((lockId) => ({
             lockId,
             isSyntheticLock:
-              queryOsmosis.querySyntheticLockupsByLockId.get(lockId)
+              queryMerlins.querySyntheticLockupsByLockId.get(lockId)
                 .isSyntheticLock === true,
           }));
 
           const durations =
-            queryOsmosis.queryLockableDurations.lockableDurations;
+            queryMerlins.queryLockableDurations.lockableDurations;
 
           const isSuperfluidDuration =
             duration.asSeconds() ===
@@ -91,14 +91,14 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
             isSuperfluidDuration ||
             locks.some((lock) => lock.isSyntheticLock)
           ) {
-            await account.osmosis.sendBeginUnlockingMsgOrSuperfluidUnbondLockMsgIfSyntheticLock(
+            await account.merlins.sendBeginUnlockingMsgOrSuperfluidUnbondLockMsgIfSyntheticLock(
               locks,
               undefined,
               () => resolve("synthetic")
             );
           } else {
             const blockGasLimitLockIds = lockIds.slice(0, 10);
-            await account.osmosis.sendBeginUnlockingMsg(
+            await account.merlins.sendBeginUnlockingMsg(
               blockGasLimitLockIds,
               undefined,
               () => resolve("normal")
@@ -111,22 +111,22 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
       });
     },
     [
-      queryOsmosis,
-      queryOsmosis.querySyntheticLockupsByLockId,
-      queryOsmosis.queryLockableDurations.response,
+      queryMerlins,
+      queryMerlins.querySyntheticLockupsByLockId,
+      queryMerlins.queryLockableDurations.response,
     ]
   );
 
   // refresh query stores when an unbonding token happens to unbond with window open
   useEffect(() => {
     if (
-      queryOsmosis.queryAccountLocked.get(bech32Address).isFetching ||
+      queryMerlins.queryAccountLocked.get(bech32Address).isFetching ||
       bech32Address === ""
     )
       return;
 
     const unlockingTokens =
-      queryOsmosis.queryAccountLocked.get(bech32Address).unlockingCoins;
+      queryMerlins.queryAccountLocked.get(bech32Address).unlockingCoins;
     const now = dayjs().utc();
     let timeoutIds: NodeJS.Timeout[] = [];
 
@@ -137,7 +137,7 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
 
       timeoutIds.push(
         setTimeout(() => {
-          queryOsmosis.queryGammPoolShare.fetch(bech32Address);
+          queryMerlins.queryGammPoolShare.fetch(bech32Address);
         }, diffMs + blockTime)
       );
     });
@@ -146,7 +146,7 @@ export function useLockTokenConfig(sendCurrency?: AppCurrency | undefined): {
       timeoutIds.forEach((timeout) => clearTimeout(timeout));
     };
   }, [
-    queryOsmosis.queryAccountLocked.get(bech32Address).response,
+    queryMerlins.queryAccountLocked.get(bech32Address).response,
     bech32Address,
   ]);
 

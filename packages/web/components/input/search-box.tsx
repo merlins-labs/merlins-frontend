@@ -19,10 +19,10 @@ export const SearchBox: FunctionComponent<
   return (
     <div
       className={classNames(
-        "flex items-center flex-nowrap gap-2 justify-between w-max rounded-xl py-[10px] px-5 border border-osmoverse-500 transition-colors",
+        "flex items-center flex-nowrap gap-2 justify-between w-max rounded-xl py-[10px] px-5 border border-furyverse-500 transition-colors",
         {
           "opacity-50": disabled,
-          "-m-px mx-0 md:m-0 px-[19px] border-2 border-osmoverse-200":
+          "-m-px mx-0 md:m-0 px-[19px] border-2 border-furyverse-200":
             isFocused,
         },
         className
@@ -33,7 +33,7 @@ export const SearchBox: FunctionComponent<
       </div>
       <label className="grow shrink">
         <input
-          className="w-full h-full appearance-none bg-transparent placeholder:body2 placeholder:text-osmoverse-500 transition-colors"
+          className="w-full h-full appearance-none bg-transparent placeholder:body2 placeholder:text-furyverse-500 transition-colors"
           value={currentValue}
           type={type}
           autoFocus={autoFocus}

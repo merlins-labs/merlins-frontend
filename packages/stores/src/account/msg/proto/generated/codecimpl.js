@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.google = exports.osmosis = exports.cosmos = void 0;
+exports.google = exports.merlins = exports.cosmos = void 0;
 var $protobuf = require("protobufjs/minimal");
 const $Reader = $protobuf.Reader,
   $Writer = $protobuf.Writer,
@@ -997,9 +997,9 @@ exports.cosmos = $root.cosmos = (() => {
   })();
   return cosmos;
 })();
-exports.osmosis = $root.osmosis = (() => {
-  const osmosis = {};
-  osmosis.gamm = (function () {
+exports.merlins = $root.merlins = (() => {
+  const merlins = {};
+  merlins.gamm = (function () {
     const gamm = {};
     gamm.v1beta1 = (function () {
       const v1beta1 = {};
@@ -1026,8 +1026,8 @@ exports.osmosis = $root.osmosis = (() => {
           (Msg.prototype.joinPool = function joinPool(request, callback) {
             return this.rpcCall(
               joinPool,
-              $root.osmosis.gamm.v1beta1.MsgJoinPool,
-              $root.osmosis.gamm.v1beta1.MsgJoinPoolResponse,
+              $root.merlins.gamm.v1beta1.MsgJoinPool,
+              $root.merlins.gamm.v1beta1.MsgJoinPoolResponse,
               request,
               callback
             );
@@ -1039,8 +1039,8 @@ exports.osmosis = $root.osmosis = (() => {
           (Msg.prototype.exitPool = function exitPool(request, callback) {
             return this.rpcCall(
               exitPool,
-              $root.osmosis.gamm.v1beta1.MsgExitPool,
-              $root.osmosis.gamm.v1beta1.MsgExitPoolResponse,
+              $root.merlins.gamm.v1beta1.MsgExitPool,
+              $root.merlins.gamm.v1beta1.MsgExitPoolResponse,
               request,
               callback
             );
@@ -1055,8 +1055,8 @@ exports.osmosis = $root.osmosis = (() => {
           ) {
             return this.rpcCall(
               swapExactAmountIn,
-              $root.osmosis.gamm.v1beta1.MsgSwapExactAmountIn,
-              $root.osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse,
+              $root.merlins.gamm.v1beta1.MsgSwapExactAmountIn,
+              $root.merlins.gamm.v1beta1.MsgSwapExactAmountInResponse,
               request,
               callback
             );
@@ -1071,8 +1071,8 @@ exports.osmosis = $root.osmosis = (() => {
           ) {
             return this.rpcCall(
               swapExactAmountOut,
-              $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOut,
-              $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse,
+              $root.merlins.gamm.v1beta1.MsgSwapExactAmountOut,
+              $root.merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse,
               request,
               callback
             );
@@ -1085,8 +1085,8 @@ exports.osmosis = $root.osmosis = (() => {
             function joinSwapExternAmountIn(request, callback) {
               return this.rpcCall(
                 joinSwapExternAmountIn,
-                $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn,
-                $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse,
+                $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn,
+                $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse,
                 request,
                 callback
               );
@@ -1099,8 +1099,8 @@ exports.osmosis = $root.osmosis = (() => {
             function joinSwapShareAmountOut(request, callback) {
               return this.rpcCall(
                 joinSwapShareAmountOut,
-                $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut,
-                $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse,
+                $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut,
+                $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse,
                 request,
                 callback
               );
@@ -1113,8 +1113,8 @@ exports.osmosis = $root.osmosis = (() => {
             function exitSwapExternAmountOut(request, callback) {
               return this.rpcCall(
                 exitSwapExternAmountOut,
-                $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut,
-                $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse,
+                $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOut,
+                $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse,
                 request,
                 callback
               );
@@ -1129,8 +1129,8 @@ exports.osmosis = $root.osmosis = (() => {
           ) {
             return this.rpcCall(
               exitSwapShareAmountIn,
-              $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn,
-              $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse,
+              $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountIn,
+              $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse,
               request,
               callback
             );
@@ -1179,7 +1179,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgJoinPool.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgJoinPool();
+            m = new $root.merlins.gamm.v1beta1.MsgJoinPool();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1207,8 +1207,8 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgJoinPool.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgJoinPool) return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgJoinPool();
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgJoinPool) return d;
+          var m = new $root.merlins.gamm.v1beta1.MsgJoinPool();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
@@ -1230,13 +1230,13 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.tokenInMaxs) {
             if (!Array.isArray(d.tokenInMaxs))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgJoinPool.tokenInMaxs: array expected"
+                ".merlins.gamm.v1beta1.MsgJoinPool.tokenInMaxs: array expected"
               );
             m.tokenInMaxs = [];
             for (var i = 0; i < d.tokenInMaxs.length; ++i) {
               if (typeof d.tokenInMaxs[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.MsgJoinPool.tokenInMaxs: object expected"
+                  ".merlins.gamm.v1beta1.MsgJoinPool.tokenInMaxs: object expected"
                 );
               m.tokenInMaxs[i] = $root.cosmos.base.v1beta1.Coin.fromObject(
                 d.tokenInMaxs[i]
@@ -1331,7 +1331,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgJoinPoolResponse.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgJoinPoolResponse();
+            m = new $root.merlins.gamm.v1beta1.MsgJoinPoolResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1352,22 +1352,22 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgJoinPoolResponse.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgJoinPoolResponse)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgJoinPoolResponse)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgJoinPoolResponse();
+          var m = new $root.merlins.gamm.v1beta1.MsgJoinPoolResponse();
           if (d.shareOutAmount != null) {
             m.shareOutAmount = String(d.shareOutAmount);
           }
           if (d.tokenIn) {
             if (!Array.isArray(d.tokenIn))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgJoinPoolResponse.tokenIn: array expected"
+                ".merlins.gamm.v1beta1.MsgJoinPoolResponse.tokenIn: array expected"
               );
             m.tokenIn = [];
             for (var i = 0; i < d.tokenIn.length; ++i) {
               if (typeof d.tokenIn[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.MsgJoinPoolResponse.tokenIn: object expected"
+                  ".merlins.gamm.v1beta1.MsgJoinPoolResponse.tokenIn: object expected"
                 );
               m.tokenIn[i] = $root.cosmos.base.v1beta1.Coin.fromObject(
                 d.tokenIn[i]
@@ -1443,7 +1443,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgExitPool.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgExitPool();
+            m = new $root.merlins.gamm.v1beta1.MsgExitPool();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1471,8 +1471,8 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgExitPool.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgExitPool) return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgExitPool();
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgExitPool) return d;
+          var m = new $root.merlins.gamm.v1beta1.MsgExitPool();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
@@ -1494,13 +1494,13 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.tokenOutMins) {
             if (!Array.isArray(d.tokenOutMins))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgExitPool.tokenOutMins: array expected"
+                ".merlins.gamm.v1beta1.MsgExitPool.tokenOutMins: array expected"
               );
             m.tokenOutMins = [];
             for (var i = 0; i < d.tokenOutMins.length; ++i) {
               if (typeof d.tokenOutMins[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.MsgExitPool.tokenOutMins: object expected"
+                  ".merlins.gamm.v1beta1.MsgExitPool.tokenOutMins: object expected"
                 );
               m.tokenOutMins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(
                 d.tokenOutMins[i]
@@ -1589,7 +1589,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgExitPoolResponse.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgExitPoolResponse();
+            m = new $root.merlins.gamm.v1beta1.MsgExitPoolResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1607,19 +1607,19 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgExitPoolResponse.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgExitPoolResponse)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgExitPoolResponse)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgExitPoolResponse();
+          var m = new $root.merlins.gamm.v1beta1.MsgExitPoolResponse();
           if (d.tokenOut) {
             if (!Array.isArray(d.tokenOut))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgExitPoolResponse.tokenOut: array expected"
+                ".merlins.gamm.v1beta1.MsgExitPoolResponse.tokenOut: array expected"
               );
             m.tokenOut = [];
             for (var i = 0; i < d.tokenOut.length; ++i) {
               if (typeof d.tokenOut[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.MsgExitPoolResponse.tokenOut: object expected"
+                  ".merlins.gamm.v1beta1.MsgExitPoolResponse.tokenOut: object expected"
                 );
               m.tokenOut[i] = $root.cosmos.base.v1beta1.Coin.fromObject(
                 d.tokenOut[i]
@@ -1677,7 +1677,7 @@ exports.osmosis = $root.osmosis = (() => {
         SwapAmountInRoute.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.SwapAmountInRoute();
+            m = new $root.merlins.gamm.v1beta1.SwapAmountInRoute();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1695,9 +1695,9 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         SwapAmountInRoute.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.SwapAmountInRoute)
+          if (d instanceof $root.merlins.gamm.v1beta1.SwapAmountInRoute)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.SwapAmountInRoute();
+          var m = new $root.merlins.gamm.v1beta1.SwapAmountInRoute();
           if (d.poolId != null) {
             if ($util.Long)
               (m.poolId = $util.Long.fromValue(d.poolId)).unsigned = true;
@@ -1774,7 +1774,7 @@ exports.osmosis = $root.osmosis = (() => {
             w.uint32(10).string(m.sender);
           if (m.routes != null && m.routes.length) {
             for (var i = 0; i < m.routes.length; ++i)
-              $root.osmosis.gamm.v1beta1.SwapAmountInRoute.encode(
+              $root.merlins.gamm.v1beta1.SwapAmountInRoute.encode(
                 m.routes[i],
                 w.uint32(18).fork()
               ).ldelim();
@@ -1794,7 +1794,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgSwapExactAmountIn.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountIn();
+            m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountIn();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1804,7 +1804,7 @@ exports.osmosis = $root.osmosis = (() => {
               case 2:
                 if (!(m.routes && m.routes.length)) m.routes = [];
                 m.routes.push(
-                  $root.osmosis.gamm.v1beta1.SwapAmountInRoute.decode(
+                  $root.merlins.gamm.v1beta1.SwapAmountInRoute.decode(
                     r,
                     r.uint32()
                   )
@@ -1827,25 +1827,25 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgSwapExactAmountIn.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgSwapExactAmountIn)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgSwapExactAmountIn)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountIn();
+          var m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountIn();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
           if (d.routes) {
             if (!Array.isArray(d.routes))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgSwapExactAmountIn.routes: array expected"
+                ".merlins.gamm.v1beta1.MsgSwapExactAmountIn.routes: array expected"
               );
             m.routes = [];
             for (var i = 0; i < d.routes.length; ++i) {
               if (typeof d.routes[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.MsgSwapExactAmountIn.routes: object expected"
+                  ".merlins.gamm.v1beta1.MsgSwapExactAmountIn.routes: object expected"
                 );
               m.routes[i] =
-                $root.osmosis.gamm.v1beta1.SwapAmountInRoute.fromObject(
+                $root.merlins.gamm.v1beta1.SwapAmountInRoute.fromObject(
                   d.routes[i]
                 );
             }
@@ -1853,7 +1853,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.tokenIn != null) {
             if (typeof d.tokenIn !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgSwapExactAmountIn.tokenIn: object expected"
+                ".merlins.gamm.v1beta1.MsgSwapExactAmountIn.tokenIn: object expected"
               );
             m.tokenIn = $root.cosmos.base.v1beta1.Coin.fromObject(d.tokenIn);
           }
@@ -1880,7 +1880,7 @@ exports.osmosis = $root.osmosis = (() => {
             d.routes = [];
             for (var j = 0; j < m.routes.length; ++j) {
               d.routes[j] =
-                $root.osmosis.gamm.v1beta1.SwapAmountInRoute.toObject(
+                $root.merlins.gamm.v1beta1.SwapAmountInRoute.toObject(
                   m.routes[j],
                   o
                 );
@@ -1924,7 +1924,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgSwapExactAmountInResponse.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse();
+            m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountInResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -1940,10 +1940,10 @@ exports.osmosis = $root.osmosis = (() => {
         };
         MsgSwapExactAmountInResponse.fromObject = function fromObject(d) {
           if (
-            d instanceof $root.osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse
+            d instanceof $root.merlins.gamm.v1beta1.MsgSwapExactAmountInResponse
           )
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountInResponse();
+          var m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountInResponse();
           if (d.tokenOutAmount != null) {
             m.tokenOutAmount = String(d.tokenOutAmount);
           }
@@ -1992,7 +1992,7 @@ exports.osmosis = $root.osmosis = (() => {
         SwapAmountOutRoute.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.SwapAmountOutRoute();
+            m = new $root.merlins.gamm.v1beta1.SwapAmountOutRoute();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2010,9 +2010,9 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         SwapAmountOutRoute.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.SwapAmountOutRoute)
+          if (d instanceof $root.merlins.gamm.v1beta1.SwapAmountOutRoute)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.SwapAmountOutRoute();
+          var m = new $root.merlins.gamm.v1beta1.SwapAmountOutRoute();
           if (d.poolId != null) {
             if ($util.Long)
               (m.poolId = $util.Long.fromValue(d.poolId)).unsigned = true;
@@ -2089,7 +2089,7 @@ exports.osmosis = $root.osmosis = (() => {
             w.uint32(10).string(m.sender);
           if (m.routes != null && m.routes.length) {
             for (var i = 0; i < m.routes.length; ++i)
-              $root.osmosis.gamm.v1beta1.SwapAmountOutRoute.encode(
+              $root.merlins.gamm.v1beta1.SwapAmountOutRoute.encode(
                 m.routes[i],
                 w.uint32(18).fork()
               ).ldelim();
@@ -2109,7 +2109,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgSwapExactAmountOut.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOut();
+            m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountOut();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2119,7 +2119,7 @@ exports.osmosis = $root.osmosis = (() => {
               case 2:
                 if (!(m.routes && m.routes.length)) m.routes = [];
                 m.routes.push(
-                  $root.osmosis.gamm.v1beta1.SwapAmountOutRoute.decode(
+                  $root.merlins.gamm.v1beta1.SwapAmountOutRoute.decode(
                     r,
                     r.uint32()
                   )
@@ -2142,25 +2142,25 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgSwapExactAmountOut.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOut)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgSwapExactAmountOut)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOut();
+          var m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountOut();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
           if (d.routes) {
             if (!Array.isArray(d.routes))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgSwapExactAmountOut.routes: array expected"
+                ".merlins.gamm.v1beta1.MsgSwapExactAmountOut.routes: array expected"
               );
             m.routes = [];
             for (var i = 0; i < d.routes.length; ++i) {
               if (typeof d.routes[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.MsgSwapExactAmountOut.routes: object expected"
+                  ".merlins.gamm.v1beta1.MsgSwapExactAmountOut.routes: object expected"
                 );
               m.routes[i] =
-                $root.osmosis.gamm.v1beta1.SwapAmountOutRoute.fromObject(
+                $root.merlins.gamm.v1beta1.SwapAmountOutRoute.fromObject(
                   d.routes[i]
                 );
             }
@@ -2171,7 +2171,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.tokenOut != null) {
             if (typeof d.tokenOut !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgSwapExactAmountOut.tokenOut: object expected"
+                ".merlins.gamm.v1beta1.MsgSwapExactAmountOut.tokenOut: object expected"
               );
             m.tokenOut = $root.cosmos.base.v1beta1.Coin.fromObject(d.tokenOut);
           }
@@ -2195,7 +2195,7 @@ exports.osmosis = $root.osmosis = (() => {
             d.routes = [];
             for (var j = 0; j < m.routes.length; ++j) {
               d.routes[j] =
-                $root.osmosis.gamm.v1beta1.SwapAmountOutRoute.toObject(
+                $root.merlins.gamm.v1beta1.SwapAmountOutRoute.toObject(
                   m.routes[j],
                   o
                 );
@@ -2239,7 +2239,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgSwapExactAmountOutResponse.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse();
+            m = new $root.merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2256,11 +2256,11 @@ exports.osmosis = $root.osmosis = (() => {
         MsgSwapExactAmountOutResponse.fromObject = function fromObject(d) {
           if (
             d instanceof
-            $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse
+            $root.merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse
           )
             return d;
           var m =
-            new $root.osmosis.gamm.v1beta1.MsgSwapExactAmountOutResponse();
+            new $root.merlins.gamm.v1beta1.MsgSwapExactAmountOutResponse();
           if (d.tokenInAmount != null) {
             m.tokenInAmount = String(d.tokenInAmount);
           }
@@ -2318,7 +2318,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgJoinSwapExternAmountIn.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn();
+            m = new $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2345,9 +2345,9 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgJoinSwapExternAmountIn.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn();
+          var m = new $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
@@ -2366,7 +2366,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.tokenIn != null) {
             if (typeof d.tokenIn !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn.tokenIn: object expected"
+                ".merlins.gamm.v1beta1.MsgJoinSwapExternAmountIn.tokenIn: object expected"
               );
             m.tokenIn = $root.cosmos.base.v1beta1.Coin.fromObject(d.tokenIn);
           }
@@ -2448,7 +2448,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
             m =
-              new $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse();
+              new $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2465,11 +2465,11 @@ exports.osmosis = $root.osmosis = (() => {
         MsgJoinSwapExternAmountInResponse.fromObject = function fromObject(d) {
           if (
             d instanceof
-            $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse
+            $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse
           )
             return d;
           var m =
-            new $root.osmosis.gamm.v1beta1.MsgJoinSwapExternAmountInResponse();
+            new $root.merlins.gamm.v1beta1.MsgJoinSwapExternAmountInResponse();
           if (d.shareOutAmount != null) {
             m.shareOutAmount = String(d.shareOutAmount);
           }
@@ -2533,7 +2533,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgJoinSwapShareAmountOut.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut();
+            m = new $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2560,9 +2560,9 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgJoinSwapShareAmountOut.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOut();
+          var m = new $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOut();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
@@ -2666,7 +2666,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
             m =
-              new $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse();
+              new $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2683,11 +2683,11 @@ exports.osmosis = $root.osmosis = (() => {
         MsgJoinSwapShareAmountOutResponse.fromObject = function fromObject(d) {
           if (
             d instanceof
-            $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse
+            $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse
           )
             return d;
           var m =
-            new $root.osmosis.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse();
+            new $root.merlins.gamm.v1beta1.MsgJoinSwapShareAmountOutResponse();
           if (d.tokenInAmount != null) {
             m.tokenInAmount = String(d.tokenInAmount);
           }
@@ -2751,7 +2751,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgExitSwapShareAmountIn.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn();
+            m = new $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountIn();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2778,9 +2778,9 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         MsgExitSwapShareAmountIn.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn)
+          if (d instanceof $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountIn)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountIn();
+          var m = new $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountIn();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
@@ -2884,7 +2884,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
             m =
-              new $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse();
+              new $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2901,11 +2901,11 @@ exports.osmosis = $root.osmosis = (() => {
         MsgExitSwapShareAmountInResponse.fromObject = function fromObject(d) {
           if (
             d instanceof
-            $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse
+            $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse
           )
             return d;
           var m =
-            new $root.osmosis.gamm.v1beta1.MsgExitSwapShareAmountInResponse();
+            new $root.merlins.gamm.v1beta1.MsgExitSwapShareAmountInResponse();
           if (d.tokenOutAmount != null) {
             m.tokenOutAmount = String(d.tokenOutAmount);
           }
@@ -2963,7 +2963,7 @@ exports.osmosis = $root.osmosis = (() => {
         MsgExitSwapExternAmountOut.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut();
+            m = new $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOut();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -2991,10 +2991,10 @@ exports.osmosis = $root.osmosis = (() => {
         };
         MsgExitSwapExternAmountOut.fromObject = function fromObject(d) {
           if (
-            d instanceof $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut
+            d instanceof $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOut
           )
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut();
+          var m = new $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOut();
           if (d.sender != null) {
             m.sender = String(d.sender);
           }
@@ -3013,7 +3013,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.tokenOut != null) {
             if (typeof d.tokenOut !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.MsgExitSwapExternAmountOut.tokenOut: object expected"
+                ".merlins.gamm.v1beta1.MsgExitSwapExternAmountOut.tokenOut: object expected"
               );
             m.tokenOut = $root.cosmos.base.v1beta1.Coin.fromObject(d.tokenOut);
           }
@@ -3097,7 +3097,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
             m =
-              new $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse();
+              new $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -3114,11 +3114,11 @@ exports.osmosis = $root.osmosis = (() => {
         MsgExitSwapExternAmountOutResponse.fromObject = function fromObject(d) {
           if (
             d instanceof
-            $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse
+            $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse
           )
             return d;
           var m =
-            new $root.osmosis.gamm.v1beta1.MsgExitSwapExternAmountOutResponse();
+            new $root.merlins.gamm.v1beta1.MsgExitSwapExternAmountOutResponse();
           if (d.shareInAmount != null) {
             m.shareInAmount = String(d.shareInAmount);
           }
@@ -3174,14 +3174,14 @@ exports.osmosis = $root.osmosis = (() => {
             ).ldelim();
           if (m.initialPoolWeights != null && m.initialPoolWeights.length) {
             for (var i = 0; i < m.initialPoolWeights.length; ++i)
-              $root.osmosis.gamm.v1beta1.PoolAsset.encode(
+              $root.merlins.gamm.v1beta1.PoolAsset.encode(
                 m.initialPoolWeights[i],
                 w.uint32(26).fork()
               ).ldelim();
           }
           if (m.targetPoolWeights != null && m.targetPoolWeights.length) {
             for (var i = 0; i < m.targetPoolWeights.length; ++i)
-              $root.osmosis.gamm.v1beta1.PoolAsset.encode(
+              $root.merlins.gamm.v1beta1.PoolAsset.encode(
                 m.targetPoolWeights[i],
                 w.uint32(34).fork()
               ).ldelim();
@@ -3191,7 +3191,7 @@ exports.osmosis = $root.osmosis = (() => {
         SmoothWeightChangeParams.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams();
+            m = new $root.merlins.gamm.v1beta1.SmoothWeightChangeParams();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -3211,14 +3211,14 @@ exports.osmosis = $root.osmosis = (() => {
                 if (!(m.initialPoolWeights && m.initialPoolWeights.length))
                   m.initialPoolWeights = [];
                 m.initialPoolWeights.push(
-                  $root.osmosis.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
+                  $root.merlins.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
                 );
                 break;
               case 4:
                 if (!(m.targetPoolWeights && m.targetPoolWeights.length))
                   m.targetPoolWeights = [];
                 m.targetPoolWeights.push(
-                  $root.osmosis.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
+                  $root.merlins.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
                 );
                 break;
               default:
@@ -3229,13 +3229,13 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         SmoothWeightChangeParams.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams)
+          if (d instanceof $root.merlins.gamm.v1beta1.SmoothWeightChangeParams)
             return d;
-          var m = new $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams();
+          var m = new $root.merlins.gamm.v1beta1.SmoothWeightChangeParams();
           if (d.startTime != null) {
             if (typeof d.startTime !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.SmoothWeightChangeParams.startTime: object expected"
+                ".merlins.gamm.v1beta1.SmoothWeightChangeParams.startTime: object expected"
               );
             m.startTime = $root.google.protobuf.Timestamp.fromObject(
               d.startTime
@@ -3244,23 +3244,23 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.duration != null) {
             if (typeof d.duration !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.SmoothWeightChangeParams.duration: object expected"
+                ".merlins.gamm.v1beta1.SmoothWeightChangeParams.duration: object expected"
               );
             m.duration = $root.google.protobuf.Duration.fromObject(d.duration);
           }
           if (d.initialPoolWeights) {
             if (!Array.isArray(d.initialPoolWeights))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.SmoothWeightChangeParams.initialPoolWeights: array expected"
+                ".merlins.gamm.v1beta1.SmoothWeightChangeParams.initialPoolWeights: array expected"
               );
             m.initialPoolWeights = [];
             for (var i = 0; i < d.initialPoolWeights.length; ++i) {
               if (typeof d.initialPoolWeights[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.SmoothWeightChangeParams.initialPoolWeights: object expected"
+                  ".merlins.gamm.v1beta1.SmoothWeightChangeParams.initialPoolWeights: object expected"
                 );
               m.initialPoolWeights[i] =
-                $root.osmosis.gamm.v1beta1.PoolAsset.fromObject(
+                $root.merlins.gamm.v1beta1.PoolAsset.fromObject(
                   d.initialPoolWeights[i]
                 );
             }
@@ -3268,16 +3268,16 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.targetPoolWeights) {
             if (!Array.isArray(d.targetPoolWeights))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.SmoothWeightChangeParams.targetPoolWeights: array expected"
+                ".merlins.gamm.v1beta1.SmoothWeightChangeParams.targetPoolWeights: array expected"
               );
             m.targetPoolWeights = [];
             for (var i = 0; i < d.targetPoolWeights.length; ++i) {
               if (typeof d.targetPoolWeights[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.SmoothWeightChangeParams.targetPoolWeights: object expected"
+                  ".merlins.gamm.v1beta1.SmoothWeightChangeParams.targetPoolWeights: object expected"
                 );
               m.targetPoolWeights[i] =
-                $root.osmosis.gamm.v1beta1.PoolAsset.fromObject(
+                $root.merlins.gamm.v1beta1.PoolAsset.fromObject(
                   d.targetPoolWeights[i]
                 );
             }
@@ -3308,7 +3308,7 @@ exports.osmosis = $root.osmosis = (() => {
             d.initialPoolWeights = [];
             for (var j = 0; j < m.initialPoolWeights.length; ++j) {
               d.initialPoolWeights[j] =
-                $root.osmosis.gamm.v1beta1.PoolAsset.toObject(
+                $root.merlins.gamm.v1beta1.PoolAsset.toObject(
                   m.initialPoolWeights[j],
                   o
                 );
@@ -3318,7 +3318,7 @@ exports.osmosis = $root.osmosis = (() => {
             d.targetPoolWeights = [];
             for (var j = 0; j < m.targetPoolWeights.length; ++j) {
               d.targetPoolWeights[j] =
-                $root.osmosis.gamm.v1beta1.PoolAsset.toObject(
+                $root.merlins.gamm.v1beta1.PoolAsset.toObject(
                   m.targetPoolWeights[j],
                   o
                 );
@@ -3353,7 +3353,7 @@ exports.osmosis = $root.osmosis = (() => {
             m.smoothWeightChangeParams != null &&
             Object.hasOwnProperty.call(m, "smoothWeightChangeParams")
           )
-            $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams.encode(
+            $root.merlins.gamm.v1beta1.SmoothWeightChangeParams.encode(
               m.smoothWeightChangeParams,
               w.uint32(26).fork()
             ).ldelim();
@@ -3362,7 +3362,7 @@ exports.osmosis = $root.osmosis = (() => {
         PoolParams.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.PoolParams();
+            m = new $root.merlins.gamm.v1beta1.PoolParams();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -3374,7 +3374,7 @@ exports.osmosis = $root.osmosis = (() => {
                 break;
               case 3:
                 m.smoothWeightChangeParams =
-                  $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams.decode(
+                  $root.merlins.gamm.v1beta1.SmoothWeightChangeParams.decode(
                     r,
                     r.uint32()
                   );
@@ -3387,8 +3387,8 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         PoolParams.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.PoolParams) return d;
-          var m = new $root.osmosis.gamm.v1beta1.PoolParams();
+          if (d instanceof $root.merlins.gamm.v1beta1.PoolParams) return d;
+          var m = new $root.merlins.gamm.v1beta1.PoolParams();
           if (d.swapFee != null) {
             m.swapFee = String(d.swapFee);
           }
@@ -3398,10 +3398,10 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.smoothWeightChangeParams != null) {
             if (typeof d.smoothWeightChangeParams !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.PoolParams.smoothWeightChangeParams: object expected"
+                ".merlins.gamm.v1beta1.PoolParams.smoothWeightChangeParams: object expected"
               );
             m.smoothWeightChangeParams =
-              $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams.fromObject(
+              $root.merlins.gamm.v1beta1.SmoothWeightChangeParams.fromObject(
                 d.smoothWeightChangeParams
               );
           }
@@ -3426,7 +3426,7 @@ exports.osmosis = $root.osmosis = (() => {
             m.hasOwnProperty("smoothWeightChangeParams")
           ) {
             d.smoothWeightChangeParams =
-              $root.osmosis.gamm.v1beta1.SmoothWeightChangeParams.toObject(
+              $root.merlins.gamm.v1beta1.SmoothWeightChangeParams.toObject(
                 m.smoothWeightChangeParams,
                 o
               );
@@ -3463,7 +3463,7 @@ exports.osmosis = $root.osmosis = (() => {
         PoolAsset.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.PoolAsset();
+            m = new $root.merlins.gamm.v1beta1.PoolAsset();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -3481,12 +3481,12 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         PoolAsset.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.PoolAsset) return d;
-          var m = new $root.osmosis.gamm.v1beta1.PoolAsset();
+          if (d instanceof $root.merlins.gamm.v1beta1.PoolAsset) return d;
+          var m = new $root.merlins.gamm.v1beta1.PoolAsset();
           if (d.token != null) {
             if (typeof d.token !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.PoolAsset.token: object expected"
+                ".merlins.gamm.v1beta1.PoolAsset.token: object expected"
               );
             m.token = $root.cosmos.base.v1beta1.Coin.fromObject(d.token);
           }
@@ -3542,7 +3542,7 @@ exports.osmosis = $root.osmosis = (() => {
             m.poolParams != null &&
             Object.hasOwnProperty.call(m, "poolParams")
           )
-            $root.osmosis.gamm.v1beta1.PoolParams.encode(
+            $root.merlins.gamm.v1beta1.PoolParams.encode(
               m.poolParams,
               w.uint32(26).fork()
             ).ldelim();
@@ -3561,7 +3561,7 @@ exports.osmosis = $root.osmosis = (() => {
             ).ldelim();
           if (m.poolAssets != null && m.poolAssets.length) {
             for (var i = 0; i < m.poolAssets.length; ++i)
-              $root.osmosis.gamm.v1beta1.PoolAsset.encode(
+              $root.merlins.gamm.v1beta1.PoolAsset.encode(
                 m.poolAssets[i],
                 w.uint32(50).fork()
               ).ldelim();
@@ -3576,7 +3576,7 @@ exports.osmosis = $root.osmosis = (() => {
         Pool.decode = function decode(r, l) {
           if (!(r instanceof $Reader)) r = $Reader.create(r);
           var c = l === undefined ? r.len : r.pos + l,
-            m = new $root.osmosis.gamm.v1beta1.Pool();
+            m = new $root.merlins.gamm.v1beta1.Pool();
           while (r.pos < c) {
             var t = r.uint32();
             switch (t >>> 3) {
@@ -3587,7 +3587,7 @@ exports.osmosis = $root.osmosis = (() => {
                 m.id = r.uint64();
                 break;
               case 3:
-                m.poolParams = $root.osmosis.gamm.v1beta1.PoolParams.decode(
+                m.poolParams = $root.merlins.gamm.v1beta1.PoolParams.decode(
                   r,
                   r.uint32()
                 );
@@ -3604,7 +3604,7 @@ exports.osmosis = $root.osmosis = (() => {
               case 6:
                 if (!(m.poolAssets && m.poolAssets.length)) m.poolAssets = [];
                 m.poolAssets.push(
-                  $root.osmosis.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
+                  $root.merlins.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
                 );
                 break;
               case 7:
@@ -3618,8 +3618,8 @@ exports.osmosis = $root.osmosis = (() => {
           return m;
         };
         Pool.fromObject = function fromObject(d) {
-          if (d instanceof $root.osmosis.gamm.v1beta1.Pool) return d;
-          var m = new $root.osmosis.gamm.v1beta1.Pool();
+          if (d instanceof $root.merlins.gamm.v1beta1.Pool) return d;
+          var m = new $root.merlins.gamm.v1beta1.Pool();
           if (d.address != null) {
             m.address = String(d.address);
           }
@@ -3636,9 +3636,9 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.poolParams != null) {
             if (typeof d.poolParams !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.Pool.poolParams: object expected"
+                ".merlins.gamm.v1beta1.Pool.poolParams: object expected"
               );
-            m.poolParams = $root.osmosis.gamm.v1beta1.PoolParams.fromObject(
+            m.poolParams = $root.merlins.gamm.v1beta1.PoolParams.fromObject(
               d.poolParams
             );
           }
@@ -3648,7 +3648,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.totalShares != null) {
             if (typeof d.totalShares !== "object")
               throw TypeError(
-                ".osmosis.gamm.v1beta1.Pool.totalShares: object expected"
+                ".merlins.gamm.v1beta1.Pool.totalShares: object expected"
               );
             m.totalShares = $root.cosmos.base.v1beta1.Coin.fromObject(
               d.totalShares
@@ -3657,15 +3657,15 @@ exports.osmosis = $root.osmosis = (() => {
           if (d.poolAssets) {
             if (!Array.isArray(d.poolAssets))
               throw TypeError(
-                ".osmosis.gamm.v1beta1.Pool.poolAssets: array expected"
+                ".merlins.gamm.v1beta1.Pool.poolAssets: array expected"
               );
             m.poolAssets = [];
             for (var i = 0; i < d.poolAssets.length; ++i) {
               if (typeof d.poolAssets[i] !== "object")
                 throw TypeError(
-                  ".osmosis.gamm.v1beta1.Pool.poolAssets: object expected"
+                  ".merlins.gamm.v1beta1.Pool.poolAssets: object expected"
                 );
-              m.poolAssets[i] = $root.osmosis.gamm.v1beta1.PoolAsset.fromObject(
+              m.poolAssets[i] = $root.merlins.gamm.v1beta1.PoolAsset.fromObject(
                 d.poolAssets[i]
               );
             }
@@ -3715,7 +3715,7 @@ exports.osmosis = $root.osmosis = (() => {
                   : m.id;
           }
           if (m.poolParams != null && m.hasOwnProperty("poolParams")) {
-            d.poolParams = $root.osmosis.gamm.v1beta1.PoolParams.toObject(
+            d.poolParams = $root.merlins.gamm.v1beta1.PoolParams.toObject(
               m.poolParams,
               o
             );
@@ -3735,7 +3735,7 @@ exports.osmosis = $root.osmosis = (() => {
           if (m.poolAssets && m.poolAssets.length) {
             d.poolAssets = [];
             for (var j = 0; j < m.poolAssets.length; ++j) {
-              d.poolAssets[j] = $root.osmosis.gamm.v1beta1.PoolAsset.toObject(
+              d.poolAssets[j] = $root.merlins.gamm.v1beta1.PoolAsset.toObject(
                 m.poolAssets[j],
                 o
               );
@@ -3785,9 +3785,9 @@ exports.osmosis = $root.osmosis = (() => {
               ) {
                 return this.rpcCall(
                   createBalancerPool,
-                  $root.osmosis.gamm.poolmodels.balancer.v1beta1
+                  $root.merlins.gamm.poolmodels.balancer.v1beta1
                     .MsgCreateBalancerPool,
-                  $root.osmosis.gamm.poolmodels.balancer.v1beta1
+                  $root.merlins.gamm.poolmodels.balancer.v1beta1
                     .MsgCreateBalancerPoolResponse,
                   request,
                   callback
@@ -3820,13 +3820,13 @@ exports.osmosis = $root.osmosis = (() => {
                 m.poolParams != null &&
                 Object.hasOwnProperty.call(m, "poolParams")
               )
-                $root.osmosis.gamm.v1beta1.PoolParams.encode(
+                $root.merlins.gamm.v1beta1.PoolParams.encode(
                   m.poolParams,
                   w.uint32(18).fork()
                 ).ldelim();
               if (m.poolAssets != null && m.poolAssets.length) {
                 for (var i = 0; i < m.poolAssets.length; ++i)
-                  $root.osmosis.gamm.v1beta1.PoolAsset.encode(
+                  $root.merlins.gamm.v1beta1.PoolAsset.encode(
                     m.poolAssets[i],
                     w.uint32(26).fork()
                   ).ldelim();
@@ -3842,7 +3842,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool();
+                  new $root.merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -3850,7 +3850,7 @@ exports.osmosis = $root.osmosis = (() => {
                     m.sender = r.string();
                     break;
                   case 2:
-                    m.poolParams = $root.osmosis.gamm.v1beta1.PoolParams.decode(
+                    m.poolParams = $root.merlins.gamm.v1beta1.PoolParams.decode(
                       r,
                       r.uint32()
                     );
@@ -3859,7 +3859,7 @@ exports.osmosis = $root.osmosis = (() => {
                     if (!(m.poolAssets && m.poolAssets.length))
                       m.poolAssets = [];
                     m.poolAssets.push(
-                      $root.osmosis.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
+                      $root.merlins.gamm.v1beta1.PoolAsset.decode(r, r.uint32())
                     );
                     break;
                   case 4:
@@ -3875,37 +3875,37 @@ exports.osmosis = $root.osmosis = (() => {
             MsgCreateBalancerPool.fromObject = function fromObject(d) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.balancer.v1beta1
+                $root.merlins.gamm.poolmodels.balancer.v1beta1
                   .MsgCreateBalancerPool
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool();
+                new $root.merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool();
               if (d.sender != null) {
                 m.sender = String(d.sender);
               }
               if (d.poolParams != null) {
                 if (typeof d.poolParams !== "object")
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.poolParams: object expected"
+                    ".merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.poolParams: object expected"
                   );
-                m.poolParams = $root.osmosis.gamm.v1beta1.PoolParams.fromObject(
+                m.poolParams = $root.merlins.gamm.v1beta1.PoolParams.fromObject(
                   d.poolParams
                 );
               }
               if (d.poolAssets) {
                 if (!Array.isArray(d.poolAssets))
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.poolAssets: array expected"
+                    ".merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.poolAssets: array expected"
                   );
                 m.poolAssets = [];
                 for (var i = 0; i < d.poolAssets.length; ++i) {
                   if (typeof d.poolAssets[i] !== "object")
                     throw TypeError(
-                      ".osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.poolAssets: object expected"
+                      ".merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool.poolAssets: object expected"
                     );
                   m.poolAssets[i] =
-                    $root.osmosis.gamm.v1beta1.PoolAsset.fromObject(
+                    $root.merlins.gamm.v1beta1.PoolAsset.fromObject(
                       d.poolAssets[i]
                     );
                 }
@@ -3930,7 +3930,7 @@ exports.osmosis = $root.osmosis = (() => {
                 d.sender = m.sender;
               }
               if (m.poolParams != null && m.hasOwnProperty("poolParams")) {
-                d.poolParams = $root.osmosis.gamm.v1beta1.PoolParams.toObject(
+                d.poolParams = $root.merlins.gamm.v1beta1.PoolParams.toObject(
                   m.poolParams,
                   o
                 );
@@ -3939,7 +3939,7 @@ exports.osmosis = $root.osmosis = (() => {
                 d.poolAssets = [];
                 for (var j = 0; j < m.poolAssets.length; ++j) {
                   d.poolAssets[j] =
-                    $root.osmosis.gamm.v1beta1.PoolAsset.toObject(
+                    $root.merlins.gamm.v1beta1.PoolAsset.toObject(
                       m.poolAssets[j],
                       o
                     );
@@ -3983,7 +3983,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse();
+                  new $root.merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -4000,12 +4000,12 @@ exports.osmosis = $root.osmosis = (() => {
             MsgCreateBalancerPoolResponse.fromObject = function fromObject(d) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.balancer.v1beta1
+                $root.merlins.gamm.poolmodels.balancer.v1beta1
                   .MsgCreateBalancerPoolResponse
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse();
+                new $root.merlins.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse();
               if (d.poolId != null) {
                 if ($util.Long)
                   (m.poolId = $util.Long.fromValue(d.poolId)).unsigned = true;
@@ -4089,7 +4089,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams();
+                  new $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -4109,11 +4109,11 @@ exports.osmosis = $root.osmosis = (() => {
             PoolParams.fromObject = function fromObject(d) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams();
+                new $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams();
               if (d.swapFee != null) {
                 m.swapFee = String(d.swapFee);
               }
@@ -4176,7 +4176,7 @@ exports.osmosis = $root.osmosis = (() => {
                 m.poolParams != null &&
                 Object.hasOwnProperty.call(m, "poolParams")
               )
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.encode(
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.encode(
                   m.poolParams,
                   w.uint32(26).fork()
                 ).ldelim();
@@ -4216,7 +4216,7 @@ exports.osmosis = $root.osmosis = (() => {
             Pool.decode = function decode(r, l) {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
-                m = new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.Pool();
+                m = new $root.merlins.gamm.poolmodels.stableswap.v1beta1.Pool();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -4228,7 +4228,7 @@ exports.osmosis = $root.osmosis = (() => {
                     break;
                   case 3:
                     m.poolParams =
-                      $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.decode(
+                      $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.decode(
                         r,
                         r.uint32()
                       );
@@ -4270,11 +4270,11 @@ exports.osmosis = $root.osmosis = (() => {
             Pool.fromObject = function fromObject(d) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1.Pool
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1.Pool
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.Pool();
+                new $root.merlins.gamm.poolmodels.stableswap.v1beta1.Pool();
               if (d.address != null) {
                 m.address = String(d.address);
               }
@@ -4292,10 +4292,10 @@ exports.osmosis = $root.osmosis = (() => {
               if (d.poolParams != null) {
                 if (typeof d.poolParams !== "object")
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.Pool.poolParams: object expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.Pool.poolParams: object expected"
                   );
                 m.poolParams =
-                  $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.fromObject(
+                  $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.fromObject(
                     d.poolParams
                   );
               }
@@ -4305,7 +4305,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (d.totalShares != null) {
                 if (typeof d.totalShares !== "object")
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.Pool.totalShares: object expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.Pool.totalShares: object expected"
                   );
                 m.totalShares = $root.cosmos.base.v1beta1.Coin.fromObject(
                   d.totalShares
@@ -4314,13 +4314,13 @@ exports.osmosis = $root.osmosis = (() => {
               if (d.poolLiquidity) {
                 if (!Array.isArray(d.poolLiquidity))
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.Pool.poolLiquidity: array expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.Pool.poolLiquidity: array expected"
                   );
                 m.poolLiquidity = [];
                 for (var i = 0; i < d.poolLiquidity.length; ++i) {
                   if (typeof d.poolLiquidity[i] !== "object")
                     throw TypeError(
-                      ".osmosis.gamm.poolmodels.stableswap.v1beta1.Pool.poolLiquidity: object expected"
+                      ".merlins.gamm.poolmodels.stableswap.v1beta1.Pool.poolLiquidity: object expected"
                     );
                   m.poolLiquidity[i] =
                     $root.cosmos.base.v1beta1.Coin.fromObject(
@@ -4331,7 +4331,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (d.scalingFactors) {
                 if (!Array.isArray(d.scalingFactors))
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.Pool.scalingFactors: array expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.Pool.scalingFactors: array expected"
                   );
                 m.scalingFactors = [];
                 for (var i = 0; i < d.scalingFactors.length; ++i) {
@@ -4397,7 +4397,7 @@ exports.osmosis = $root.osmosis = (() => {
               }
               if (m.poolParams != null && m.hasOwnProperty("poolParams")) {
                 d.poolParams =
-                  $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.toObject(
+                  $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.toObject(
                     m.poolParams,
                     o
                   );
@@ -4485,9 +4485,9 @@ exports.osmosis = $root.osmosis = (() => {
                 function createStableswapPool(request, callback) {
                   return this.rpcCall(
                     createStableswapPool,
-                    $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                    $root.merlins.gamm.poolmodels.stableswap.v1beta1
                       .MsgCreateStableswapPool,
-                    $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                    $root.merlins.gamm.poolmodels.stableswap.v1beta1
                       .MsgCreateStableswapPoolResponse,
                     request,
                     callback
@@ -4501,9 +4501,9 @@ exports.osmosis = $root.osmosis = (() => {
                 function stableSwapAdjustScalingFactors(request, callback) {
                   return this.rpcCall(
                     stableSwapAdjustScalingFactors,
-                    $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                    $root.merlins.gamm.poolmodels.stableswap.v1beta1
                       .MsgStableSwapAdjustScalingFactors,
-                    $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                    $root.merlins.gamm.poolmodels.stableswap.v1beta1
                       .MsgStableSwapAdjustScalingFactorsResponse,
                     request,
                     callback
@@ -4540,7 +4540,7 @@ exports.osmosis = $root.osmosis = (() => {
                 m.poolParams != null &&
                 Object.hasOwnProperty.call(m, "poolParams")
               )
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.encode(
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.encode(
                   m.poolParams,
                   w.uint32(18).fork()
                 ).ldelim();
@@ -4576,7 +4576,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool();
+                  new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -4585,7 +4585,7 @@ exports.osmosis = $root.osmosis = (() => {
                     break;
                   case 2:
                     m.poolParams =
-                      $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.decode(
+                      $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.decode(
                         r,
                         r.uint32()
                       );
@@ -4623,35 +4623,35 @@ exports.osmosis = $root.osmosis = (() => {
             MsgCreateStableswapPool.fromObject = function fromObject(d) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1
                   .MsgCreateStableswapPool
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool();
+                new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool();
               if (d.sender != null) {
                 m.sender = String(d.sender);
               }
               if (d.poolParams != null) {
                 if (typeof d.poolParams !== "object")
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.poolParams: object expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.poolParams: object expected"
                   );
                 m.poolParams =
-                  $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.fromObject(
+                  $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.fromObject(
                     d.poolParams
                   );
               }
               if (d.initialPoolLiquidity) {
                 if (!Array.isArray(d.initialPoolLiquidity))
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.initialPoolLiquidity: array expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.initialPoolLiquidity: array expected"
                   );
                 m.initialPoolLiquidity = [];
                 for (var i = 0; i < d.initialPoolLiquidity.length; ++i) {
                   if (typeof d.initialPoolLiquidity[i] !== "object")
                     throw TypeError(
-                      ".osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.initialPoolLiquidity: object expected"
+                      ".merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.initialPoolLiquidity: object expected"
                     );
                   m.initialPoolLiquidity[i] =
                     $root.cosmos.base.v1beta1.Coin.fromObject(
@@ -4662,7 +4662,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (d.scalingFactors) {
                 if (!Array.isArray(d.scalingFactors))
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.scalingFactors: array expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool.scalingFactors: array expected"
                   );
                 m.scalingFactors = [];
                 for (var i = 0; i < d.scalingFactors.length; ++i) {
@@ -4707,7 +4707,7 @@ exports.osmosis = $root.osmosis = (() => {
               }
               if (m.poolParams != null && m.hasOwnProperty("poolParams")) {
                 d.poolParams =
-                  $root.osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams.toObject(
+                  $root.merlins.gamm.poolmodels.stableswap.v1beta1.PoolParams.toObject(
                     m.poolParams,
                     o
                   );
@@ -4790,7 +4790,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse();
+                  new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -4809,12 +4809,12 @@ exports.osmosis = $root.osmosis = (() => {
             ) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1
                   .MsgCreateStableswapPoolResponse
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse();
+                new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse();
               if (d.poolId != null) {
                 if ($util.Long)
                   (m.poolId = $util.Long.fromValue(d.poolId)).unsigned = true;
@@ -4904,7 +4904,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors();
+                  new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -4934,12 +4934,12 @@ exports.osmosis = $root.osmosis = (() => {
             ) {
               if (
                 d instanceof
-                $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                $root.merlins.gamm.poolmodels.stableswap.v1beta1
                   .MsgStableSwapAdjustScalingFactors
               )
                 return d;
               var m =
-                new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors();
+                new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors();
               if (d.sender != null) {
                 m.sender = String(d.sender);
               }
@@ -4958,7 +4958,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (d.scalingFactors) {
                 if (!Array.isArray(d.scalingFactors))
                   throw TypeError(
-                    ".osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors.scalingFactors: array expected"
+                    ".merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors.scalingFactors: array expected"
                   );
                 m.scalingFactors = [];
                 for (var i = 0; i < d.scalingFactors.length; ++i) {
@@ -5075,7 +5075,7 @@ exports.osmosis = $root.osmosis = (() => {
               if (!(r instanceof $Reader)) r = $Reader.create(r);
               var c = l === undefined ? r.len : r.pos + l,
                 m =
-                  new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse();
+                  new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse();
               while (r.pos < c) {
                 var t = r.uint32();
                 switch (t >>> 3) {
@@ -5090,11 +5090,11 @@ exports.osmosis = $root.osmosis = (() => {
               function fromObject(d) {
                 if (
                   d instanceof
-                  $root.osmosis.gamm.poolmodels.stableswap.v1beta1
+                  $root.merlins.gamm.poolmodels.stableswap.v1beta1
                     .MsgStableSwapAdjustScalingFactorsResponse
                 )
                   return d;
-                return new $root.osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse();
+                return new $root.merlins.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse();
               };
             MsgStableSwapAdjustScalingFactorsResponse.toObject =
               function toObject() {
@@ -5117,7 +5117,7 @@ exports.osmosis = $root.osmosis = (() => {
     })();
     return gamm;
   })();
-  osmosis.superfluid = (function () {
+  merlins.superfluid = (function () {
     const superfluid = {};
     superfluid.Msg = (function () {
       function Msg(rpcImpl, requestDelimited, responseDelimited) {
@@ -5145,8 +5145,8 @@ exports.osmosis = $root.osmosis = (() => {
         ) {
           return this.rpcCall(
             superfluidDelegate,
-            $root.osmosis.superfluid.MsgSuperfluidDelegate,
-            $root.osmosis.superfluid.MsgSuperfluidDelegateResponse,
+            $root.merlins.superfluid.MsgSuperfluidDelegate,
+            $root.merlins.superfluid.MsgSuperfluidDelegateResponse,
             request,
             callback
           );
@@ -5161,8 +5161,8 @@ exports.osmosis = $root.osmosis = (() => {
         ) {
           return this.rpcCall(
             superfluidUndelegate,
-            $root.osmosis.superfluid.MsgSuperfluidUndelegate,
-            $root.osmosis.superfluid.MsgSuperfluidUndelegateResponse,
+            $root.merlins.superfluid.MsgSuperfluidUndelegate,
+            $root.merlins.superfluid.MsgSuperfluidUndelegateResponse,
             request,
             callback
           );
@@ -5177,8 +5177,8 @@ exports.osmosis = $root.osmosis = (() => {
         ) {
           return this.rpcCall(
             superfluidUnbondLock,
-            $root.osmosis.superfluid.MsgSuperfluidUnbondLock,
-            $root.osmosis.superfluid.MsgSuperfluidUnbondLockResponse,
+            $root.merlins.superfluid.MsgSuperfluidUnbondLock,
+            $root.merlins.superfluid.MsgSuperfluidUnbondLockResponse,
             request,
             callback
           );
@@ -5191,8 +5191,8 @@ exports.osmosis = $root.osmosis = (() => {
           function lockAndSuperfluidDelegate(request, callback) {
             return this.rpcCall(
               lockAndSuperfluidDelegate,
-              $root.osmosis.superfluid.MsgLockAndSuperfluidDelegate,
-              $root.osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse,
+              $root.merlins.superfluid.MsgLockAndSuperfluidDelegate,
+              $root.merlins.superfluid.MsgLockAndSuperfluidDelegateResponse,
               request,
               callback
             );
@@ -5207,8 +5207,8 @@ exports.osmosis = $root.osmosis = (() => {
         ) {
           return this.rpcCall(
             unPoolWhitelistedPool,
-            $root.osmosis.superfluid.MsgUnPoolWhitelistedPool,
-            $root.osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse,
+            $root.merlins.superfluid.MsgUnPoolWhitelistedPool,
+            $root.merlins.superfluid.MsgUnPoolWhitelistedPoolResponse,
             request,
             callback
           );
@@ -5245,7 +5245,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgSuperfluidDelegate.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgSuperfluidDelegate();
+          m = new $root.merlins.superfluid.MsgSuperfluidDelegate();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5266,9 +5266,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgSuperfluidDelegate.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.superfluid.MsgSuperfluidDelegate)
+        if (d instanceof $root.merlins.superfluid.MsgSuperfluidDelegate)
           return d;
-        var m = new $root.osmosis.superfluid.MsgSuperfluidDelegate();
+        var m = new $root.merlins.superfluid.MsgSuperfluidDelegate();
         if (d.sender != null) {
           m.sender = String(d.sender);
         }
@@ -5348,7 +5348,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgSuperfluidDelegateResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgSuperfluidDelegateResponse();
+          m = new $root.merlins.superfluid.MsgSuperfluidDelegateResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5360,9 +5360,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgSuperfluidDelegateResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.superfluid.MsgSuperfluidDelegateResponse)
+        if (d instanceof $root.merlins.superfluid.MsgSuperfluidDelegateResponse)
           return d;
-        return new $root.osmosis.superfluid.MsgSuperfluidDelegateResponse();
+        return new $root.merlins.superfluid.MsgSuperfluidDelegateResponse();
       };
       MsgSuperfluidDelegateResponse.toObject = function toObject() {
         return {};
@@ -5396,7 +5396,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgSuperfluidUndelegate.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgSuperfluidUndelegate();
+          m = new $root.merlins.superfluid.MsgSuperfluidUndelegate();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5414,9 +5414,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgSuperfluidUndelegate.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.superfluid.MsgSuperfluidUndelegate)
+        if (d instanceof $root.merlins.superfluid.MsgSuperfluidUndelegate)
           return d;
-        var m = new $root.osmosis.superfluid.MsgSuperfluidUndelegate();
+        var m = new $root.merlins.superfluid.MsgSuperfluidUndelegate();
         if (d.sender != null) {
           m.sender = String(d.sender);
         }
@@ -5489,7 +5489,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgSuperfluidUndelegateResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgSuperfluidUndelegateResponse();
+          m = new $root.merlins.superfluid.MsgSuperfluidUndelegateResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5502,10 +5502,10 @@ exports.osmosis = $root.osmosis = (() => {
       };
       MsgSuperfluidUndelegateResponse.fromObject = function fromObject(d) {
         if (
-          d instanceof $root.osmosis.superfluid.MsgSuperfluidUndelegateResponse
+          d instanceof $root.merlins.superfluid.MsgSuperfluidUndelegateResponse
         )
           return d;
-        return new $root.osmosis.superfluid.MsgSuperfluidUndelegateResponse();
+        return new $root.merlins.superfluid.MsgSuperfluidUndelegateResponse();
       };
       MsgSuperfluidUndelegateResponse.toObject = function toObject() {
         return {};
@@ -5539,7 +5539,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgSuperfluidUnbondLock.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgSuperfluidUnbondLock();
+          m = new $root.merlins.superfluid.MsgSuperfluidUnbondLock();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5557,9 +5557,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgSuperfluidUnbondLock.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.superfluid.MsgSuperfluidUnbondLock)
+        if (d instanceof $root.merlins.superfluid.MsgSuperfluidUnbondLock)
           return d;
-        var m = new $root.osmosis.superfluid.MsgSuperfluidUnbondLock();
+        var m = new $root.merlins.superfluid.MsgSuperfluidUnbondLock();
         if (d.sender != null) {
           m.sender = String(d.sender);
         }
@@ -5632,7 +5632,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgSuperfluidUnbondLockResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgSuperfluidUnbondLockResponse();
+          m = new $root.merlins.superfluid.MsgSuperfluidUnbondLockResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5645,10 +5645,10 @@ exports.osmosis = $root.osmosis = (() => {
       };
       MsgSuperfluidUnbondLockResponse.fromObject = function fromObject(d) {
         if (
-          d instanceof $root.osmosis.superfluid.MsgSuperfluidUnbondLockResponse
+          d instanceof $root.merlins.superfluid.MsgSuperfluidUnbondLockResponse
         )
           return d;
-        return new $root.osmosis.superfluid.MsgSuperfluidUnbondLockResponse();
+        return new $root.merlins.superfluid.MsgSuperfluidUnbondLockResponse();
       };
       MsgSuperfluidUnbondLockResponse.toObject = function toObject() {
         return {};
@@ -5689,7 +5689,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgLockAndSuperfluidDelegate.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgLockAndSuperfluidDelegate();
+          m = new $root.merlins.superfluid.MsgLockAndSuperfluidDelegate();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5713,22 +5713,22 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgLockAndSuperfluidDelegate.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.superfluid.MsgLockAndSuperfluidDelegate)
+        if (d instanceof $root.merlins.superfluid.MsgLockAndSuperfluidDelegate)
           return d;
-        var m = new $root.osmosis.superfluid.MsgLockAndSuperfluidDelegate();
+        var m = new $root.merlins.superfluid.MsgLockAndSuperfluidDelegate();
         if (d.sender != null) {
           m.sender = String(d.sender);
         }
         if (d.coins) {
           if (!Array.isArray(d.coins))
             throw TypeError(
-              ".osmosis.superfluid.MsgLockAndSuperfluidDelegate.coins: array expected"
+              ".merlins.superfluid.MsgLockAndSuperfluidDelegate.coins: array expected"
             );
           m.coins = [];
           for (var i = 0; i < d.coins.length; ++i) {
             if (typeof d.coins[i] !== "object")
               throw TypeError(
-                ".osmosis.superfluid.MsgLockAndSuperfluidDelegate.coins: object expected"
+                ".merlins.superfluid.MsgLockAndSuperfluidDelegate.coins: object expected"
               );
             m.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(d.coins[i]);
           }
@@ -5791,7 +5791,7 @@ exports.osmosis = $root.osmosis = (() => {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
           m =
-            new $root.osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse();
+            new $root.merlins.superfluid.MsgLockAndSuperfluidDelegateResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5808,11 +5808,11 @@ exports.osmosis = $root.osmosis = (() => {
       MsgLockAndSuperfluidDelegateResponse.fromObject = function fromObject(d) {
         if (
           d instanceof
-          $root.osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse
+          $root.merlins.superfluid.MsgLockAndSuperfluidDelegateResponse
         )
           return d;
         var m =
-          new $root.osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse();
+          new $root.merlins.superfluid.MsgLockAndSuperfluidDelegateResponse();
         if (d.ID != null) {
           if ($util.Long) (m.ID = $util.Long.fromValue(d.ID)).unsigned = true;
           else if (typeof d.ID === "string") m.ID = parseInt(d.ID, 10);
@@ -5883,7 +5883,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgUnPoolWhitelistedPool.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgUnPoolWhitelistedPool();
+          m = new $root.merlins.superfluid.MsgUnPoolWhitelistedPool();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -5901,9 +5901,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgUnPoolWhitelistedPool.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.superfluid.MsgUnPoolWhitelistedPool)
+        if (d instanceof $root.merlins.superfluid.MsgUnPoolWhitelistedPool)
           return d;
-        var m = new $root.osmosis.superfluid.MsgUnPoolWhitelistedPool();
+        var m = new $root.merlins.superfluid.MsgUnPoolWhitelistedPool();
         if (d.sender != null) {
           m.sender = String(d.sender);
         }
@@ -5985,7 +5985,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgUnPoolWhitelistedPoolResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse();
+          m = new $root.merlins.superfluid.MsgUnPoolWhitelistedPoolResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6006,14 +6006,14 @@ exports.osmosis = $root.osmosis = (() => {
       };
       MsgUnPoolWhitelistedPoolResponse.fromObject = function fromObject(d) {
         if (
-          d instanceof $root.osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse
+          d instanceof $root.merlins.superfluid.MsgUnPoolWhitelistedPoolResponse
         )
           return d;
-        var m = new $root.osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse();
+        var m = new $root.merlins.superfluid.MsgUnPoolWhitelistedPoolResponse();
         if (d.exitedLockIds) {
           if (!Array.isArray(d.exitedLockIds))
             throw TypeError(
-              ".osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse.exitedLockIds: array expected"
+              ".merlins.superfluid.MsgUnPoolWhitelistedPoolResponse.exitedLockIds: array expected"
             );
           m.exitedLockIds = [];
           for (var i = 0; i < d.exitedLockIds.length; ++i) {
@@ -6069,7 +6069,7 @@ exports.osmosis = $root.osmosis = (() => {
     })();
     return superfluid;
   })();
-  osmosis.lockup = (function () {
+  merlins.lockup = (function () {
     const lockup = {};
     lockup.PeriodLock = (function () {
       function PeriodLock(p) {
@@ -6116,7 +6116,7 @@ exports.osmosis = $root.osmosis = (() => {
       PeriodLock.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.PeriodLock();
+          m = new $root.merlins.lockup.PeriodLock();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6146,8 +6146,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       PeriodLock.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.PeriodLock) return d;
-        var m = new $root.osmosis.lockup.PeriodLock();
+        if (d instanceof $root.merlins.lockup.PeriodLock) return d;
+        var m = new $root.merlins.lockup.PeriodLock();
         if (d.ID != null) {
           if ($util.Long) (m.ID = $util.Long.fromValue(d.ID)).unsigned = true;
           else if (typeof d.ID === "string") m.ID = parseInt(d.ID, 10);
@@ -6163,25 +6163,25 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.duration != null) {
           if (typeof d.duration !== "object")
             throw TypeError(
-              ".osmosis.lockup.PeriodLock.duration: object expected"
+              ".merlins.lockup.PeriodLock.duration: object expected"
             );
           m.duration = $root.google.protobuf.Duration.fromObject(d.duration);
         }
         if (d.endTime != null) {
           if (typeof d.endTime !== "object")
             throw TypeError(
-              ".osmosis.lockup.PeriodLock.endTime: object expected"
+              ".merlins.lockup.PeriodLock.endTime: object expected"
             );
           m.endTime = $root.google.protobuf.Timestamp.fromObject(d.endTime);
         }
         if (d.coins) {
           if (!Array.isArray(d.coins))
-            throw TypeError(".osmosis.lockup.PeriodLock.coins: array expected");
+            throw TypeError(".merlins.lockup.PeriodLock.coins: array expected");
           m.coins = [];
           for (var i = 0; i < d.coins.length; ++i) {
             if (typeof d.coins[i] !== "object")
               throw TypeError(
-                ".osmosis.lockup.PeriodLock.coins: object expected"
+                ".merlins.lockup.PeriodLock.coins: object expected"
               );
             m.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(d.coins[i]);
           }
@@ -6287,7 +6287,7 @@ exports.osmosis = $root.osmosis = (() => {
       QueryCondition.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.QueryCondition();
+          m = new $root.merlins.lockup.QueryCondition();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6314,8 +6314,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       QueryCondition.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.QueryCondition) return d;
-        var m = new $root.osmosis.lockup.QueryCondition();
+        if (d instanceof $root.merlins.lockup.QueryCondition) return d;
+        var m = new $root.merlins.lockup.QueryCondition();
         switch (d.lockQueryType) {
           case "ByDuration":
           case 0:
@@ -6332,14 +6332,14 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.duration != null) {
           if (typeof d.duration !== "object")
             throw TypeError(
-              ".osmosis.lockup.QueryCondition.duration: object expected"
+              ".merlins.lockup.QueryCondition.duration: object expected"
             );
           m.duration = $root.google.protobuf.Duration.fromObject(d.duration);
         }
         if (d.timestamp != null) {
           if (typeof d.timestamp !== "object")
             throw TypeError(
-              ".osmosis.lockup.QueryCondition.timestamp: object expected"
+              ".merlins.lockup.QueryCondition.timestamp: object expected"
             );
           m.timestamp = $root.google.protobuf.Timestamp.fromObject(d.timestamp);
         }
@@ -6357,7 +6357,7 @@ exports.osmosis = $root.osmosis = (() => {
         if (m.lockQueryType != null && m.hasOwnProperty("lockQueryType")) {
           d.lockQueryType =
             o.enums === String
-              ? $root.osmosis.lockup.LockQueryType[m.lockQueryType]
+              ? $root.merlins.lockup.LockQueryType[m.lockQueryType]
               : m.lockQueryType;
         }
         if (m.denom != null && m.hasOwnProperty("denom")) {
@@ -6418,7 +6418,7 @@ exports.osmosis = $root.osmosis = (() => {
       SyntheticLock.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.SyntheticLock();
+          m = new $root.merlins.lockup.SyntheticLock();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6442,8 +6442,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       SyntheticLock.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.SyntheticLock) return d;
-        var m = new $root.osmosis.lockup.SyntheticLock();
+        if (d instanceof $root.merlins.lockup.SyntheticLock) return d;
+        var m = new $root.merlins.lockup.SyntheticLock();
         if (d.underlyingLockId != null) {
           if ($util.Long)
             (m.underlyingLockId = $util.Long.fromValue(
@@ -6465,14 +6465,14 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.endTime != null) {
           if (typeof d.endTime !== "object")
             throw TypeError(
-              ".osmosis.lockup.SyntheticLock.endTime: object expected"
+              ".merlins.lockup.SyntheticLock.endTime: object expected"
             );
           m.endTime = $root.google.protobuf.Timestamp.fromObject(d.endTime);
         }
         if (d.duration != null) {
           if (typeof d.duration !== "object")
             throw TypeError(
-              ".osmosis.lockup.SyntheticLock.duration: object expected"
+              ".merlins.lockup.SyntheticLock.duration: object expected"
             );
           m.duration = $root.google.protobuf.Duration.fromObject(d.duration);
         }
@@ -6554,8 +6554,8 @@ exports.osmosis = $root.osmosis = (() => {
         (Msg.prototype.lockTokens = function lockTokens(request, callback) {
           return this.rpcCall(
             lockTokens,
-            $root.osmosis.lockup.MsgLockTokens,
-            $root.osmosis.lockup.MsgLockTokensResponse,
+            $root.merlins.lockup.MsgLockTokens,
+            $root.merlins.lockup.MsgLockTokensResponse,
             request,
             callback
           );
@@ -6570,8 +6570,8 @@ exports.osmosis = $root.osmosis = (() => {
         ) {
           return this.rpcCall(
             beginUnlockingAll,
-            $root.osmosis.lockup.MsgBeginUnlockingAll,
-            $root.osmosis.lockup.MsgBeginUnlockingAllResponse,
+            $root.merlins.lockup.MsgBeginUnlockingAll,
+            $root.merlins.lockup.MsgBeginUnlockingAllResponse,
             request,
             callback
           );
@@ -6586,8 +6586,8 @@ exports.osmosis = $root.osmosis = (() => {
         ) {
           return this.rpcCall(
             beginUnlocking,
-            $root.osmosis.lockup.MsgBeginUnlocking,
-            $root.osmosis.lockup.MsgBeginUnlockingResponse,
+            $root.merlins.lockup.MsgBeginUnlocking,
+            $root.merlins.lockup.MsgBeginUnlockingResponse,
             request,
             callback
           );
@@ -6599,8 +6599,8 @@ exports.osmosis = $root.osmosis = (() => {
         (Msg.prototype.extendLockup = function extendLockup(request, callback) {
           return this.rpcCall(
             extendLockup,
-            $root.osmosis.lockup.MsgExtendLockup,
-            $root.osmosis.lockup.MsgExtendLockupResponse,
+            $root.merlins.lockup.MsgExtendLockup,
+            $root.merlins.lockup.MsgExtendLockupResponse,
             request,
             callback
           );
@@ -6612,8 +6612,8 @@ exports.osmosis = $root.osmosis = (() => {
         (Msg.prototype.forceUnlock = function forceUnlock(request, callback) {
           return this.rpcCall(
             forceUnlock,
-            $root.osmosis.lockup.MsgForceUnlock,
-            $root.osmosis.lockup.MsgForceUnlockResponse,
+            $root.merlins.lockup.MsgForceUnlock,
+            $root.merlins.lockup.MsgForceUnlockResponse,
             request,
             callback
           );
@@ -6657,7 +6657,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgLockTokens.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgLockTokens();
+          m = new $root.merlins.lockup.MsgLockTokens();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6681,28 +6681,28 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgLockTokens.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgLockTokens) return d;
-        var m = new $root.osmosis.lockup.MsgLockTokens();
+        if (d instanceof $root.merlins.lockup.MsgLockTokens) return d;
+        var m = new $root.merlins.lockup.MsgLockTokens();
         if (d.owner != null) {
           m.owner = String(d.owner);
         }
         if (d.duration != null) {
           if (typeof d.duration !== "object")
             throw TypeError(
-              ".osmosis.lockup.MsgLockTokens.duration: object expected"
+              ".merlins.lockup.MsgLockTokens.duration: object expected"
             );
           m.duration = $root.google.protobuf.Duration.fromObject(d.duration);
         }
         if (d.coins) {
           if (!Array.isArray(d.coins))
             throw TypeError(
-              ".osmosis.lockup.MsgLockTokens.coins: array expected"
+              ".merlins.lockup.MsgLockTokens.coins: array expected"
             );
           m.coins = [];
           for (var i = 0; i < d.coins.length; ++i) {
             if (typeof d.coins[i] !== "object")
               throw TypeError(
-                ".osmosis.lockup.MsgLockTokens.coins: object expected"
+                ".merlins.lockup.MsgLockTokens.coins: object expected"
               );
             m.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(d.coins[i]);
           }
@@ -6759,7 +6759,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgLockTokensResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgLockTokensResponse();
+          m = new $root.merlins.lockup.MsgLockTokensResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6774,8 +6774,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgLockTokensResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgLockTokensResponse) return d;
-        var m = new $root.osmosis.lockup.MsgLockTokensResponse();
+        if (d instanceof $root.merlins.lockup.MsgLockTokensResponse) return d;
+        var m = new $root.merlins.lockup.MsgLockTokensResponse();
         if (d.ID != null) {
           if ($util.Long) (m.ID = $util.Long.fromValue(d.ID)).unsigned = true;
           else if (typeof d.ID === "string") m.ID = parseInt(d.ID, 10);
@@ -6840,7 +6840,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgBeginUnlockingAll.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgBeginUnlockingAll();
+          m = new $root.merlins.lockup.MsgBeginUnlockingAll();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -6855,8 +6855,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgBeginUnlockingAll.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgBeginUnlockingAll) return d;
-        var m = new $root.osmosis.lockup.MsgBeginUnlockingAll();
+        if (d instanceof $root.merlins.lockup.MsgBeginUnlockingAll) return d;
+        var m = new $root.merlins.lockup.MsgBeginUnlockingAll();
         if (d.owner != null) {
           m.owner = String(d.owner);
         }
@@ -6893,7 +6893,7 @@ exports.osmosis = $root.osmosis = (() => {
         if (!w) w = $Writer.create();
         if (m.unlocks != null && m.unlocks.length) {
           for (var i = 0; i < m.unlocks.length; ++i)
-            $root.osmosis.lockup.PeriodLock.encode(
+            $root.merlins.lockup.PeriodLock.encode(
               m.unlocks[i],
               w.uint32(10).fork()
             ).ldelim();
@@ -6903,14 +6903,14 @@ exports.osmosis = $root.osmosis = (() => {
       MsgBeginUnlockingAllResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgBeginUnlockingAllResponse();
+          m = new $root.merlins.lockup.MsgBeginUnlockingAllResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
             case 1:
               if (!(m.unlocks && m.unlocks.length)) m.unlocks = [];
               m.unlocks.push(
-                $root.osmosis.lockup.PeriodLock.decode(r, r.uint32())
+                $root.merlins.lockup.PeriodLock.decode(r, r.uint32())
               );
               break;
             default:
@@ -6921,21 +6921,21 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgBeginUnlockingAllResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgBeginUnlockingAllResponse)
+        if (d instanceof $root.merlins.lockup.MsgBeginUnlockingAllResponse)
           return d;
-        var m = new $root.osmosis.lockup.MsgBeginUnlockingAllResponse();
+        var m = new $root.merlins.lockup.MsgBeginUnlockingAllResponse();
         if (d.unlocks) {
           if (!Array.isArray(d.unlocks))
             throw TypeError(
-              ".osmosis.lockup.MsgBeginUnlockingAllResponse.unlocks: array expected"
+              ".merlins.lockup.MsgBeginUnlockingAllResponse.unlocks: array expected"
             );
           m.unlocks = [];
           for (var i = 0; i < d.unlocks.length; ++i) {
             if (typeof d.unlocks[i] !== "object")
               throw TypeError(
-                ".osmosis.lockup.MsgBeginUnlockingAllResponse.unlocks: object expected"
+                ".merlins.lockup.MsgBeginUnlockingAllResponse.unlocks: object expected"
               );
-            m.unlocks[i] = $root.osmosis.lockup.PeriodLock.fromObject(
+            m.unlocks[i] = $root.merlins.lockup.PeriodLock.fromObject(
               d.unlocks[i]
             );
           }
@@ -6951,7 +6951,7 @@ exports.osmosis = $root.osmosis = (() => {
         if (m.unlocks && m.unlocks.length) {
           d.unlocks = [];
           for (var j = 0; j < m.unlocks.length; ++j) {
-            d.unlocks[j] = $root.osmosis.lockup.PeriodLock.toObject(
+            d.unlocks[j] = $root.merlins.lockup.PeriodLock.toObject(
               m.unlocks[j],
               o
             );
@@ -6997,7 +6997,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgBeginUnlocking.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgBeginUnlocking();
+          m = new $root.merlins.lockup.MsgBeginUnlocking();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7021,8 +7021,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgBeginUnlocking.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgBeginUnlocking) return d;
-        var m = new $root.osmosis.lockup.MsgBeginUnlocking();
+        if (d instanceof $root.merlins.lockup.MsgBeginUnlocking) return d;
+        var m = new $root.merlins.lockup.MsgBeginUnlocking();
         if (d.owner != null) {
           m.owner = String(d.owner);
         }
@@ -7038,13 +7038,13 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.coins) {
           if (!Array.isArray(d.coins))
             throw TypeError(
-              ".osmosis.lockup.MsgBeginUnlocking.coins: array expected"
+              ".merlins.lockup.MsgBeginUnlocking.coins: array expected"
             );
           m.coins = [];
           for (var i = 0; i < d.coins.length; ++i) {
             if (typeof d.coins[i] !== "object")
               throw TypeError(
-                ".osmosis.lockup.MsgBeginUnlocking.coins: object expected"
+                ".merlins.lockup.MsgBeginUnlocking.coins: object expected"
               );
             m.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(d.coins[i]);
           }
@@ -7117,7 +7117,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgBeginUnlockingResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgBeginUnlockingResponse();
+          m = new $root.merlins.lockup.MsgBeginUnlockingResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7132,9 +7132,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgBeginUnlockingResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgBeginUnlockingResponse)
+        if (d instanceof $root.merlins.lockup.MsgBeginUnlockingResponse)
           return d;
-        var m = new $root.osmosis.lockup.MsgBeginUnlockingResponse();
+        var m = new $root.merlins.lockup.MsgBeginUnlockingResponse();
         if (d.success != null) {
           m.success = Boolean(d.success);
         }
@@ -7186,7 +7186,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgExtendLockup.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgExtendLockup();
+          m = new $root.merlins.lockup.MsgExtendLockup();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7207,8 +7207,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgExtendLockup.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgExtendLockup) return d;
-        var m = new $root.osmosis.lockup.MsgExtendLockup();
+        if (d instanceof $root.merlins.lockup.MsgExtendLockup) return d;
+        var m = new $root.merlins.lockup.MsgExtendLockup();
         if (d.owner != null) {
           m.owner = String(d.owner);
         }
@@ -7224,7 +7224,7 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.duration != null) {
           if (typeof d.duration !== "object")
             throw TypeError(
-              ".osmosis.lockup.MsgExtendLockup.duration: object expected"
+              ".merlins.lockup.MsgExtendLockup.duration: object expected"
             );
           m.duration = $root.google.protobuf.Duration.fromObject(d.duration);
         }
@@ -7291,7 +7291,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgExtendLockupResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgExtendLockupResponse();
+          m = new $root.merlins.lockup.MsgExtendLockupResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7306,8 +7306,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgExtendLockupResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgExtendLockupResponse) return d;
-        var m = new $root.osmosis.lockup.MsgExtendLockupResponse();
+        if (d instanceof $root.merlins.lockup.MsgExtendLockupResponse) return d;
+        var m = new $root.merlins.lockup.MsgExtendLockupResponse();
         if (d.success != null) {
           m.success = Boolean(d.success);
         }
@@ -7362,7 +7362,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgForceUnlock.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgForceUnlock();
+          m = new $root.merlins.lockup.MsgForceUnlock();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7386,8 +7386,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgForceUnlock.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgForceUnlock) return d;
-        var m = new $root.osmosis.lockup.MsgForceUnlock();
+        if (d instanceof $root.merlins.lockup.MsgForceUnlock) return d;
+        var m = new $root.merlins.lockup.MsgForceUnlock();
         if (d.owner != null) {
           m.owner = String(d.owner);
         }
@@ -7403,13 +7403,13 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.coins) {
           if (!Array.isArray(d.coins))
             throw TypeError(
-              ".osmosis.lockup.MsgForceUnlock.coins: array expected"
+              ".merlins.lockup.MsgForceUnlock.coins: array expected"
             );
           m.coins = [];
           for (var i = 0; i < d.coins.length; ++i) {
             if (typeof d.coins[i] !== "object")
               throw TypeError(
-                ".osmosis.lockup.MsgForceUnlock.coins: object expected"
+                ".merlins.lockup.MsgForceUnlock.coins: object expected"
               );
             m.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(d.coins[i]);
           }
@@ -7482,7 +7482,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgForceUnlockResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.lockup.MsgForceUnlockResponse();
+          m = new $root.merlins.lockup.MsgForceUnlockResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7497,8 +7497,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgForceUnlockResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.lockup.MsgForceUnlockResponse) return d;
-        var m = new $root.osmosis.lockup.MsgForceUnlockResponse();
+        if (d instanceof $root.merlins.lockup.MsgForceUnlockResponse) return d;
+        var m = new $root.merlins.lockup.MsgForceUnlockResponse();
         if (d.success != null) {
           m.success = Boolean(d.success);
         }
@@ -7522,7 +7522,7 @@ exports.osmosis = $root.osmosis = (() => {
     })();
     return lockup;
   })();
-  osmosis.incentives = (function () {
+  merlins.incentives = (function () {
     const incentives = {};
     incentives.Msg = (function () {
       function Msg(rpcImpl, requestDelimited, responseDelimited) {
@@ -7547,8 +7547,8 @@ exports.osmosis = $root.osmosis = (() => {
         (Msg.prototype.createGauge = function createGauge(request, callback) {
           return this.rpcCall(
             createGauge,
-            $root.osmosis.incentives.MsgCreateGauge,
-            $root.osmosis.incentives.MsgCreateGaugeResponse,
+            $root.merlins.incentives.MsgCreateGauge,
+            $root.merlins.incentives.MsgCreateGaugeResponse,
             request,
             callback
           );
@@ -7560,8 +7560,8 @@ exports.osmosis = $root.osmosis = (() => {
         (Msg.prototype.addToGauge = function addToGauge(request, callback) {
           return this.rpcCall(
             addToGauge,
-            $root.osmosis.incentives.MsgAddToGauge,
-            $root.osmosis.incentives.MsgAddToGaugeResponse,
+            $root.merlins.incentives.MsgAddToGauge,
+            $root.merlins.incentives.MsgAddToGaugeResponse,
             request,
             callback
           );
@@ -7602,7 +7602,7 @@ exports.osmosis = $root.osmosis = (() => {
           m.distributeTo != null &&
           Object.hasOwnProperty.call(m, "distributeTo")
         )
-          $root.osmosis.lockup.QueryCondition.encode(
+          $root.merlins.lockup.QueryCondition.encode(
             m.distributeTo,
             w.uint32(26).fork()
           ).ldelim();
@@ -7628,7 +7628,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgCreateGauge.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.incentives.MsgCreateGauge();
+          m = new $root.merlins.incentives.MsgCreateGauge();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7639,7 +7639,7 @@ exports.osmosis = $root.osmosis = (() => {
               m.owner = r.string();
               break;
             case 3:
-              m.distributeTo = $root.osmosis.lockup.QueryCondition.decode(
+              m.distributeTo = $root.merlins.lockup.QueryCondition.decode(
                 r,
                 r.uint32()
               );
@@ -7667,8 +7667,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgCreateGauge.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.incentives.MsgCreateGauge) return d;
-        var m = new $root.osmosis.incentives.MsgCreateGauge();
+        if (d instanceof $root.merlins.incentives.MsgCreateGauge) return d;
+        var m = new $root.merlins.incentives.MsgCreateGauge();
         if (d.isPerpetual != null) {
           m.isPerpetual = Boolean(d.isPerpetual);
         }
@@ -7678,22 +7678,22 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.distributeTo != null) {
           if (typeof d.distributeTo !== "object")
             throw TypeError(
-              ".osmosis.incentives.MsgCreateGauge.distributeTo: object expected"
+              ".merlins.incentives.MsgCreateGauge.distributeTo: object expected"
             );
-          m.distributeTo = $root.osmosis.lockup.QueryCondition.fromObject(
+          m.distributeTo = $root.merlins.lockup.QueryCondition.fromObject(
             d.distributeTo
           );
         }
         if (d.coins) {
           if (!Array.isArray(d.coins))
             throw TypeError(
-              ".osmosis.incentives.MsgCreateGauge.coins: array expected"
+              ".merlins.incentives.MsgCreateGauge.coins: array expected"
             );
           m.coins = [];
           for (var i = 0; i < d.coins.length; ++i) {
             if (typeof d.coins[i] !== "object")
               throw TypeError(
-                ".osmosis.incentives.MsgCreateGauge.coins: object expected"
+                ".merlins.incentives.MsgCreateGauge.coins: object expected"
               );
             m.coins[i] = $root.cosmos.base.v1beta1.Coin.fromObject(d.coins[i]);
           }
@@ -7701,7 +7701,7 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.startTime != null) {
           if (typeof d.startTime !== "object")
             throw TypeError(
-              ".osmosis.incentives.MsgCreateGauge.startTime: object expected"
+              ".merlins.incentives.MsgCreateGauge.startTime: object expected"
             );
           m.startTime = $root.google.protobuf.Timestamp.fromObject(d.startTime);
         }
@@ -7750,7 +7750,7 @@ exports.osmosis = $root.osmosis = (() => {
           d.owner = m.owner;
         }
         if (m.distributeTo != null && m.hasOwnProperty("distributeTo")) {
-          d.distributeTo = $root.osmosis.lockup.QueryCondition.toObject(
+          d.distributeTo = $root.merlins.lockup.QueryCondition.toObject(
             m.distributeTo,
             o
           );
@@ -7810,7 +7810,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgCreateGaugeResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.incentives.MsgCreateGaugeResponse();
+          m = new $root.merlins.incentives.MsgCreateGaugeResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7822,9 +7822,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgCreateGaugeResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.incentives.MsgCreateGaugeResponse)
+        if (d instanceof $root.merlins.incentives.MsgCreateGaugeResponse)
           return d;
-        return new $root.osmosis.incentives.MsgCreateGaugeResponse();
+        return new $root.merlins.incentives.MsgCreateGaugeResponse();
       };
       MsgCreateGaugeResponse.toObject = function toObject() {
         return {};
@@ -7867,7 +7867,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgAddToGauge.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.incentives.MsgAddToGauge();
+          m = new $root.merlins.incentives.MsgAddToGauge();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -7891,8 +7891,8 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgAddToGauge.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.incentives.MsgAddToGauge) return d;
-        var m = new $root.osmosis.incentives.MsgAddToGauge();
+        if (d instanceof $root.merlins.incentives.MsgAddToGauge) return d;
+        var m = new $root.merlins.incentives.MsgAddToGauge();
         if (d.owner != null) {
           m.owner = String(d.owner);
         }
@@ -7911,13 +7911,13 @@ exports.osmosis = $root.osmosis = (() => {
         if (d.rewards) {
           if (!Array.isArray(d.rewards))
             throw TypeError(
-              ".osmosis.incentives.MsgAddToGauge.rewards: array expected"
+              ".merlins.incentives.MsgAddToGauge.rewards: array expected"
             );
           m.rewards = [];
           for (var i = 0; i < d.rewards.length; ++i) {
             if (typeof d.rewards[i] !== "object")
               throw TypeError(
-                ".osmosis.incentives.MsgAddToGauge.rewards: object expected"
+                ".merlins.incentives.MsgAddToGauge.rewards: object expected"
               );
             m.rewards[i] = $root.cosmos.base.v1beta1.Coin.fromObject(
               d.rewards[i]
@@ -7993,7 +7993,7 @@ exports.osmosis = $root.osmosis = (() => {
       MsgAddToGaugeResponse.decode = function decode(r, l) {
         if (!(r instanceof $Reader)) r = $Reader.create(r);
         var c = l === undefined ? r.len : r.pos + l,
-          m = new $root.osmosis.incentives.MsgAddToGaugeResponse();
+          m = new $root.merlins.incentives.MsgAddToGaugeResponse();
         while (r.pos < c) {
           var t = r.uint32();
           switch (t >>> 3) {
@@ -8005,9 +8005,9 @@ exports.osmosis = $root.osmosis = (() => {
         return m;
       };
       MsgAddToGaugeResponse.fromObject = function fromObject(d) {
-        if (d instanceof $root.osmosis.incentives.MsgAddToGaugeResponse)
+        if (d instanceof $root.merlins.incentives.MsgAddToGaugeResponse)
           return d;
-        return new $root.osmosis.incentives.MsgAddToGaugeResponse();
+        return new $root.merlins.incentives.MsgAddToGaugeResponse();
       };
       MsgAddToGaugeResponse.toObject = function toObject() {
         return {};
@@ -8019,7 +8019,7 @@ exports.osmosis = $root.osmosis = (() => {
     })();
     return incentives;
   })();
-  return osmosis;
+  return merlins;
 })();
 exports.google = $root.google = (() => {
   const google = {};

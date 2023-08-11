@@ -55,7 +55,7 @@ export class ObservableQueryPermission extends ObservableQueryMap {
   }
 }
 
-export class OsmoPixelsQueries {
+export class FuryPixelsQueries {
   public readonly queryPixels: ObservableQueryPixels;
   public readonly queryPermission: ObservableQueryPermission;
   public readonly queryStatus: ObservableQueryStatus;

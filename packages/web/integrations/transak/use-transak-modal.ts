@@ -18,7 +18,7 @@ export function useTransakModal(
 } {
   const { chainStore, accountStore } = useStore();
 
-  const account = accountStore.getAccount(chainStore.osmosis.chainId);
+  const account = accountStore.getAccount(chainStore.merlins.chainId);
 
   const [transak, setTransak] = useState<any | null>(null);
   const [shouldShow, setShouldShow] = useState(false);
@@ -34,9 +34,9 @@ export function useTransakModal(
           widgetHeight: "635px",
           widgetWidth: "500px",
           // Examples of some of the customization parameters you can pass
-          defaultCryptoCurrency: "OSMO", // Example 'ETH'
+          defaultCryptoCurrency: "FURY", // Example 'ETH'
           walletAddress: account.bech32Address, // Your customer's wallet address
-          themeColor: "6A67EA", // App theme color // wosmongton-700
+          themeColor: "6A67EA", // App theme color // wfuryngton-700
           email: "", // Your customer's email address
           redirectURL: "",
         });

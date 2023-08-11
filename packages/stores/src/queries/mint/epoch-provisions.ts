@@ -16,7 +16,7 @@ export class ObservableQueryEpochProvisions extends ObservableChainQuery<EpochPr
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/mint/v1beta1/epoch_provisions`
+      `/merlins/mint/v1beta1/epoch_provisions`
     );
 
     makeObservable(this);

@@ -102,7 +102,7 @@ export class NonIbcBridgeHistoryStore implements ITxStatusReceiver {
    * Add transaction to be tracked starting now.
    * @param prefixedKey Identifier of transaction, with a prefix corresponding to a tx status source. Example: `axelar<tx hash>`
    * @param amount Human readable amount. (e.g. `12 ETH`)
-   * @param isWithdraw Indicates if this is a withdraw from Osmosis.
+   * @param isWithdraw Indicates if this is a withdraw from Merlins.
    * @param accountAddress The address of the user's account.
    */
   @action

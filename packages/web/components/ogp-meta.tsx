@@ -10,8 +10,8 @@ import { IS_FRONTIER } from "../config";
  */
 export const OgpMeta: FunctionComponent = () => {
   const previewText = IS_FRONTIER
-    ? "The Osmosis Frontier"
-    : "Trade on Osmosis Zone";
+    ? "The Merlins Frontier"
+    : "Trade on Merlins Zone";
 
   return (
     <Head>

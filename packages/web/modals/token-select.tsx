@@ -70,7 +70,7 @@ export const TokenSelectModal: FunctionComponent<
           return (
             <li
               key={currency.coinDenom}
-              className="flex justify-between items-center rounded-2xl py-2.5 px-4 my-1 hover:bg-osmoverse-900 cursor-pointer mx-3"
+              className="flex justify-between items-center rounded-2xl py-2.5 px-4 my-1 hover:bg-furyverse-900 cursor-pointer mx-3"
               onClick={(e) => {
                 e.stopPropagation();
                 props.onSelect(coinDenom);
@@ -91,7 +91,7 @@ export const TokenSelectModal: FunctionComponent<
                   )}
                   <div>
                     <h6 className="text-white-full">{justDenom}</h6>
-                    <div className="text-osmoverse-400 text-left md:caption font-semibold">
+                    <div className="text-furyverse-400 text-left md:caption font-semibold">
                       {showChannel ? `${networkName} ${channel}` : networkName}
                     </div>
                   </div>
@@ -107,7 +107,7 @@ export const TokenSelectModal: FunctionComponent<
                   >
                     {tokenAmount}
                   </h6>
-                  <span className="subtitle1 text-osmoverse-400">
+                  <span className="subtitle1 text-furyverse-400">
                     {tokenPrice}
                   </span>
                 </div>

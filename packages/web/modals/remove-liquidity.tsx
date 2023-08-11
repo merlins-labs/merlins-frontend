@@ -24,7 +24,7 @@ export const RemoveLiquidityModal: FunctionComponent<
   const { chainStore, accountStore, queriesStore } = useStore();
   const t = useTranslation();
 
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
   const account = accountStore.getAccount(chainId);
   const isSendingMsg = account.txTypeInProgress !== "";
 

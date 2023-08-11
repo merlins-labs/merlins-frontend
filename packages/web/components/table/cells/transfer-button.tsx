@@ -21,12 +21,12 @@ export const TransferButtonCell: FunctionComponent<
   isUnstable,
   onWithdraw,
   onDeposit,
-  onBuyOsmo,
+  onBuyFury,
 }) => {
   const t = useTranslation();
   const { chainStore, accountStore } = useStore();
 
-  const account = accountStore.getAccount(chainStore.osmosis.chainId);
+  const account = accountStore.getAccount(chainStore.merlins.chainId);
 
   return type === "withdraw" ? (
     chainId && coinDenom && onWithdraw ? (
@@ -37,19 +37,19 @@ export const TransferButtonCell: FunctionComponent<
         action={() => onWithdraw?.(chainId, coinDenom, withdrawUrlOverride)}
       />
     ) : null
-  ) : chainId && coinDenom && (onDeposit || onBuyOsmo) ? (
+  ) : chainId && coinDenom && (onDeposit || onBuyFury) ? (
     <TransferButton
       disabled={
         isUnstable ||
-        (onBuyOsmo && account.walletStatus !== WalletStatus.Loaded)
+        (onBuyFury && account.walletStatus !== WalletStatus.Loaded)
       }
       externalUrl={depositUrlOverride}
       label={
-        onBuyOsmo ? t("assets.table.buyOsmo") : t("assets.table.depositButton")
+        onBuyFury ? t("assets.table.buyFury") : t("assets.table.depositButton")
       }
       action={
-        onBuyOsmo
-          ? onBuyOsmo
+        onBuyFury
+          ? onBuyFury
           : () => onDeposit?.(chainId, coinDenom, depositUrlOverride)
       }
     />
@@ -66,7 +66,7 @@ const TransferButton: FunctionComponent<{
   return externalUrl ? (
     <a
       className={classNames(
-        "flex items-center gap-1 pt-2 lg:pt-0 subtitle1 shrink-0 text-wosmongton-200",
+        "flex items-center gap-1 pt-2 lg:pt-0 subtitle1 shrink-0 text-wfuryngton-200",
         { "opacity-30": disabled }
       )}
       rel="noreferrer"
@@ -89,7 +89,7 @@ const TransferButton: FunctionComponent<{
     </a>
   ) : (
     <button
-      className="flex items-center gap-1 text-wosmongton-200 hover:text-rust-300 transition-colors subtitle1 disabled:opacity-30 hover:disabled:text-wosmongton-200"
+      className="flex items-center gap-1 text-wfuryngton-200 hover:text-rust-300 transition-colors subtitle1 disabled:opacity-30 hover:disabled:text-wfuryngton-200"
       onClick={action}
       disabled={disabled}
       onMouseEnter={() => setIsHovering(true)}

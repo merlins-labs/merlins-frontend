@@ -6,7 +6,7 @@ import { computedFn } from "mobx-utils";
 
 export class ObservableQueryNumPools extends ObservableChainQuery<NumPools> {
   constructor(kvStore: KVStore, chainId: string, chainGetter: ChainGetter) {
-    super(kvStore, chainId, chainGetter, "/osmosis/gamm/v1beta1/num_pools");
+    super(kvStore, chainId, chainGetter, "/merlins/gamm/v1beta1/num_pools");
 
     makeObservable(this);
   }

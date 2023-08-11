@@ -11,7 +11,7 @@ export class ObservableQueryDistrInfo extends ObservableChainQuery<DistrInfo> {
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/pool-incentives/v1beta1/distr_info`
+      `/merlins/pool-incentives/v1beta1/distr_info`
     );
 
     makeObservable(this);

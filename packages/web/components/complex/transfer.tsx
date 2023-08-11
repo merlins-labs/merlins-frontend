@@ -23,7 +23,7 @@ export type TransferProps = {
     { address: string; networkName: string; iconUrl?: string }
   ];
   selectedWalletDisplay?: WalletDisplay;
-  isOsmosisAccountLoaded: boolean;
+  isMerlinsAccountLoaded: boolean;
   onRequestSwitchWallet?: () => void;
   availableBalance?: CoinPretty;
   editWithdrawAddrConfig?: {
@@ -47,7 +47,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
   isWithdraw,
   transferPath: [from, bridge, to],
   selectedWalletDisplay,
-  isOsmosisAccountLoaded,
+  isMerlinsAccountLoaded,
   onRequestSwitchWallet,
   availableBalance,
   currentValue,
@@ -78,7 +78,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
 
   const maxFromChars = isEditingWithdrawAddr
     ? 13 // can't be on mobile
-    : !from.address.startsWith("osmo") && selectedWalletDisplay
+    : !from.address.startsWith("fury") && selectedWalletDisplay
     ? isMobile
       ? 13
       : 18 // more space for switch wallet button
@@ -86,7 +86,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
     ? 14
     : 24;
   const maxToChars =
-    (!to.address.startsWith("osmo") && selectedWalletDisplay) || // make room for btns
+    (!to.address.startsWith("fury") && selectedWalletDisplay) || // make room for btns
     editWithdrawAddrConfig
       ? isMobile
         ? 13
@@ -103,7 +103,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
       />
       <div
         className={classNames(
-          "flex gap-4 md:gap-2 body1 text-osmoverse-400 transition-opacity duration-300",
+          "flex gap-4 md:gap-2 body1 text-furyverse-400 transition-opacity duration-300",
           { "opacity-30": panelDisabled }
         )}
       >
@@ -112,14 +112,14 @@ export const Transfer: FunctionComponent<TransferProps> = ({
             "flex w-full text-center border border-white-faint rounded-2xl p-4 md:p-2 transition-width",
             {
               "w-1/4": isEditingWithdrawAddr,
-              "text-osmoverse-400/30": isEditingWithdrawAddr,
+              "text-furyverse-400/30": isEditingWithdrawAddr,
             }
           )}
         >
           {!(isMobile && isEditingWithdrawAddr) && !panelDisabled && (
             <div className="flex flex-wrap justify-center items-center gap-2 mx-auto md:caption">
               {!from.address.startsWith("0x") || from.address.length === 0 ? (
-                isOsmosisAccountLoaded ? (
+                isMerlinsAccountLoaded ? (
                   Bech32Address.shortenAddress(from.address, maxFromChars)
                 ) : (
                   <i>{t("connectWallet")}</i>
@@ -128,7 +128,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
                 truncateEthAddress(from.address)
               )}
               {from.address.length > 0 &&
-                !from.address.startsWith("osmo") &&
+                !from.address.startsWith("fury") &&
                 selectedWalletDisplay && (
                   <SwitchWalletButton
                     selectedWalletIconUrl={selectedWalletDisplay.iconUrl}
@@ -152,7 +152,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
             {!isEditingWithdrawAddr &&
               !panelDisabled &&
               (!to.address.startsWith("0x") || to.address.length === 0 ? (
-                isOsmosisAccountLoaded ? (
+                isMerlinsAccountLoaded ? (
                   Bech32Address.shortenAddress(
                     editWithdrawAddrConfig &&
                       editWithdrawAddrConfig.customAddress !== ""
@@ -167,7 +167,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
                 truncateEthAddress(to.address)
               ))}
             {to.address.length > 0 &&
-            !to.address.startsWith("osmo") &&
+            !to.address.startsWith("fury") &&
             selectedWalletDisplay ? (
               <SwitchWalletButton
                 selectedWalletIconUrl={selectedWalletDisplay.iconUrl}
@@ -180,7 +180,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
               !panelDisabled &&
               !isEditingWithdrawAddr && (
                 <BorderButton
-                  className="h-6 py-0.5 px-1.5 caption border border-wosmongton-300 hover:border-wosmongton-100/60 text-wosmongton-100 hover:text-wosmongton-100/60"
+                  className="h-6 py-0.5 px-1.5 caption border border-wfuryngton-300 hover:border-wfuryngton-100/60 text-wfuryngton-100 hover:text-wfuryngton-100/60"
                   onClick={() => {
                     setIsEditingWithdrawAddr(true);
                     editWithdrawAddrConfig.setCustomAddress(to.address);
@@ -203,7 +203,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
                   {
                     label: t("assets.ibcTransfer.buttonEnter"),
                     className:
-                      "bg-wosmongton-100 hover:bg-wosmongton-100 border-0 rounded-md",
+                      "bg-wfuryngton-100 hover:bg-wfuryngton-100 border-0 rounded-md",
                     onClick: () => setIsEditingWithdrawAddr(false),
                     disabled: !editWithdrawAddrConfig.isValid,
                   },
@@ -242,7 +242,7 @@ export const Transfer: FunctionComponent<TransferProps> = ({
                     network: from.networkName,
                   })}{" "}
               <button
-                className="text-wosmongton-100 cursor-pointer disabled:cursor-default"
+                className="text-wfuryngton-100 cursor-pointer disabled:cursor-default"
                 disabled={availableBalance?.toDec().isZero()}
                 onClick={() => {
                   toggleIsMax();
@@ -276,13 +276,13 @@ export const Transfer: FunctionComponent<TransferProps> = ({
           <GradientView
             className="text-center"
             gradientClassName="bg-superfluid"
-            bgClassName="bg-osmoverse-900"
+            bgClassName="bg-furyverse-900"
           >
             <span className="body2 md:caption">{warningMessage}</span>
           </GradientView>
         )}
         {editWithdrawAddrConfig && editWithdrawAddrConfig.customAddress !== "" && (
-          <GradientView className="flex flex-col gap-2 body2 md:caption text-center bg-osmoverse-800">
+          <GradientView className="flex flex-col gap-2 body2 md:caption text-center bg-furyverse-800">
             <span>{t("assets.ibcTransfer.warningLossFunds")}</span>
             <div className="mx-auto">
               <CheckBox

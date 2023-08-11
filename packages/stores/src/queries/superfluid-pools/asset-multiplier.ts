@@ -19,7 +19,7 @@ export class ObservableQuerySuperfluidAssetMultiplierInner extends ObservableCha
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/superfluid/v1beta1/asset_multiplier?denom=${denom}`
+      `/merlins/superfluid/v1beta1/asset_multiplier?denom=${denom}`
     );
 
     makeObservable(this);
@@ -31,7 +31,7 @@ export class ObservableQuerySuperfluidAssetMultiplierInner extends ObservableCha
       return new Dec(0);
     }
 
-    return new Dec(this.response.data.osmo_equivalent_multiplier.multiplier);
+    return new Dec(this.response.data.fury_equivalent_multiplier.multiplier);
   }
 }
 

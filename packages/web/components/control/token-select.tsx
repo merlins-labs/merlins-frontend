@@ -172,7 +172,7 @@ export const TokenSelect: FunctionComponent<{
                   </div>
                 )}
               </div>
-              <div className="w-24 subtitle2 md:caption text-osmoverse-400">
+              <div className="w-24 subtitle2 md:caption text-furyverse-400">
                 {chainStore.getChainFromCurrency(selectedCurrency.coinDenom)
                   ?.chainName ?? ""}
               </div>

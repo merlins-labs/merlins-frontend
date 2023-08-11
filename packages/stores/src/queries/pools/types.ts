@@ -10,7 +10,7 @@ export type NumPools = {
   num_pools: string;
 };
 
-/** Non OSMO gauge. */
+/** Non FURY gauge. */
 export type ExternalGauge = {
   id: string;
   duration: Duration;

@@ -23,7 +23,7 @@ export const Step1SetRatios: FunctionComponent<StepProps> = observer(
             ({ amountConfig, percentage, scalingFactor }, index) => (
               <div
                 key={amountConfig.sendCurrency.coinDenom}
-                className="flex items-center shrink-0 place-content-between h-24 md:h-auto px-7 md:p-2.5 border border-osmoverse-700 rounded-2xl"
+                className="flex items-center shrink-0 place-content-between h-24 md:h-auto px-7 md:p-2.5 border border-furyverse-700 rounded-2xl"
               >
                 <TokenSelect
                   selectedTokenDenom={amountConfig.sendCurrency.coinDenom}
@@ -81,9 +81,9 @@ export const Step1SetRatios: FunctionComponent<StepProps> = observer(
           )}
           <button
             className={classNames(
-              "flex items-center shrink-0 gap-5 md:p-2.5 px-6 py-4 border border-osmoverse-700 rounded-2xl select-none",
+              "flex items-center shrink-0 gap-5 md:p-2.5 px-6 py-4 border border-furyverse-700 rounded-2xl select-none",
               config.canAddAsset
-                ? "hover:border-wosmongton-200 cursor-pointer"
+                ? "hover:border-wfuryngton-200 cursor-pointer"
                 : "opacity-30 cursor-default"
             )}
             onClick={() => {
@@ -95,7 +95,7 @@ export const Step1SetRatios: FunctionComponent<StepProps> = observer(
               }
             }}
           >
-            <div className="flex items-center justify-center bg-wosmongton-500 h-7 w-7 md:h-6 md:w-6 ml-1.5 rounded-full">
+            <div className="flex items-center justify-center bg-wfuryngton-500 h-7 w-7 md:h-6 md:w-6 ml-1.5 rounded-full">
               <Image
                 alt="add"
                 src="/icons/add.svg"

@@ -8,8 +8,8 @@ import {
 } from "@keplr-wallet/unit";
 import { Currency } from "@keplr-wallet/types";
 import {
-  isOsmoRoutedMultihop,
-  getOsmoRoutedMultihopTotalSwapFee,
+  isFuryRoutedMultihop,
+  getFuryRoutedMultihopTotalSwapFee,
 } from "./multihop";
 import { WeightedPoolMath } from "./weighted";
 import { StableSwapMath } from "./stable";
@@ -277,20 +277,20 @@ export function estimateMultihopSwapExactAmountIn(
   for (const { pool, tokenOutCurrency } of pools) {
     let poolSwapFee = pool.swapFee;
 
-    // add potential OSMO swap fee discount
+    // add potential FURY swap fee discount
     if (pools.length === 2) {
       const { tokenOutCurrency } = pools[0];
       const routePools = pools.map(({ pool }) => pool);
 
       if (
-        isOsmoRoutedMultihop(
+        isFuryRoutedMultihop(
           routePools,
           tokenOutCurrency.coinMinimalDenom,
           stakeCurrencyMinDenom
         )
       ) {
         const { maxSwapFee, swapFeeSum } =
-          getOsmoRoutedMultihopTotalSwapFee(routePools);
+          getFuryRoutedMultihopTotalSwapFee(routePools);
         poolSwapFee = maxSwapFee.mul(poolSwapFee.quo(swapFeeSum));
       }
     }
@@ -585,7 +585,7 @@ function estimateExitPool_Raw(
   const tokenOuts: Coin[] = [];
 
   if (exitFee.gte(new Dec(0))) {
-    // https://github.com/osmosis-labs/osmosis/blob/main/x/gamm/pool-models/internal/cfmm_common/lp.go#L25
+    // https://github.com/merlins-labs/merlins/blob/main/x/gamm/pool-models/internal/cfmm_common/lp.go#L25
     shareInAmount = new Dec(shareInAmount)
       .sub(new Dec(shareInAmount).mulTruncate(exitFee))
       .round();

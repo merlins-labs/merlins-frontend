@@ -13,7 +13,7 @@ import { useStore } from ".";
 export const IbcNotifier: FunctionComponent = observer(() => {
   const { chainStore, queriesStore, ibcTransferHistoryStore, accountStore } =
     useStore();
-  const { chainId } = chainStore.osmosis;
+  const { chainId } = chainStore.merlins;
   const [historyHandlerAdded, setHistoryHandlerAdded] = useState(false);
 
   useEffect(() => {

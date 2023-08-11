@@ -60,11 +60,11 @@ export const CheckBox: FunctionComponent<
           "after:absolute after:h-5 after:w-5 after:rounded z-10", // box
           disabled
             ? isOn
-              ? "opacity-30 cursor-default checked:after:bg-osmoverse-400" // disabled AND on
-              : "opacity-30 cursor-default after:border-2 after:border-osmoverse-400"
+              ? "opacity-30 cursor-default checked:after:bg-furyverse-400" // disabled AND on
+              : "opacity-30 cursor-default after:border-2 after:border-furyverse-400"
             : isOn
-            ? "after:bg-wosmongton-200" // not disabled AND on
-            : "after:border-2 after:border-wosmongton-200",
+            ? "after:bg-wfuryngton-200" // not disabled AND on
+            : "after:border-2 after:border-wfuryngton-200",
           className
         )}
         checked={isOn}

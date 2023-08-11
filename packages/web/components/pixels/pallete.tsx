@@ -41,7 +41,7 @@ const Palette = ({
       }}
     >
       <div
-        className="w-full max-w-[424px] rounded-[16px] bg-osmoverse-700 p-[20px] mx-auto"
+        className="w-full max-w-[424px] rounded-[16px] bg-furyverse-700 p-[20px] mx-auto"
         style={{
           pointerEvents: "all",
         }}
@@ -100,7 +100,7 @@ const Palette = ({
           <div className="relative">
             <a
               className="absolute flex flex-row items-center justify-center w-full rounded-lg text-subtitle1 tracking-tighter text-xs bottom-[6px] text-center py-[8px]"
-              href="https://wallet.keplr.app/chains/osmosis"
+              href="https://wallet.keplr.app/chains/merlins"
               target="_blank"
               rel="noopener noreferrer"
             >

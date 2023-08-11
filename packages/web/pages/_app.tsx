@@ -87,19 +87,19 @@ function MyApp({ Component, pageProps }: AppProps) {
     m.push(
       {
         label: t("menu.stake"),
-        link: "https://wallet.keplr.app/chains/osmosis",
+        link: "https://wallet.keplr.app/chains/merlins",
         icon: "/icons/ticket-white.svg",
         amplitudeEvent: [EventName.Sidebar.stakeClicked] as AmplitudeEvent,
       },
       {
         label: t("menu.vote"),
-        link: "https://wallet.keplr.app/chains/osmosis?tab=governance",
+        link: "https://wallet.keplr.app/chains/merlins?tab=governance",
         icon: "/icons/vote-white.svg",
         amplitudeEvent: [EventName.Sidebar.voteClicked] as AmplitudeEvent,
       },
       {
         label: t("menu.info"),
-        link: "https://info.osmosis.zone",
+        link: "https://info.merlins.zone",
         icon: "/icons/chart-white.svg",
         amplitudeEvent: [EventName.Sidebar.infoClicked] as AmplitudeEvent,
       }
@@ -113,12 +113,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <GetKeplrProvider>
       <StoreProvider>
         <Head>
-          {/* metamask Osmosis app icon */}
+          {/* metamask Merlins app icon */}
           <link
             rel="shortcut icon"
             href={`${
               typeof window !== "undefined" ? window.origin : ""
-            }/osmosis-logo-wc.png`}
+            }/merlins-logo-wc.png`}
           />
         </Head>
         <OgpMeta />
@@ -136,7 +136,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     "<link>": (
                       <a
                         className="items-center underline"
-                        href="https://app.osmosis.zone/"
+                        href="https://app.merlins.zone/"
                         target="_self"
                       />
                     ),

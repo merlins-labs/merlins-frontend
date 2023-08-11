@@ -32,9 +32,9 @@ export const PoolTokenSelect: FunctionComponent<
     <div>
       <div
         className={classNames(
-          "md:p-1 p-3 flex hover:bg-osmoverse-700 cursor-pointer",
+          "md:p-1 p-3 flex hover:bg-furyverse-700 cursor-pointer",
           {
-            "bg-osmoverse-700 rounded-t-xl md:w-48 w-64": isToggleOpen,
+            "bg-furyverse-700 rounded-t-xl md:w-48 w-64": isToggleOpen,
             "rounded-xl": !isToggleOpen,
           },
           className
@@ -85,7 +85,7 @@ const TokensDropdown: FunctionComponent<
     onSelect: (coinDenom: string) => void;
   } & MobileProps
 > = ({ tokens, onSelect, isMobile = false }) => (
-  <div className="absolute flex flex-col bg-osmoverse-700 rounded-b-xl z-40 md:w-52 w-64">
+  <div className="absolute flex flex-col bg-furyverse-700 rounded-b-xl z-40 md:w-52 w-64">
     {tokens.map((token, index) => (
       <button
         className={classNames(

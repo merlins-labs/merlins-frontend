@@ -17,7 +17,7 @@ export class ObservableSyntheticLockupsByLockIdInner extends ObservableChainQuer
       kvStore,
       chainId,
       chainGetter,
-      `/osmosis/lockup/v1beta1/synthetic_lockups_by_lock_id/${_lockId}`
+      `/merlins/lockup/v1beta1/synthetic_lockups_by_lock_id/${_lockId}`
     );
   }
 

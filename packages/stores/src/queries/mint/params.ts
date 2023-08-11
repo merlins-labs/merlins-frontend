@@ -6,7 +6,7 @@ import { Dec } from "@keplr-wallet/unit";
 
 export class ObservableQueryMintParmas extends ObservableChainQuery<MintParmas> {
   constructor(kvStore: KVStore, chainId: string, chainGetter: ChainGetter) {
-    super(kvStore, chainId, chainGetter, `/osmosis/mint/v1beta1/params`);
+    super(kvStore, chainId, chainGetter, `/merlins/mint/v1beta1/params`);
 
     makeObservable(this);
   }
